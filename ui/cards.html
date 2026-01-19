@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cards | Encore UI</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+</head>
+
+<body x-data="{
+    sidebarHidden: false,
+    darkMode: localStorage.getItem('theme') === 'dark',
+    toggleSidebar() { this.sidebarHidden = !this.sidebarHidden; },
+    toggleTheme() {
+        this.darkMode = !this.darkMode;
+        localStorage.setItem('theme', this.darkMode ? 'dark' : 'light');
+        document.documentElement.classList.toggle('dark', this.darkMode);
+    },
+    init() { if (this.darkMode) document.documentElement.classList.add('dark'); }
+}" :class="{ 'sidebar-hidden': sidebarHidden }"
+  class="bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 antialiased">
+
+  <div class="fixed inset-0 z-50 lg:hidden bg-slate-900/50 backdrop-blur-sm" x-show="sidebarHidden" x-transition
+    @click="sidebarHidden = false" style="display: none;"></div>
+
+  <div class="min-h-screen bg-slate-50 dark:bg-slate-900">
+    <!-- Sidebar -->
+    <aside class="layout-sidebar bg-white dark:bg-slate-800 ">
+      <!-- Brand -->
+      <div class="h-16 flex items-center px-6 border-b border-slate-100 dark:border-slate-700">
+        <div class="flex items-center gap-2 font-bold text-xl text-indigo-600 dark:text-indigo-400 tracking-tight">
+          <i class='bx bxs-cube-alt text-2xl'></i>
+          <span>Encore</span>
+        </div>
+        <button @click="sidebarHidden = !sidebarHidden"
+          class="lg:hidden ml-auto text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+          <i class='bx bx-x text-2xl'></i>
+        </button>
+      </div>
+
+      <!-- Navigation -->
+      <div class="flex-1 overflow-y-auto py-4 custom-scrollbar">
+        <nav class="px-2">
+          <ul class="nav">
+
+            <!-- 1. DASHBOARDS -->
+            <li class="nav-header">Dashboard</li>
+
+            <li class="nav-item dropdown" x-data="{ open: false }">
+              <a href="#" class="nav-link active group" @click.prevent="open = !open" :class="{ 'active': open }">
+                <i class='bx bxs-dashboard nav-icon'></i>
+                <span>Dashboard</span>
+                <i class='bx bx-chevron-right nav-chevron' :class="{ 'rotate-90': open }"></i>
+              </a>
+
+              <ul class="nav-submenu" :class="{ 'show': open }">
+                <div>
+                  <li class="nav-item">
+                    <a href="/dashboard/dashboard-default.html" class="nav-sub-link">
+                      <span>Default</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/dashboard/dashboard-analytics.html" class="nav-sub-link">
+                      <span>Analytics</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/dashboard/dashboard-project-crm.html" class="nav-sub-link">
+                      <span>Project / CRM</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/dashboard/dashboard-e-commerce.html" class="nav-sub-link">
+                      <span>eCommerce</span>
+                    </a>
+                  </li>
+                </div>
+              </ul>
+            </li>
+
+            <!-- 2. LAYOUTS -->
+            <li class="nav-header">Starter</li>
+
+            <li class="nav-item dropdown" x-data="{ open: false }">
+              <a href="#" class="nav-link group" @click.prevent="open = !open" :class="{ 'active': open }">
+                <i class='bx bx-layout nav-icon'></i>
+                <span>Layouts</span>
+                <i class='bx bx-chevron-right nav-chevron' :class="{ 'rotate-90': open }"></i>
+              </a>
+
+              <ul class="nav-submenu" :class="{ 'show': open }">
+                <div>
+                  <li class="nav-item">
+                    <a href="/layout/layout-vertical.html" class="nav-sub-link">
+                      <span>Vertical</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/layout/layout-horizontal.html" class="nav-sub-link">
+                      <span>Horizontal</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/layout/layout-detached.html" class="nav-sub-link">
+                      <span>Detached</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/layout/layout-two-column.html" class="nav-sub-link">
+                      <span>Two Column</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/layout/layout-compact.html" class="nav-sub-link">
+                      <span>Compact / Mini</span>
+                    </a>
+                  </li>
+                </div>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown" x-data="{ open: false }">
+              <a href="#" class="nav-link group" @click.prevent="open = !open" :class="{ 'active': open }">
+                <i class='bx bx-package nav-icon'></i>
+                <span>Apps</span>
+                <i class='bx bx-chevron-right nav-chevron' :class="{ 'rotate-90': open }"></i>
+              </a>
+
+              <ul class="nav-submenu" :class="{ 'show': open }">
+                <div>
+                  <li class="nav-item">
+                    <a href="/apps/chat.html" class="nav-sub-link">
+                      <span>Chat</span>
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a href="/apps/email.html" class="nav-sub-link">
+                      <span>Email</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/apps/calendar.html" class="nav-sub-link">
+                      <span>Calendar</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/apps/kanban.html" class="nav-sub-link">
+                      <span>Kanban Board</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/apps/file-manager.html" class="nav-sub-link">
+                      <span>File Manager</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/apps/invoices.html" class="nav-sub-link">
+                      <span>Invoices</span>
+                    </a>
+                  </li>
+                </div>
+              </ul>
+            </li>
+
+            <!-- 4. UI INTERFACE -->
+            <li class="nav-header">UI Interface</li>
+
+            <li class="nav-item dropdown" x-data="{ open: true }">
+              <a href="#" class="nav-link group" @click.prevent="open = !open" :class="{ 'active': open }">
+                <i class='bx bx-layer nav-icon'></i>
+                <span>Basic UI</span>
+                <i class='bx bx-chevron-right nav-chevron' :class="{ 'rotate-90': open }"></i>
+              </a>
+              <ul class="nav-submenu" :class="{ 'show': open }">
+                <div>
+                  <li class="nav-item"><a href="/ui/alerts.html" class="nav-sub-link"><span>Alerts</span></a>
+                  </li>
+                  <li class="nav-item"><a href="/ui/badges.html" class="nav-sub-link"><span>Badges &
+                        Chips</span></a></li>
+                  <li class="nav-item"><a href="/ui/buttons.html" class="nav-sub-link"><span>Buttons</span></a></li>
+                  <li class="nav-item"><a href="/ui/cards.html" class="nav-sub-link active"><span>Cards</span></a></li>
+                  <li class="nav-item"><a href="/ui/carousel.html" class="nav-sub-link"><span>Carousel</span></a></li>
+                  <li class="nav-item"><a href="/ui/dropdowns.html" class="nav-sub-link"><span>Dropdowns</span></a></li>
+                  <li class="nav-item"><a href="/ui/grid.html" class="nav-sub-link"><span>Grid
+                        System</span></a></li>
+                  <li class="nav-item"><a href="/ui/modals.html" class="nav-sub-link"><span>Modals</span></a></li>
+                  <li class="nav-item"><a href="/ui/offcanvas.html" class="nav-sub-link"><span>Offcanvas</span></a></li>
+                  <li class="nav-item"><a href="/ui/tabs.html" class="nav-sub-link"><span>Tabs &
+                        Accordions</span></a></li>
+                  <li class="nav-item"><a href="/ui/placeholders.html"
+                      class="nav-sub-link"><span>Placeholders</span></a></li>
+                  <li class="nav-item"><a href="/ui/toasts.html" class="nav-sub-link"><span>Toasts</span></a></li>
+                  <li class="nav-item"><a href="/ui/tooltips.html" class="nav-sub-link"><span>Tooltips
+                        & Popovers</span></a></li>
+                  <li class="nav-item"><a href="/ui/typography.html" class="nav-sub-link"><span>Typography</span></a>
+                  </li>
+                  <li class="nav-item"><a href="/ui/video.html" class="nav-sub-link"><span>Video &
+                        Embeds</span></a></li>
+                </div>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown" x-data="{ open: false }">
+              <a href="#" class="nav-link group" @click.prevent="open = !open" :class="{ 'active': open }">
+                <i class='bx bx-cube nav-icon'></i>
+                <span>Advanced UI</span>
+                <i class='bx bx-chevron-right nav-chevron' :class="{ 'rotate-90': open }"></i>
+              </a>
+              <ul class="nav-submenu" :class="{ 'show': open }">
+                <div>
+                  <li class="nav-item"><a href="/ui/sweetalert.html" class="nav-sub-link"><span>SweetAlert</span></a>
+                  </li>
+                  <li class="nav-item"><a href="/ui/nestable.html" class="nav-sub-link"><span>Nestable
+                        List</span></a></li>
+                  <li class="nav-item"><a href="/ui/ratings.html" class="nav-sub-link"><span>Ratings</span></a></li>
+                  <li class="nav-item"><a href="/ui/rangeslider.html" class="nav-sub-link"><span>Range
+                        Slider</span></a></li>
+                  <li class="nav-item"><a href="/ui/ribbons.html" class="nav-sub-link"><span>Ribbons</span></a></li>
+                  <li class="nav-item"><a href="/ui/lightbox.html" class="nav-sub-link"><span>Lightbox</span></a></li>
+                  <li class="nav-item"><a href="/ui/treeview.html" class="nav-sub-link"><span>Tree
+                        View</span></a></li>
+                </div>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a href="/ui/icons.html" class="nav-link group">
+                <i class='bx bx-sticker nav-icon'></i>
+                <span>Icons</span>
+              </a>
+            </li>
+
+            <!-- 5. FORMS -->
+            <li class="nav-header">Forms</li>
+
+            <li class="nav-item">
+              <a href="/forms/basic-elements.html" class="nav-link group">
+                <i class='bx bx-edit nav-icon'></i>
+                <span>Basic Elements</span>
+              </a>
+            </li>
+
+            <li class="nav-item dropdown" x-data="{ open: false }">
+              <a href="#" class="nav-link group" @click.prevent="open = !open" :class="{ 'active': open }">
+                <i class='bx bx-layout nav-icon'></i>
+                <span>Form Layouts</span>
+                <i class='bx bx-chevron-right nav-chevron' :class="{ 'rotate-90': open }"></i>
+              </a>
+              <ul class="nav-submenu" :class="{ 'show': open }">
+                <div>
+                  <li class="nav-item"><a href="/forms/vertical-form.html" class="nav-sub-link"><span>Vertical
+                        Form</span></a></li>
+                  <li class="nav-item"><a href="/forms/horizontal-form.html" class="nav-sub-link"><span>Horizontal
+                        Form</span></a></li>
+                  <li class="nav-item"><a href="/forms/column-grid-form.html" class="nav-sub-link"><span>Column Grid
+                        Form</span></a></li>
+                </div>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown" x-data="{ open: false }">
+              <a href="#" class="nav-link group" @click.prevent="open = !open" :class="{ 'active': open }">
+                <i class='bx bx-filter-alt nav-icon'></i>
+                <span>Form Advanced</span>
+                <i class='bx bx-chevron-right nav-chevron' :class="{ 'rotate-90': open }"></i>
+              </a>
+              <ul class="nav-submenu" :class="{ 'show': open }">
+                <div>
+                  <li class="nav-item"><a href="/forms/select2.html" class="nav-sub-link"><span>Select2 /
+                        Choices</span></a></li>
+                  <li class="nav-item"><a href="/forms/date-time-picker.html" class="nav-sub-link"><span>Date & Time
+                        Picker</span></a></li>
+                  <li class="nav-item"><a href="/forms/input-masks.html" class="nav-sub-link"><span>Input
+                        Masks</span></a></li>
+                  <li class="nav-item"><a href="/forms/text-editor.html" class="nav-sub-link"><span>Text
+                        Editor</span></a></li>
+                  <li class="nav-item"><a href="/forms/form-repeater.html" class="nav-sub-link"><span>Form
+                        Repeater</span></a></li>
+                  <li class="nav-item"><a href="/forms/file-upload.html" class="nav-sub-link"><span>File
+                        Upload</span></a></li>
+                  <li class="nav-item"><a href="/forms/clipboard.html" class="nav-sub-link"><span>Clipboard</span></a>
+                  </li>
+                </div>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown" x-data="{ open: false }">
+              <a href="#" class="nav-link group" @click.prevent="open = !open" :class="{ 'active': open }">
+                <i class='bx bx-check-circle nav-icon'></i>
+                <span>Form Wizard</span>
+                <i class='bx bx-chevron-right nav-chevron' :class="{ 'rotate-90': open }"></i>
+              </a>
+              <ul class="nav-submenu" :class="{ 'show': open }">
+                <div>
+                  <li class="nav-item"><a href="/forms/horizontal-wizard.html" class="nav-sub-link"><span>Horizontal
+                        Wizard</span></a></li>
+                  <li class="nav-item"><a href="/forms/vertical-wizard.html" class="nav-sub-link"><span>Vertical
+                        Wizard</span></a></li>
+                  <li class="nav-item"><a href="/forms/validation-wizard.html" class="nav-sub-link"><span>Validation
+                        Wizard</span></a></li>
+                </div>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a href="#" class="nav-link group">
+                <i class='bx bx-list-check nav-icon'></i>
+                <span>Form Validation</span>
+              </a>
+            </li>
+
+            <!-- 6. TABLES & DATA -->
+            <li class="nav-header">Tables & Data</li>
+
+            <li class="nav-item dropdown" x-data="{ open: false }">
+              <a href="#" class="nav-link group" @click.prevent="open = !open" :class="{ 'active': open }">
+                <i class='bx bx-table nav-icon'></i>
+                <span>Tables</span>
+                <i class='bx bx-chevron-right nav-chevron' :class="{ 'rotate-90': open }"></i>
+              </a>
+              <ul class="nav-submenu" :class="{ 'show': open }">
+                <div>
+                  <li class="nav-item"><a href="/tables/basic-tables.html" class="nav-sub-link"><span>Basic
+                        Tables</span></a></li>
+                  <li class="nav-item"><a href="/tables/datatables.html"
+                      class="nav-sub-link"><span>DataTables</span></a></li>
+                </div>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown" x-data="{ open: false }">
+              <a href="#" class="nav-link group" @click.prevent="open = !open" :class="{ 'active': open }">
+                <i class='bx bx-pie-chart-alt-2 nav-icon'></i>
+                <span>Charts</span>
+                <i class='bx bx-chevron-right nav-chevron' :class="{ 'rotate-90': open }"></i>
+              </a>
+              <ul class="nav-submenu" :class="{ 'show': open }">
+                <div>
+                  <li class="nav-item"><a href="/charts/apexcharts.html"
+                      class="nav-sub-link"><span>ApexCharts</span></a></li>
+                  <li class="nav-item"><a href="/charts/chartjs.html" class="nav-sub-link"><span>ChartJS</span></a></li>
+                </div>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown" x-data="{ open: false }">
+              <a href="#" class="nav-link group" @click.prevent="open = !open" :class="{ 'active': open }">
+                <i class='bx bx-map-alt nav-icon'></i>
+                <span>Maps</span>
+                <i class='bx bx-chevron-right nav-chevron' :class="{ 'rotate-90': open }"></i>
+              </a>
+              <ul class="nav-submenu" :class="{ 'show': open }">
+                <div>
+                  <li class="nav-item"><a href="/maps/google-maps.html" class="nav-sub-link"><span>Google
+                        Maps</span></a></li>
+                  <li class="nav-item"><a href="/maps/vector-maps.html" class="nav-sub-link"><span>Vector
+                        Maps</span></a></li>
+                </div>
+              </ul>
+            </li>
+
+            <!-- 7. PAGES -->
+            <li class="nav-header">Pages</li>
+
+            <li class="nav-item dropdown" x-data="{ open: false }">
+              <a href="#" class="nav-link group" @click.prevent="open = !open" :class="{ 'active': open }">
+                <i class='bx bx-lock-alt nav-icon'></i>
+                <span>Authentication</span>
+                <i class='bx bx-chevron-right nav-chevron' :class="{ 'rotate-90': open }"></i>
+              </a>
+              <ul class="nav-submenu" :class="{ 'show': open }">
+                <div>
+                  <li class="nav-item"><a href="/authentication/login.html" class="nav-sub-link"><span>Login</span></a>
+                  </li>
+                  <li class="nav-item"><a href="/authentication/register.html"
+                      class="nav-sub-link"><span>Register</span></a></li>
+                  <li class="nav-item"><a href="/authentication/forgot-password.html" class="nav-sub-link"><span>Forgot
+                        Password</span></a></li>
+                  <li class="nav-item"><a href="/authentication/reset-password.html" class="nav-sub-link"><span>Reset
+                        Password</span></a></li>
+                  <li class="nav-item"><a href="/authentication/lock-screen.html" class="nav-sub-link"><span>Lock
+                        Screen</span></a></li>
+                </div>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown" x-data="{ open: false }">
+              <a href="#" class="nav-link group" @click.prevent="open = !open" :class="{ 'active': open }">
+                <i class='bx bx-user-circle nav-icon'></i>
+                <span>User Module</span>
+                <i class='bx bx-chevron-right nav-chevron' :class="{ 'rotate-90': open }"></i>
+              </a>
+              <ul class="nav-submenu" :class="{ 'show': open }">
+                <div>
+                  <li class="nav-item"><a href="/user/profile.html" class="nav-sub-link"><span>Profile</span></a></li>
+                  <li class="nav-item"><a href="/user/account-settings.html" class="nav-sub-link"><span>Account
+                        Settings</span></a></li>
+                </div>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown" x-data="{ open: false }">
+              <a href="#" class="nav-link group" @click.prevent="open = !open" :class="{ 'active': open }">
+                <i class='bx bx-box nav-icon'></i>
+                <span>Utility / Misc</span>
+                <i class='bx bx-chevron-right nav-chevron' :class="{ 'rotate-90': open }"></i>
+              </a>
+              <ul class="nav-submenu" :class="{ 'show': open }">
+                <div>
+                  <li class="nav-item"><a href="/utility/pricing-table.html" class="nav-sub-link"><span>Pricing
+                        Table</span></a></li>
+                  <li class="nav-item"><a href="/utility/faq.html" class="nav-sub-link"><span>FAQ</span></a></li>
+                  <li class="nav-item"><a href="/utility/timeline.html" class="nav-sub-link"><span>Timeline</span></a>
+                  </li>
+                  <li class="nav-item"><a href="/utility/gallery.html" class="nav-sub-link"><span>Gallery</span></a>
+                  </li>
+                  <li class="nav-item"><a href="/utility/search-results.html" class="nav-sub-link"><span>Search
+                        Results</span></a></li>
+                  <li class="nav-item"><a href="/utility/testimonials.html"
+                      class="nav-sub-link"><span>Testimonials</span></a></li>
+                  <li class="nav-item"><a href="/utility/starter.html" class="nav-sub-link"><span>Starter / Blank
+                        Page</span></a></li>
+                </div>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown" x-data="{ open: false }">
+              <a href="#" class="nav-link group" @click.prevent="open = !open" :class="{ 'active': open }">
+                <i class='bx bx-window-open nav-icon'></i>
+                <span>Special Pages</span>
+                <i class='bx bx-chevron-right nav-chevron' :class="{ 'rotate-90': open }"></i>
+              </a>
+              <ul class="nav-submenu" :class="{ 'show': open }">
+                <div>
+                  <li class="nav-item"><a href="/pages/coming-soon.html" class="nav-sub-link"><span>Coming
+                        Soon</span></a></li>
+                  <li class="nav-item"><a href="/pages/maintenance.html"
+                      class="nav-sub-link"><span>Maintenance</span></a></li>
+                  <li class="nav-item"><a href="/pages/error-404.html" class="nav-sub-link"><span>Error 404</span></a>
+                  </li>
+                  <li class="nav-item"><a href="/pages/error-500.html" class="nav-sub-link"><span>Error 500</span></a>
+                  </li>
+                </div>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Sidebar Footer -->
+      <div class="p-4 border-t border-slate-100 dark:border-slate-700">
+        <a href="#"
+          class="flex items-center gap-3 px-3 py-2 text-sm text-red-600 dark:text-red-400 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+          <i class='bx bx-log-out text-lg text-red-400 dark:text-red-500'></i>
+          <span class="font-medium">Logout</span>
+        </a>
+      </div>
+    </aside>
+
+    <div class="layout-content">
+      <!-- Navbar (STANDARD, UNCHANGED) -->
+      <header class="relative z-10">
+        <!-- Main Navbar -->
+        <div
+          class="bg-white/95 dark:bg-slate-800/95 backdrop-blur-md border-b border-slate-100/50 dark:border-slate-700/50">
+          <div class="container mx-auto">
+            <div class="h-16 px-4 lg:px-6 flex items-center justify-between">
+
+              <!-- Left Section -->
+              <div class="flex items-center gap-4">
+                <!-- Sidebar Toggle (Desktop & Mobile) -->
+                <button @click="toggleSidebar()"
+                  class="p-2 hover:bg-linear-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-xl transition-all duration-300 group">
+                  <i
+                    class='bx bx-menu text-2xl text-slate-600 dark:text-slate-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors'></i>
+                </button>
+              </div>
+
+              <!-- Center Section - Floating Search -->
+              <div class="hidden lg:flex items-center flex-1 max-w-xl mx-8">
+                <div class="relative w-full group">
+                  <div
+                    class="absolute inset-0 bg-linear-to-r from-indigo-400 to-purple-400 rounded-xl opacity-0 group-hover:opacity-10 blur transition-opacity duration-300">
+                  </div>
+                  <div
+                    class="relative flex items-center bg-slate-50 dark:bg-slate-700 rounded-xl border border-slate-200 dark:border-slate-600 group-hover:border-indigo-300 dark:group-hover:border-indigo-500 transition-all duration-300">
+                    <i
+                      class='bx bx-search text-slate-400 dark:text-slate-500 text-lg ml-4 group-hover:text-indigo-500 dark:group-hover:text-indigo-400 transition-colors'></i>
+                    <input type="text" placeholder="Search anything..."
+                      class="flex-1 px-4 py-2.5 bg-transparent text-sm text-slate-900 dark:text-slate-100 outline-none placeholder:text-slate-400 dark:placeholder:text-slate-500">
+                    <div
+                      class="hidden group-focus-within:flex items-center gap-1 mr-3 text-xs text-slate-400 dark:text-slate-500">
+                      <kbd
+                        class="px-2 py-0.5 bg-white dark:bg-slate-600 rounded border border-slate-200 dark:border-slate-500">⌘</kbd>
+                      <kbd
+                        class="px-2 py-0.5 bg-white dark:bg-slate-600 rounded border border-slate-200 dark:border-slate-500">K</kbd>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Section - Actions -->
+              <div class="flex items-center gap-2">
+
+                <!-- Quick Actions -->
+                <div class="hidden sm:flex items-center gap-1">
+                  <!-- Theme Toggle -->
+                  <button @click="toggleTheme()"
+                    class="relative p-2.5 hover:bg-linear-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-xl transition-all duration-300 group">
+                    <i class='bx text-xl text-slate-600 dark:text-slate-400 transition-colors'
+                      :class="darkMode ? 'bx-sun group-hover:text-amber-500' : 'bx-moon group-hover:text-indigo-600 dark:group-hover:text-indigo-400'"></i>
+                  </button>
+
+                  <!-- Notifications Dropdown -->
+                  <div class="relative" x-data="{ open: false }" @click.outside="open = false">
+                    <button @click="open = !open"
+                      class="relative p-2.5 hover:bg-linear-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-xl transition-all duration-300 group">
+                      <i
+                        class='bx bx-bell text-xl text-slate-600 dark:text-slate-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors'></i>
+                      <span class="absolute top-1.5 right-1.5 flex h-2 w-2">
+                        <span
+                          class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+                      </span>
+                    </button>
+
+                    <!-- Dropdown Menu -->
+                    <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                      x-transition:enter-start="opacity-0 translate-y-2"
+                      x-transition:enter-end="opacity-100 translate-y-0"
+                      x-transition:leave="transition ease-in duration-150"
+                      x-transition:leave-start="opacity-100 translate-y-0"
+                      x-transition:leave-end="opacity-0 translate-y-2"
+                      class="absolute right-0 mt-2 w-80 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 overflow-hidden z-50">
+
+                      <div
+                        class="p-4 border-b border-slate-100 dark:border-slate-700 flex items-center justify-between">
+                        <h3 class="font-semibold text-slate-800 dark:text-slate-100">
+                          Notifications</h3>
+                        <a href="#" class="text-xs text-indigo-600 dark:text-indigo-400 hover:underline">Mark
+                          all as read</a>
+                      </div>
+
+                      <div class="max-h-[300px] overflow-y-auto custom-scrollbar">
+                        <a href="#"
+                          class="flex gap-4 p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                          <div
+                            class="w-10 h-10 rounded-full bg-indigo-50 dark:bg-indigo-900/20 flex items-center justify-center text-indigo-600 shrink-0">
+                            <i class='bx bx-cart'></i>
+                          </div>
+                          <div>
+                            <p class="text-sm font-medium text-slate-800 dark:text-slate-100">
+                              New Order Received</p>
+                            <p class="text-xs text-slate-500 mt-1">Order #1234 from John Doe
+                              has been placed.</p>
+                            <p class="text-[10px] text-slate-400 mt-1">2 mins ago</p>
+                          </div>
+                        </a>
+                        <a href="#"
+                          class="flex gap-4 p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                          <div
+                            class="w-10 h-10 rounded-full bg-amber-50 dark:bg-amber-900/20 flex items-center justify-center text-amber-600 shrink-0">
+                            <i class='bx bx-server'></i>
+                          </div>
+                          <div>
+                            <p class="text-sm font-medium text-slate-800 dark:text-slate-100">
+                              Server Load High</p>
+                            <p class="text-xs text-slate-500 mt-1">CPU usage is above 90% on
+                              Server A.</p>
+                            <p class="text-[10px] text-slate-400 mt-1">1 hour ago</p>
+                          </div>
+                        </a>
+                        <a href="#"
+                          class="flex gap-4 p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                          <div
+                            class="w-10 h-10 rounded-full bg-emerald-50 dark:bg-emerald-900/20 flex items-center justify-center text-emerald-600 shrink-0">
+                            <i class='bx bx-user-plus'></i>
+                          </div>
+                          <div>
+                            <p class="text-sm font-medium text-slate-800 dark:text-slate-100">
+                              New User Registered</p>
+                            <p class="text-xs text-slate-500 mt-1">Sarah Smith created an
+                              account.</p>
+                            <p class="text-[10px] text-slate-400 mt-1">3 hours ago</p>
+                          </div>
+                        </a>
+                      </div>
+
+                      <div class="p-3 border-t border-slate-100 dark:border-slate-700 text-center">
+                        <a href="#"
+                          class="text-sm text-indigo-600 dark:text-indigo-400 font-medium hover:underline">View
+                          All Notifications</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Messages Dropdown -->
+                  <div class="relative" x-data="{ open: false }" @click.outside="open = false">
+                    <button @click="open = !open"
+                      class="relative p-2.5 hover:bg-linear-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl transition-all duration-300 group">
+                      <i
+                        class='bx bx-message-dots text-xl text-slate-600 dark:text-slate-400 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors'></i>
+                      <span
+                        class="absolute -top-1 -right-1 flex items-center justify-center h-5 w-5 bg-linear-to-br from-indigo-500 to-purple-500 text-white text-xs font-bold rounded-full">
+                        3
+                      </span>
+                    </button>
+
+                    <!-- Dropdown Menu -->
+                    <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                      x-transition:enter-start="opacity-0 translate-y-2"
+                      x-transition:enter-end="opacity-100 translate-y-0"
+                      x-transition:leave="transition ease-in duration-150"
+                      x-transition:leave-start="opacity-100 translate-y-0"
+                      x-transition:leave-end="opacity-0 translate-y-2"
+                      class="absolute right-0 mt-2 w-80 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 overflow-hidden z-50">
+
+                      <div
+                        class="p-4 border-b border-slate-100 dark:border-slate-700 flex items-center justify-between">
+                        <h3 class="font-semibold text-slate-800 dark:text-slate-100">Messages
+                        </h3>
+                        <a href="#" class="text-xs text-purple-600 dark:text-purple-400 hover:underline">Mark
+                          all as read</a>
+                      </div>
+
+                      <div class="max-h-[300px] overflow-y-auto custom-scrollbar">
+                        <a href="#"
+                          class="flex gap-4 p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                          <img src="https://ui-avatars.com/api/?name=Jane+Doe&background=random"
+                            class="w-10 h-10 rounded-full shrink-0">
+                          <div class="overflow-hidden">
+                            <div class="flex justify-between items-center mb-1">
+                              <p class="text-sm font-medium text-slate-800 dark:text-slate-100">
+                                Jane Doe</p>
+                              <span class="text-[10px] text-slate-400">Just now</span>
+                            </div>
+                            <p class="text-xs text-slate-500 truncate">Hey, can you review
+                              the latest designs?</p>
+                          </div>
+                        </a>
+                        <a href="#"
+                          class="flex gap-4 p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                          <img src="https://ui-avatars.com/api/?name=Mike+Ross&background=random"
+                            class="w-10 h-10 rounded-full shrink-0">
+                          <div class="overflow-hidden">
+                            <div class="flex justify-between items-center mb-1">
+                              <p class="text-sm font-medium text-slate-800 dark:text-slate-100">
+                                Mike Ross</p>
+                              <span class="text-[10px] text-slate-400">15m ago</span>
+                            </div>
+                            <p class="text-xs text-slate-500 truncate">The project meeting
+                              has been rescheduled.</p>
+                          </div>
+                        </a>
+                      </div>
+
+                      <div class="p-3 border-t border-slate-100 dark:border-slate-700 text-center">
+                        <a href="#"
+                          class="text-sm text-purple-600 dark:text-purple-400 font-medium hover:underline">View
+                          All Messages</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Divider -->
+                <div
+                  class="hidden sm:block h-8 w-px bg-linear-to-b from-transparent via-slate-200 dark:via-slate-600 to-transparent mx-2">
+                </div>
+
+                <!-- Profile Section -->
+                <div class="relative" x-data="{ open: false }" @click.outside="open = false">
+                  <button @click="open = !open"
+                    class="flex items-center gap-3 pl-2 pr-3 py-1.5 hover:bg-linear-to-br from-slate-50 to-indigo-50 dark:from-slate-700 dark:to-indigo-900/30 rounded-xl transition-all duration-300 group">
+                    <div class="relative">
+                      <img src="https://ui-avatars.com/api/?name=Admin+User&background=6366f1&color=fff" alt="Avatar"
+                        class="w-9 h-9 rounded-full ring-2 ring-white dark:ring-slate-700 group-hover:ring-indigo-200 dark:group-hover:ring-indigo-500 transition-all duration-300">
+                      <span
+                        class="absolute bottom-0 right-0 h-3 w-3 bg-emerald-500 border-2 border-white dark:border-slate-800 rounded-full"></span>
+                    </div>
+                    <div class="hidden lg:block text-left">
+                      <p
+                        class="text-sm font-semibold text-slate-800 dark:text-slate-200 leading-tight group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                        Admin User</p>
+                      <p class="text-xs text-slate-500 dark:text-slate-400">Administrator</p>
+                    </div>
+                    <i class='bx bx-chevron-down text-slate-400 dark:text-slate-500 hidden lg:block group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-all duration-300'
+                      :class="{ 'rotate-180': open }"></i>
+                  </button>
+
+                  <!-- Profile Dropdown -->
+                  <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                    x-transition:enter-start="opacity-0 translate-y-2"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:leave="transition ease-in duration-150"
+                    x-transition:leave-start="opacity-100 translate-y-0"
+                    x-transition:leave-end="opacity-0 translate-y-2"
+                    class="absolute right-0 mt-2 w-56 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 overflow-hidden z-50">
+
+                    <div
+                      class="p-4 border-b border-slate-100 dark:border-slate-700 text-center bg-slate-50/50 dark:bg-slate-700/30">
+                      <div class="w-16 h-16 rounded-full bg-slate-200 dark:bg-slate-600 mx-auto mb-2 overflow-hidden">
+                        <img src="https://ui-avatars.com/api/?name=Admin+User&background=6366f1&color=fff"
+                          class="w-full h-full object-cover">
+                      </div>
+                      <h4 class="font-bold text-slate-800 dark:text-slate-100">Admin User</h4>
+                      <p class="text-xs text-slate-500 dark:text-slate-400">admin@encore.com</p>
+                    </div>
+
+                    <div class="p-2">
+                      <a href="#"
+                        class="flex items-center gap-3 px-3 py-2 text-sm text-slate-600 dark:text-slate-300 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                        <i class='bx bx-user text-lg text-slate-400 dark:text-slate-500'></i>
+                        My Profile
+                      </a>
+                      <a href="#"
+                        class="flex items-center gap-3 px-3 py-2 text-sm text-slate-600 dark:text-slate-300 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                        <i class='bx bx-cog text-lg text-slate-400 dark:text-slate-500'></i>
+                        Settings
+                      </a>
+                      <a href="#"
+                        class="flex items-center gap-3 px-3 py-2 text-sm text-slate-600 dark:text-slate-300 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                        <i class='bx bx-credit-card text-lg text-slate-400 dark:text-slate-500'></i>
+                        Billing
+                      </a>
+                    </div>
+
+                    <div class="p-2 border-t border-slate-100 dark:border-slate-700">
+                      <a href="#"
+                        class="flex items-center gap-3 px-3 py-2 text-sm text-red-600 dark:text-red-400 rounded-xl hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors">
+                        <i class='bx bx-log-out text-lg'></i>
+                        Logout
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="flex-1 overflow-x-hidden overflow-y-auto p-4 lg:p-8">
+        <div class="container mx-auto px-4 lg:px-6 py-8">
+
+          <!-- Page Header -->
+          <div class="mb-8">
+            <h1 class="text-2xl font-bold text-slate-900 dark:text-slate-100">Cards</h1>
+            <p class="mt-2 text-slate-600 dark:text-slate-400">Flexible and extensible content layout container.</p>
+          </div>
+
+          <!-- Basic Cards -->
+          <section class="mb-8">
+            <div
+              class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 shadow-sm hover:shadow-md transition-shadow">
+              <div class="mb-6">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-2">Basic Cards</h2>
+                <p class="text-slate-600 dark:text-slate-400">Simple card layouts with title and content</p>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div
+                  class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-6 hover:shadow-lg transition-shadow">
+                  <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-2">Card Title</h3>
+                  <p class="text-slate-600 dark:text-slate-400 text-sm">This is a simple card with a title and some
+                    descriptive text content.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                  class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-6 hover:shadow-lg transition-shadow">
+                  <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-2">Another Card</h3>
+                  <p class="text-slate-600 dark:text-slate-400 text-sm">Cards are great for organizing content into
+                    digestible sections.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                  class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-6 hover:shadow-lg transition-shadow">
+                  <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-2">Third Card</h3>
+                  <p class="text-slate-600 dark:text-slate-400 text-sm">Use cards to display information in a clean and
+                    organized manner.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Cards with Icons -->
+          <section class="mb-8">
+            <div
+              class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 shadow-sm hover:shadow-md transition-shadow">
+              <div class="mb-6">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-2">Cards with Icons</h2>
+                <p class="text-slate-600 dark:text-slate-400">Cards enhanced with icons for better visual appeal</p>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Icon Card 1 -->
+                <div
+                  class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-6 hover:shadow-lg hover:border-blue-500 dark:hover:border-blue-500 transition-all group">
+                  <div
+                    class="w-12 h-12 bg-blue-50 dark:bg-blue-950/30 rounded-xl flex items-center justify-center mb-4 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/50 transition-colors">
+                    <i class='bx bx-rocket text-2xl text-blue-600 dark:text-blue-400'></i>
+                  </div>
+                  <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-2">Fast Performance</h3>
+                  <p class="text-slate-600 dark:text-slate-400 text-sm">Lightning fast load times and smooth
+                    interactions.</p>
+                </div>
+
+                <!-- Icon Card 2 -->
+                <div
+                  class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-6 hover:shadow-lg hover:border-emerald-500 dark:hover:border-emerald-500 transition-all group">
+                  <div
+                    class="w-12 h-12 bg-emerald-50 dark:bg-emerald-950/30 rounded-xl flex items-center justify-center mb-4 group-hover:bg-emerald-100 dark:group-hover:bg-emerald-900/50 transition-colors">
+                    <i class='bx bx-shield-alt-2 text-2xl text-emerald-600 dark:text-emerald-400'></i>
+                  </div>
+                  <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-2">Secure</h3>
+                  <p class="text-slate-600 dark:text-slate-400 text-sm">Enterprise-grade security for your data.</p>
+                </div>
+
+                <!-- Icon Card 3 -->
+                <div
+                  class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-6 hover:shadow-lg hover:border-purple-500 dark:hover:border-purple-500 transition-all group">
+                  <div
+                    class="w-12 h-12 bg-purple-50 dark:bg-purple-950/30 rounded-xl flex items-center justify-center mb-4 group-hover:bg-purple-100 dark:group-hover:bg-purple-900/50 transition-colors">
+                    <i class='bx bx-palette text-2xl text-purple-600 dark:text-purple-400'></i>
+                  </div>
+                  <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-2">Customizable</h3>
+                  <p class="text-slate-600 dark:text-slate-400 text-sm">Fully customizable to match your brand.</p>
+                </div>
+
+                <!-- Icon Card 4 -->
+                <div
+                  class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-6 hover:shadow-lg hover:border-amber-500 dark:hover:border-amber-500 transition-all group">
+                  <div
+                    class="w-12 h-12 bg-amber-50 dark:bg-amber-950/30 rounded-xl flex items-center justify-center mb-4 group-hover:bg-amber-100 dark:group-hover:bg-amber-900/50 transition-colors">
+                    <i class='bx bx-support text-2xl text-amber-600 dark:text-amber-400'></i>
+                  </div>
+                  <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-2">24/7 Support</h3>
+                  <p class="text-slate-600 dark:text-slate-400 text-sm">Round-the-clock customer support.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Cards with Images -->
+          <section class="mb-8">
+            <div
+              class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 shadow-sm hover:shadow-md transition-shadow">
+              <div class="mb-6">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-2">Cards with Images</h2>
+                <p class="text-slate-600 dark:text-slate-400">Cards featuring images and content</p>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Image Card 1 -->
+                <div
+                  class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-lg transition-shadow group">
+                  <div class="h-48 bg-linear-to-br from-blue-500 to-indigo-600 relative overflow-hidden">
+                    <div
+                      class="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                      <i class='bx bx-image text-6xl text-white/50'></i>
+                    </div>
+                  </div>
+                  <div class="p-6">
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-2">Blue Gradient</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">Beautiful gradient background with smooth
+                      transitions.</p>
+                    <button
+                      class="px-4 py-2 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 focus:ring-4 focus:ring-blue-500/50 text-white text-sm font-semibold rounded-lg active:scale-95 transition-all">Learn
+                      More</button>
+                  </div>
+                </div>
+
+                <!-- Image Card 2 -->
+                <div
+                  class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-lg transition-shadow group">
+                  <div class="h-48 bg-linear-to-br from-emerald-500 to-teal-600 relative overflow-hidden">
+                    <div
+                      class="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                      <i class='bx bx-image text-6xl text-white/50'></i>
+                    </div>
+                  </div>
+                  <div class="p-6">
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-2">Green Gradient</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">Fresh and vibrant color combinations.</p>
+                    <button
+                      class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 focus:ring-4 focus:ring-emerald-500/50 text-white text-sm font-semibold rounded-lg active:scale-95 transition-all">Learn
+                      More</button>
+                  </div>
+                </div>
+
+                <!-- Image Card 3 -->
+                <div
+                  class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-lg transition-shadow group">
+                  <div class="h-48 bg-linear-to-br from-purple-500 to-pink-600 relative overflow-hidden">
+                    <div
+                      class="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                      <i class='bx bx-image text-6xl text-white/50'></i>
+                    </div>
+                  </div>
+                  <div class="p-6">
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-2">Purple Gradient</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">Eye-catching and modern design.</p>
+                    <button
+                      class="px-4 py-2 bg-purple-600 hover:bg-purple-700 active:bg-purple-800 focus:ring-4 focus:ring-purple-500/50 text-white text-sm font-semibold rounded-lg active:scale-95 transition-all">Learn
+                      More</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Stat Cards -->
+          <section class="mb-8">
+            <div
+              class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 shadow-sm hover:shadow-md transition-shadow">
+              <div class="mb-6">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-2">Stat Cards</h2>
+                <p class="text-slate-600 dark:text-slate-400">Cards for displaying statistics and metrics</p>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Stat Card 1 -->
+                <div
+                  class="bg-linear-to-br from-blue-500 to-blue-600 rounded-xl p-6 text-white hover:shadow-lg hover:shadow-blue-500/30 transition-all">
+                  <div class="flex items-center justify-between mb-4">
+                    <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm">
+                      <i class='bx bx-user text-2xl'></i>
+                    </div>
+                    <span class="text-sm bg-white/20 px-3 py-1 rounded-full">+12%</span>
+                  </div>
+                  <div>
+                    <p class="text-white/80 text-sm mb-1">Total Users</p>
+                    <h3 class="text-3xl font-bold">24,567</h3>
+                  </div>
+                </div>
+
+                <!-- Stat Card 2 -->
+                <div
+                  class="bg-linear-to-br from-emerald-500 to-emerald-600 rounded-xl p-6 text-white hover:shadow-lg hover:shadow-emerald-500/30 transition-all">
+                  <div class="flex items-center justify-between mb-4">
+                    <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm">
+                      <i class='bx bx-dollar text-2xl'></i>
+                    </div>
+                    <span class="text-sm bg-white/20 px-3 py-1 rounded-full">+8%</span>
+                  </div>
+                  <div>
+                    <p class="text-white/80 text-sm mb-1">Revenue</p>
+                    <h3 class="text-3xl font-bold">$89,432</h3>
+                  </div>
+                </div>
+
+                <!-- Stat Card 3 -->
+                <div
+                  class="bg-linear-to-br from-purple-500 to-purple-600 rounded-xl p-6 text-white hover:shadow-lg hover:shadow-purple-500/30 transition-all">
+                  <div class="flex items-center justify-between mb-4">
+                    <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm">
+                      <i class='bx bx-shopping-bag text-2xl'></i>
+                    </div>
+                    <span class="text-sm bg-white/20 px-3 py-1 rounded-full">+23%</span>
+                  </div>
+                  <div>
+                    <p class="text-white/80 text-sm mb-1">Orders</p>
+                    <h3 class="text-3xl font-bold">1,234</h3>
+                  </div>
+                </div>
+
+                <!-- Stat Card 4 -->
+                <div
+                  class="bg-linear-to-br from-amber-500 to-amber-600 rounded-xl p-6 text-white hover:shadow-lg hover:shadow-amber-500/30 transition-all">
+                  <div class="flex items-center justify-between mb-4">
+                    <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm">
+                      <i class='bx bx-line-chart text-2xl'></i>
+                    </div>
+                    <span class="text-sm bg-white/20 px-3 py-1 rounded-full">+5%</span>
+                  </div>
+                  <div>
+                    <p class="text-white/80 text-sm mb-1">Growth</p>
+                    <h3 class="text-3xl font-bold">45.2%</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Profile Cards -->
+          <section class="mb-8">
+            <div
+              class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 shadow-sm hover:shadow-md transition-shadow">
+              <div class="mb-6">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-2">Profile Cards</h2>
+                <p class="text-slate-600 dark:text-slate-400">User profile cards with avatar and information</p>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Profile Card 1 -->
+                <div
+                  class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-lg transition-shadow">
+                  <div class="h-24 bg-linear-to-r from-blue-500 to-indigo-600"></div>
+                  <div class="px-6 pb-6">
+                    <div class="-mt-12 mb-4">
+                      <img src="https://ui-avatars.com/api/?name=John+Doe&background=6366f1&color=fff&size=96"
+                        class="w-24 h-24 rounded-full border-4 border-white dark:border-slate-800">
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-1">John Doe</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">Frontend Developer</p>
+                    <div class="flex gap-2">
+                      <button
+                        class="flex-1 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg transition-colors">Follow</button>
+                      <button
+                        class="px-4 py-2 border-2 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700 text-sm font-semibold rounded-lg transition-colors">Message</button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Profile Card 2 -->
+                <div
+                  class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-lg transition-shadow">
+                  <div class="h-24 bg-linear-to-r from-emerald-500 to-teal-600"></div>
+                  <div class="px-6 pb-6">
+                    <div class="-mt-12 mb-4">
+                      <img src="https://ui-avatars.com/api/?name=Jane+Smith&background=10b981&color=fff&size=96"
+                        class="w-24 h-24 rounded-full border-4 border-white dark:border-slate-800">
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-1">Jane Smith</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">UI/UX Designer</p>
+                    <div class="flex gap-2">
+                      <button
+                        class="flex-1 px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold rounded-lg transition-colors">Follow</button>
+                      <button
+                        class="px-4 py-2 border-2 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700 text-sm font-semibold rounded-lg transition-colors">Message</button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Profile Card 3 -->
+                <div
+                  class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-lg transition-shadow">
+                  <div class="h-24 bg-linear-to-r from-purple-500 to-pink-600"></div>
+                  <div class="px-6 pb-6">
+                    <div class="-mt-12 mb-4">
+                      <img src="https://ui-avatars.com/api/?name=Mike+Ross&background=a855f7&color=fff&size=96"
+                        class="w-24 h-24 rounded-full border-4 border-white dark:border-slate-800">
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-1">Mike Ross</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">Product Manager</p>
+                    <div class="flex gap-2">
+                      <button
+                        class="flex-1 px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold rounded-lg transition-colors">Follow</button>
+                      <button
+                        class="px-4 py-2 border-2 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700 text-sm font-semibold rounded-lg transition-colors">Message</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Cards with Header, Body, and Footer -->
+          <section class="mb-8">
+            <div
+              class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 shadow-sm hover:shadow-md transition-shadow">
+              <div class="mb-6">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-2">Cards with Header, Body, and
+                  Footer</h2>
+                <p class="text-slate-600 dark:text-slate-400">Structured cards with distinct header, body, and footer
+                  sections</p>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Structured Card 1 -->
+                <div
+                  class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-lg transition-shadow flex flex-col">
+                  <!-- Header -->
+                  <div
+                    class="px-6 py-4 bg-slate-50 dark:bg-slate-700/50 border-b border-slate-200 dark:border-slate-700">
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100">Project Update</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">2 hours ago</p>
+                  </div>
+                  <!-- Body -->
+                  <div class="px-6 py-4 flex-1">
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mb-3">
+                      The new feature has been successfully deployed to production. All tests are passing and monitoring
+                      shows stable performance.
+                    </p>
+                    <ul class="space-y-2 mb-3">
+                      <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                        <i class='bx bx-check-circle text-emerald-500'></i>
+                        <span>Backend API integration</span>
+                      </li>
+                      <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                        <i class='bx bx-check-circle text-emerald-500'></i>
+                        <span>Frontend UI components</span>
+                      </li>
+                      <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                        <i class='bx bx-check-circle text-emerald-500'></i>
+                        <span>Unit and integration tests</span>
+                      </li>
+                    </ul>
+                    <div class="flex items-center gap-2 text-sm">
+                      <span
+                        class="px-2 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 rounded-md text-xs font-medium">Completed</span>
+                      <span class="text-slate-500 dark:text-slate-400">•</span>
+                      <span class="text-slate-600 dark:text-slate-400">3 tasks</span>
+                    </div>
+                  </div>
+                  <!-- Footer -->
+                  <div
+                    class="px-6 py-4 bg-slate-50 dark:bg-slate-700/50 border-t border-slate-200 dark:border-slate-700 flex items-center justify-between">
+                    <div class="flex -space-x-2">
+                      <img src="https://ui-avatars.com/api/?name=A&background=6366f1&color=fff&size=32"
+                        class="w-8 h-8 rounded-full border-2 border-white dark:border-slate-800">
+                      <img src="https://ui-avatars.com/api/?name=B&background=10b981&color=fff&size=32"
+                        class="w-8 h-8 rounded-full border-2 border-white dark:border-slate-800">
+                      <img src="https://ui-avatars.com/api/?name=C&background=f59e0b&color=fff&size=32"
+                        class="w-8 h-8 rounded-full border-2 border-white dark:border-slate-800">
+                    </div>
+                    <button
+                      class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 text-sm font-semibold transition-colors">View
+                      Details</button>
+                  </div>
+                </div>
+
+                <!-- Structured Card 2 -->
+                <div
+                  class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-lg transition-shadow flex flex-col">
+                  <!-- Header -->
+                  <div
+                    class="px-6 py-4 bg-blue-50 dark:bg-blue-950/30 border-b border-blue-100 dark:border-blue-900/50">
+                    <div class="flex items-center gap-3">
+                      <div
+                        class="w-10 h-10 bg-blue-100 dark:bg-blue-900/50 rounded-lg flex items-center justify-center">
+                        <i class='bx bx-bell text-xl text-blue-600 dark:text-blue-400'></i>
+                      </div>
+                      <div>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100">New Notification</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Just now</p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Body -->
+                  <div class="px-6 py-4 flex-1">
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mb-3">
+                      You have 5 new messages and 3 pending tasks that require your attention.
+                    </p>
+                    <ul class="space-y-2">
+                      <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                        <i class='bx bx-check-circle text-emerald-500'></i>
+                        <span>Review pull request #234</span>
+                      </li>
+                      <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                        <i class='bx bx-check-circle text-emerald-500'></i>
+                        <span>Update documentation</span>
+                      </li>
+                      <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                        <i class='bx bx-time-five text-amber-500'></i>
+                        <span>Team meeting at 3 PM</span>
+                      </li>
+                      <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                        <i class='bx bx-time-five text-amber-500'></i>
+                        <span>Code review deadline</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- Footer -->
+                  <div
+                    class="px-6 py-4 bg-slate-50 dark:bg-slate-700/50 border-t border-slate-200 dark:border-slate-700">
+                    <div class="flex gap-2">
+                      <button
+                        class="flex-1 px-4 py-2 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white text-sm font-semibold rounded-lg transition-colors">Mark
+                        as Read</button>
+                      <button
+                        class="px-4 py-2 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-400 text-sm font-semibold rounded-lg transition-colors">Dismiss</button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Structured Card 3 -->
+                <div
+                  class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-lg transition-shadow flex flex-col">
+                  <!-- Header -->
+                  <div class="px-6 py-4 bg-linear-to-r from-purple-500 to-pink-600 text-white">
+                    <div class="flex items-center justify-between">
+                      <h3 class="text-lg font-bold">Premium Plan</h3>
+                      <span
+                        class="px-2 py-1 bg-white/20 rounded-md text-xs font-semibold backdrop-blur-sm">Popular</span>
+                    </div>
+                  </div>
+                  <!-- Body -->
+                  <div class="px-6 py-4 flex-1">
+                    <div class="mb-4">
+                      <div class="flex items-baseline gap-1">
+                        <span class="text-3xl font-bold text-slate-900 dark:text-slate-100">$29</span>
+                        <span class="text-slate-500 dark:text-slate-400 text-sm">/month</span>
+                      </div>
+                    </div>
+                    <ul class="space-y-2 mb-4">
+                      <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                        <i class='bx bx-check text-emerald-500 text-lg'></i>
+                        <span>Unlimited projects</span>
+                      </li>
+                      <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                        <i class='bx bx-check text-emerald-500 text-lg'></i>
+                        <span>Priority support</span>
+                      </li>
+                      <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                        <i class='bx bx-check text-emerald-500 text-lg'></i>
+                        <span>Advanced analytics</span>
+                      </li>
+                      <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                        <i class='bx bx-check text-emerald-500 text-lg'></i>
+                        <span>Custom integrations</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- Footer -->
+                  <div
+                    class="px-6 py-4 bg-slate-50 dark:bg-slate-700/50 border-t border-slate-200 dark:border-slate-700">
+                    <button
+                      class="w-full px-4 py-2.5 bg-linear-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white text-sm font-semibold rounded-lg shadow-lg shadow-purple-500/30 hover:shadow-xl hover:shadow-purple-500/40 transition-all">
+                      Get Started
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 p-4">
+        <div class="container mx-auto py-2">
+          <p class="text-center text-sm text-slate-500 dark:text-slate-400">&copy; 2026 Encore UI. All rights
+            reserved.</p>
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+
+</html>

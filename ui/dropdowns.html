@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dropdowns | Encore UI</title>
+
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <!-- Core CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- Alpine JS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+</head>
+
+<body x-data="{
+    sidebarHidden: false,
+    darkMode: localStorage.getItem('theme') === 'dark',
+    toggleSidebar() { this.sidebarHidden = !this.sidebarHidden; },
+    toggleTheme() {
+        this.darkMode = !this.darkMode;
+        localStorage.setItem('theme', this.darkMode ? 'dark' : 'light');
+        document.documentElement.classList.toggle('dark', this.darkMode);
+    },
+    init() { if (this.darkMode) document.documentElement.classList.add('dark'); }
+}" :class="{ 'sidebar-hidden': sidebarHidden }"
+  class="bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 antialiased">
+
+  <div class="fixed inset-0 z-50 lg:hidden bg-slate-900/50 backdrop-blur-sm" x-show="sidebarHidden" x-transition
+    @click="sidebarHidden = false" style="display: none;"></div>
+
+  <div class="min-h-screen bg-slate-50 dark:bg-slate-900">
+    <!-- Sidebar -->
+    <aside class="layout-sidebar bg-white dark:bg-slate-800 ">
+      <!-- Brand -->
+      <div class="h-16 flex items-center px-6 border-b border-slate-100 dark:border-slate-700">
+        <div class="flex items-center gap-2 font-bold text-xl text-indigo-600 dark:text-indigo-400 tracking-tight">
+          <i class='bx bxs-cube-alt text-2xl'></i>
+          <span>Encore</span>
+        </div>
+        <button @click="sidebarHidden = !sidebarHidden"
+          class="lg:hidden ml-auto text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+          <i class='bx bx-x text-2xl'></i>
+        </button>
+      </div>
+
+      <!-- Navigation -->
+      <div class="flex-1 overflow-y-auto py-4 custom-scrollbar">
+        <nav class="px-2">
+          <ul class="nav">
+
+            <!-- 1. DASHBOARDS -->
+            <li class="nav-header">Dashboard</li>
+
+            <li class="nav-item dropdown" x-data="{ open: false }">
+              <a href="#" class="nav-link group" @click.prevent="open = !open" :class="{ 'active': open }">
+                <i class='bx bxs-dashboard nav-icon'></i>
+                <span>Dashboard</span>
+                <i class='bx bx-chevron-right nav-chevron' :class="{ 'rotate-90': open }"></i>
+              </a>
+
+              <ul class="nav-submenu" :class="{ 'show': open }">
+                <div>
+                  <li class="nav-item">
+                    <a href="/dashboard/dashboard-default.html" class="nav-sub-link">
+                      <span>Default</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/dashboard/dashboard-analytics.html" class="nav-sub-link">
+                      <span>Analytics</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/dashboard/dashboard-project-crm.html" class="nav-sub-link">
+                      <span>Project / CRM</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/dashboard/dashboard-e-commerce.html" class="nav-sub-link">
+                      <span>eCommerce</span>
+                    </a>
+                  </li>
+                </div>
+              </ul>
+            </li>
+
+            <!-- 2. LAYOUTS -->
+            <li class="nav-header">Starter</li>
+
+            <li class="nav-item dropdown" x-data="{ open: false }">
+              <a href="#" class="nav-link group" @click.prevent="open = !open" :class="{ 'active': open }">
+                <i class='bx bx-layout nav-icon'></i>
+                <span>Layouts</span>
+                <i class='bx bx-chevron-right nav-chevron' :class="{ 'rotate-90': open }"></i>
+              </a>
+
+              <ul class="nav-submenu" :class="{ 'show': open }">
+                <div>
+                  <li class="nav-item">
+                    <a href="/layout/layout-vertical.html" class="nav-sub-link">
+                      <span>Vertical</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/layout/layout-horizontal.html" class="nav-sub-link">
+                      <span>Horizontal</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/layout/layout-detached.html" class="nav-sub-link">
+                      <span>Detached</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/layout/layout-two-column.html" class="nav-sub-link">
+                      <span>Two Column</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/layout/layout-compact.html" class="nav-sub-link">
+                      <span>Compact / Mini</span>
+                    </a>
+                  </li>
+                </div>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown" x-data="{ open: false }">
+              <a href="#" class="nav-link group" @click.prevent="open = !open" :class="{ 'active': open }">
+                <i class='bx bx-package nav-icon'></i>
+                <span>Apps</span>
+                <i class='bx bx-chevron-right nav-chevron' :class="{ 'rotate-90': open }"></i>
+              </a>
+
+              <ul class="nav-submenu" :class="{ 'show': open }">
+                <div>
+                  <li class="nav-item">
+                    <a href="/apps/chat.html" class="nav-sub-link">
+                      <span>Chat</span>
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a href="/apps/email.html" class="nav-sub-link">
+                      <span>Email</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/apps/calendar.html" class="nav-sub-link">
+                      <span>Calendar</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/apps/kanban.html" class="nav-sub-link">
+                      <span>Kanban Board</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/apps/file-manager.html" class="nav-sub-link">
+                      <span>File Manager</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/apps/invoices.html" class="nav-sub-link">
+                      <span>Invoices</span>
+                    </a>
+                  </li>
+                </div>
+              </ul>
+            </li>
+
+            <!-- 4. UI INTERFACE -->
+            <li class="nav-header">UI Interface</li>
+
+            <li class="nav-item dropdown" x-data="{ open: true }">
+              <a href="#" class="nav-link active group" @click.prevent="open = !open" :class="{ 'active': open }">
+                <i class='bx bx-layer nav-icon'></i>
+                <span>Basic UI</span>
+                <i class='bx bx-chevron-right nav-chevron' :class="{ 'rotate-90': open }"></i>
+              </a>
+              <ul class="nav-submenu" :class="{ 'show': open }">
+                <div>
+                  <li class="nav-item"><a href="/ui/alerts.html" class="nav-sub-link"><span>Alerts</span></a>
+                  </li>
+                  <li class="nav-item"><a href="/ui/badges.html" class="nav-sub-link"><span>Badges &
+                        Chips</span></a></li>
+                  <li class="nav-item"><a href="/ui/buttons.html" class="nav-sub-link"><span>Buttons</span></a></li>
+                  <li class="nav-item"><a href="/ui/cards.html" class="nav-sub-link"><span>Cards</span></a></li>
+                  <li class="nav-item"><a href="/ui/carousel.html" class="nav-sub-link"><span>Carousel</span></a>
+                  </li>
+                  <li class="nav-item"><a href="/ui/dropdowns.html"
+                      class="nav-sub-link active"><span>Dropdowns</span></a></li>
+                  <li class="nav-item"><a href="/ui/grid.html" class="nav-sub-link"><span>Grid
+                        System</span></a></li>
+                  <li class="nav-item"><a href="/ui/modals.html" class="nav-sub-link"><span>Modals</span></a></li>
+                  <li class="nav-item"><a href="/ui/offcanvas.html" class="nav-sub-link"><span>Offcanvas</span></a></li>
+                  <li class="nav-item"><a href="/ui/tabs.html" class="nav-sub-link"><span>Tabs &
+                        Accordions</span></a></li>
+                  <li class="nav-item"><a href="/ui/placeholders.html"
+                      class="nav-sub-link"><span>Placeholders</span></a></li>
+                  <li class="nav-item"><a href="/ui/toasts.html" class="nav-sub-link"><span>Toasts</span></a></li>
+                  <li class="nav-item"><a href="/ui/tooltips.html" class="nav-sub-link"><span>Tooltips
+                        & Popovers</span></a></li>
+                  <li class="nav-item"><a href="/ui/typography.html" class="nav-sub-link"><span>Typography</span></a>
+                  </li>
+                  <li class="nav-item"><a href="/ui/video.html" class="nav-sub-link"><span>Video &
+                        Embeds</span></a></li>
+                </div>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown" x-data="{ open: false }">
+              <a href="#" class="nav-link group" @click.prevent="open = !open" :class="{ 'active': open }">
+                <i class='bx bx-cube nav-icon'></i>
+                <span>Advanced UI</span>
+                <i class='bx bx-chevron-right nav-chevron' :class="{ 'rotate-90': open }"></i>
+              </a>
+              <ul class="nav-submenu" :class="{ 'show': open }">
+                <div>
+                  <li class="nav-item"><a href="/ui/sweetalert.html" class="nav-sub-link"><span>SweetAlert</span></a>
+                  </li>
+                  <li class="nav-item"><a href="/ui/nestable.html" class="nav-sub-link"><span>Nestable
+                        List</span></a></li>
+                  <li class="nav-item"><a href="/ui/ratings.html" class="nav-sub-link"><span>Ratings</span></a></li>
+                  <li class="nav-item"><a href="/ui/rangeslider.html" class="nav-sub-link"><span>Range
+                        Slider</span></a></li>
+                  <li class="nav-item"><a href="/ui/ribbons.html" class="nav-sub-link"><span>Ribbons</span></a></li>
+                  <li class="nav-item"><a href="/ui/lightbox.html" class="nav-sub-link"><span>Lightbox</span></a></li>
+                  <li class="nav-item"><a href="/ui/treeview.html" class="nav-sub-link"><span>Tree
+                        View</span></a></li>
+                </div>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a href="/ui/icons.html" class="nav-link group">
+                <i class='bx bx-sticker nav-icon'></i>
+                <span>Icons</span>
+              </a>
+            </li>
+
+            <!-- 5. FORMS -->
+            <li class="nav-header">Forms</li>
+
+            <li class="nav-item">
+              <a href="/forms/basic-elements.html" class="nav-link group">
+                <i class='bx bx-edit nav-icon'></i>
+                <span>Basic Elements</span>
+              </a>
+            </li>
+
+            <li class="nav-item dropdown" x-data="{ open: false }">
+              <a href="#" class="nav-link group" @click.prevent="open = !open" :class="{ 'active': open }">
+                <i class='bx bx-layout nav-icon'></i>
+                <span>Form Layouts</span>
+                <i class='bx bx-chevron-right nav-chevron' :class="{ 'rotate-90': open }"></i>
+              </a>
+              <ul class="nav-submenu" :class="{ 'show': open }">
+                <div>
+                  <li class="nav-item"><a href="/forms/vertical-form.html" class="nav-sub-link"><span>Vertical
+                        Form</span></a></li>
+                  <li class="nav-item"><a href="/forms/horizontal-form.html" class="nav-sub-link"><span>Horizontal
+                        Form</span></a></li>
+                  <li class="nav-item"><a href="/forms/column-grid-form.html" class="nav-sub-link"><span>Column Grid
+                        Form</span></a></li>
+                </div>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown" x-data="{ open: false }">
+              <a href="#" class="nav-link group" @click.prevent="open = !open" :class="{ 'active': open }">
+                <i class='bx bx-filter-alt nav-icon'></i>
+                <span>Form Advanced</span>
+                <i class='bx bx-chevron-right nav-chevron' :class="{ 'rotate-90': open }"></i>
+              </a>
+              <ul class="nav-submenu" :class="{ 'show': open }">
+                <div>
+                  <li class="nav-item"><a href="/forms/select2.html" class="nav-sub-link"><span>Select2 /
+                        Choices</span></a></li>
+                  <li class="nav-item"><a href="/forms/date-time-picker.html" class="nav-sub-link"><span>Date & Time
+                        Picker</span></a></li>
+                  <li class="nav-item"><a href="/forms/input-masks.html" class="nav-sub-link"><span>Input
+                        Masks</span></a></li>
+                  <li class="nav-item"><a href="/forms/text-editor.html" class="nav-sub-link"><span>Text
+                        Editor</span></a></li>
+                  <li class="nav-item"><a href="/forms/form-repeater.html" class="nav-sub-link"><span>Form
+                        Repeater</span></a></li>
+                  <li class="nav-item"><a href="/forms/file-upload.html" class="nav-sub-link"><span>File
+                        Upload</span></a></li>
+                  <li class="nav-item"><a href="/forms/clipboard.html" class="nav-sub-link"><span>Clipboard</span></a>
+                  </li>
+                </div>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown" x-data="{ open: false }">
+              <a href="#" class="nav-link group" @click.prevent="open = !open" :class="{ 'active': open }">
+                <i class='bx bx-check-circle nav-icon'></i>
+                <span>Form Wizard</span>
+                <i class='bx bx-chevron-right nav-chevron' :class="{ 'rotate-90': open }"></i>
+              </a>
+              <ul class="nav-submenu" :class="{ 'show': open }">
+                <div>
+                  <li class="nav-item"><a href="/forms/horizontal-wizard.html" class="nav-sub-link"><span>Horizontal
+                        Wizard</span></a></li>
+                  <li class="nav-item"><a href="/forms/vertical-wizard.html" class="nav-sub-link"><span>Vertical
+                        Wizard</span></a></li>
+                  <li class="nav-item"><a href="/forms/validation-wizard.html" class="nav-sub-link"><span>Validation
+                        Wizard</span></a></li>
+                </div>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a href="#" class="nav-link group">
+                <i class='bx bx-list-check nav-icon'></i>
+                <span>Form Validation</span>
+              </a>
+            </li>
+
+            <!-- 6. TABLES & DATA -->
+            <li class="nav-header">Tables & Data</li>
+
+            <li class="nav-item dropdown" x-data="{ open: false }">
+              <a href="#" class="nav-link group" @click.prevent="open = !open" :class="{ 'active': open }">
+                <i class='bx bx-table nav-icon'></i>
+                <span>Tables</span>
+                <i class='bx bx-chevron-right nav-chevron' :class="{ 'rotate-90': open }"></i>
+              </a>
+              <ul class="nav-submenu" :class="{ 'show': open }">
+                <div>
+                  <li class="nav-item"><a href="/tables/basic-tables.html" class="nav-sub-link"><span>Basic
+                        Tables</span></a></li>
+                  <li class="nav-item"><a href="/tables/datatables.html"
+                      class="nav-sub-link"><span>DataTables</span></a></li>
+                </div>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown" x-data="{ open: false }">
+              <a href="#" class="nav-link group" @click.prevent="open = !open" :class="{ 'active': open }">
+                <i class='bx bx-pie-chart-alt-2 nav-icon'></i>
+                <span>Charts</span>
+                <i class='bx bx-chevron-right nav-chevron' :class="{ 'rotate-90': open }"></i>
+              </a>
+              <ul class="nav-submenu" :class="{ 'show': open }">
+                <div>
+                  <li class="nav-item"><a href="/charts/apexcharts.html"
+                      class="nav-sub-link"><span>ApexCharts</span></a></li>
+                  <li class="nav-item"><a href="/charts/chartjs.html" class="nav-sub-link"><span>ChartJS</span></a></li>
+                </div>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown" x-data="{ open: false }">
+              <a href="#" class="nav-link group" @click.prevent="open = !open" :class="{ 'active': open }">
+                <i class='bx bx-map-alt nav-icon'></i>
+                <span>Maps</span>
+                <i class='bx bx-chevron-right nav-chevron' :class="{ 'rotate-90': open }"></i>
+              </a>
+              <ul class="nav-submenu" :class="{ 'show': open }">
+                <div>
+                  <li class="nav-item"><a href="/maps/google-maps.html" class="nav-sub-link"><span>Google
+                        Maps</span></a></li>
+                  <li class="nav-item"><a href="/maps/vector-maps.html" class="nav-sub-link"><span>Vector
+                        Maps</span></a></li>
+                </div>
+              </ul>
+            </li>
+
+            <!-- 7. PAGES -->
+            <li class="nav-header">Pages</li>
+
+            <li class="nav-item dropdown" x-data="{ open: false }">
+              <a href="#" class="nav-link group" @click.prevent="open = !open" :class="{ 'active': open }">
+                <i class='bx bx-lock-alt nav-icon'></i>
+                <span>Authentication</span>
+                <i class='bx bx-chevron-right nav-chevron' :class="{ 'rotate-90': open }"></i>
+              </a>
+              <ul class="nav-submenu" :class="{ 'show': open }">
+                <div>
+                  <li class="nav-item"><a href="/authentication/login.html" class="nav-sub-link"><span>Login</span></a>
+                  </li>
+                  <li class="nav-item"><a href="/authentication/register.html"
+                      class="nav-sub-link"><span>Register</span></a></li>
+                  <li class="nav-item"><a href="/authentication/forgot-password.html" class="nav-sub-link"><span>Forgot
+                        Password</span></a></li>
+                  <li class="nav-item"><a href="/authentication/reset-password.html" class="nav-sub-link"><span>Reset
+                        Password</span></a></li>
+                  <li class="nav-item"><a href="/authentication/lock-screen.html" class="nav-sub-link"><span>Lock
+                        Screen</span></a></li>
+                </div>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown" x-data="{ open: false }">
+              <a href="#" class="nav-link group" @click.prevent="open = !open" :class="{ 'active': open }">
+                <i class='bx bx-user-circle nav-icon'></i>
+                <span>User Module</span>
+                <i class='bx bx-chevron-right nav-chevron' :class="{ 'rotate-90': open }"></i>
+              </a>
+              <ul class="nav-submenu" :class="{ 'show': open }">
+                <div>
+                  <li class="nav-item"><a href="/user/profile.html" class="nav-sub-link"><span>Profile</span></a></li>
+                  <li class="nav-item"><a href="/user/account-settings.html" class="nav-sub-link"><span>Account
+                        Settings</span></a></li>
+                </div>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown" x-data="{ open: false }">
+              <a href="#" class="nav-link group" @click.prevent="open = !open" :class="{ 'active': open }">
+                <i class='bx bx-box nav-icon'></i>
+                <span>Utility / Misc</span>
+                <i class='bx bx-chevron-right nav-chevron' :class="{ 'rotate-90': open }"></i>
+              </a>
+              <ul class="nav-submenu" :class="{ 'show': open }">
+                <div>
+                  <li class="nav-item"><a href="/utility/pricing-table.html" class="nav-sub-link"><span>Pricing
+                        Table</span></a></li>
+                  <li class="nav-item"><a href="/utility/faq.html" class="nav-sub-link"><span>FAQ</span></a></li>
+                  <li class="nav-item"><a href="/utility/timeline.html" class="nav-sub-link"><span>Timeline</span></a>
+                  </li>
+                  <li class="nav-item"><a href="/utility/gallery.html" class="nav-sub-link"><span>Gallery</span></a>
+                  </li>
+                  <li class="nav-item"><a href="/utility/search-results.html" class="nav-sub-link"><span>Search
+                        Results</span></a></li>
+                  <li class="nav-item"><a href="/utility/testimonials.html"
+                      class="nav-sub-link"><span>Testimonials</span></a></li>
+                  <li class="nav-item"><a href="/utility/starter.html" class="nav-sub-link"><span>Starter / Blank
+                        Page</span></a></li>
+                </div>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown" x-data="{ open: false }">
+              <a href="#" class="nav-link group" @click.prevent="open = !open" :class="{ 'active': open }">
+                <i class='bx bx-window-open nav-icon'></i>
+                <span>Special Pages</span>
+                <i class='bx bx-chevron-right nav-chevron' :class="{ 'rotate-90': open }"></i>
+              </a>
+              <ul class="nav-submenu" :class="{ 'show': open }">
+                <div>
+                  <li class="nav-item"><a href="/pages/coming-soon.html" class="nav-sub-link"><span>Coming
+                        Soon</span></a></li>
+                  <li class="nav-item"><a href="/pages/maintenance.html"
+                      class="nav-sub-link"><span>Maintenance</span></a></li>
+                  <li class="nav-item"><a href="/pages/error-404.html" class="nav-sub-link"><span>Error 404</span></a>
+                  </li>
+                  <li class="nav-item"><a href="/pages/error-500.html" class="nav-sub-link"><span>Error 500</span></a>
+                  </li>
+                </div>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Sidebar Footer -->
+      <div class="p-4 border-t border-slate-100 dark:border-slate-700">
+        <a href="#"
+          class="flex items-center gap-3 px-3 py-2 text-sm text-red-600 dark:text-red-400 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+          <i class='bx bx-log-out text-lg text-red-400 dark:text-red-500'></i>
+          <span class="font-medium">Logout</span>
+        </a>
+      </div>
+    </aside>
+
+    <div class="layout-content">
+      <!-- Navbar (STANDARD, UNCHANGED) -->
+      <header class="relative z-10">
+        <!-- Main Navbar -->
+        <div
+          class="bg-white/95 dark:bg-slate-800/95 backdrop-blur-md border-b border-slate-100/50 dark:border-slate-700/50">
+          <div class="container mx-auto">
+            <div class="h-16 px-4 lg:px-6 flex items-center justify-between">
+
+              <!-- Left Section -->
+              <div class="flex items-center gap-4">
+                <!-- Sidebar Toggle (Desktop & Mobile) -->
+                <button @click="toggleSidebar()"
+                  class="p-2 hover:bg-linear-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-xl transition-all duration-300 group">
+                  <i
+                    class='bx bx-menu text-2xl text-slate-600 dark:text-slate-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors'></i>
+                </button>
+              </div>
+
+              <!-- Center Section - Floating Search -->
+              <div class="hidden lg:flex items-center flex-1 max-w-xl mx-8">
+                <div class="relative w-full group">
+                  <div
+                    class="absolute inset-0 bg-linear-to-r from-indigo-400 to-purple-400 rounded-xl opacity-0 group-hover:opacity-10 blur transition-opacity duration-300">
+                  </div>
+                  <div
+                    class="relative flex items-center bg-slate-50 dark:bg-slate-700 rounded-xl border border-slate-200 dark:border-slate-600 group-hover:border-indigo-300 dark:group-hover:border-indigo-500 transition-all duration-300">
+                    <i
+                      class='bx bx-search text-slate-400 dark:text-slate-500 text-lg ml-4 group-hover:text-indigo-500 dark:group-hover:text-indigo-400 transition-colors'></i>
+                    <input type="text" placeholder="Search anything..."
+                      class="flex-1 px-4 py-2.5 bg-transparent text-sm text-slate-900 dark:text-slate-100 outline-none placeholder:text-slate-400 dark:placeholder:text-slate-500">
+                    <div
+                      class="hidden group-focus-within:flex items-center gap-1 mr-3 text-xs text-slate-400 dark:text-slate-500">
+                      <kbd
+                        class="px-2 py-0.5 bg-white dark:bg-slate-600 rounded border border-slate-200 dark:border-slate-500">⌘</kbd>
+                      <kbd
+                        class="px-2 py-0.5 bg-white dark:bg-slate-600 rounded border border-slate-200 dark:border-slate-500">K</kbd>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Section - Actions -->
+              <div class="flex items-center gap-2">
+
+                <!-- Quick Actions -->
+                <div class="hidden sm:flex items-center gap-1">
+                  <!-- Theme Toggle -->
+                  <button @click="toggleTheme()"
+                    class="relative p-2.5 hover:bg-linear-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-xl transition-all duration-300 group">
+                    <i class='bx text-xl text-slate-600 dark:text-slate-400 transition-colors'
+                      :class="darkMode ? 'bx-sun group-hover:text-amber-500' : 'bx-moon group-hover:text-indigo-600 dark:group-hover:text-indigo-400'"></i>
+                  </button>
+
+                  <!-- Notifications Dropdown -->
+                  <div class="relative" x-data="{ open: false }" @click.outside="open = false">
+                    <button @click="open = !open"
+                      class="relative p-2.5 hover:bg-linear-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-xl transition-all duration-300 group">
+                      <i
+                        class='bx bx-bell text-xl text-slate-600 dark:text-slate-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors'></i>
+                      <span class="absolute top-1.5 right-1.5 flex h-2 w-2">
+                        <span
+                          class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+                      </span>
+                    </button>
+
+                    <!-- Dropdown Menu -->
+                    <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                      x-transition:enter-start="opacity-0 translate-y-2"
+                      x-transition:enter-end="opacity-100 translate-y-0"
+                      x-transition:leave="transition ease-in duration-150"
+                      x-transition:leave-start="opacity-100 translate-y-0"
+                      x-transition:leave-end="opacity-0 translate-y-2"
+                      class="absolute right-0 mt-2 w-80 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 overflow-hidden z-50">
+
+                      <div
+                        class="p-4 border-b border-slate-100 dark:border-slate-700 flex items-center justify-between">
+                        <h3 class="font-semibold text-slate-800 dark:text-slate-100">
+                          Notifications</h3>
+                        <a href="#" class="text-xs text-indigo-600 dark:text-indigo-400 hover:underline">Mark
+                          all as read</a>
+                      </div>
+
+                      <div class="max-h-[300px] overflow-y-auto custom-scrollbar">
+                        <a href="#"
+                          class="flex gap-4 p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                          <div
+                            class="w-10 h-10 rounded-full bg-indigo-50 dark:bg-indigo-900/20 flex items-center justify-center text-indigo-600 shrink-0">
+                            <i class='bx bx-cart'></i>
+                          </div>
+                          <div>
+                            <p class="text-sm font-medium text-slate-800 dark:text-slate-100">
+                              New Order Received</p>
+                            <p class="text-xs text-slate-500 mt-1">Order #1234 from John Doe
+                              has been placed.</p>
+                            <p class="text-[10px] text-slate-400 mt-1">2 mins ago</p>
+                          </div>
+                        </a>
+                        <a href="#"
+                          class="flex gap-4 p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                          <div
+                            class="w-10 h-10 rounded-full bg-amber-50 dark:bg-amber-900/20 flex items-center justify-center text-amber-600 shrink-0">
+                            <i class='bx bx-server'></i>
+                          </div>
+                          <div>
+                            <p class="text-sm font-medium text-slate-800 dark:text-slate-100">
+                              Server Load High</p>
+                            <p class="text-xs text-slate-500 mt-1">CPU usage is above 90% on
+                              Server A.</p>
+                            <p class="text-[10px] text-slate-400 mt-1">1 hour ago</p>
+                          </div>
+                        </a>
+                        <a href="#"
+                          class="flex gap-4 p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                          <div
+                            class="w-10 h-10 rounded-full bg-emerald-50 dark:bg-emerald-900/20 flex items-center justify-center text-emerald-600 shrink-0">
+                            <i class='bx bx-user-plus'></i>
+                          </div>
+                          <div>
+                            <p class="text-sm font-medium text-slate-800 dark:text-slate-100">
+                              New User Registered</p>
+                            <p class="text-xs text-slate-500 mt-1">Sarah Smith created an
+                              account.</p>
+                            <p class="text-[10px] text-slate-400 mt-1">3 hours ago</p>
+                          </div>
+                        </a>
+                      </div>
+
+                      <div class="p-3 border-t border-slate-100 dark:border-slate-700 text-center">
+                        <a href="#"
+                          class="text-sm text-indigo-600 dark:text-indigo-400 font-medium hover:underline">View
+                          All Notifications</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Messages Dropdown -->
+                  <div class="relative" x-data="{ open: false }" @click.outside="open = false">
+                    <button @click="open = !open"
+                      class="relative p-2.5 hover:bg-linear-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl transition-all duration-300 group">
+                      <i
+                        class='bx bx-message-dots text-xl text-slate-600 dark:text-slate-400 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors'></i>
+                      <span
+                        class="absolute -top-1 -right-1 flex items-center justify-center h-5 w-5 bg-linear-to-br from-indigo-500 to-purple-500 text-white text-xs font-bold rounded-full">
+                        3
+                      </span>
+                    </button>
+
+                    <!-- Dropdown Menu -->
+                    <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                      x-transition:enter-start="opacity-0 translate-y-2"
+                      x-transition:enter-end="opacity-100 translate-y-0"
+                      x-transition:leave="transition ease-in duration-150"
+                      x-transition:leave-start="opacity-100 translate-y-0"
+                      x-transition:leave-end="opacity-0 translate-y-2"
+                      class="absolute right-0 mt-2 w-80 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 overflow-hidden z-50">
+
+                      <div
+                        class="p-4 border-b border-slate-100 dark:border-slate-700 flex items-center justify-between">
+                        <h3 class="font-semibold text-slate-800 dark:text-slate-100">Messages
+                        </h3>
+                        <a href="#" class="text-xs text-purple-600 dark:text-purple-400 hover:underline">Mark
+                          all as read</a>
+                      </div>
+
+                      <div class="max-h-[300px] overflow-y-auto custom-scrollbar">
+                        <a href="#"
+                          class="flex gap-4 p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                          <img src="https://ui-avatars.com/api/?name=Jane+Doe&background=random"
+                            class="w-10 h-10 rounded-full shrink-0">
+                          <div class="overflow-hidden">
+                            <div class="flex justify-between items-center mb-1">
+                              <p class="text-sm font-medium text-slate-800 dark:text-slate-100">
+                                Jane Doe</p>
+                              <span class="text-[10px] text-slate-400">Just now</span>
+                            </div>
+                            <p class="text-xs text-slate-500 truncate">Hey, can you review
+                              the latest designs?</p>
+                          </div>
+                        </a>
+                        <a href="#"
+                          class="flex gap-4 p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                          <img src="https://ui-avatars.com/api/?name=Mike+Ross&background=random"
+                            class="w-10 h-10 rounded-full shrink-0">
+                          <div class="overflow-hidden">
+                            <div class="flex justify-between items-center mb-1">
+                              <p class="text-sm font-medium text-slate-800 dark:text-slate-100">
+                                Mike Ross</p>
+                              <span class="text-[10px] text-slate-400">15m ago</span>
+                            </div>
+                            <p class="text-xs text-slate-500 truncate">The project meeting
+                              has been rescheduled.</p>
+                          </div>
+                        </a>
+                      </div>
+
+                      <div class="p-3 border-t border-slate-100 dark:border-slate-700 text-center">
+                        <a href="#"
+                          class="text-sm text-purple-600 dark:text-purple-400 font-medium hover:underline">View
+                          All Messages</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Divider -->
+                <div
+                  class="hidden sm:block h-8 w-px bg-linear-to-b from-transparent via-slate-200 dark:via-slate-600 to-transparent mx-2">
+                </div>
+
+                <!-- Profile Section -->
+                <div class="relative" x-data="{ open: false }" @click.outside="open = false">
+                  <button @click="open = !open"
+                    class="flex items-center gap-3 pl-2 pr-3 py-1.5 hover:bg-linear-to-br from-slate-50 to-indigo-50 dark:from-slate-700 dark:to-indigo-900/30 rounded-xl transition-all duration-300 group">
+                    <div class="relative">
+                      <img src="https://ui-avatars.com/api/?name=Admin+User&background=6366f1&color=fff" alt="Avatar"
+                        class="w-9 h-9 rounded-full ring-2 ring-white dark:ring-slate-700 group-hover:ring-indigo-200 dark:group-hover:ring-indigo-500 transition-all duration-300">
+                      <span
+                        class="absolute bottom-0 right-0 h-3 w-3 bg-emerald-500 border-2 border-white dark:border-slate-800 rounded-full"></span>
+                    </div>
+                    <div class="hidden lg:block text-left">
+                      <p
+                        class="text-sm font-semibold text-slate-800 dark:text-slate-200 leading-tight group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                        Admin User</p>
+                      <p class="text-xs text-slate-500 dark:text-slate-400">Administrator</p>
+                    </div>
+                    <i class='bx bx-chevron-down text-slate-400 dark:text-slate-500 hidden lg:block group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-all duration-300'
+                      :class="{ 'rotate-180': open }"></i>
+                  </button>
+
+                  <!-- Profile Dropdown -->
+                  <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                    x-transition:enter-start="opacity-0 translate-y-2"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:leave="transition ease-in duration-150"
+                    x-transition:leave-start="opacity-100 translate-y-0"
+                    x-transition:leave-end="opacity-0 translate-y-2"
+                    class="absolute right-0 mt-2 w-56 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 overflow-hidden z-50">
+
+                    <div
+                      class="p-4 border-b border-slate-100 dark:border-slate-700 text-center bg-slate-50/50 dark:bg-slate-700/30">
+                      <div class="w-16 h-16 rounded-full bg-slate-200 dark:bg-slate-600 mx-auto mb-2 overflow-hidden">
+                        <img src="https://ui-avatars.com/api/?name=Admin+User&background=6366f1&color=fff"
+                          class="w-full h-full object-cover">
+                      </div>
+                      <h4 class="font-bold text-slate-800 dark:text-slate-100">Admin User</h4>
+                      <p class="text-xs text-slate-500 dark:text-slate-400">admin@encore.com</p>
+                    </div>
+
+                    <div class="p-2">
+                      <a href="#"
+                        class="flex items-center gap-3 px-3 py-2 text-sm text-slate-600 dark:text-slate-300 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                        <i class='bx bx-user text-lg text-slate-400 dark:text-slate-500'></i>
+                        My Profile
+                      </a>
+                      <a href="#"
+                        class="flex items-center gap-3 px-3 py-2 text-sm text-slate-600 dark:text-slate-300 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                        <i class='bx bx-cog text-lg text-slate-400 dark:text-slate-500'></i>
+                        Settings
+                      </a>
+                      <a href="#"
+                        class="flex items-center gap-3 px-3 py-2 text-sm text-slate-600 dark:text-slate-300 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                        <i class='bx bx-credit-card text-lg text-slate-400 dark:text-slate-500'></i>
+                        Billing
+                      </a>
+                    </div>
+
+                    <div class="p-2 border-t border-slate-100 dark:border-slate-700">
+                      <a href="#"
+                        class="flex items-center gap-3 px-3 py-2 text-sm text-red-600 dark:text-red-400 rounded-xl hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors">
+                        <i class='bx bx-log-out text-lg'></i>
+                        Logout
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="flex-1 overflow-x-hidden overflow-y-auto p-4 lg:p-8">
+        <div class="container mx-auto px-4 lg:px-6 py-8">
+          <!-- Page Header -->
+          <div class="mb-8">
+            <h1 class="text-3xl font-bold text-slate-900 dark:text-slate-100">Dropdowns</h1>
+            <p class="text-slate-600 dark:text-slate-400 mt-2">Interactive menus with premium interactions and
+              glassmorphism styling.</p>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+            <!-- 1. Minimalist & Clean -->
+            <div
+              class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 shadow-sm overflow-visible">
+              <div class="mb-6 flex items-center justify-between">
+                <div>
+                  <h2 class="text-lg font-bold text-slate-900 dark:text-slate-100">Modern Minimalist</h2>
+                  <p class="text-sm text-slate-500 mt-1">Clean aesthetics with subtle interactions.</p>
+                </div>
+                <span
+                  class="px-2.5 py-1 rounded-full text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Basic</span>
+              </div>
+
+              <div class="flex flex-wrap gap-4 content-start">
+
+                <!-- Standard Dropdown -->
+                <div class="relative" x-data="{ open: false }" @click.outside="open = false">
+                  <button @click="open = !open"
+                    class="group flex items-center gap-2 px-5 py-2.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200 hover:border-indigo-500 dark:hover:border-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300 shadow-sm">
+                    <span>Options Menu</span>
+                    <i class='bx bx-chevron-down text-lg text-slate-400 group-hover:text-indigo-500 transition-transform duration-300'
+                      :class="{ 'rotate-180': open }"></i>
+                  </button>
+
+                  <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                    x-transition:enter-start="opacity-0 translate-y-2 scale-95"
+                    x-transition:enter-end="opacity-100 translate-y-0 scale-100"
+                    x-transition:leave="transition ease-in duration-150"
+                    x-transition:leave-start="opacity-100 translate-y-0 scale-100"
+                    x-transition:leave-end="opacity-0 translate-y-2 scale-95"
+                    class="absolute left-0 mt-2 w-56 bg-white dark:bg-slate-800 rounded-xl shadow-xl shadow-slate-200/50 dark:shadow-slate-900/50 border border-slate-100 dark:border-slate-700 z-50 overflow-hidden">
+
+                    <div class="p-1.5">
+                      <a href="#"
+                        class="flex items-center gap-3 px-3 py-2 text-sm text-slate-600 dark:text-slate-300 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700/50 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors group">
+                        <i class='bx bx-edit text-lg text-slate-400 group-hover:text-indigo-500'></i>
+                        Edit Details
+                      </a>
+                      <a href="#"
+                        class="flex items-center gap-3 px-3 py-2 text-sm text-slate-600 dark:text-slate-300 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700/50 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors group">
+                        <i class='bx bx-duplicate text-lg text-slate-400 group-hover:text-indigo-500'></i>
+                        Duplicate
+                      </a>
+                      <div class="h-px bg-slate-100 dark:bg-slate-700 my-1 mx-2"></div>
+                      <a href="#"
+                        class="flex items-center gap-3 px-3 py-2 text-sm text-red-600 dark:text-red-400 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors group">
+                        <i class='bx bx-trash text-lg group-hover:scale-110 transition-transform'></i>
+                        Delete Item
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Icon Trigger -->
+                <div class="relative" x-data="{ open: false }" @click.outside="open = false">
+                  <button @click="open = !open"
+                    class="w-10 h-10 flex items-center justify-center bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600 rounded-xl text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400 hover:border-indigo-500 dark:hover:border-indigo-400 shadow-sm transition-all duration-300">
+                    <i class='bx bx-dots-vertical-rounded text-xl'></i>
+                  </button>
+                  <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                    class="absolute left-0 mt-2 w-48 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-100 dark:border-slate-700 z-50 overflow-hidden p-1.5">
+                    <a href="#"
+                      class="block px-3 py-2 text-sm rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200">View</a>
+                    <a href="#"
+                      class="block px-3 py-2 text-sm rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200">Export</a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- 2. Vibrant & Gradient -->
+            <div
+              class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 shadow-sm overflow-visible">
+              <div class="mb-6 flex items-center justify-between">
+                <div>
+                  <h2 class="text-lg font-bold text-slate-900 dark:text-slate-100">Vibrant & Pro</h2>
+                  <p class="text-sm text-slate-500 mt-1">Rich gradients and detailed menus.</p>
+                </div>
+                <span
+                  class="px-2.5 py-1 rounded-full text-xs font-medium bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400">Premium</span>
+              </div>
+
+              <div class="flex flex-wrap gap-4 content-start">
+
+                <div class="relative" x-data="{ open: false }" @click.outside="open = false">
+                  <button @click="open = !open"
+                    class="relative inline-flex items-center gap-2 px-6 py-2.5 bg-linear-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white text-sm font-bold rounded-xl shadow-lg shadow-indigo-500/30 transition-all duration-300 hover:shadow-indigo-500/50 hover:-translate-y-0.5">
+                    <span>Explore Pro</span>
+                    <i class='bx bxs-hot text-amber-300 animate-pulse'></i>
+                  </button>
+
+                  <div x-show="open" x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter-start="opacity-0 translate-y-4 scale-90"
+                    x-transition:enter-end="opacity-100 translate-y-0 scale-100"
+                    x-transition:leave="transition ease-in duration-200"
+                    class="absolute right-0 lg:left-0 mt-3 w-72 bg-slate-900/95 backdrop-blur-xl rounded-xl shadow-2xl shadow-indigo-500/20 border border-white/10 p-2 z-50 origin-top-left text-white">
+
+                    <div
+                      class="p-3 bg-linear-to-br from-indigo-500/20 to-purple-500/20 rounded-lg border border-white/5 mb-2">
+                      <h4 class="font-bold text-white mb-1">Premium Access</h4>
+                      <p class="text-xs text-slate-300">Unlock all advanced features today.</p>
+                    </div>
+
+                    <div class="space-y-1">
+                      <a href="#"
+                        class="flex items-start gap-3 p-2 rounded-lg hover:bg-white/10 transition-colors group">
+                        <div
+                          class="w-8 h-8 rounded-lg bg-linear-to-br from-amber-400 to-orange-500 flex items-center justify-center text-white shadow-lg shadow-orange-500/20 group-hover:scale-110 transition-transform">
+                          <i class='bx bx-crown text-lg'></i>
+                        </div>
+                        <div>
+                          <p class="text-sm font-bold text-slate-100 group-hover:text-white">Start Trial</p>
+                          <p class="text-[10px] text-slate-400">14-days free access</p>
+                        </div>
+                      </a>
+                      <a href="#"
+                        class="flex items-start gap-3 p-2 rounded-lg hover:bg-white/10 transition-colors group">
+                        <div
+                          class="w-8 h-8 rounded-lg bg-linear-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-white shadow-lg shadow-teal-500/20 group-hover:scale-110 transition-transform">
+                          <i class='bx bx-book-open text-lg'></i>
+                        </div>
+                        <div>
+                          <p class="text-sm font-bold text-slate-100 group-hover:text-white">Documentation</p>
+                          <p class="text-[10px] text-slate-400">Full integration guides</p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- 3. Complex User Menu -->
+            <div
+              class="relative z-30 lg:col-span-2 bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 shadow-sm overflow-visible">
+              <div class="mb-6">
+                <h2 class="text-lg font-bold text-slate-900 dark:text-slate-100">Rich User Menu</h2>
+                <p class="text-sm text-slate-500 mt-1">Perfect for profile navigation and account settings.</p>
+              </div>
+
+              <div
+                class="flex flex-col items-center justify-center bg-slate-50 dark:bg-slate-700/30 rounded-xl border border-dashed border-slate-200 dark:border-slate-600 relative z-0 py-8">
+
+                <div class="relative" x-data="{ open: false }" @click.outside="open = false">
+                  <button @click="open = !open"
+                    class="flex items-center gap-3 pl-2 pr-4 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600 rounded-full hover:shadow-lg hover:border-indigo-200 dark:hover:border-indigo-900 transition-all duration-300 group z-10 relative">
+                    <div class="relative">
+                      <img src="https://ui-avatars.com/api/?name=Alex+M&background=0ea5e9&color=fff"
+                        class="w-10 h-10 rounded-full border-2 border-white dark:border-slate-700 group-hover:scale-105 transition-transform">
+                      <span
+                        class="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 border-2 border-white dark:border-slate-800 rounded-full"></span>
+                    </div>
+                    <div class="text-left">
+                      <p
+                        class="text-sm font-bold text-slate-800 dark:text-slate-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                        Alex Morgan</p>
+                      <p class="text-[10px] text-slate-500 dark:text-slate-400 font-medium">Administrator</p>
+                    </div>
+                    <i class='bx bx-chevron-down text-slate-400 group-hover:text-indigo-500 transition-colors ml-2'
+                      :class="{ 'rotate-180': open }"></i>
+                  </button>
+
+                  <div x-show="open" x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter-start="opacity-0 translate-y-2 blur-xs"
+                    x-transition:enter-end="opacity-100 translate-y-0 blur-none"
+                    class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-80 bg-white dark:bg-slate-800 rounded-2xl shadow-2xl shadow-slate-200/50 dark:shadow-slate-900/50 border border-slate-100 dark:border-slate-600 overflow-hidden z-20">
+
+                    <div class="relative p-6 bg-slate-900 text-white overflow-hidden group">
+                      <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-indigo-500 rounded-full blur-3xl -mr-16 -mt-16 opacity-30 group-hover:opacity-50 transition-opacity duration-500">
+                      </div>
+                      <div
+                        class="absolute bottom-0 left-0 w-32 h-32 bg-purple-500 rounded-full blur-3xl -ml-16 -mb-16 opacity-30 group-hover:opacity-50 transition-opacity duration-500">
+                      </div>
+
+                      <div class="relative z-10 flex items-center gap-4">
+                        <img src="https://ui-avatars.com/api/?name=Alex+M&background=0ea5e9&color=fff"
+                          class="w-14 h-14 rounded-full border-4 border-white/10 shadow-xl">
+                        <div>
+                          <h4 class="font-bold text-lg">Alex Morgan</h4>
+                          <p class="text-slate-300 text-xs mb-2">alex@encore.ui</p>
+                          <span
+                            class="px-2 py-0.5 rounded text-[10px] font-bold bg-white/20 text-white backdrop-blur-sm border border-white/10">PRO
+                            PLAN</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="p-2 space-y-1">
+                      <a href="#"
+                        class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700/50 group transition-all duration-200">
+                        <div
+                          class="w-10 h-10 rounded-lg bg-indigo-50 dark:bg-indigo-900/20 flex items-center justify-center text-indigo-600 dark:text-indigo-400 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                          <i class='bx bx-user text-xl'></i>
+                        </div>
+                        <div class="flex-1">
+                          <div class="flex items-center justify-between">
+                            <p
+                              class="text-sm font-bold text-slate-700 dark:text-slate-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                              My Profile</p>
+                          </div>
+                          <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Account settings</p>
+                        </div>
+                      </a>
+
+                      <a href="#"
+                        class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700/50 group transition-all duration-200">
+                        <div
+                          class="w-10 h-10 rounded-lg bg-emerald-50 dark:bg-emerald-900/20 flex items-center justify-center text-emerald-600 dark:text-emerald-400 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                          <i class='bx bx-wallet text-xl'></i>
+                        </div>
+                        <div class="flex-1">
+                          <div class="flex items-center justify-between">
+                            <p
+                              class="text-sm font-bold text-slate-700 dark:text-slate-200 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                              Billing</p>
+                          </div>
+                          <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Manage payments</p>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div
+                      class="p-2 mt-1 border-t border-slate-100 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800/50">
+                      <a href="#"
+                        class="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl text-sm font-semibold text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 hover:shadow-sm transition-all duration-200">
+                        <i class='bx bx-log-out text-lg'></i>
+                        Sign Out
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- 4. Functional & Forms -->
+            <div
+              class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 shadow-sm overflow-visible">
+              <div class="mb-6 flex items-center justify-between">
+                <div>
+                  <h2 class="text-lg font-bold text-slate-900 dark:text-slate-100">Functional & Forms</h2>
+                  <p class="text-sm text-slate-500 mt-1">Dropdowns with inputs, search, and selection states.</p>
+                </div>
+                <span
+                  class="px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400">Interactive</span>
+              </div>
+
+              <div class="flex flex-wrap gap-4 content-start">
+
+                <!-- Searchable Dropdown -->
+                <div class="relative" x-data="{ open: false, search: '' }" @click.outside="open = false">
+                  <button @click="open = !open"
+                    class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:border-indigo-500 dark:hover:border-indigo-400 transition-colors w-48 justify-between">
+                    <span x-text="search ? 'Filter: ' + search : 'Select Member'"></span>
+                    <i class='bx bx-chevron-down text-slate-400' :class="{ 'rotate-180': open }"></i>
+                  </button>
+
+                  <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                    x-transition:enter-start="opacity-0 translate-y-2"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    class="absolute left-0 mt-2 w-64 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-100 dark:border-slate-700 z-50 overflow-hidden">
+
+                    <div class="p-2 border-b border-slate-100 dark:border-slate-700">
+                      <div class="relative">
+                        <i class='bx bx-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-400'></i>
+                        <input type="text" x-model="search" placeholder="Search members..."
+                          class="w-full pl-9 pr-3 py-1.5 text-sm bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600 rounded-lg focus:outline-none focus:border-indigo-500 dark:focus:border-indigo-400 transition-colors">
+                      </div>
+                    </div>
+
+                    <div class="max-h-48 overflow-y-auto custom-scrollbar p-1">
+                      <template
+                        x-for="name in ['Alice Smith', 'Bob Jones', 'Charlie Day', 'David Miller', 'Eva Green']">
+                        <button x-show="name.toLowerCase().includes(search.toLowerCase())"
+                          @click="open = false; search = name"
+                          class="w-full flex items-center gap-3 px-3 py-2 text-sm text-left rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                          <div
+                            class="w-6 h-6 rounded-full bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xs font-bold"
+                            x-text="name[0]"></div>
+                          <span class="text-slate-700 dark:text-slate-200" x-text="name"></span>
+                        </button>
+                      </template>
+                      <div
+                        x-show="!['Alice Smith', 'Bob Jones', 'Charlie Day', 'David Miller', 'Eva Green'].some(n => n.toLowerCase().includes(search.toLowerCase()))"
+                        class="p-3 text-center text-xs text-slate-400">
+                        No results found
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Multi-select / Checkbox -->
+                <div class="relative" x-data="{ open: false, selected: [] }" @click.outside="open = false">
+                  <button @click="open = !open"
+                    class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-600 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:border-indigo-500 dark:hover:border-indigo-400 transition-colors">
+                    <i class='bx bx-filter-alt text-slate-400'></i>
+                    <span>Tags</span>
+                    <span x-show="selected.length > 0"
+                      class="ml-1 px-1.5 py-0.5 rounded-md bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 text-xs font-bold"
+                      x-text="selected.length"></span>
+                  </button>
+
+                  <div x-show="open" x-transition
+                    class="absolute left-0 mt-2 w-56 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-100 dark:border-slate-700 z-50 p-1.5">
+                    <template x-for="tag in ['Design', 'Development', 'Marketing', 'SEO', 'Analytics']">
+                      <label
+                        class="flex items-center justify-between px-3 py-2 cursor-pointer rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                        <span class="text-sm text-slate-700 dark:text-slate-200" x-text="tag"></span>
+                        <div class="relative flex items-center">
+                          <input type="checkbox" :value="tag" x-model="selected"
+                            class="peer h-4 w-4 appearance-none rounded border border-slate-300 dark:border-slate-600 checked:bg-indigo-500 checked:border-indigo-500 transition-all">
+                          <i
+                            class='bx bx-check absolute left-0 top-0 text-white text-base pointer-events-none opacity-0 peer-checked:opacity-100 transition-opacity'></i>
+                        </div>
+                      </label>
+                    </template>
+                    <div class="h-px bg-slate-100 dark:bg-slate-700 my-1 mx-2"></div>
+                    <button @click="selected = []"
+                      class="w-full text-xs text-center text-slate-500 hover:text-indigo-600 py-1">Clear
+                      Selection</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- 5. Directional & Layouts -->
+            <div
+              class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 shadow-sm overflow-visible">
+              <div class="mb-6 flex items-center justify-between">
+                <div>
+                  <h2 class="text-lg font-bold text-slate-900 dark:text-slate-100">Directional</h2>
+                  <p class="text-sm text-slate-500 mt-1">Control where the menu appears relative to the trigger.</p>
+                </div>
+                <!-- Controls for demo -->
+              </div>
+
+              <div class="flex flex-wrap items-center gap-4 content-start h-full">
+
+                <!-- Dropup (Top) -->
+                <div class="relative" x-data="{ open: false }" @click.outside="open = false">
+                  <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                    x-transition:enter-start="opacity-0 translate-y-2"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-32 bg-slate-800 text-white rounded-xl shadow-xl shadow-slate-900/20 p-1 z-50 text-center">
+                    <span
+                      class="block px-3 py-1.5 text-xs font-medium rounded-lg hover:bg-white/10 cursor-pointer">Start</span>
+                    <span
+                      class="block px-3 py-1.5 text-xs font-medium rounded-lg hover:bg-white/10 cursor-pointer">Stop</span>
+                    <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-slate-800 rotate-45"></div>
+                  </div>
+                  <button @click="open = !open"
+                    class="w-10 h-10 flex items-center justify-center bg-slate-100 dark:bg-slate-700 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-indigo-100/50 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                    title="Dropup">
+                    <i class='bx bx-chevron-up text-xl'></i>
+                  </button>
+                </div>
+
+                <!-- Dropdown (Bottom - Default) -->
+                <div class="relative" x-data="{ open: false }" @click.outside="open = false">
+                  <button @click="open = !open"
+                    class="w-10 h-10 flex items-center justify-center bg-slate-100 dark:bg-slate-700 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-indigo-100/50 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                    title="Dropdown">
+                    <i class='bx bx-chevron-down text-xl'></i>
+                  </button>
+                  <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                    x-transition:enter-start="opacity-0 -translate-y-2"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-32 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-100 dark:border-slate-700 z-50 p-1">
+                    <a href="#"
+                      class="block px-3 py-1.5 text-xs font-medium rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-center">Profile</a>
+                    <a href="#"
+                      class="block px-3 py-1.5 text-xs font-medium rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-center">Settings</a>
+                  </div>
+                </div>
+
+                <!-- Dropleft -->
+                <div class="relative" x-data="{ open: false }" @click.outside="open = false">
+                  <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                    x-transition:enter-start="opacity-0 translate-x-2"
+                    x-transition:enter-end="opacity-100 translate-x-0"
+                    class="absolute right-full top-0 mr-2 w-32 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-100 dark:border-slate-700 z-50 p-1">
+                    <a href="#"
+                      class="block px-3 py-1.5 text-xs font-medium rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-center">Prev</a>
+                    <a href="#"
+                      class="block px-3 py-1.5 text-xs font-medium rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-center">History</a>
+                  </div>
+                  <button @click="open = !open"
+                    class="w-10 h-10 flex items-center justify-center bg-slate-100 dark:bg-slate-700 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-indigo-100/50 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                    title="Dropleft">
+                    <i class='bx bx-chevron-left text-xl'></i>
+                  </button>
+                </div>
+
+                <!-- Dropright -->
+                <div class="relative" x-data="{ open: false }" @click.outside="open = false">
+                  <button @click="open = !open"
+                    class="w-10 h-10 flex items-center justify-center bg-slate-100 dark:bg-slate-700 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-indigo-100/50 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                    title="Dropright">
+                    <i class='bx bx-chevron-right text-xl'></i>
+                  </button>
+
+                  <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                    x-transition:enter-start="opacity-0 -translate-x-2"
+                    x-transition:enter-end="opacity-100 translate-x-0"
+                    class="absolute left-full top-0 ml-2 w-32 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-100 dark:border-slate-700 z-50 p-1">
+                    <a href="#"
+                      class="block px-3 py-1.5 text-xs font-medium rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-center">Next</a>
+                    <a href="#"
+                      class="block px-3 py-1.5 text-xs font-medium rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-center">More</a>
+                  </div>
+                </div>
+
+                <div class="h-8 w-px bg-slate-200 dark:bg-slate-700 mx-2"></div>
+
+                <!-- Nested Dropdown -->
+                <div class="relative" x-data="{ open: false }" @click.outside="open = false">
+                  <button @click="open = !open"
+                    class="flex items-center gap-2 px-4 py-2 bg-slate-100 dark:bg-slate-700 rounded-xl text-sm font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">
+                    <span>Nested</span>
+                    <i class='bx bx-chevron-down text-lg'></i>
+                  </button>
+
+                  <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                    x-transition:enter-start="opacity-0 translate-y-2"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    class="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-100 dark:border-slate-700 z-50 p-1.5 overflow-visible">
+
+                    <a href="#"
+                      class="block px-3 py-2 text-sm rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200">Dashboard</a>
+                    <a href="#"
+                      class="block px-3 py-2 text-sm rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200">Analytics</a>
+
+                    <!-- Trigger for Submenu -->
+                    <div class="relative group" x-data="{ subOpen: false }" @mouseenter="subOpen = true"
+                      @mouseleave="subOpen = false">
+                      <button @click="subOpen = !subOpen"
+                        class="flex items-center justify-between w-full px-3 py-2 text-sm rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 group-hover:bg-slate-50 dark:group-hover:bg-slate-700 transition-colors">
+                        <span>More Options</span>
+                        <i class='bx bx-chevron-right text-lg text-slate-400'></i>
+                      </button>
+
+                      <!-- Submenu -->
+                      <div x-show="subOpen" x-transition:enter="transition ease-out duration-200"
+                        x-transition:enter-start="opacity-0 -translate-x-2"
+                        x-transition:enter-end="opacity-100 translate-x-0"
+                        class="absolute left-full top-0 ml-2 w-40 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-100 dark:border-slate-700 p-1.5 z-60">
+                        <a href="#"
+                          class="block px-3 py-2 text-sm rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200">Reports</a>
+                        <a href="#"
+                          class="block px-3 py-2 text-sm rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200">Archive</a>
+                        <div class="h-px bg-slate-100 dark:bg-slate-700 my-1 mx-2"></div>
+                        <a href="#"
+                          class="block px-3 py-2 text-sm rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20 text-red-600 dark:text-red-400">Delete</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="h-8 w-px bg-slate-200 dark:bg-slate-700 mx-2"></div>
+
+                <!-- Apps Menu Grid (Existing but styled as trigger) -->
+                <div class="relative" x-data="{ open: false }" @click.outside="open = false">
+                  <button @click="open = !open"
+                    class="w-10 h-10 flex items-center justify-center bg-transparent hover:bg-slate-100 dark:hover:bg-slate-700 rounded-full text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 transition-colors">
+                    <i class='bx bx-grid-alt text-2xl'></i>
+                  </button>
+
+                  <div x-show="open" x-transition
+                    class="absolute right-0 top-full mt-2 w-72 bg-white dark:bg-slate-800 rounded-2xl shadow-2xl border border-slate-100 dark:border-slate-700 z-50 p-4">
+                    <div class="grid grid-cols-3 gap-2">
+                      <a href="#"
+                        class="flex flex-col items-center justify-center p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors group">
+                        <i
+                          class='bx bxl-dribbble text-2xl text-pink-500 mb-1 group-hover:scale-110 transition-transform'></i>
+                        <span class="text-xs text-slate-600 dark:text-slate-300">Design</span>
+                      </a>
+                      <a href="#"
+                        class="flex flex-col items-center justify-center p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors group">
+                        <i
+                          class='bx bxl-github text-2xl text-slate-800 dark:text-white mb-1 group-hover:scale-110 transition-transform'></i>
+                        <span class="text-xs text-slate-600 dark:text-slate-300">Code</span>
+                      </a>
+                      <a href="#"
+                        class="flex flex-col items-center justify-center p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors group">
+                        <i
+                          class='bx bxl-slack text-2xl text-purple-500 mb-1 group-hover:scale-110 transition-transform'></i>
+                        <span class="text-xs text-slate-600 dark:text-slate-300">Slack</span>
+                      </a>
+                      <a href="#"
+                        class="flex flex-col items-center justify-center p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors group">
+                        <i
+                          class='bx bxl-trello text-2xl text-blue-500 mb-1 group-hover:scale-110 transition-transform'></i>
+                        <span class="text-xs text-slate-600 dark:text-slate-300">Trello</span>
+                      </a>
+                      <a href="#"
+                        class="flex flex-col items-center justify-center p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors group">
+                        <i
+                          class='bx bxl-dropbox text-2xl text-blue-600 mb-1 group-hover:scale-110 transition-transform'></i>
+                        <span class="text-xs text-slate-600 dark:text-slate-300">Drive</span>
+                      </a>
+                      <a href="#"
+                        class="flex flex-col items-center justify-center p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors group">
+                        <i
+                          class='bx bxl-spotify text-2xl text-green-500 mb-1 group-hover:scale-110 transition-transform'></i>
+                        <span class="text-xs text-slate-600 dark:text-slate-300">Spotify</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- 6. Mega Menu -->
+            <div
+              class="lg:col-span-2 bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 shadow-sm overflow-visible pb-32">
+              <div class="mb-6">
+                <h2 class="text-lg font-bold text-slate-900 dark:text-slate-100">Mega Menu</h2>
+                <p class="text-sm text-slate-500 mt-1">Multi-column layouts for complex navigation structures.</p>
+              </div>
+
+              <div class="relative" x-data="{ open: false }" @click.outside="open = false">
+                <button @click="open = !open"
+                  class="flex items-center gap-2 px-6 py-3 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 rounded-xl text-sm font-bold shadow-lg shadow-slate-900/20 hover:shadow-slate-900/30 transition-all duration-300">
+                  <span>Products & Solutions</span>
+                  <i class='bx bx-chevron-down' :class="{ 'rotate-180': open }"></i>
+                </button>
+
+                <div x-show="open" x-transition:enter="transition ease-out duration-300"
+                  x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0"
+                  class="absolute top-full left-0 mt-3 w-full max-w-4xl bg-white dark:bg-slate-800 rounded-2xl shadow-2xl shadow-slate-200/50 dark:shadow-slate-900/50 border border-slate-100 dark:border-slate-700 z-50 overflow-hidden grid grid-cols-12">
+
+                  <!-- Col 1 -->
+                  <div
+                    class="col-span-12 md:col-span-4 p-6 bg-slate-50 dark:bg-slate-700/30 border-r border-slate-100 dark:border-slate-700">
+                    <h4 class="font-bold text-slate-900 dark:text-slate-100 mb-4 flex items-center gap-2">
+                      <i class='bx bx-rocket text-indigo-500'></i> Featured
+                    </h4>
+                    <div class="space-y-4">
+                      <a href="#" class="block group">
+                        <div
+                          class="aspect-video rounded-lg bg-indigo-100 dark:bg-indigo-900/30 mb-2 overflow-hidden relative">
+                          <div class="absolute inset-0 bg-indigo-500/10 group-hover:bg-transparent transition-colors">
+                          </div>
+                          <img src="https://ui-avatars.com/api/?name=New+v2&background=6366f1&color=fff&size=400"
+                            class="w-full h-full object-cover mix-blend-overlay opacity-50 group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <p
+                          class="font-bold text-sm text-slate-800 dark:text-slate-200 group-hover:text-indigo-600 transition-colors">
+                          Encore v2.0 Released</p>
+                        <p class="text-xs text-slate-500 line-clamp-2">Check out the new features including AI
+                          components.</p>
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Col 2 & 3 -->
+                  <div class="col-span-12 md:col-span-8 p-6 grid grid-cols-2 gap-8">
+                    <div>
+                      <h4
+                        class="font-bold text-slate-900 dark:text-slate-100 mb-4 text-sm uppercase tracking-wider text-opacity-70">
+                        Platform</h4>
+                      <ul class="space-y-3">
+                        <li>
+                          <a href="#" class="flex items-start gap-3 group">
+                            <div class="mt-0.5 text-slate-400 group-hover:text-indigo-500 transition-colors"><i
+                                class='bx bx-data'></i></div>
+                            <div>
+                              <p
+                                class="text-sm font-semibold text-slate-700 dark:text-slate-200 group-hover:text-indigo-600 transition-colors">
+                                Database</p>
+                              <p class="text-xs text-slate-500">Managed SQL & NoSQL</p>
+                            </div>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" class="flex items-start gap-3 group">
+                            <div class="mt-0.5 text-slate-400 group-hover:text-indigo-500 transition-colors"><i
+                                class='bx bx-cloud'></i></div>
+                            <div>
+                              <p
+                                class="text-sm font-semibold text-slate-700 dark:text-slate-200 group-hover:text-indigo-600 transition-colors">
+                                Serverless</p>
+                              <p class="text-xs text-slate-500">Deploy functions instantly</p>
+                            </div>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" class="flex items-start gap-3 group">
+                            <div class="mt-0.5 text-slate-400 group-hover:text-indigo-500 transition-colors"><i
+                                class='bx bx-shield-quarter'></i></div>
+                            <div>
+                              <p
+                                class="text-sm font-semibold text-slate-700 dark:text-slate-200 group-hover:text-indigo-600 transition-colors">
+                                Security</p>
+                              <p class="text-xs text-slate-500">SAML & SSO Ready</p>
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h4
+                        class="font-bold text-slate-900 dark:text-slate-100 mb-4 text-sm uppercase tracking-wider text-opacity-70">
+                        Developers</h4>
+                      <ul class="space-y-3">
+                        <li>
+                          <a href="#" class="flex items-start gap-3 group">
+                            <div class="mt-0.5 text-slate-400 group-hover:text-indigo-500 transition-colors"><i
+                                class='bx bx-code-alt'></i></div>
+                            <div>
+                              <p
+                                class="text-sm font-semibold text-slate-700 dark:text-slate-200 group-hover:text-indigo-600 transition-colors">
+                                API Reference</p>
+                              <p class="text-xs text-slate-500">REST & GraphQL docs</p>
+                            </div>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#" class="flex items-start gap-3 group">
+                            <div class="mt-0.5 text-slate-400 group-hover:text-indigo-500 transition-colors"><i
+                                class='bx bx-book'></i></div>
+                            <div>
+                              <p
+                                class="text-sm font-semibold text-slate-700 dark:text-slate-200 group-hover:text-indigo-600 transition-colors">
+                                Guides</p>
+                              <p class="text-xs text-slate-500">Start building in minutes</p>
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
+                      <div
+                        class="mt-6 p-3 rounded-lg bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-100 dark:border-indigo-800/50">
+                        <a href="#"
+                          class="flex items-center justify-between text-indigo-700 dark:text-indigo-300 text-xs font-bold hover:underline">
+                          <span>View Changelog</span>
+                          <i class='bx bx-right-arrow-alt'></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 p-4">
+        <div class="container mx-auto py-2">
+          <p class="text-center text-sm text-slate-500 dark:text-slate-400">&copy; 2026 Encore UI. All rights
+            reserved.</p>
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+
+</html>

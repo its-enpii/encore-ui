@@ -1,0 +1,4903 @@
+[{
+  "icon": "bx bx-child",
+  "name": "child"
+}, {
+  "icon": "bx bxs-balloon",
+  "name": "balloon"
+}, {
+  "icon": "bx bxs-coffee-bean",
+  "name": "coffee-bean"
+}, {
+  "icon": "bx bxs-pear",
+  "name": "pear"
+}, {
+  "icon": "bx bxs-sushi",
+  "name": "sushi"
+}, {
+  "icon": "bx bx-sushi",
+  "name": "sushi"
+}, {
+  "icon": "bx bxs-shower",
+  "name": "shower"
+}, {
+  "icon": "bx bx-shower",
+  "name": "shower"
+}, {
+  "icon": "bx bxl-typescript",
+  "name": "typescript"
+}, {
+  "icon": "bx bxl-graphql",
+  "name": "graphql"
+}, {
+  "icon": "bx bx-rfid",
+  "name": "rfid"
+}, {
+  "icon": "bx bxs-universal-access",
+  "name": "universal-access"
+}, {
+  "icon": "bx bx-universal-access",
+  "name": "universal-access"
+}, {
+  "icon": "bx bxs-castle",
+  "name": "castle"
+}, {
+  "icon": "bx bxs-shield-minus",
+  "name": "shield-minus"
+}, {
+  "icon": "bx bx-shield-minus",
+  "name": "shield-minus"
+}, {
+  "icon": "bx bxs-shield-plus",
+  "name": "shield-plus"
+}, {
+  "icon": "bx bx-shield-plus",
+  "name": "shield-plus"
+}, {
+  "icon": "bx bx-vertical-bottom",
+  "name": "vertical-bottom"
+}, {
+  "icon": "bx bx-vertical-top",
+  "name": "vertical-top"
+}, {
+  "icon": "bx bx-horizontal-right",
+  "name": "horizontal-right"
+}, {
+  "icon": "bx bx-horizontal-left",
+  "name": "horizontal-left"
+}, {
+  "icon": "bx bxs-objects-vertical-bottom",
+  "name": "objects-vertical-bottom"
+}, {
+  "icon": "bx bx-objects-vertical-bottom",
+  "name": "objects-vertical-bottom"
+}, {
+  "icon": "bx bxs-objects-vertical-center",
+  "name": "objects-vertical-center"
+}, {
+  "icon": "bx bx-objects-vertical-center",
+  "name": "objects-vertical-center"
+}, {
+  "icon": "bx bxs-objects-vertical-top",
+  "name": "objects-vertical-top"
+}, {
+  "icon": "bx bx-objects-vertical-top",
+  "name": "objects-vertical-top"
+}, {
+  "icon": "bx bxs-objects-horizontal-right",
+  "name": "objects-horizontal-right"
+}, {
+  "icon": "bx bx-objects-horizontal-right",
+  "name": "objects-horizontal-right"
+}, {
+  "icon": "bx bxs-objects-horizontal-center",
+  "name": "objects-horizontal-center"
+}, {
+  "icon": "bx bx-objects-horizontal-center",
+  "name": "objects-horizontal-center"
+}, {
+  "icon": "bx bxs-objects-horizontal-left",
+  "name": "objects-horizontal-left"
+}, {
+  "icon": "bx bx-objects-horizontal-left",
+  "name": "objects-horizontal-left"
+}, {
+  "icon": "bx bxs-color",
+  "name": "color"
+}, {
+  "icon": "bx bx-color",
+  "name": "color"
+}, {
+  "icon": "bx bx-reflect-horizontal",
+  "name": "reflect-horizontal"
+}, {
+  "icon": "bx bx-reflect-vertical",
+  "name": "reflect-vertical"
+}, {
+  "icon": "bx bxl-postgresql",
+  "name": "postgresql"
+}, {
+  "icon": "bx bxl-mongodb",
+  "name": "mongodb"
+}, {
+  "icon": "bx bxl-deezer",
+  "name": "deezer"
+}, {
+  "icon": "bx bxl-xing",
+  "name": "xing"
+}, {
+  "icon": "bx bx-cart-add",
+  "name": "cart-add"
+}, {
+  "icon": "bx bx-cart-download",
+  "name": "cart-download"
+}, {
+  "icon": "bx bx-no-signal",
+  "name": "no-signal"
+}, {
+  "icon": "bx bx-signal-5",
+  "name": "signal-5"
+}, {
+  "icon": "bx bx-signal-4",
+  "name": "signal-4"
+}, {
+  "icon": "bx bx-signal-3",
+  "name": "signal-3"
+}, {
+  "icon": "bx bx-signal-2",
+  "name": "signal-2"
+}, {
+  "icon": "bx bx-signal-1",
+  "name": "signal-1"
+}, {
+  "icon": "bx bxs-cheese",
+  "name": "cheese"
+}, {
+  "icon": "bx bx-cheese",
+  "name": "cheese"
+}, {
+  "icon": "bx bxs-hard-hat",
+  "name": "hard-hat"
+}, {
+  "icon": "bx bx-hard-hat",
+  "name": "hard-hat"
+}, {
+  "icon": "bx bxs-home-alt-2",
+  "name": "home-alt-2"
+}, {
+  "icon": "bx bx-home-alt-2",
+  "name": "home-alt-2"
+}, {
+  "icon": "bx bxl-meta",
+  "name": "meta"
+}, {
+  "icon": "bx bxs-lemon",
+  "name": "lemon"
+}, {
+  "icon": "bx bx-lemon",
+  "name": "lemon"
+}, {
+  "icon": "bx bxs-cable-car",
+  "name": "cable-car"
+}, {
+  "icon": "bx bx-cable-car",
+  "name": "cable-car"
+}, {
+  "icon": "bx bxs-cricket-ball",
+  "name": "cricket-ball"
+}, {
+  "icon": "bx bx-cricket-ball",
+  "name": "cricket-ball"
+}, {
+  "icon": "bx bxs-tree-alt",
+  "name": "tree-alt"
+}, {
+  "icon": "bx bx-male-female",
+  "name": "male-female"
+}, {
+  "icon": "bx bxs-invader",
+  "name": "invader"
+}, {
+  "icon": "bx bxs-baguette",
+  "name": "baguette"
+}, {
+  "icon": "bx bx-baguette",
+  "name": "baguette"
+}, {
+  "icon": "bx bx-fork",
+  "name": "fork"
+}, {
+  "icon": "bx bx-knife",
+  "name": "knife"
+}, {
+  "icon": "bx bxs-circle-half",
+  "name": "circle-half"
+}, {
+  "icon": "bx bx-circle-half",
+  "name": "circle-half"
+}, {
+  "icon": "bx bxs-circle-three-quarter",
+  "name": "circle-three-quarter"
+}, {
+  "icon": "bx bx-circle-three-quarter",
+  "name": "circle-three-quarter"
+}, {
+  "icon": "bx bxs-circle-quarter",
+  "name": "circle-quarter"
+}, {
+  "icon": "bx bx-circle-quarter",
+  "name": "circle-quarter"
+}, {
+  "icon": "bx bxs-bowl-rice",
+  "name": "bowl-rice"
+}, {
+  "icon": "bx bx-bowl-rice",
+  "name": "bowl-rice"
+}, {
+  "icon": "bx bxs-bowl-hot",
+  "name": "bowl-hot"
+}, {
+  "icon": "bx bx-bowl-hot",
+  "name": "bowl-hot"
+}, {
+  "icon": "bx bxs-popsicle",
+  "name": "popsicle"
+}, {
+  "icon": "bx bx-popsicle",
+  "name": "popsicle"
+}, {
+  "icon": "bx bx-cross",
+  "name": "cross"
+}, {
+  "icon": "bx bx-scatter-chart",
+  "name": "scatter-chart"
+}, {
+  "icon": "bx bx-money-withdraw",
+  "name": "money-withdraw"
+}, {
+  "icon": "bx bx-candles",
+  "name": "candles"
+}, {
+  "icon": "bx bx-math",
+  "name": "math"
+}, {
+  "icon": "bx bx-party",
+  "name": "party"
+}, {
+  "icon": "bx bx-leaf",
+  "name": "leaf"
+}, {
+  "icon": "bx bx-injection",
+  "name": "injection"
+}, {
+  "icon": "bx bx-expand-vertical",
+  "name": "expand-vertical"
+}, {
+  "icon": "bx bx-expand-horizontal",
+  "name": "expand-horizontal"
+}, {
+  "icon": "bx bx-collapse-vertical",
+  "name": "collapse-vertical"
+}, {
+  "icon": "bx bx-collapse-horizontal",
+  "name": "collapse-horizontal"
+}, {
+  "icon": "bx bx-collapse-alt",
+  "name": "collapse-alt"
+}, {
+  "icon": "bx bxs-party",
+  "name": "party"
+}, {
+  "icon": "bx bxs-leaf",
+  "name": "leaf"
+}, {
+  "icon": "bx bxs-injection",
+  "name": "injection"
+}, {
+  "icon": "bx bxs-dog",
+  "name": "dog"
+}, {
+  "icon": "bx bxs-cat",
+  "name": "cat"
+}, {
+  "icon": "bx bxl-upwork",
+  "name": "upwork"
+}, {
+  "icon": "bx bxl-netlify",
+  "name": "netlify"
+}, {
+  "icon": "bx bxl-java",
+  "name": "java"
+}, {
+  "icon": "bx bxl-heroku",
+  "name": "heroku"
+}, {
+  "icon": "bx bxl-go-lang",
+  "name": "go-lang"
+}, {
+  "icon": "bx bxl-gmail",
+  "name": "gmail"
+}, {
+  "icon": "bx bxl-flask",
+  "name": "flask"
+}, {
+  "icon": "bx bxl-99designs",
+  "name": "99designs"
+}, {
+  "icon": "bx bxl-venmo",
+  "name": "venmo"
+}, {
+  "icon": "bx bx-qr",
+  "name": "qr"
+}, {
+  "icon": "bx bx-qr-scan",
+  "name": "qr-scan"
+}, {
+  "icon": "bx bxl-docker",
+  "name": "docker"
+}, {
+  "icon": "bx bxl-aws",
+  "name": "aws"
+}, {
+  "icon": "bx bxs-hand",
+  "name": "hand"
+}, {
+  "icon": "bx bx-podcast",
+  "name": "podcast"
+}, {
+  "icon": "bx bxs-checkbox-minus",
+  "name": "checkbox-minus"
+}, {
+  "icon": "bx bx-checkbox-minus",
+  "name": "checkbox-minus"
+}, {
+  "icon": "bx bxs-speaker",
+  "name": "speaker"
+}, {
+  "icon": "bx bx-speaker",
+  "name": "speaker"
+}, {
+  "icon": "bx bxs-registered",
+  "name": "registered"
+}, {
+  "icon": "bx bx-registered",
+  "name": "registered"
+}, {
+  "icon": "bx bxs-phone-off",
+  "name": "phone-off"
+}, {
+  "icon": "bx bx-phone-off",
+  "name": "phone-off"
+}, {
+  "icon": "bx bxl-tiktok",
+  "name": "tiktok"
+}, {
+  "icon": "bx bxl-sketch",
+  "name": "sketch"
+}, {
+  "icon": "bx bxl-steam",
+  "name": "steam"
+}, {
+  "icon": "bx bxl-trip-advisor",
+  "name": "trip-advisor"
+}, {
+  "icon": "bx bxl-visual-studio",
+  "name": "visual-studio"
+}, {
+  "icon": "bx bxl-unity",
+  "name": "unity"
+}, {
+  "icon": "bx bxl-php",
+  "name": "php"
+}, {
+  "icon": "bx bxl-discord-alt",
+  "name": "discord-alt"
+}, {
+  "icon": "bx bxl-flutter",
+  "name": "flutter"
+}, {
+  "icon": "bx bxl-mastodon",
+  "name": "mastodon"
+}, {
+  "icon": "bx bxl-tailwind-css",
+  "name": "tailwind-css"
+}, {
+  "icon": "bx bx-buildings",
+  "name": "buildings"
+}, {
+  "icon": "bx bxs-buildings",
+  "name": "buildings"
+}, {
+  "icon": "bx bx-store-alt",
+  "name": "store-alt"
+}, {
+  "icon": "bx bxs-store-alt",
+  "name": "store-alt"
+}, {
+  "icon": "bx bx-bar-chart-alt-2",
+  "name": "bar-chart-alt-2"
+}, {
+  "icon": "bx bxs-bar-chart-alt-2",
+  "name": "bar-chart-alt-2"
+}, {
+  "icon": "bx bx-message-dots",
+  "name": "message-dots"
+}, {
+  "icon": "bx bxs-message-dots",
+  "name": "message-dots"
+}, {
+  "icon": "bx bx-message-rounded-dots",
+  "name": "message-rounded-dots"
+}, {
+  "icon": "bx bxs-message-rounded-dots",
+  "name": "message-rounded-dots"
+}, {
+  "icon": "bx bxs-devices",
+  "name": "devices"
+}, {
+  "icon": "bx bx-memory-card",
+  "name": "memory-card"
+}, {
+  "icon": "bx bxs-memory-card",
+  "name": "memory-card"
+}, {
+  "icon": "bx bx-wallet-alt",
+  "name": "wallet-alt"
+}, {
+  "icon": "bx bxs-wallet-alt",
+  "name": "wallet-alt"
+}, {
+  "icon": "bx bxs-bank",
+  "name": "bank"
+}, {
+  "icon": "bx bx-slideshow",
+  "name": "slideshow"
+}, {
+  "icon": "bx bxs-slideshow",
+  "name": "slideshow"
+}, {
+  "icon": "bx bx-message-square",
+  "name": "message-square"
+}, {
+  "icon": "bx bx-message-square-dots",
+  "name": "message-square-dots"
+}, {
+  "icon": "bx bxs-message-square",
+  "name": "message-square"
+}, {
+  "icon": "bx bxs-message-square-dots",
+  "name": "message-square-dots"
+}, {
+  "icon": "bx bx-book-content",
+  "name": "book-content"
+}, {
+  "icon": "bx bxs-book-content",
+  "name": "book-content"
+}, {
+  "icon": "bx bx-chat",
+  "name": "chat"
+}, {
+  "icon": "bx bxs-chat",
+  "name": "chat"
+}, {
+  "icon": "bx bx-edit-alt",
+  "name": "edit-alt"
+}, {
+  "icon": "bx bxs-edit-alt",
+  "name": "edit-alt"
+}, {
+  "icon": "bx bx-mouse-alt",
+  "name": "mouse-alt"
+}, {
+  "icon": "bx bxs-mouse-alt",
+  "name": "mouse-alt"
+}, {
+  "icon": "bx bx-bug-alt",
+  "name": "bug-alt"
+}, {
+  "icon": "bx bxs-bug-alt",
+  "name": "bug-alt"
+}, {
+  "icon": "bx bx-notepad",
+  "name": "notepad"
+}, {
+  "icon": "bx bxs-notepad",
+  "name": "notepad"
+}, {
+  "icon": "bx bx-video-recording",
+  "name": "video-recording"
+}, {
+  "icon": "bx bxs-video-recording",
+  "name": "video-recording"
+}, {
+  "icon": "bx bx-shape-square",
+  "name": "shape-square"
+}, {
+  "icon": "bx bx-shape-triangle",
+  "name": "shape-triangle"
+}, {
+  "icon": "bx bxs-direction-left",
+  "name": "direction-left"
+}, {
+  "icon": "bx bx-ghost",
+  "name": "ghost"
+}, {
+  "icon": "bx bxs-ghost",
+  "name": "ghost"
+}, {
+  "icon": "bx bx-mail-send",
+  "name": "mail-send"
+}, {
+  "icon": "bx bx-code-alt",
+  "name": "code-alt"
+}, {
+  "icon": "bx bx-grid",
+  "name": "grid"
+}, {
+  "icon": "bx bxs-quote-single-left",
+  "name": "quote-single-left"
+}, {
+  "icon": "bx bxs-quote-single-right",
+  "name": "quote-single-right"
+}, {
+  "icon": "bx bx-user-pin",
+  "name": "user-pin"
+}, {
+  "icon": "bx bxs-user-pin",
+  "name": "user-pin"
+}, {
+  "icon": "bx bx-run",
+  "name": "run"
+}, {
+  "icon": "bx bx-copy-alt",
+  "name": "copy-alt"
+}, {
+  "icon": "bx bxs-copy-alt",
+  "name": "copy-alt"
+}, {
+  "icon": "bx bx-transfer-alt",
+  "name": "transfer-alt"
+}, {
+  "icon": "bx bxs-file-doc",
+  "name": "file-doc"
+}, {
+  "icon": "bx bxs-file-html",
+  "name": "file-html"
+}, {
+  "icon": "bx bxs-comment-detail",
+  "name": "comment-detail"
+}, {
+  "icon": "bx bxs-comment-add",
+  "name": "comment-add"
+}, {
+  "icon": "bx bxs-file-css",
+  "name": "file-css"
+}, {
+  "icon": "bx bxs-file-js",
+  "name": "file-js"
+}, {
+  "icon": "bx bxs-file-json",
+  "name": "file-json"
+}, {
+  "icon": "bx bxs-file-md",
+  "name": "file-md"
+}, {
+  "icon": "bx bxs-file-txt",
+  "name": "file-txt"
+}, {
+  "icon": "bx bxs-file-png",
+  "name": "file-png"
+}, {
+  "icon": "bx bxs-file-jpg",
+  "name": "file-jpg"
+}, {
+  "icon": "bx bxs-file-gif",
+  "name": "file-gif"
+}, {
+  "icon": "bx bxs-analyse",
+  "name": "analyse"
+}, {
+  "icon": "bx bx-book-open",
+  "name": "book-open"
+}, {
+  "icon": "bx bxs-plane-take-off",
+  "name": "plane-take-off"
+}, {
+  "icon": "bx bxs-plane-land",
+  "name": "plane-land"
+}, {
+  "icon": "bx bxs-parking",
+  "name": "parking"
+}, {
+  "icon": "bx bxs-id-card",
+  "name": "id-card"
+}, {
+  "icon": "bx bxs-adjust-alt",
+  "name": "adjust-alt"
+}, {
+  "icon": "bx bx-landscape",
+  "name": "landscape"
+}, {
+  "icon": "bx bxs-landscape",
+  "name": "landscape"
+}, {
+  "icon": "bx bxs-traffic",
+  "name": "traffic"
+}, {
+  "icon": "bx bx-comment",
+  "name": "comment"
+}, {
+  "icon": "bx bxs-comment",
+  "name": "comment"
+}, {
+  "icon": "bx bx-comment-dots",
+  "name": "comment-dots"
+}, {
+  "icon": "bx bxs-comment-dots",
+  "name": "comment-dots"
+}, {
+  "icon": "bx bxs-wine",
+  "name": "wine"
+}, {
+  "icon": "bx bx-pyramid",
+  "name": "pyramid"
+}, {
+  "icon": "bx bxs-pyramid",
+  "name": "pyramid"
+}, {
+  "icon": "bx bx-cylinder",
+  "name": "cylinder"
+}, {
+  "icon": "bx bxs-cylinder",
+  "name": "cylinder"
+}, {
+  "icon": "bx bxs-graduation",
+  "name": "graduation"
+}, {
+  "icon": "bx bx-lock-alt",
+  "name": "lock-alt"
+}, {
+  "icon": "bx bxs-lock-alt",
+  "name": "lock-alt"
+}, {
+  "icon": "bx bx-lock-open-alt",
+  "name": "lock-open-alt"
+}, {
+  "icon": "bx bxs-lock-open-alt",
+  "name": "lock-open-alt"
+}, {
+  "icon": "bx bxs-hourglass-top",
+  "name": "hourglass-top"
+}, {
+  "icon": "bx bxs-hourglass-bottom",
+  "name": "hourglass-bottom"
+}, {
+  "icon": "bx bx-left-arrow-alt",
+  "name": "left-arrow-alt"
+}, {
+  "icon": "bx bx-right-arrow-alt",
+  "name": "right-arrow-alt"
+}, {
+  "icon": "bx bx-up-arrow-alt",
+  "name": "up-arrow-alt"
+}, {
+  "icon": "bx bx-down-arrow-alt",
+  "name": "down-arrow-alt"
+}, {
+  "icon": "bx bx-shape-circle",
+  "name": "shape-circle"
+}, {
+  "icon": "bx bx-cycling",
+  "name": "cycling"
+}, {
+  "icon": "bx bx-dna",
+  "name": "dna"
+}, {
+  "icon": "bx bx-bowling-ball",
+  "name": "bowling-ball"
+}, {
+  "icon": "bx bxs-bowling-ball",
+  "name": "bowling-ball"
+}, {
+  "icon": "bx bx-search-alt-2",
+  "name": "search-alt-2"
+}, {
+  "icon": "bx bxs-search-alt-2",
+  "name": "search-alt-2"
+}, {
+  "icon": "bx bx-plus-medical",
+  "name": "plus-medical"
+}, {
+  "icon": "bx bx-street-view",
+  "name": "street-view"
+}, {
+  "icon": "bx bx-droplet",
+  "name": "droplet"
+}, {
+  "icon": "bx bxs-droplet-half",
+  "name": "droplet-half"
+}, {
+  "icon": "bx bx-paint-roll",
+  "name": "paint-roll"
+}, {
+  "icon": "bx bxs-paint-roll",
+  "name": "paint-roll"
+}, {
+  "icon": "bx bx-shield-alt-2",
+  "name": "shield-alt-2"
+}, {
+  "icon": "bx bxs-shield-alt-2",
+  "name": "shield-alt-2"
+}, {
+  "icon": "bx bx-error-alt",
+  "name": "error-alt"
+}, {
+  "icon": "bx bxs-error-alt",
+  "name": "error-alt"
+}, {
+  "icon": "bx bx-square",
+  "name": "square"
+}, {
+  "icon": "bx bxs-square",
+  "name": "square"
+}, {
+  "icon": "bx bx-square-rounded",
+  "name": "square-rounded"
+}, {
+  "icon": "bx bxs-square-rounded",
+  "name": "square-rounded"
+}, {
+  "icon": "bx bx-polygon",
+  "name": "polygon"
+}, {
+  "icon": "bx bxs-polygon",
+  "name": "polygon"
+}, {
+  "icon": "bx bx-cube-alt",
+  "name": "cube-alt"
+}, {
+  "icon": "bx bxs-cube-alt",
+  "name": "cube-alt"
+}, {
+  "icon": "bx bx-cuboid",
+  "name": "cuboid"
+}, {
+  "icon": "bx bxs-cuboid",
+  "name": "cuboid"
+}, {
+  "icon": "bx bx-user-voice",
+  "name": "user-voice"
+}, {
+  "icon": "bx bxs-user-voice",
+  "name": "user-voice"
+}, {
+  "icon": "bx bx-accessibility",
+  "name": "accessibility"
+}, {
+  "icon": "bx bx-building-house",
+  "name": "building-house"
+}, {
+  "icon": "bx bxs-building-house",
+  "name": "building-house"
+}, {
+  "icon": "bx bx-doughnut-chart",
+  "name": "doughnut-chart"
+}, {
+  "icon": "bx bxs-doughnut-chart",
+  "name": "doughnut-chart"
+}, {
+  "icon": "bx bxs-circle",
+  "name": "circle"
+}, {
+  "icon": "bx bx-log-in-circle",
+  "name": "log-in-circle"
+}, {
+  "icon": "bx bxs-log-in-circle",
+  "name": "log-in-circle"
+}, {
+  "icon": "bx bx-log-out-circle",
+  "name": "log-out-circle"
+}, {
+  "icon": "bx bxs-log-out-circle",
+  "name": "log-out-circle"
+}, {
+  "icon": "bx bxs-log-in",
+  "name": "log-in"
+}, {
+  "icon": "bx bxs-log-out",
+  "name": "log-out"
+}, {
+  "icon": "bx bxs-notification",
+  "name": "notification"
+}, {
+  "icon": "bx bxs-notification-off",
+  "name": "notification-off"
+}, {
+  "icon": "bx bx-check-square",
+  "name": "check-square"
+}, {
+  "icon": "bx bxs-check-square",
+  "name": "check-square"
+}, {
+  "icon": "bx bx-message-alt",
+  "name": "message-alt"
+}, {
+  "icon": "bx bxs-message-alt",
+  "name": "message-alt"
+}, {
+  "icon": "bx bx-message-alt-dots",
+  "name": "message-alt-dots"
+}, {
+  "icon": "bx bxs-message-alt-dots",
+  "name": "message-alt-dots"
+}, {
+  "icon": "bx bx-no-entry",
+  "name": "no-entry"
+}, {
+  "icon": "bx bxs-no-entry",
+  "name": "no-entry"
+}, {
+  "icon": "bx bxs-traffic-barrier",
+  "name": "traffic-barrier"
+}, {
+  "icon": "bx bxs-component",
+  "name": "component"
+}, {
+  "icon": "bx bxs-plane-alt",
+  "name": "plane-alt"
+}, {
+  "icon": "bx bx-palette",
+  "name": "palette"
+}, {
+  "icon": "bx bxs-palette",
+  "name": "palette"
+}, {
+  "icon": "bx bx-basket",
+  "name": "basket"
+}, {
+  "icon": "bx bxs-basket",
+  "name": "basket"
+}, {
+  "icon": "bx bx-purchase-tag-alt",
+  "name": "purchase-tag-alt"
+}, {
+  "icon": "bx bxs-purchase-tag-alt",
+  "name": "purchase-tag-alt"
+}, {
+  "icon": "bx bx-receipt",
+  "name": "receipt"
+}, {
+  "icon": "bx bxs-receipt",
+  "name": "receipt"
+}, {
+  "icon": "bx bx-line-chart",
+  "name": "line-chart"
+}, {
+  "icon": "bx bx-map-pin",
+  "name": "map-pin"
+}, {
+  "icon": "bx bxs-map-pin",
+  "name": "map-pin"
+}, {
+  "icon": "bx bx-hive",
+  "name": "hive"
+}, {
+  "icon": "bx bx-band-aid",
+  "name": "band-aid"
+}, {
+  "icon": "bx bxs-band-aid",
+  "name": "band-aid"
+}, {
+  "icon": "bx bx-credit-card-alt",
+  "name": "credit-card-alt"
+}, {
+  "icon": "bx bxs-credit-card-alt",
+  "name": "credit-card-alt"
+}, {
+  "icon": "bx bxs-credit-card",
+  "name": "credit-card"
+}, {
+  "icon": "bx bx-wifi-off",
+  "name": "wifi-off"
+}, {
+  "icon": "bx bxs-paint",
+  "name": "paint"
+}, {
+  "icon": "bx bx-brightness-half",
+  "name": "brightness-half"
+}, {
+  "icon": "bx bxs-brightness-half",
+  "name": "brightness-half"
+}, {
+  "icon": "bx bx-brightness",
+  "name": "brightness"
+}, {
+  "icon": "bx bxs-brightness",
+  "name": "brightness"
+}, {
+  "icon": "bx bx-filter-alt",
+  "name": "filter-alt"
+}, {
+  "icon": "bx bx-dialpad-alt",
+  "name": "dialpad-alt"
+}, {
+  "icon": "bx bx-border-right",
+  "name": "border-right"
+}, {
+  "icon": "bx bx-border-left",
+  "name": "border-left"
+}, {
+  "icon": "bx bx-border-top",
+  "name": "border-top"
+}, {
+  "icon": "bx bx-border-bottom",
+  "name": "border-bottom"
+}, {
+  "icon": "bx bx-border-all",
+  "name": "border-all"
+}, {
+  "icon": "bx bx-mobile-landscape",
+  "name": "mobile-landscape"
+}, {
+  "icon": "bx bx-mobile-vibration",
+  "name": "mobile-vibration"
+}, {
+  "icon": "bx bxs-rectangle",
+  "name": "rectangle"
+}, {
+  "icon": "bx bxs-right-arrow",
+  "name": "right-arrow"
+}, {
+  "icon": "bx bxs-left-arrow",
+  "name": "left-arrow"
+}, {
+  "icon": "bx bxs-up-arrow",
+  "name": "up-arrow"
+}, {
+  "icon": "bx bxs-down-arrow",
+  "name": "down-arrow"
+}, {
+  "icon": "bx bxs-right-top-arrow-circle",
+  "name": "right-top-arrow-circle"
+}, {
+  "icon": "bx bxs-right-down-arrow-circle",
+  "name": "right-down-arrow-circle"
+}, {
+  "icon": "bx bxs-left-top-arrow-circle",
+  "name": "left-top-arrow-circle"
+}, {
+  "icon": "bx bxs-left-down-arrow-circle",
+  "name": "left-down-arrow-circle"
+}, {
+  "icon": "bx bxs-institution",
+  "name": "institution"
+}, {
+  "icon": "bx bxs-school",
+  "name": "school"
+}, {
+  "icon": "bx bxs-chalkboard",
+  "name": "chalkboard"
+}, {
+  "icon": "bx bxs-skip-previous-circle",
+  "name": "skip-previous-circle"
+}, {
+  "icon": "bx bxs-skip-next-circle",
+  "name": "skip-next-circle"
+}, {
+  "icon": "bx bxs-data",
+  "name": "data"
+}, {
+  "icon": "bx bxs-mobile",
+  "name": "mobile"
+}, {
+  "icon": "bx bxs-folder-minus",
+  "name": "folder-minus"
+}, {
+  "icon": "bx bxs-bell-plus",
+  "name": "bell-plus"
+}, {
+  "icon": "bx bxs-bell-minus",
+  "name": "bell-minus"
+}, {
+  "icon": "bx bxs-search",
+  "name": "search"
+}, {
+  "icon": "bx bxs-zoom-in",
+  "name": "zoom-in"
+}, {
+  "icon": "bx bxs-zoom-out",
+  "name": "zoom-out"
+}, {
+  "icon": "bx bxs-grid",
+  "name": "grid"
+}, {
+  "icon": "bx bxs-user-x",
+  "name": "user-x"
+}, {
+  "icon": "bx bxs-user-check",
+  "name": "user-check"
+}, {
+  "icon": "bx bxs-compass",
+  "name": "compass"
+}, {
+  "icon": "bx bx-gas-pump",
+  "name": "gas-pump"
+}, {
+  "icon": "bx bxs-stopwatch",
+  "name": "stopwatch"
+}, {
+  "icon": "bx bxs-timer",
+  "name": "timer"
+}, {
+  "icon": "bx bxs-time",
+  "name": "time"
+}, {
+  "icon": "bx bx-pie-chart-alt-2",
+  "name": "pie-chart-alt-2"
+}, {
+  "icon": "bx bxs-pie-chart-alt-2",
+  "name": "pie-chart-alt-2"
+}, {
+  "icon": "bx bx-time-five",
+  "name": "time-five"
+}, {
+  "icon": "bx bxs-time-five",
+  "name": "time-five"
+}, {
+  "icon": "bx bxl-instagram-alt",
+  "name": "instagram-alt"
+}, {
+  "icon": "bx bxs-bookmarks",
+  "name": "bookmarks"
+}, {
+  "icon": "bx bxs-bookmark-minus",
+  "name": "bookmark-minus"
+}, {
+  "icon": "bx bx-briefcase-alt-2",
+  "name": "briefcase-alt-2"
+}, {
+  "icon": "bx bxs-briefcase-alt-2",
+  "name": "briefcase-alt-2"
+}, {
+  "icon": "bx bx-brush-alt",
+  "name": "brush-alt"
+}, {
+  "icon": "bx bxs-calendar",
+  "name": "calendar"
+}, {
+  "icon": "bx bxs-calendar-alt",
+  "name": "calendar-alt"
+}, {
+  "icon": "bx bxs-calendar-plus",
+  "name": "calendar-plus"
+}, {
+  "icon": "bx bxs-calendar-minus",
+  "name": "calendar-minus"
+}, {
+  "icon": "bx bxs-calendar-x",
+  "name": "calendar-x"
+}, {
+  "icon": "bx bxs-calendar-check",
+  "name": "calendar-check"
+}, {
+  "icon": "bx bxs-calendar-event",
+  "name": "calendar-event"
+}, {
+  "icon": "bx bx-customize",
+  "name": "customize"
+}, {
+  "icon": "bx bxs-customize",
+  "name": "customize"
+}, {
+  "icon": "bx bxs-carousel",
+  "name": "carousel"
+}, {
+  "icon": "bx bxs-rewind-circle",
+  "name": "rewind-circle"
+}, {
+  "icon": "bx bxs-fast-forward-circle",
+  "name": "fast-forward-circle"
+}, {
+  "icon": "bx bxs-mobile-vibration",
+  "name": "mobile-vibration"
+}, {
+  "icon": "bx bxs-quote-alt-left",
+  "name": "quote-alt-left"
+}, {
+  "icon": "bx bxs-quote-alt-right",
+  "name": "quote-alt-right"
+}, {
+  "icon": "bx bxs-layout",
+  "name": "layout"
+}, {
+  "icon": "bx bx-radio",
+  "name": "radio"
+}, {
+  "icon": "bx bx-printer",
+  "name": "printer"
+}, {
+  "icon": "bx bx-sort-a-z",
+  "name": "sort-a-z"
+}, {
+  "icon": "bx bx-sort-z-a",
+  "name": "sort-z-a"
+}, {
+  "icon": "bx bx-conversation",
+  "name": "conversation"
+}, {
+  "icon": "bx bxs-brush-alt",
+  "name": "brush-alt"
+}, {
+  "icon": "bx bx-exit",
+  "name": "exit"
+}, {
+  "icon": "bx bxs-exit",
+  "name": "exit"
+}, {
+  "icon": "bx bx-extension",
+  "name": "extension"
+}, {
+  "icon": "bx bxs-extension",
+  "name": "extension"
+}, {
+  "icon": "bx bxs-file-find",
+  "name": "file-find"
+}, {
+  "icon": "bx bx-face",
+  "name": "face"
+}, {
+  "icon": "bx bxs-face",
+  "name": "face"
+}, {
+  "icon": "bx bx-file-find",
+  "name": "file-find"
+}, {
+  "icon": "bx bx-label",
+  "name": "label"
+}, {
+  "icon": "bx bxs-label",
+  "name": "label"
+}, {
+  "icon": "bx bx-check-shield",
+  "name": "check-shield"
+}, {
+  "icon": "bx bxs-check-shield",
+  "name": "check-shield"
+}, {
+  "icon": "bx bx-border-radius",
+  "name": "border-radius"
+}, {
+  "icon": "bx bx-add-to-queue",
+  "name": "add-to-queue"
+}, {
+  "icon": "bx bxs-add-to-queue",
+  "name": "add-to-queue"
+}, {
+  "icon": "bx bx-archive-in",
+  "name": "archive-in"
+}, {
+  "icon": "bx bxs-archive-in",
+  "name": "archive-in"
+}, {
+  "icon": "bx bx-archive-out",
+  "name": "archive-out"
+}, {
+  "icon": "bx bxs-archive-out",
+  "name": "archive-out"
+}, {
+  "icon": "bx bx-alarm-add",
+  "name": "alarm-add"
+}, {
+  "icon": "bx bxs-alarm-add",
+  "name": "alarm-add"
+}, {
+  "icon": "bx bx-space-bar",
+  "name": "space-bar"
+}, {
+  "icon": "bx bx-image-alt",
+  "name": "image-alt"
+}, {
+  "icon": "bx bx-image-add",
+  "name": "image-add"
+}, {
+  "icon": "bx bxs-image-add",
+  "name": "image-add"
+}, {
+  "icon": "bx bx-fridge",
+  "name": "fridge"
+}, {
+  "icon": "bx bxs-fridge",
+  "name": "fridge"
+}, {
+  "icon": "bx bx-dish",
+  "name": "dish"
+}, {
+  "icon": "bx bxs-dish",
+  "name": "dish"
+}, {
+  "icon": "bx bx-spa",
+  "name": "spa"
+}, {
+  "icon": "bx bxs-spa",
+  "name": "spa"
+}, {
+  "icon": "bx bx-cake",
+  "name": "cake"
+}, {
+  "icon": "bx bxs-cake",
+  "name": "cake"
+}, {
+  "icon": "bx bxs-city",
+  "name": "city"
+}, {
+  "icon": "bx bx-bolt-circle",
+  "name": "bolt-circle"
+}, {
+  "icon": "bx bxs-bolt-circle",
+  "name": "bolt-circle"
+}, {
+  "icon": "bx bx-tone",
+  "name": "tone"
+}, {
+  "icon": "bx bx-bitcoin",
+  "name": "bitcoin"
+}, {
+  "icon": "bx bx-lira",
+  "name": "lira"
+}, {
+  "icon": "bx bx-ruble",
+  "name": "ruble"
+}, {
+  "icon": "bx bxs-caret-up-circle",
+  "name": "caret-up-circle"
+}, {
+  "icon": "bx bxs-caret-down-circle",
+  "name": "caret-down-circle"
+}, {
+  "icon": "bx bxs-caret-left-circle",
+  "name": "caret-left-circle"
+}, {
+  "icon": "bx bxs-caret-right-circle",
+  "name": "caret-right-circle"
+}, {
+  "icon": "bx bx-rupee",
+  "name": "rupee"
+}, {
+  "icon": "bx bx-euro",
+  "name": "euro"
+}, {
+  "icon": "bx bx-pound",
+  "name": "pound"
+}, {
+  "icon": "bx bx-won",
+  "name": "won"
+}, {
+  "icon": "bx bx-yen",
+  "name": "yen"
+}, {
+  "icon": "bx bx-shekel",
+  "name": "shekel"
+}, {
+  "icon": "bx bxl-facebook-circle",
+  "name": "facebook-circle"
+}, {
+  "icon": "bx bxl-jquery",
+  "name": "jquery"
+}, {
+  "icon": "bx bxl-imdb",
+  "name": "imdb"
+}, {
+  "icon": "bx bxl-pinterest-alt",
+  "name": "pinterest-alt"
+}, {
+  "icon": "bx bxs-tone",
+  "name": "tone"
+}, {
+  "icon": "bx bx-health",
+  "name": "health"
+}, {
+  "icon": "bx bxs-baby-carriage",
+  "name": "baby-carriage"
+}, {
+  "icon": "bx bx-clinic",
+  "name": "clinic"
+}, {
+  "icon": "bx bxs-hand-up",
+  "name": "hand-up"
+}, {
+  "icon": "bx bxs-hand-right",
+  "name": "hand-right"
+}, {
+  "icon": "bx bxs-hand-down",
+  "name": "hand-down"
+}, {
+  "icon": "bx bxs-hand-left",
+  "name": "hand-left"
+}, {
+  "icon": "bx bx-male",
+  "name": "male"
+}, {
+  "icon": "bx bx-female",
+  "name": "female"
+}, {
+  "icon": "bx bx-male-sign",
+  "name": "male-sign"
+}, {
+  "icon": "bx bx-female-sign",
+  "name": "female-sign"
+}, {
+  "icon": "bx bxs-clinic",
+  "name": "clinic"
+}, {
+  "icon": "bx bxs-offer",
+  "name": "offer"
+}, {
+  "icon": "bx bx-food-tag",
+  "name": "food-tag"
+}, {
+  "icon": "bx bx-food-menu",
+  "name": "food-menu"
+}, {
+  "icon": "bx bxs-food-menu",
+  "name": "food-menu"
+}, {
+  "icon": "bx bxs-camera-plus",
+  "name": "camera-plus"
+}, {
+  "icon": "bx bxs-business",
+  "name": "business"
+}, {
+  "icon": "bx bx-meh-alt",
+  "name": "meh-alt"
+}, {
+  "icon": "bx bx-wink-tongue",
+  "name": "wink-tongue"
+}, {
+  "icon": "bx bx-happy-alt",
+  "name": "happy-alt"
+}, {
+  "icon": "bx bx-cool",
+  "name": "cool"
+}, {
+  "icon": "bx bx-tired",
+  "name": "tired"
+}, {
+  "icon": "bx bx-smile",
+  "name": "smile"
+}, {
+  "icon": "bx bx-angry",
+  "name": "angry"
+}, {
+  "icon": "bx bx-happy-heart-eyes",
+  "name": "happy-heart-eyes"
+}, {
+  "icon": "bx bx-dizzy",
+  "name": "dizzy"
+}, {
+  "icon": "bx bx-wink-smile",
+  "name": "wink-smile"
+}, {
+  "icon": "bx bx-confused",
+  "name": "confused"
+}, {
+  "icon": "bx bx-sleepy",
+  "name": "sleepy"
+}, {
+  "icon": "bx bx-shocked",
+  "name": "shocked"
+}, {
+  "icon": "bx bx-happy-beaming",
+  "name": "happy-beaming"
+}, {
+  "icon": "bx bx-meh-blank",
+  "name": "meh-blank"
+}, {
+  "icon": "bx bx-laugh",
+  "name": "laugh"
+}, {
+  "icon": "bx bx-upside-down",
+  "name": "upside-down"
+}, {
+  "icon": "bx bxs-angry",
+  "name": "angry"
+}, {
+  "icon": "bx bxs-happy-heart-eyes",
+  "name": "happy-heart-eyes"
+}, {
+  "icon": "bx bxs-dizzy",
+  "name": "dizzy"
+}, {
+  "icon": "bx bxs-wink-smile",
+  "name": "wink-smile"
+}, {
+  "icon": "bx bxs-smile",
+  "name": "smile"
+}, {
+  "icon": "bx bxs-meh",
+  "name": "meh"
+}, {
+  "icon": "bx bxs-meh-alt",
+  "name": "meh-alt"
+}, {
+  "icon": "bx bxs-confused",
+  "name": "confused"
+}, {
+  "icon": "bx bxs-sleepy",
+  "name": "sleepy"
+}, {
+  "icon": "bx bxs-sad",
+  "name": "sad"
+}, {
+  "icon": "bx bxs-happy",
+  "name": "happy"
+}, {
+  "icon": "bx bxs-shocked",
+  "name": "shocked"
+}, {
+  "icon": "bx bxs-happy-beaming",
+  "name": "happy-beaming"
+}, {
+  "icon": "bx bxs-tired",
+  "name": "tired"
+}, {
+  "icon": "bx bxs-cool",
+  "name": "cool"
+}, {
+  "icon": "bx bxs-meh-blank",
+  "name": "meh-blank"
+}, {
+  "icon": "bx bxs-laugh",
+  "name": "laugh"
+}, {
+  "icon": "bx bxs-happy-alt",
+  "name": "happy-alt"
+}, {
+  "icon": "bx bxs-upside-down",
+  "name": "upside-down"
+}, {
+  "icon": "bx bxs-wink-tongue",
+  "name": "wink-tongue"
+}, {
+  "icon": "bx bxl-adobe",
+  "name": "adobe"
+}, {
+  "icon": "bx bxl-algolia",
+  "name": "algolia"
+}, {
+  "icon": "bx bxl-audible",
+  "name": "audible"
+}, {
+  "icon": "bx bxl-figma",
+  "name": "figma"
+}, {
+  "icon": "bx bxl-etsy",
+  "name": "etsy"
+}, {
+  "icon": "bx bxl-gitlab",
+  "name": "gitlab"
+}, {
+  "icon": "bx bxl-patreon",
+  "name": "patreon"
+}, {
+  "icon": "bx bxl-redbubble",
+  "name": "redbubble"
+}, {
+  "icon": "bx bx-diamond",
+  "name": "diamond"
+}, {
+  "icon": "bx bxs-comment-error",
+  "name": "comment-error"
+}, {
+  "icon": "bx bxs-vial",
+  "name": "vial"
+}, {
+  "icon": "bx bx-align-left",
+  "name": "align-left"
+}, {
+  "icon": "bx bx-align-middle",
+  "name": "align-middle"
+}, {
+  "icon": "bx bx-align-right",
+  "name": "align-right"
+}, {
+  "icon": "bx bx-arrow-back",
+  "name": "arrow-back"
+}, {
+  "icon": "bx bx-bell-minus",
+  "name": "bell-minus"
+}, {
+  "icon": "bx bx-bell-off",
+  "name": "bell-off"
+}, {
+  "icon": "bx bx-bell-plus",
+  "name": "bell-plus"
+}, {
+  "icon": "bx bx-bell",
+  "name": "bell"
+}, {
+  "icon": "bx bx-bookmark",
+  "name": "bookmark"
+}, {
+  "icon": "bx bx-bookmarks",
+  "name": "bookmarks"
+}, {
+  "icon": "bx bx-bullseye",
+  "name": "bullseye"
+}, {
+  "icon": "bx bx-camera-off",
+  "name": "camera-off"
+}, {
+  "icon": "bx bx-camera",
+  "name": "camera"
+}, {
+  "icon": "bx bx-captions",
+  "name": "captions"
+}, {
+  "icon": "bx bx-checkbox-checked",
+  "name": "checkbox-checked"
+}, {
+  "icon": "bx bx-checkbox",
+  "name": "checkbox"
+}, {
+  "icon": "bx bx-checkbox-square",
+  "name": "checkbox-square"
+}, {
+  "icon": "bx bx-chevron-down",
+  "name": "chevron-down"
+}, {
+  "icon": "bx bx-chevron-up",
+  "name": "chevron-up"
+}, {
+  "icon": "bx bx-chevron-left",
+  "name": "chevron-left"
+}, {
+  "icon": "bx bx-chevron-right",
+  "name": "chevron-right"
+}, {
+  "icon": "bx bx-chevrons-down",
+  "name": "chevrons-down"
+}, {
+  "icon": "bx bx-chevrons-up",
+  "name": "chevrons-up"
+}, {
+  "icon": "bx bx-chevrons-right",
+  "name": "chevrons-right"
+}, {
+  "icon": "bx bx-chevrons-left",
+  "name": "chevrons-left"
+}, {
+  "icon": "bx bx-clipboard",
+  "name": "clipboard"
+}, {
+  "icon": "bx bx-code-curly",
+  "name": "code-curly"
+}, {
+  "icon": "bx bx-code",
+  "name": "code"
+}, {
+  "icon": "bx bx-coffee",
+  "name": "coffee"
+}, {
+  "icon": "bx bx-copy",
+  "name": "copy"
+}, {
+  "icon": "bx bx-copyright",
+  "name": "copyright"
+}, {
+  "icon": "bx bx-down-arrow-circle",
+  "name": "down-arrow-circle"
+}, {
+  "icon": "bx bx-error-circle",
+  "name": "error-circle"
+}, {
+  "icon": "bx bx-error",
+  "name": "error"
+}, {
+  "icon": "bx bx-exit-fullscreen",
+  "name": "exit-fullscreen"
+}, {
+  "icon": "bx bx-fast-forward-circle",
+  "name": "fast-forward-circle"
+}, {
+  "icon": "bx bx-fast-forward",
+  "name": "fast-forward"
+}, {
+  "icon": "bx bx-first-page",
+  "name": "first-page"
+}, {
+  "icon": "bx bx-folder-minus",
+  "name": "folder-minus"
+}, {
+  "icon": "bx bx-folder-plus",
+  "name": "folder-plus"
+}, {
+  "icon": "bx bx-folder",
+  "name": "folder"
+}, {
+  "icon": "bx bx-fullscreen",
+  "name": "fullscreen"
+}, {
+  "icon": "bx bx-hide",
+  "name": "hide"
+}, {
+  "icon": "bx bx-image",
+  "name": "image"
+}, {
+  "icon": "bx bx-info-circle",
+  "name": "info-circle"
+}, {
+  "icon": "bx bx-align-justify",
+  "name": "align-justify"
+}, {
+  "icon": "bx bx-key",
+  "name": "key"
+}, {
+  "icon": "bx bx-last-page",
+  "name": "last-page"
+}, {
+  "icon": "bx bx-left-arrow-circle",
+  "name": "left-arrow-circle"
+}, {
+  "icon": "bx bx-left-down-arrow-circle",
+  "name": "left-down-arrow-circle"
+}, {
+  "icon": "bx bx-left-indent",
+  "name": "left-indent"
+}, {
+  "icon": "bx bx-left-top-arrow-circle",
+  "name": "left-top-arrow-circle"
+}, {
+  "icon": "bx bx-menu",
+  "name": "menu"
+}, {
+  "icon": "bx bx-microphone",
+  "name": "microphone"
+}, {
+  "icon": "bx bx-minus-circle",
+  "name": "minus-circle"
+}, {
+  "icon": "bx bx-moon",
+  "name": "moon"
+}, {
+  "icon": "bx bx-pause-circle",
+  "name": "pause-circle"
+}, {
+  "icon": "bx bx-pause",
+  "name": "pause"
+}, {
+  "icon": "bx bx-play-circle",
+  "name": "play-circle"
+}, {
+  "icon": "bx bx-play",
+  "name": "play"
+}, {
+  "icon": "bx bx-plus-circle",
+  "name": "plus-circle"
+}, {
+  "icon": "bx bx-question-mark",
+  "name": "question-mark"
+}, {
+  "icon": "bx bx-radio-circle-marked",
+  "name": "radio-circle-marked"
+}, {
+  "icon": "bx bx-radio-circle",
+  "name": "radio-circle"
+}, {
+  "icon": "bx bx-rectangle",
+  "name": "rectangle"
+}, {
+  "icon": "bx bx-rewind",
+  "name": "rewind"
+}, {
+  "icon": "bx bx-reset",
+  "name": "reset"
+}, {
+  "icon": "bx bx-right-arrow-circle",
+  "name": "right-arrow-circle"
+}, {
+  "icon": "bx bx-right-down-arrow-circle",
+  "name": "right-down-arrow-circle"
+}, {
+  "icon": "bx bx-right-indent",
+  "name": "right-indent"
+}, {
+  "icon": "bx bx-right-top-arrow-circle",
+  "name": "right-top-arrow-circle"
+}, {
+  "icon": "bx bx-rss",
+  "name": "rss"
+}, {
+  "icon": "bx bx-search",
+  "name": "search"
+}, {
+  "icon": "bx bx-show",
+  "name": "show"
+}, {
+  "icon": "bx bx-skip-next",
+  "name": "skip-next"
+}, {
+  "icon": "bx bx-skip-previous",
+  "name": "skip-previous"
+}, {
+  "icon": "bx bx-stop-circle",
+  "name": "stop-circle"
+}, {
+  "icon": "bx bx-stop",
+  "name": "stop"
+}, {
+  "icon": "bx bx-stopwatch",
+  "name": "stopwatch"
+}, {
+  "icon": "bx bx-sync",
+  "name": "sync"
+}, {
+  "icon": "bx bx-time",
+  "name": "time"
+}, {
+  "icon": "bx bx-toggle-left",
+  "name": "toggle-left"
+}, {
+  "icon": "bx bx-toggle-right",
+  "name": "toggle-right"
+}, {
+  "icon": "bx bx-trending-down",
+  "name": "trending-down"
+}, {
+  "icon": "bx bx-trending-up",
+  "name": "trending-up"
+}, {
+  "icon": "bx bx-up-arrow-circle",
+  "name": "up-arrow-circle"
+}, {
+  "icon": "bx bx-vertical-center",
+  "name": "vertical-center"
+}, {
+  "icon": "bx bx-video",
+  "name": "video"
+}, {
+  "icon": "bx bx-volume-full",
+  "name": "volume-full"
+}, {
+  "icon": "bx bx-volume-low",
+  "name": "volume-low"
+}, {
+  "icon": "bx bx-volume-mute",
+  "name": "volume-mute"
+}, {
+  "icon": "bx bx-volume",
+  "name": "volume"
+}, {
+  "icon": "bx bx-x-circle",
+  "name": "x-circle"
+}, {
+  "icon": "bx bx-zoom-in",
+  "name": "zoom-in"
+}, {
+  "icon": "bx bx-zoom-out",
+  "name": "zoom-out"
+}, {
+  "icon": "bx bx-archive",
+  "name": "archive"
+}, {
+  "icon": "bx bx-at",
+  "name": "at"
+}, {
+  "icon": "bx bx-bar-chart-alt",
+  "name": "bar-chart-alt"
+}, {
+  "icon": "bx bx-bar-chart-square",
+  "name": "bar-chart-square"
+}, {
+  "icon": "bx bx-bar-chart",
+  "name": "bar-chart"
+}, {
+  "icon": "bx bx-basketball",
+  "name": "basketball"
+}, {
+  "icon": "bx bx-block",
+  "name": "block"
+}, {
+  "icon": "bx bx-book-bookmark",
+  "name": "book-bookmark"
+}, {
+  "icon": "bx bx-book",
+  "name": "book"
+}, {
+  "icon": "bx bx-bookmark-minus",
+  "name": "bookmark-minus"
+}, {
+  "icon": "bx bx-bookmark-plus",
+  "name": "bookmark-plus"
+}, {
+  "icon": "bx bx-briefcase",
+  "name": "briefcase"
+}, {
+  "icon": "bx bx-broadcast",
+  "name": "broadcast"
+}, {
+  "icon": "bx bx-building",
+  "name": "building"
+}, {
+  "icon": "bx bx-bug",
+  "name": "bug"
+}, {
+  "icon": "bx bx-bluetooth",
+  "name": "bluetooth"
+}, {
+  "icon": "bx bx-bulb",
+  "name": "bulb"
+}, {
+  "icon": "bx bx-buoy",
+  "name": "buoy"
+}, {
+  "icon": "bx bx-calendar-plus",
+  "name": "calendar-plus"
+}, {
+  "icon": "bx bx-calendar-check",
+  "name": "calendar-check"
+}, {
+  "icon": "bx bx-calendar-minus",
+  "name": "calendar-minus"
+}, {
+  "icon": "bx bx-calendar-x",
+  "name": "calendar-x"
+}, {
+  "icon": "bx bx-calendar",
+  "name": "calendar"
+}, {
+  "icon": "bx bx-chart",
+  "name": "chart"
+}, {
+  "icon": "bx bx-cloud-download",
+  "name": "cloud-download"
+}, {
+  "icon": "bx bx-cloud-upload",
+  "name": "cloud-upload"
+}, {
+  "icon": "bx bx-cloud",
+  "name": "cloud"
+}, {
+  "icon": "bx bx-terminal",
+  "name": "terminal"
+}, {
+  "icon": "bx bx-crosshair",
+  "name": "crosshair"
+}, {
+  "icon": "bx bx-compass",
+  "name": "compass"
+}, {
+  "icon": "bx bx-data",
+  "name": "data"
+}, {
+  "icon": "bx bx-desktop",
+  "name": "desktop"
+}, {
+  "icon": "bx bx-directions",
+  "name": "directions"
+}, {
+  "icon": "bx bx-dollar",
+  "name": "dollar"
+}, {
+  "icon": "bx bx-dots-horizontal-rounded",
+  "name": "dots-horizontal-rounded"
+}, {
+  "icon": "bx bx-dots-horizontal",
+  "name": "dots-horizontal"
+}, {
+  "icon": "bx bx-dots-vertical-rounded",
+  "name": "dots-vertical-rounded"
+}, {
+  "icon": "bx bx-dots-vertical",
+  "name": "dots-vertical"
+}, {
+  "icon": "bx bx-download",
+  "name": "download"
+}, {
+  "icon": "bx bx-envelope",
+  "name": "envelope"
+}, {
+  "icon": "bx bx-gift",
+  "name": "gift"
+}, {
+  "icon": "bx bx-globe",
+  "name": "globe"
+}, {
+  "icon": "bx bx-devices",
+  "name": "devices"
+}, {
+  "icon": "bx bx-headphone",
+  "name": "headphone"
+}, {
+  "icon": "bx bx-heart",
+  "name": "heart"
+}, {
+  "icon": "bx bx-home",
+  "name": "home"
+}, {
+  "icon": "bx bx-laptop",
+  "name": "laptop"
+}, {
+  "icon": "bx bx-layer",
+  "name": "layer"
+}, {
+  "icon": "bx bx-link-alt",
+  "name": "link-alt"
+}, {
+  "icon": "bx bx-link",
+  "name": "link"
+}, {
+  "icon": "bx bx-list-plus",
+  "name": "list-plus"
+}, {
+  "icon": "bx bx-list-ul",
+  "name": "list-ul"
+}, {
+  "icon": "bx bx-list-minus",
+  "name": "list-minus"
+}, {
+  "icon": "bx bx-lock-open",
+  "name": "lock-open"
+}, {
+  "icon": "bx bx-lock",
+  "name": "lock"
+}, {
+  "icon": "bx bx-map-alt",
+  "name": "map-alt"
+}, {
+  "icon": "bx bx-map",
+  "name": "map"
+}, {
+  "icon": "bx bx-message-rounded",
+  "name": "message-rounded"
+}, {
+  "icon": "bx bx-message",
+  "name": "message"
+}, {
+  "icon": "bx bx-mobile-alt",
+  "name": "mobile-alt"
+}, {
+  "icon": "bx bx-mobile",
+  "name": "mobile"
+}, {
+  "icon": "bx bx-navigation",
+  "name": "navigation"
+}, {
+  "icon": "bx bx-phone",
+  "name": "phone"
+}, {
+  "icon": "bx bx-pie-chart",
+  "name": "pie-chart"
+}, {
+  "icon": "bx bx-send",
+  "name": "send"
+}, {
+  "icon": "bx bx-sidebar",
+  "name": "sidebar"
+}, {
+  "icon": "bx bx-sitemap",
+  "name": "sitemap"
+}, {
+  "icon": "bx bx-spreadsheet",
+  "name": "spreadsheet"
+}, {
+  "icon": "bx bx-tab",
+  "name": "tab"
+}, {
+  "icon": "bx bx-tag",
+  "name": "tag"
+}, {
+  "icon": "bx bx-target-lock",
+  "name": "target-lock"
+}, {
+  "icon": "bx bx-tennis-ball",
+  "name": "tennis-ball"
+}, {
+  "icon": "bx bx-alarm",
+  "name": "alarm"
+}, {
+  "icon": "bx bx-upload",
+  "name": "upload"
+}, {
+  "icon": "bx bx-usb",
+  "name": "usb"
+}, {
+  "icon": "bx bx-video-off",
+  "name": "video-off"
+}, {
+  "icon": "bx bx-voicemail",
+  "name": "voicemail"
+}, {
+  "icon": "bx bx-wifi",
+  "name": "wifi"
+}, {
+  "icon": "bx bx-window-open",
+  "name": "window-open"
+}, {
+  "icon": "bx bx-window",
+  "name": "window"
+}, {
+  "icon": "bx bx-windows",
+  "name": "windows"
+}, {
+  "icon": "bx bx-duplicate",
+  "name": "duplicate"
+}, {
+  "icon": "bx bx-table",
+  "name": "table"
+}, {
+  "icon": "bx bx-x",
+  "name": "x"
+}, {
+  "icon": "bx bx-adjust",
+  "name": "adjust"
+}, {
+  "icon": "bx bx-album",
+  "name": "album"
+}, {
+  "icon": "bx bx-anchor",
+  "name": "anchor"
+}, {
+  "icon": "bx bx-award",
+  "name": "award"
+}, {
+  "icon": "bx bx-bold",
+  "name": "bold"
+}, {
+  "icon": "bx bx-calculator",
+  "name": "calculator"
+}, {
+  "icon": "bx bx-cart",
+  "name": "cart"
+}, {
+  "icon": "bx bx-check",
+  "name": "check"
+}, {
+  "icon": "bx bx-cloud-drizzle",
+  "name": "cloud-drizzle"
+}, {
+  "icon": "bx bx-cloud-light-rain",
+  "name": "cloud-light-rain"
+}, {
+  "icon": "bx bx-cloud-lightning",
+  "name": "cloud-lightning"
+}, {
+  "icon": "bx bx-cloud-rain",
+  "name": "cloud-rain"
+}, {
+  "icon": "bx bx-cloud-snow",
+  "name": "cloud-snow"
+}, {
+  "icon": "bx bx-cog",
+  "name": "cog"
+}, {
+  "icon": "bx bx-columns",
+  "name": "columns"
+}, {
+  "icon": "bx bx-credit-card",
+  "name": "credit-card"
+}, {
+  "icon": "bx bx-crop",
+  "name": "crop"
+}, {
+  "icon": "bx bx-cube",
+  "name": "cube"
+}, {
+  "icon": "bx bx-cut",
+  "name": "cut"
+}, {
+  "icon": "bx bx-detail",
+  "name": "detail"
+}, {
+  "icon": "bx bx-shield-quarter",
+  "name": "shield-quarter"
+}, {
+  "icon": "bx bx-edit",
+  "name": "edit"
+}, {
+  "icon": "bx bx-file",
+  "name": "file"
+}, {
+  "icon": "bx bx-filter",
+  "name": "filter"
+}, {
+  "icon": "bx bx-font",
+  "name": "font"
+}, {
+  "icon": "bx bx-git-branch",
+  "name": "git-branch"
+}, {
+  "icon": "bx bx-git-commit",
+  "name": "git-commit"
+}, {
+  "icon": "bx bx-git-compare",
+  "name": "git-compare"
+}, {
+  "icon": "bx bx-git-merge",
+  "name": "git-merge"
+}, {
+  "icon": "bx bx-git-pull-request",
+  "name": "git-pull-request"
+}, {
+  "icon": "bx bx-git-repo-forked",
+  "name": "git-repo-forked"
+}, {
+  "icon": "bx bx-group",
+  "name": "group"
+}, {
+  "icon": "bx bx-hash",
+  "name": "hash"
+}, {
+  "icon": "bx bx-heading",
+  "name": "heading"
+}, {
+  "icon": "bx bx-home-alt",
+  "name": "home-alt"
+}, {
+  "icon": "bx bx-italic",
+  "name": "italic"
+}, {
+  "icon": "bx bx-joystick",
+  "name": "joystick"
+}, {
+  "icon": "bx bx-link-external",
+  "name": "link-external"
+}, {
+  "icon": "bx bx-log-in",
+  "name": "log-in"
+}, {
+  "icon": "bx bx-log-out",
+  "name": "log-out"
+}, {
+  "icon": "bx bx-microphone-off",
+  "name": "microphone-off"
+}, {
+  "icon": "bx bx-minus",
+  "name": "minus"
+}, {
+  "icon": "bx bx-mouse",
+  "name": "mouse"
+}, {
+  "icon": "bx bx-move",
+  "name": "move"
+}, {
+  "icon": "bx bx-music",
+  "name": "music"
+}, {
+  "icon": "bx bx-notification",
+  "name": "notification"
+}, {
+  "icon": "bx bx-package",
+  "name": "package"
+}, {
+  "icon": "bx bx-paragraph",
+  "name": "paragraph"
+}, {
+  "icon": "bx bx-paste",
+  "name": "paste"
+}, {
+  "icon": "bx bx-pencil",
+  "name": "pencil"
+}, {
+  "icon": "bx bx-pin",
+  "name": "pin"
+}, {
+  "icon": "bx bx-plus",
+  "name": "plus"
+}, {
+  "icon": "bx bx-power-off",
+  "name": "power-off"
+}, {
+  "icon": "bx bx-pulse",
+  "name": "pulse"
+}, {
+  "icon": "bx bx-save",
+  "name": "save"
+}, {
+  "icon": "bx bx-screenshot",
+  "name": "screenshot"
+}, {
+  "icon": "bx bx-select-multiple",
+  "name": "select-multiple"
+}, {
+  "icon": "bx bx-share-alt",
+  "name": "share-alt"
+}, {
+  "icon": "bx bx-share",
+  "name": "share"
+}, {
+  "icon": "bx bx-shield-alt",
+  "name": "shield-alt"
+}, {
+  "icon": "bx bx-shield",
+  "name": "shield"
+}, {
+  "icon": "bx bx-shopping-bag",
+  "name": "shopping-bag"
+}, {
+  "icon": "bx bx-shuffle",
+  "name": "shuffle"
+}, {
+  "icon": "bx bx-sort",
+  "name": "sort"
+}, {
+  "icon": "bx bx-star",
+  "name": "star"
+}, {
+  "icon": "bx bx-sun",
+  "name": "sun"
+}, {
+  "icon": "bx bx-text",
+  "name": "text"
+}, {
+  "icon": "bx bx-trash",
+  "name": "trash"
+}, {
+  "icon": "bx bx-trophy",
+  "name": "trophy"
+}, {
+  "icon": "bx bx-underline",
+  "name": "underline"
+}, {
+  "icon": "bx bx-user-check",
+  "name": "user-check"
+}, {
+  "icon": "bx bx-user-circle",
+  "name": "user-circle"
+}, {
+  "icon": "bx bx-user-minus",
+  "name": "user-minus"
+}, {
+  "icon": "bx bx-user-plus",
+  "name": "user-plus"
+}, {
+  "icon": "bx bx-user-x",
+  "name": "user-x"
+}, {
+  "icon": "bx bx-user",
+  "name": "user"
+}, {
+  "icon": "bx bx-barcode",
+  "name": "barcode"
+}, {
+  "icon": "bx bx-crown",
+  "name": "crown"
+}, {
+  "icon": "bx bx-dislike",
+  "name": "dislike"
+}, {
+  "icon": "bx bx-down-arrow",
+  "name": "down-arrow"
+}, {
+  "icon": "bx bx-export",
+  "name": "export"
+}, {
+  "icon": "bx bxl-facebook",
+  "name": "facebook"
+}, {
+  "icon": "bx bx-first-aid",
+  "name": "first-aid"
+}, {
+  "icon": "bx bx-flag",
+  "name": "flag"
+}, {
+  "icon": "bx bxl-github",
+  "name": "github"
+}, {
+  "icon": "bx bxl-google",
+  "name": "google"
+}, {
+  "icon": "bx bx-history",
+  "name": "history"
+}, {
+  "icon": "bx bxl-instagram",
+  "name": "instagram"
+}, {
+  "icon": "bx bx-joystick-alt",
+  "name": "joystick-alt"
+}, {
+  "icon": "bx bx-left-arrow",
+  "name": "left-arrow"
+}, {
+  "icon": "bx bx-like",
+  "name": "like"
+}, {
+  "icon": "bx bx-list-check",
+  "name": "list-check"
+}, {
+  "icon": "bx bx-poll",
+  "name": "poll"
+}, {
+  "icon": "bx bx-radar",
+  "name": "radar"
+}, {
+  "icon": "bx bx-redo",
+  "name": "redo"
+}, {
+  "icon": "bx bx-reply-all",
+  "name": "reply-all"
+}, {
+  "icon": "bx bx-reply",
+  "name": "reply"
+}, {
+  "icon": "bx bx-repost",
+  "name": "repost"
+}, {
+  "icon": "bx bx-revision",
+  "name": "revision"
+}, {
+  "icon": "bx bx-right-arrow",
+  "name": "right-arrow"
+}, {
+  "icon": "bx bx-subdirectory-left",
+  "name": "subdirectory-left"
+}, {
+  "icon": "bx bx-subdirectory-right",
+  "name": "subdirectory-right"
+}, {
+  "icon": "bx bx-support",
+  "name": "support"
+}, {
+  "icon": "bx bx-timer",
+  "name": "timer"
+}, {
+  "icon": "bx bxl-twitter",
+  "name": "twitter"
+}, {
+  "icon": "bx bx-undo",
+  "name": "undo"
+}, {
+  "icon": "bx bx-up-arrow",
+  "name": "up-arrow"
+}, {
+  "icon": "bx bxl-youtube",
+  "name": "youtube"
+}, {
+  "icon": "bx bxl-whatsapp",
+  "name": "whatsapp"
+}, {
+  "icon": "bx bxl-tumblr",
+  "name": "tumblr"
+}, {
+  "icon": "bx bx-phone-call",
+  "name": "phone-call"
+}, {
+  "icon": "bx bxl-behance",
+  "name": "behance"
+}, {
+  "icon": "bx bxl-dribbble",
+  "name": "dribbble"
+}, {
+  "icon": "bx bx-aperture",
+  "name": "aperture"
+}, {
+  "icon": "bx bx-film",
+  "name": "film"
+}, {
+  "icon": "bx bx-folder-open",
+  "name": "folder-open"
+}, {
+  "icon": "bx bx-task",
+  "name": "task"
+}, {
+  "icon": "bx bx-server",
+  "name": "server"
+}, {
+  "icon": "bx bx-battery",
+  "name": "battery"
+}, {
+  "icon": "bx bx-calendar-alt",
+  "name": "calendar-alt"
+}, {
+  "icon": "bx bx-import",
+  "name": "import"
+}, {
+  "icon": "bx bx-ruler",
+  "name": "ruler"
+}, {
+  "icon": "bx bx-horizontal-center",
+  "name": "horizontal-center"
+}, {
+  "icon": "bx bx-rotate-right",
+  "name": "rotate-right"
+}, {
+  "icon": "bx bx-rename",
+  "name": "rename"
+}, {
+  "icon": "bx bx-collapse",
+  "name": "collapse"
+}, {
+  "icon": "bx bx-phone-incoming",
+  "name": "phone-incoming"
+}, {
+  "icon": "bx bx-phone-outgoing",
+  "name": "phone-outgoing"
+}, {
+  "icon": "bx bx-body",
+  "name": "body"
+}, {
+  "icon": "bx bx-cast",
+  "name": "cast"
+}, {
+  "icon": "bx bx-chip",
+  "name": "chip"
+}, {
+  "icon": "bx bx-skip-next-circle",
+  "name": "skip-next-circle"
+}, {
+  "icon": "bx bx-skip-previous-circle",
+  "name": "skip-previous-circle"
+}, {
+  "icon": "bx bx-hdd",
+  "name": "hdd"
+}, {
+  "icon": "bx bx-store",
+  "name": "store"
+}, {
+  "icon": "bx bx-globe-alt",
+  "name": "globe-alt"
+}, {
+  "icon": "bx bxl-vimeo",
+  "name": "vimeo"
+}, {
+  "icon": "bx bx-upvote",
+  "name": "upvote"
+}, {
+  "icon": "bx bx-downvote",
+  "name": "downvote"
+}, {
+  "icon": "bx bx-news",
+  "name": "news"
+}, {
+  "icon": "bx bx-pie-chart-alt",
+  "name": "pie-chart-alt"
+}, {
+  "icon": "bx bx-images",
+  "name": "images"
+}, {
+  "icon": "bx bx-purchase-tag",
+  "name": "purchase-tag"
+}, {
+  "icon": "bx bx-pen",
+  "name": "pen"
+}, {
+  "icon": "bx bx-expand",
+  "name": "expand"
+}, {
+  "icon": "bx bx-paperclip",
+  "name": "paperclip"
+}, {
+  "icon": "bx bx-closet",
+  "name": "closet"
+}, {
+  "icon": "bx bx-tv",
+  "name": "tv"
+}, {
+  "icon": "bx bx-collection",
+  "name": "collection"
+}, {
+  "icon": "bx bx-station",
+  "name": "station"
+}, {
+  "icon": "bx bx-wallet",
+  "name": "wallet"
+}, {
+  "icon": "bx bx-briefcase-alt",
+  "name": "briefcase-alt"
+}, {
+  "icon": "bx bx-hourglass",
+  "name": "hourglass"
+}, {
+  "icon": "bx bx-carousel",
+  "name": "carousel"
+}, {
+  "icon": "bx bx-infinite",
+  "name": "infinite"
+}, {
+  "icon": "bx bx-plug",
+  "name": "plug"
+}, {
+  "icon": "bx bx-notification-off",
+  "name": "notification-off"
+}, {
+  "icon": "bx bx-window-close",
+  "name": "window-close"
+}, {
+  "icon": "bx bx-command",
+  "name": "command"
+}, {
+  "icon": "bx bx-grid-alt",
+  "name": "grid-alt"
+}, {
+  "icon": "bx bx-trash-alt",
+  "name": "trash-alt"
+}, {
+  "icon": "bx bx-chalkboard",
+  "name": "chalkboard"
+}, {
+  "icon": "bx bx-loader",
+  "name": "loader"
+}, {
+  "icon": "bx bx-slider",
+  "name": "slider"
+}, {
+  "icon": "bx bx-paper-plane",
+  "name": "paper-plane"
+}, {
+  "icon": "bx bx-selection",
+  "name": "selection"
+}, {
+  "icon": "bx bxl-linkedin",
+  "name": "linkedin"
+}, {
+  "icon": "bx bx-world",
+  "name": "world"
+}, {
+  "icon": "bx bx-dock-bottom",
+  "name": "dock-bottom"
+}, {
+  "icon": "bx bx-dock-right",
+  "name": "dock-right"
+}, {
+  "icon": "bx bx-dock-top",
+  "name": "dock-top"
+}, {
+  "icon": "bx bx-dock-left",
+  "name": "dock-left"
+}, {
+  "icon": "bx bx-layout",
+  "name": "layout"
+}, {
+  "icon": "bx bxl-bitcoin",
+  "name": "bitcoin"
+}, {
+  "icon": "bx bxl-facebook-square",
+  "name": "facebook-square"
+}, {
+  "icon": "bx bx-alarm-off",
+  "name": "alarm-off"
+}, {
+  "icon": "bx bx-wrench",
+  "name": "wrench"
+}, {
+  "icon": "bx bx-loader-circle",
+  "name": "loader-circle"
+}, {
+  "icon": "bx bx-loader-alt",
+  "name": "loader-alt"
+}, {
+  "icon": "bx bx-car",
+  "name": "car"
+}, {
+  "icon": "bx bx-cart-alt",
+  "name": "cart-alt"
+}, {
+  "icon": "bx bxs-adjust",
+  "name": "adjust"
+}, {
+  "icon": "bx bxs-alarm",
+  "name": "alarm"
+}, {
+  "icon": "bx bxs-alarm-off",
+  "name": "alarm-off"
+}, {
+  "icon": "bx bxs-album",
+  "name": "album"
+}, {
+  "icon": "bx bxs-archive",
+  "name": "archive"
+}, {
+  "icon": "bx bxs-camera",
+  "name": "camera"
+}, {
+  "icon": "bx bxs-camera-off",
+  "name": "camera-off"
+}, {
+  "icon": "bx bxs-folder",
+  "name": "folder"
+}, {
+  "icon": "bx bxs-folder-plus",
+  "name": "folder-plus"
+}, {
+  "icon": "bx bxs-award",
+  "name": "award"
+}, {
+  "icon": "bx bxs-bar-chart-square",
+  "name": "bar-chart-square"
+}, {
+  "icon": "bx bxs-barcode",
+  "name": "barcode"
+}, {
+  "icon": "bx bxs-battery",
+  "name": "battery"
+}, {
+  "icon": "bx bxs-battery-charging",
+  "name": "battery-charging"
+}, {
+  "icon": "bx bxs-battery-full",
+  "name": "battery-full"
+}, {
+  "icon": "bx bxs-bell",
+  "name": "bell"
+}, {
+  "icon": "bx bxs-bell-off",
+  "name": "bell-off"
+}, {
+  "icon": "bx bxs-bolt",
+  "name": "bolt"
+}, {
+  "icon": "bx bxs-book",
+  "name": "book"
+}, {
+  "icon": "bx bxs-book-bookmark",
+  "name": "book-bookmark"
+}, {
+  "icon": "bx bxs-bookmark",
+  "name": "bookmark"
+}, {
+  "icon": "bx bxs-bookmark-plus",
+  "name": "bookmark-plus"
+}, {
+  "icon": "bx bxs-book-open",
+  "name": "book-open"
+}, {
+  "icon": "bx bxs-bookmark-star",
+  "name": "bookmark-star"
+}, {
+  "icon": "bx bxs-briefcase",
+  "name": "briefcase"
+}, {
+  "icon": "bx bxs-briefcase-alt",
+  "name": "briefcase-alt"
+}, {
+  "icon": "bx bxs-bug",
+  "name": "bug"
+}, {
+  "icon": "bx bxs-building",
+  "name": "building"
+}, {
+  "icon": "bx bxs-bulb",
+  "name": "bulb"
+}, {
+  "icon": "bx bxs-buoy",
+  "name": "buoy"
+}, {
+  "icon": "bx bxs-calculator",
+  "name": "calculator"
+}, {
+  "icon": "bx bxs-captions",
+  "name": "captions"
+}, {
+  "icon": "bx bxs-car",
+  "name": "car"
+}, {
+  "icon": "bx bxs-cart-alt",
+  "name": "cart-alt"
+}, {
+  "icon": "bx bxs-cart",
+  "name": "cart"
+}, {
+  "icon": "bx bxs-chart",
+  "name": "chart"
+}, {
+  "icon": "bx bxs-chip",
+  "name": "chip"
+}, {
+  "icon": "bx bxs-cloud-download",
+  "name": "cloud-download"
+}, {
+  "icon": "bx bxs-cloud-upload",
+  "name": "cloud-upload"
+}, {
+  "icon": "bx bxs-cloud",
+  "name": "cloud"
+}, {
+  "icon": "bx bxs-coffee",
+  "name": "coffee"
+}, {
+  "icon": "bx bxs-cog",
+  "name": "cog"
+}, {
+  "icon": "bx bxs-collection",
+  "name": "collection"
+}, {
+  "icon": "bx bxs-contact",
+  "name": "contact"
+}, {
+  "icon": "bx bxs-copy",
+  "name": "copy"
+}, {
+  "icon": "bx bxs-coupon",
+  "name": "coupon"
+}, {
+  "icon": "bx bxs-crown",
+  "name": "crown"
+}, {
+  "icon": "bx bxs-cube",
+  "name": "cube"
+}, {
+  "icon": "bx bxs-detail",
+  "name": "detail"
+}, {
+  "icon": "bx bxs-discount",
+  "name": "discount"
+}, {
+  "icon": "bx bxs-dislike",
+  "name": "dislike"
+}, {
+  "icon": "bx bxs-dock-bottom",
+  "name": "dock-bottom"
+}, {
+  "icon": "bx bxs-dock-left",
+  "name": "dock-left"
+}, {
+  "icon": "bx bxs-dock-right",
+  "name": "dock-right"
+}, {
+  "icon": "bx bxs-dock-top",
+  "name": "dock-top"
+}, {
+  "icon": "bx bxs-down-arrow-circle",
+  "name": "down-arrow-circle"
+}, {
+  "icon": "bx bxs-download",
+  "name": "download"
+}, {
+  "icon": "bx bxs-downvote",
+  "name": "downvote"
+}, {
+  "icon": "bx bxs-drink",
+  "name": "drink"
+}, {
+  "icon": "bx bxs-droplet",
+  "name": "droplet"
+}, {
+  "icon": "bx bxs-duplicate",
+  "name": "duplicate"
+}, {
+  "icon": "bx bxs-eject",
+  "name": "eject"
+}, {
+  "icon": "bx bxs-envelope",
+  "name": "envelope"
+}, {
+  "icon": "bx bxs-error-circle",
+  "name": "error-circle"
+}, {
+  "icon": "bx bxs-error",
+  "name": "error"
+}, {
+  "icon": "bx bxs-file-image",
+  "name": "file-image"
+}, {
+  "icon": "bx bxs-file",
+  "name": "file"
+}, {
+  "icon": "bx bxs-filter-alt",
+  "name": "filter-alt"
+}, {
+  "icon": "bx bxs-first-aid",
+  "name": "first-aid"
+}, {
+  "icon": "bx bxs-flag-alt",
+  "name": "flag-alt"
+}, {
+  "icon": "bx bxs-flag",
+  "name": "flag"
+}, {
+  "icon": "bx bxs-gift",
+  "name": "gift"
+}, {
+  "icon": "bx bxs-grid-alt",
+  "name": "grid-alt"
+}, {
+  "icon": "bx bxs-group",
+  "name": "group"
+}, {
+  "icon": "bx bxs-hdd",
+  "name": "hdd"
+}, {
+  "icon": "bx bxs-heart",
+  "name": "heart"
+}, {
+  "icon": "bx bxs-hide",
+  "name": "hide"
+}, {
+  "icon": "bx bxs-home",
+  "name": "home"
+}, {
+  "icon": "bx bxs-hot",
+  "name": "hot"
+}, {
+  "icon": "bx bxs-hourglass",
+  "name": "hourglass"
+}, {
+  "icon": "bx bxs-image",
+  "name": "image"
+}, {
+  "icon": "bx bxs-inbox",
+  "name": "inbox"
+}, {
+  "icon": "bx bxs-info-circle",
+  "name": "info-circle"
+}, {
+  "icon": "bx bxs-joystick-alt",
+  "name": "joystick-alt"
+}, {
+  "icon": "bx bxs-joystick",
+  "name": "joystick"
+}, {
+  "icon": "bx bxs-layer",
+  "name": "layer"
+}, {
+  "icon": "bx bxs-left-arrow-circle",
+  "name": "left-arrow-circle"
+}, {
+  "icon": "bx bxs-like",
+  "name": "like"
+}, {
+  "icon": "bx bxs-lock-open",
+  "name": "lock-open"
+}, {
+  "icon": "bx bxs-lock",
+  "name": "lock"
+}, {
+  "icon": "bx bxs-map-alt",
+  "name": "map-alt"
+}, {
+  "icon": "bx bxs-map",
+  "name": "map"
+}, {
+  "icon": "bx bxs-message-rounded",
+  "name": "message-rounded"
+}, {
+  "icon": "bx bxs-message",
+  "name": "message"
+}, {
+  "icon": "bx bxs-microphone-off",
+  "name": "microphone-off"
+}, {
+  "icon": "bx bxs-microphone",
+  "name": "microphone"
+}, {
+  "icon": "bx bxs-minus-circle",
+  "name": "minus-circle"
+}, {
+  "icon": "bx bxs-moon",
+  "name": "moon"
+}, {
+  "icon": "bx bxs-mouse",
+  "name": "mouse"
+}, {
+  "icon": "bx bxs-music",
+  "name": "music"
+}, {
+  "icon": "bx bxs-navigation",
+  "name": "navigation"
+}, {
+  "icon": "bx bxs-news",
+  "name": "news"
+}, {
+  "icon": "bx bxs-package",
+  "name": "package"
+}, {
+  "icon": "bx bxs-paper-plane",
+  "name": "paper-plane"
+}, {
+  "icon": "bx bxs-paste",
+  "name": "paste"
+}, {
+  "icon": "bx bxs-pen",
+  "name": "pen"
+}, {
+  "icon": "bx bxs-pencil",
+  "name": "pencil"
+}, {
+  "icon": "bx bxs-phone-call",
+  "name": "phone-call"
+}, {
+  "icon": "bx bxs-phone-incoming",
+  "name": "phone-incoming"
+}, {
+  "icon": "bx bxs-phone-outgoing",
+  "name": "phone-outgoing"
+}, {
+  "icon": "bx bxs-phone",
+  "name": "phone"
+}, {
+  "icon": "bx bxs-pie-chart-alt",
+  "name": "pie-chart-alt"
+}, {
+  "icon": "bx bxs-pie-chart",
+  "name": "pie-chart"
+}, {
+  "icon": "bx bxs-pin",
+  "name": "pin"
+}, {
+  "icon": "bx bxs-playlist",
+  "name": "playlist"
+}, {
+  "icon": "bx bxs-plug",
+  "name": "plug"
+}, {
+  "icon": "bx bxs-plus-circle",
+  "name": "plus-circle"
+}, {
+  "icon": "bx bxs-printer",
+  "name": "printer"
+}, {
+  "icon": "bx bxs-purchase-tag",
+  "name": "purchase-tag"
+}, {
+  "icon": "bx bxs-quote-left",
+  "name": "quote-left"
+}, {
+  "icon": "bx bxs-quote-right",
+  "name": "quote-right"
+}, {
+  "icon": "bx bxs-radio",
+  "name": "radio"
+}, {
+  "icon": "bx bxs-rename",
+  "name": "rename"
+}, {
+  "icon": "bx bxs-report",
+  "name": "report"
+}, {
+  "icon": "bx bxs-right-arrow-circle",
+  "name": "right-arrow-circle"
+}, {
+  "icon": "bx bxs-ruler",
+  "name": "ruler"
+}, {
+  "icon": "bx bxs-save",
+  "name": "save"
+}, {
+  "icon": "bx bxs-sort-alt",
+  "name": "sort-alt"
+}, {
+  "icon": "bx bxs-select-multiple",
+  "name": "select-multiple"
+}, {
+  "icon": "bx bxs-send",
+  "name": "send"
+}, {
+  "icon": "bx bxs-server",
+  "name": "server"
+}, {
+  "icon": "bx bxs-share-alt",
+  "name": "share-alt"
+}, {
+  "icon": "bx bxs-share",
+  "name": "share"
+}, {
+  "icon": "bx bxs-shield",
+  "name": "shield"
+}, {
+  "icon": "bx bxs-shopping-bag-alt",
+  "name": "shopping-bag-alt"
+}, {
+  "icon": "bx bxs-shopping-bag",
+  "name": "shopping-bag"
+}, {
+  "icon": "bx bxs-show",
+  "name": "show"
+}, {
+  "icon": "bx bx-happy",
+  "name": "happy"
+}, {
+  "icon": "bx bx-meh",
+  "name": "meh"
+}, {
+  "icon": "bx bx-sad",
+  "name": "sad"
+}, {
+  "icon": "bx bxs-spreadsheet",
+  "name": "spreadsheet"
+}, {
+  "icon": "bx bxs-star",
+  "name": "star"
+}, {
+  "icon": "bx bxs-store",
+  "name": "store"
+}, {
+  "icon": "bx bxs-sun",
+  "name": "sun"
+}, {
+  "icon": "bx bxs-t-shirt",
+  "name": "t-shirt"
+}, {
+  "icon": "bx bxs-tag-x",
+  "name": "tag-x"
+}, {
+  "icon": "bx bxs-tag",
+  "name": "tag"
+}, {
+  "icon": "bx bxs-tennis-ball",
+  "name": "tennis-ball"
+}, {
+  "icon": "bx bxs-terminal",
+  "name": "terminal"
+}, {
+  "icon": "bx bxs-to-top",
+  "name": "to-top"
+}, {
+  "icon": "bx bxs-toggle-left",
+  "name": "toggle-left"
+}, {
+  "icon": "bx bxs-toggle-right",
+  "name": "toggle-right"
+}, {
+  "icon": "bx bxs-torch",
+  "name": "torch"
+}, {
+  "icon": "bx bxs-trash-alt",
+  "name": "trash-alt"
+}, {
+  "icon": "bx bxs-trash",
+  "name": "trash"
+}, {
+  "icon": "bx bxs-trophy",
+  "name": "trophy"
+}, {
+  "icon": "bx bxs-truck",
+  "name": "truck"
+}, {
+  "icon": "bx bxs-up-arrow-circle",
+  "name": "up-arrow-circle"
+}, {
+  "icon": "bx bxs-upvote",
+  "name": "upvote"
+}, {
+  "icon": "bx bxs-user-circle",
+  "name": "user-circle"
+}, {
+  "icon": "bx bxs-user-detail",
+  "name": "user-detail"
+}, {
+  "icon": "bx bxs-user-minus",
+  "name": "user-minus"
+}, {
+  "icon": "bx bxs-user-plus",
+  "name": "user-plus"
+}, {
+  "icon": "bx bxs-user",
+  "name": "user"
+}, {
+  "icon": "bx bxs-video-off",
+  "name": "video-off"
+}, {
+  "icon": "bx bxs-video",
+  "name": "video"
+}, {
+  "icon": "bx bxs-videos",
+  "name": "videos"
+}, {
+  "icon": "bx bxs-volume-full",
+  "name": "volume-full"
+}, {
+  "icon": "bx bxs-volume-low",
+  "name": "volume-low"
+}, {
+  "icon": "bx bxs-volume-mute",
+  "name": "volume-mute"
+}, {
+  "icon": "bx bxs-volume",
+  "name": "volume"
+}, {
+  "icon": "bx bxs-wallet",
+  "name": "wallet"
+}, {
+  "icon": "bx bxs-watch-alt",
+  "name": "watch-alt"
+}, {
+  "icon": "bx bxs-watch",
+  "name": "watch"
+}, {
+  "icon": "bx bxs-widget",
+  "name": "widget"
+}, {
+  "icon": "bx bxs-wrench",
+  "name": "wrench"
+}, {
+  "icon": "bx bxs-x-circle",
+  "name": "x-circle"
+}, {
+  "icon": "bx bxs-zap",
+  "name": "zap"
+}, {
+  "icon": "bx bxs-folder-open",
+  "name": "folder-open"
+}, {
+  "icon": "bx bxs-battery-low",
+  "name": "battery-low"
+}, {
+  "icon": "bx bxs-conversation",
+  "name": "conversation"
+}, {
+  "icon": "bx bxs-dashboard",
+  "name": "dashboard"
+}, {
+  "icon": "bx bxs-file-plus",
+  "name": "file-plus"
+}, {
+  "icon": "bx bx-slider-alt",
+  "name": "slider-alt"
+}, {
+  "icon": "bx bxl-google-plus",
+  "name": "google-plus"
+}, {
+  "icon": "bx bxl-google-plus-circle",
+  "name": "google-plus-circle"
+}, {
+  "icon": "bx bxl-linkedin-square",
+  "name": "linkedin-square"
+}, {
+  "icon": "bx bxl-medium",
+  "name": "medium"
+}, {
+  "icon": "bx bxl-medium-square",
+  "name": "medium-square"
+}, {
+  "icon": "bx bxl-skype",
+  "name": "skype"
+}, {
+  "icon": "bx bxl-slack-old",
+  "name": "slack-old"
+}, {
+  "icon": "bx bxl-slack",
+  "name": "slack"
+}, {
+  "icon": "bx bxl-twitch",
+  "name": "twitch"
+}, {
+  "icon": "bx bxl-discord",
+  "name": "discord"
+}, {
+  "icon": "bx bxl-reddit",
+  "name": "reddit"
+}, {
+  "icon": "bx bxl-pinterest",
+  "name": "pinterest"
+}, {
+  "icon": "bx bxl-blogger",
+  "name": "blogger"
+}, {
+  "icon": "bx bx-certification",
+  "name": "certification"
+}, {
+  "icon": "bx bxs-certification",
+  "name": "certification"
+}, {
+  "icon": "bx bx-rocket",
+  "name": "rocket"
+}, {
+  "icon": "bx bxs-rocket",
+  "name": "rocket"
+}, {
+  "icon": "bx bx-check-circle",
+  "name": "check-circle"
+}, {
+  "icon": "bx bxs-check-circle",
+  "name": "check-circle"
+}, {
+  "icon": "bx bxs-checkbox",
+  "name": "checkbox"
+}, {
+  "icon": "bx bxs-checkbox-checked",
+  "name": "checkbox-checked"
+}, {
+  "icon": "bx bxs-star-half",
+  "name": "star-half"
+}, {
+  "icon": "bx bx-bus",
+  "name": "bus"
+}, {
+  "icon": "bx bxs-bus",
+  "name": "bus"
+}, {
+  "icon": "bx bx-check-double",
+  "name": "check-double"
+}, {
+  "icon": "bx bx-dumbbell",
+  "name": "dumbbell"
+}, {
+  "icon": "bx bx-bot",
+  "name": "bot"
+}, {
+  "icon": "bx bx-area",
+  "name": "area"
+}, {
+  "icon": "bx bxs-bot",
+  "name": "bot"
+}, {
+  "icon": "bx bxs-area",
+  "name": "area"
+}, {
+  "icon": "bx bx-bed",
+  "name": "bed"
+}, {
+  "icon": "bx bxs-bed",
+  "name": "bed"
+}, {
+  "icon": "bx bx-bath",
+  "name": "bath"
+}, {
+  "icon": "bx bxs-bath",
+  "name": "bath"
+}, {
+  "icon": "bx bx-train",
+  "name": "train"
+}, {
+  "icon": "bx bxs-train",
+  "name": "train"
+}, {
+  "icon": "bx bx-taxi",
+  "name": "taxi"
+}, {
+  "icon": "bx bxs-taxi",
+  "name": "taxi"
+}, {
+  "icon": "bx bx-movie",
+  "name": "movie"
+}, {
+  "icon": "bx bxs-movie",
+  "name": "movie"
+}, {
+  "icon": "bx bx-hotel",
+  "name": "hotel"
+}, {
+  "icon": "bx bx-planet",
+  "name": "planet"
+}, {
+  "icon": "bx bxs-planet",
+  "name": "planet"
+}, {
+  "icon": "bx bx-list-ol",
+  "name": "list-ol"
+}, {
+  "icon": "bx bx-video-plus",
+  "name": "video-plus"
+}, {
+  "icon": "bx bxs-video-plus",
+  "name": "video-plus"
+}, {
+  "icon": "bx bx-menu-alt-left",
+  "name": "menu-alt-left"
+}, {
+  "icon": "bx bx-menu-alt-right",
+  "name": "menu-alt-right"
+}, {
+  "icon": "bx bx-box",
+  "name": "box"
+}, {
+  "icon": "bx bxs-box",
+  "name": "box"
+}, {
+  "icon": "bx bxs-key",
+  "name": "key"
+}, {
+  "icon": "bx bx-restaurant",
+  "name": "restaurant"
+}, {
+  "icon": "bx bx-swim",
+  "name": "swim"
+}, {
+  "icon": "bx bx-water",
+  "name": "water"
+}, {
+  "icon": "bx bx-wind",
+  "name": "wind"
+}, {
+  "icon": "bx bx-dialpad",
+  "name": "dialpad"
+}, {
+  "icon": "bx bx-handicap",
+  "name": "handicap"
+}, {
+  "icon": "bx bx-font-size",
+  "name": "font-size"
+}, {
+  "icon": "bx bx-code-block",
+  "name": "code-block"
+}, {
+  "icon": "bx bx-photo-album",
+  "name": "photo-album"
+}, {
+  "icon": "bx bxs-photo-album",
+  "name": "photo-album"
+}, {
+  "icon": "bx bxs-bell-ring",
+  "name": "bell-ring"
+}, {
+  "icon": "bx bxl-apple",
+  "name": "apple"
+}, {
+  "icon": "bx bxl-android",
+  "name": "android"
+}, {
+  "icon": "bx bxl-play-store",
+  "name": "play-store"
+}, {
+  "icon": "bx bxl-windows",
+  "name": "windows"
+}, {
+  "icon": "bx bxl-vk",
+  "name": "vk"
+}, {
+  "icon": "bx bxl-pocket",
+  "name": "pocket"
+}, {
+  "icon": "bx bx-strikethrough",
+  "name": "strikethrough"
+}, {
+  "icon": "bx bx-file-blank",
+  "name": "file-blank"
+}, {
+  "icon": "bx bxs-file-blank",
+  "name": "file-blank"
+}, {
+  "icon": "bx bx-highlight",
+  "name": "highlight"
+}, {
+  "icon": "bx bx-font-color",
+  "name": "font-color"
+}, {
+  "icon": "bx bx-fingerprint",
+  "name": "fingerprint"
+}, {
+  "icon": "bx bx-transfer",
+  "name": "transfer"
+}, {
+  "icon": "bx bx-circle",
+  "name": "circle"
+}, {
+  "icon": "bx bxs-edit",
+  "name": "edit"
+}, {
+  "icon": "bx bx-ball",
+  "name": "ball"
+}, {
+  "icon": "bx bxs-ball",
+  "name": "ball"
+}, {
+  "icon": "bx bx-football",
+  "name": "football"
+}, {
+  "icon": "bx bxs-film",
+  "name": "film"
+}, {
+  "icon": "bx bx-dollar-circle",
+  "name": "dollar-circle"
+}, {
+  "icon": "bx bxs-dollar-circle",
+  "name": "dollar-circle"
+}, {
+  "icon": "bx bxs-skull",
+  "name": "skull"
+}, {
+  "icon": "bx bxl-messenger",
+  "name": "messenger"
+}, {
+  "icon": "bx bx-search-alt",
+  "name": "search-alt"
+}, {
+  "icon": "bx bxs-image-alt",
+  "name": "image-alt"
+}, {
+  "icon": "bx bxs-microphone-alt",
+  "name": "microphone-alt"
+}, {
+  "icon": "bx bx-analyse",
+  "name": "analyse"
+}, {
+  "icon": "bx bxs-x-square",
+  "name": "x-square"
+}, {
+  "icon": "bx bxs-plus-square",
+  "name": "plus-square"
+}, {
+  "icon": "bx bxs-minus-square",
+  "name": "minus-square"
+}, {
+  "icon": "bx bx-disc",
+  "name": "disc"
+}, {
+  "icon": "bx bxs-disc",
+  "name": "disc"
+}, {
+  "icon": "bx bx-equalizer",
+  "name": "equalizer"
+}, {
+  "icon": "bx bx-stats",
+  "name": "stats"
+}, {
+  "icon": "bx bx-move-horizontal",
+  "name": "move-horizontal"
+}, {
+  "icon": "bx bx-move-vertical",
+  "name": "move-vertical"
+}, {
+  "icon": "bx bxs-flame",
+  "name": "flame"
+}, {
+  "icon": "bx bx-grid-horizontal",
+  "name": "grid-horizontal"
+}, {
+  "icon": "bx bx-grid-vertical",
+  "name": "grid-vertical"
+}, {
+  "icon": "bx bx-grid-small",
+  "name": "grid-small"
+}, {
+  "icon": "bx bx-badge",
+  "name": "badge"
+}, {
+  "icon": "bx bxs-badge",
+  "name": "badge"
+}, {
+  "icon": "bx bx-id-card",
+  "name": "id-card"
+}, {
+  "icon": "bx bx-sort-up",
+  "name": "sort-up"
+}, {
+  "icon": "bx bx-sort-down",
+  "name": "sort-down"
+}, {
+  "icon": "bx bx-note",
+  "name": "note"
+}, {
+  "icon": "bx bxs-note",
+  "name": "note"
+}, {
+  "icon": "bx bx-test-tube",
+  "name": "test-tube"
+}, {
+  "icon": "bx bx-help-circle",
+  "name": "help-circle"
+}, {
+  "icon": "bx bxs-help-circle",
+  "name": "help-circle"
+}, {
+  "icon": "bx bx-card",
+  "name": "card"
+}, {
+  "icon": "bx bxs-card",
+  "name": "card"
+}, {
+  "icon": "bx bx-rewind-circle",
+  "name": "rewind-circle"
+}, {
+  "icon": "bx bx-magnet",
+  "name": "magnet"
+}, {
+  "icon": "bx bxs-magnet",
+  "name": "magnet"
+}, {
+  "icon": "bx bxl-500px",
+  "name": "500px"
+}, {
+  "icon": "bx bxl-angular",
+  "name": "angular"
+}, {
+  "icon": "bx bxl-codepen",
+  "name": "codepen"
+}, {
+  "icon": "bx bxl-creative-commons",
+  "name": "creative-commons"
+}, {
+  "icon": "bx bxl-digitalocean",
+  "name": "digitalocean"
+}, {
+  "icon": "bx bxl-deviantart",
+  "name": "deviantart"
+}, {
+  "icon": "bx bxl-discourse",
+  "name": "discourse"
+}, {
+  "icon": "bx bxl-dropbox",
+  "name": "dropbox"
+}, {
+  "icon": "bx bxl-drupal",
+  "name": "drupal"
+}, {
+  "icon": "bx bxl-ebay",
+  "name": "ebay"
+}, {
+  "icon": "bx bxl-amazon",
+  "name": "amazon"
+}, {
+  "icon": "bx bxl-digg",
+  "name": "digg"
+}, {
+  "icon": "bx bxl-unsplash",
+  "name": "unsplash"
+}, {
+  "icon": "bx bxl-wikipedia",
+  "name": "wikipedia"
+}, {
+  "icon": "bx bxl-sass",
+  "name": "sass"
+}, {
+  "icon": "bx bxl-foursquare",
+  "name": "foursquare"
+}, {
+  "icon": "bx bxl-invision",
+  "name": "invision"
+}, {
+  "icon": "bx bxl-opera",
+  "name": "opera"
+}, {
+  "icon": "bx bxl-airbnb",
+  "name": "airbnb"
+}, {
+  "icon": "bx bxl-yelp",
+  "name": "yelp"
+}, {
+  "icon": "bx bxl-quora",
+  "name": "quora"
+}, {
+  "icon": "bx bxl-git",
+  "name": "git"
+}, {
+  "icon": "bx bxl-html5",
+  "name": "html5"
+}, {
+  "icon": "bx bxl-product-hunt",
+  "name": "product-hunt"
+}, {
+  "icon": "bx bxl-magento",
+  "name": "magento"
+}, {
+  "icon": "bx bxl-stack-overflow",
+  "name": "stack-overflow"
+}, {
+  "icon": "bx bxl-firefox",
+  "name": "firefox"
+}, {
+  "icon": "bx bxl-javascript",
+  "name": "javascript"
+}, {
+  "icon": "bx bxl-nodejs",
+  "name": "nodejs"
+}, {
+  "icon": "bx bxl-kickstarter",
+  "name": "kickstarter"
+}, {
+  "icon": "bx bxl-vuejs",
+  "name": "vuejs"
+}, {
+  "icon": "bx bxl-bing",
+  "name": "bing"
+}, {
+  "icon": "bx bxl-react",
+  "name": "react"
+}, {
+  "icon": "bx bxl-periscope",
+  "name": "periscope"
+}, {
+  "icon": "bx bxl-wordpress",
+  "name": "wordpress"
+}, {
+  "icon": "bx bxl-telegram",
+  "name": "telegram"
+}, {
+  "icon": "bx bxl-stripe",
+  "name": "stripe"
+}, {
+  "icon": "bx bxl-edge",
+  "name": "edge"
+}, {
+  "icon": "bx bxl-paypal",
+  "name": "paypal"
+}, {
+  "icon": "bx bxl-internet-explorer",
+  "name": "internet-explorer"
+}, {
+  "icon": "bx bxl-joomla",
+  "name": "joomla"
+}, {
+  "icon": "bx bxl-dailymotion",
+  "name": "dailymotion"
+}, {
+  "icon": "bx bxl-chrome",
+  "name": "chrome"
+}, {
+  "icon": "bx bxl-baidu",
+  "name": "baidu"
+}, {
+  "icon": "bx bxl-visa",
+  "name": "visa"
+}, {
+  "icon": "bx bxl-mastercard",
+  "name": "mastercard"
+}, {
+  "icon": "bx bxl-redux",
+  "name": "redux"
+}, {
+  "icon": "bx bxl-bootstrap",
+  "name": "bootstrap"
+}, {
+  "icon": "bx bxl-yahoo",
+  "name": "yahoo"
+}, {
+  "icon": "bx bxl-microsoft",
+  "name": "microsoft"
+}, {
+  "icon": "bx bxl-css3",
+  "name": "css3"
+}, {
+  "icon": "bx bxl-jsfiddle",
+  "name": "jsfiddle"
+}, {
+  "icon": "bx bxl-shopify",
+  "name": "shopify"
+}, {
+  "icon": "bx bxl-flickr",
+  "name": "flickr"
+}, {
+  "icon": "bx bxl-less",
+  "name": "less"
+}, {
+  "icon": "bx bxl-snapchat",
+  "name": "snapchat"
+}, {
+  "icon": "bx bxl-soundcloud",
+  "name": "soundcloud"
+}, {
+  "icon": "bx bxl-spotify",
+  "name": "spotify"
+}, {
+  "icon": "bx bxl-trello",
+  "name": "trello"
+}, {
+  "icon": "bx bxl-wix",
+  "name": "wix"
+}, {
+  "icon": "bx bxl-mailchimp",
+  "name": "mailchimp"
+}, {
+  "icon": "bx bxl-medium-old",
+  "name": "medium-old"
+}, {
+  "icon": "bx bxl-squarespace",
+  "name": "squarespace"
+}, {
+  "icon": "bx bxl-whatsapp-square",
+  "name": "whatsapp-square"
+}, {
+  "icon": "bx bxl-flickr-square",
+  "name": "flickr-square"
+}, {
+  "icon": "bx bxs-ambulance",
+  "name": "ambulance"
+}, {
+  "icon": "bx bxs-left-arrow-square",
+  "name": "left-arrow-square"
+}, {
+  "icon": "bx bxs-up-arrow-square",
+  "name": "up-arrow-square"
+}, {
+  "icon": "bx bxs-down-arrow-square",
+  "name": "down-arrow-square"
+}, {
+  "icon": "bx bxs-right-arrow-square",
+  "name": "right-arrow-square"
+}, {
+  "icon": "bx bxs-user-badge",
+  "name": "user-badge"
+}, {
+  "icon": "bx bx-calendar-event",
+  "name": "calendar-event"
+}, {
+  "icon": "bx bx-caret-left",
+  "name": "caret-left"
+}, {
+  "icon": "bx bx-caret-up",
+  "name": "caret-up"
+}, {
+  "icon": "bx bx-caret-right",
+  "name": "caret-right"
+}, {
+  "icon": "bx bx-caret-down",
+  "name": "caret-down"
+}, {
+  "icon": "bx bxs-gas-pump",
+  "name": "gas-pump"
+}, {
+  "icon": "bx bxs-landmark",
+  "name": "landmark"
+}, {
+  "icon": "bx bx-show-alt",
+  "name": "show-alt"
+}, {
+  "icon": "bx bx-badge-check",
+  "name": "badge-check"
+}, {
+  "icon": "bx bxs-badge-check",
+  "name": "badge-check"
+}, {
+  "icon": "bx bx-rotate-left",
+  "name": "rotate-left"
+}, {
+  "icon": "bx bxs-coffee-alt",
+  "name": "coffee-alt"
+}, {
+  "icon": "bx bx-brush",
+  "name": "brush"
+}, {
+  "icon": "bx bxs-brush",
+  "name": "brush"
+}, {
+  "icon": "bx bxs-keyboard",
+  "name": "keyboard"
+}, {
+  "icon": "bx bxs-megaphone",
+  "name": "megaphone"
+}, {
+  "icon": "bx bxs-directions",
+  "name": "directions"
+}, {
+  "icon": "bx bxs-direction-right",
+  "name": "direction-right"
+}, {
+  "icon": "bx bx-unlink",
+  "name": "unlink"
+}, {
+  "icon": "bx bx-paint",
+  "name": "paint"
+}, {
+  "icon": "bx bx-joystick-button",
+  "name": "joystick-button"
+}, {
+  "icon": "bx bxs-joystick-button",
+  "name": "joystick-button"
+}, {
+  "icon": "bx bx-font-family",
+  "name": "font-family"
+}, {
+  "icon": "bx bxs-flask",
+  "name": "flask"
+}, {
+  "icon": "bx bxs-capsule",
+  "name": "capsule"
+}, {
+  "icon": "bx bxs-color-fill",
+  "name": "color-fill"
+}, {
+  "icon": "bx bxs-hotel",
+  "name": "hotel"
+}, {
+  "icon": "bx bxs-magic-wand",
+  "name": "magic-wand"
+}, {
+  "icon": "bx bx-repeat",
+  "name": "repeat"
+}, {
+  "icon": "bx bxs-eraser",
+  "name": "eraser"
+}, {
+  "icon": "bx bxs-cloud-rain",
+  "name": "cloud-rain"
+}, {
+  "icon": "bx bxs-cloud-lightning",
+  "name": "cloud-lightning"
+}, {
+  "icon": "bx bxs-eyedropper",
+  "name": "eyedropper"
+}, {
+  "icon": "bx bxs-user-rectangle",
+  "name": "user-rectangle"
+}, {
+  "icon": "bx bxs-plane",
+  "name": "plane"
+}, {
+  "icon": "bx bxs-tree",
+  "name": "tree"
+}, {
+  "icon": "bx bxs-factory",
+  "name": "factory"
+}, {
+  "icon": "bx bxs-ship",
+  "name": "ship"
+}, {
+  "icon": "bx bx-walk",
+  "name": "walk"
+}, {
+  "icon": "bx bxs-yin-yang",
+  "name": "yin-yang"
+}, {
+  "icon": "bx bxs-file-pdf",
+  "name": "file-pdf"
+}, {
+  "icon": "bx bx-money",
+  "name": "money"
+}, {
+  "icon": "bx bx-home-circle",
+  "name": "home-circle"
+}, {
+  "icon": "bx bxs-home-circle",
+  "name": "home-circle"
+}, {
+  "icon": "bx bx-location-plus",
+  "name": "location-plus"
+}, {
+  "icon": "bx bxs-location-plus",
+  "name": "location-plus"
+}, {
+  "icon": "bx bx-arch",
+  "name": "arch"
+}, {
+  "icon": "bx bxs-arch",
+  "name": "arch"
+}, {
+  "icon": "bx bx-atom",
+  "name": "atom"
+}, {
+  "icon": "bx bxs-badge-dollar",
+  "name": "badge-dollar"
+}, {
+  "icon": "bx bx-baseball",
+  "name": "baseball"
+}, {
+  "icon": "bx bx-beer",
+  "name": "beer"
+}, {
+  "icon": "bx bxs-beer",
+  "name": "beer"
+}, {
+  "icon": "bx bx-bible",
+  "name": "bible"
+}, {
+  "icon": "bx bxs-bible",
+  "name": "bible"
+}, {
+  "icon": "bx bx-bomb",
+  "name": "bomb"
+}, {
+  "icon": "bx bxs-bomb",
+  "name": "bomb"
+}, {
+  "icon": "bx bx-bus-school",
+  "name": "bus-school"
+}, {
+  "icon": "bx bxs-bus-school",
+  "name": "bus-school"
+}, {
+  "icon": "bx bx-cabinet",
+  "name": "cabinet"
+}, {
+  "icon": "bx bxs-cabinet",
+  "name": "cabinet"
+}, {
+  "icon": "bx bx-calendar-edit",
+  "name": "calendar-edit"
+}, {
+  "icon": "bx bxs-calendar-edit",
+  "name": "calendar-edit"
+}, {
+  "icon": "bx bxs-car-wash",
+  "name": "car-wash"
+}, {
+  "icon": "bx bxs-car-garage",
+  "name": "car-garage"
+}, {
+  "icon": "bx bxs-car-mechanic",
+  "name": "car-mechanic"
+}, {
+  "icon": "bx bxs-car-crash",
+  "name": "car-crash"
+}, {
+  "icon": "bx bx-coffee-togo",
+  "name": "coffee-togo"
+}, {
+  "icon": "bx bxs-coffee-togo",
+  "name": "coffee-togo"
+}, {
+  "icon": "bx bxs-chess",
+  "name": "chess"
+}, {
+  "icon": "bx bxs-dryer",
+  "name": "dryer"
+}, {
+  "icon": "bx bxs-washer",
+  "name": "washer"
+}, {
+  "icon": "bx bx-pointer",
+  "name": "pointer"
+}, {
+  "icon": "bx bxs-pointer",
+  "name": "pointer"
+}, {
+  "icon": "bx bx-microchip",
+  "name": "microchip"
+}, {
+  "icon": "bx bxs-microchip",
+  "name": "microchip"
+}, {
+  "icon": "bx bxs-piano",
+  "name": "piano"
+}, {
+  "icon": "bx bxs-file-export",
+  "name": "file-export"
+}, {
+  "icon": "bx bxs-file-import",
+  "name": "file-import"
+}, {
+  "icon": "bx bxs-flag-checkered",
+  "name": "flag-checkered"
+}, {
+  "icon": "bx bx-heart-circle",
+  "name": "heart-circle"
+}, {
+  "icon": "bx bxs-heart-circle",
+  "name": "heart-circle"
+}, {
+  "icon": "bx bx-heart-square",
+  "name": "heart-square"
+}, {
+  "icon": "bx bxs-heart-square",
+  "name": "heart-square"
+}, {
+  "icon": "bx bx-home-heart",
+  "name": "home-heart"
+}, {
+  "icon": "bx bxs-home-heart",
+  "name": "home-heart"
+}, {
+  "icon": "bx bx-info-square",
+  "name": "info-square"
+}, {
+  "icon": "bx bxs-info-square",
+  "name": "info-square"
+}, {
+  "icon": "bx bx-layer-plus",
+  "name": "layer-plus"
+}, {
+  "icon": "bx bxs-layer-plus",
+  "name": "layer-plus"
+}, {
+  "icon": "bx bx-layer-minus",
+  "name": "layer-minus"
+}, {
+  "icon": "bx bxs-layer-minus",
+  "name": "layer-minus"
+}, {
+  "icon": "bx bx-recycle",
+  "name": "recycle"
+}, {
+  "icon": "bx bx-traffic-cone",
+  "name": "traffic-cone"
+}, {
+  "icon": "bx bxs-traffic-cone",
+  "name": "traffic-cone"
+}, {
+  "icon": "bx bx-wifi-2",
+  "name": "wifi-2"
+}, {
+  "icon": "bx bx-wifi-1",
+  "name": "wifi-1"
+}, {
+  "icon": "bx bx-wifi-0",
+  "name": "wifi-0"
+}, {
+  "icon": "bx bx-mask",
+  "name": "mask"
+}, {
+  "icon": "bx bxs-mask",
+  "name": "mask"
+}, {
+  "icon": "bx bx-low-vision",
+  "name": "low-vision"
+}, {
+  "icon": "bx bxs-low-vision",
+  "name": "low-vision"
+}, {
+  "icon": "bx bxs-radiation",
+  "name": "radiation"
+}, {
+  "icon": "bx bx-been-here",
+  "name": "been-here"
+}, {
+  "icon": "bx bxs-been-here",
+  "name": "been-here"
+}, {
+  "icon": "bx bx-current-location",
+  "name": "current-location"
+}, {
+  "icon": "bx bx-arrow-from-top",
+  "name": "arrow-from-top"
+}, {
+  "icon": "bx bxs-arrow-from-top",
+  "name": "arrow-from-top"
+}, {
+  "icon": "bx bx-arrow-from-bottom",
+  "name": "arrow-from-bottom"
+}, {
+  "icon": "bx bxs-arrow-from-bottom",
+  "name": "arrow-from-bottom"
+}, {
+  "icon": "bx bx-arrow-from-left",
+  "name": "arrow-from-left"
+}, {
+  "icon": "bx bxs-arrow-from-left",
+  "name": "arrow-from-left"
+}, {
+  "icon": "bx bx-arrow-from-right",
+  "name": "arrow-from-right"
+}, {
+  "icon": "bx bxs-arrow-from-right",
+  "name": "arrow-from-right"
+}, {
+  "icon": "bx bx-arrow-to-right",
+  "name": "arrow-to-right"
+}, {
+  "icon": "bx bxs-arrow-to-right",
+  "name": "arrow-to-right"
+}, {
+  "icon": "bx bx-arrow-to-left",
+  "name": "arrow-to-left"
+}, {
+  "icon": "bx bxs-arrow-to-left",
+  "name": "arrow-to-left"
+}, {
+  "icon": "bx bx-arrow-to-top",
+  "name": "arrow-to-top"
+}, {
+  "icon": "bx bxs-arrow-to-top",
+  "name": "arrow-to-top"
+}, {
+  "icon": "bx bx-arrow-to-bottom",
+  "name": "arrow-to-bottom"
+}, {
+  "icon": "bx bxs-arrow-to-bottom",
+  "name": "arrow-to-bottom"
+}, {
+  "icon": "bx bx-book-reader",
+  "name": "book-reader"
+}, {
+  "icon": "bx bxs-book-reader",
+  "name": "book-reader"
+}, {
+  "icon": "bx bxs-edit-location",
+  "name": "edit-location"
+}, {
+  "icon": "bx bxs-ev-station",
+  "name": "ev-station"
+}, {
+  "icon": "bx bxs-shapes",
+  "name": "shapes"
+}, {
+  "icon": "bx bxs-florist",
+  "name": "florist"
+}, {
+  "icon": "bx bxs-pizza",
+  "name": "pizza"
+}, {
+  "icon": "bx bx-scan",
+  "name": "scan"
+}, {
+  "icon": "bx bx-calendar-week",
+  "name": "calendar-week"
+}, {
+  "icon": "bx bxs-calendar-week",
+  "name": "calendar-week"
+}, {
+  "icon": "bx bx-glasses",
+  "name": "glasses"
+}, {
+  "icon": "bx bx-glasses-alt",
+  "name": "glasses-alt"
+}, {
+  "icon": "bx bx-border-none",
+  "name": "border-none"
+}, {
+  "icon": "bx bx-border-inner",
+  "name": "border-inner"
+}, {
+  "icon": "bx bx-dice-1",
+  "name": "dice-1"
+}, {
+  "icon": "bx bxs-dice-1",
+  "name": "dice-1"
+}, {
+  "icon": "bx bx-dice-2",
+  "name": "dice-2"
+}, {
+  "icon": "bx bxs-dice-2",
+  "name": "dice-2"
+}, {
+  "icon": "bx bx-dice-3",
+  "name": "dice-3"
+}, {
+  "icon": "bx bxs-dice-3",
+  "name": "dice-3"
+}, {
+  "icon": "bx bx-dice-4",
+  "name": "dice-4"
+}, {
+  "icon": "bx bxs-dice-4",
+  "name": "dice-4"
+}, {
+  "icon": "bx bx-dice-5",
+  "name": "dice-5"
+}, {
+  "icon": "bx bxs-dice-5",
+  "name": "dice-5"
+}, {
+  "icon": "bx bx-dice-6",
+  "name": "dice-6"
+}, {
+  "icon": "bx bxs-dice-6",
+  "name": "dice-6"
+}, {
+  "icon": "bx bx-webcam",
+  "name": "webcam"
+}, {
+  "icon": "bx bxs-webcam",
+  "name": "webcam"
+}, {
+  "icon": "bx bx-spray-can",
+  "name": "spray-can"
+}, {
+  "icon": "bx bxs-spray-can",
+  "name": "spray-can"
+}, {
+  "icon": "bx bxs-file-archive",
+  "name": "file-archive"
+}, {
+  "icon": "bx bx-sticker",
+  "name": "sticker"
+}, {
+  "icon": "bx bxs-sticker",
+  "name": "sticker"
+}, {
+  "icon": "bx bx-tachometer",
+  "name": "tachometer"
+}, {
+  "icon": "bx bxs-tachometer",
+  "name": "tachometer"
+}, {
+  "icon": "bx bxs-thermometer",
+  "name": "thermometer"
+}, {
+  "icon": "bx bx-game",
+  "name": "game"
+}, {
+  "icon": "bx bxs-game",
+  "name": "game"
+}, {
+  "icon": "bx bx-abacus",
+  "name": "abacus"
+}, {
+  "icon": "bx bx-alarm-snooze",
+  "name": "alarm-snooze"
+}, {
+  "icon": "bx bxs-alarm-snooze",
+  "name": "alarm-snooze"
+}, {
+  "icon": "bx bx-alarm-exclamation",
+  "name": "alarm-exclamation"
+}, {
+  "icon": "bx bxs-alarm-exclamation",
+  "name": "alarm-exclamation"
+}, {
+  "icon": "bx bxs-chevrons-left",
+  "name": "chevrons-left"
+}, {
+  "icon": "bx bxs-chevrons-right",
+  "name": "chevrons-right"
+}, {
+  "icon": "bx bxs-chevrons-up",
+  "name": "chevrons-up"
+}, {
+  "icon": "bx bxs-chevrons-down",
+  "name": "chevrons-down"
+}, {
+  "icon": "bx bxs-chevron-down",
+  "name": "chevron-down"
+}, {
+  "icon": "bx bxs-chevron-up",
+  "name": "chevron-up"
+}, {
+  "icon": "bx bxs-chevron-right",
+  "name": "chevron-right"
+}, {
+  "icon": "bx bxs-chevron-left",
+  "name": "chevron-left"
+}, {
+  "icon": "bx bxs-guitar-amp",
+  "name": "guitar-amp"
+}, {
+  "icon": "bx bxs-up-arrow-alt",
+  "name": "up-arrow-alt"
+}, {
+  "icon": "bx bxs-down-arrow-alt",
+  "name": "down-arrow-alt"
+}, {
+  "icon": "bx bxs-left-arrow-alt",
+  "name": "left-arrow-alt"
+}, {
+  "icon": "bx bxs-right-arrow-alt",
+  "name": "right-arrow-alt"
+}, {
+  "icon": "bx bx-medal",
+  "name": "medal"
+}, {
+  "icon": "bx bxs-medal",
+  "name": "medal"
+}, {
+  "icon": "bx bxs-shopping-bags",
+  "name": "shopping-bags"
+}, {
+  "icon": "bx bxs-baseball",
+  "name": "baseball"
+}, {
+  "icon": "bx bx-task-x",
+  "name": "task-x"
+}, {
+  "icon": "bx bxs-basketball",
+  "name": "basketball"
+}, {
+  "icon": "bx bx-barcode-reader",
+  "name": "barcode-reader"
+}, {
+  "icon": "bx bx-blanket",
+  "name": "blanket"
+}, {
+  "icon": "bx bxs-blanket",
+  "name": "blanket"
+}, {
+  "icon": "bx bxs-binoculars",
+  "name": "binoculars"
+}, {
+  "icon": "bx bx-bone",
+  "name": "bone"
+}, {
+  "icon": "bx bxs-bone",
+  "name": "bone"
+}, {
+  "icon": "bx bx-bong",
+  "name": "bong"
+}, {
+  "icon": "bx bxs-bong",
+  "name": "bong"
+}, {
+  "icon": "bx bx-book-alt",
+  "name": "book-alt"
+}, {
+  "icon": "bx bxs-book-alt",
+  "name": "book-alt"
+}, {
+  "icon": "bx bx-book-heart",
+  "name": "book-heart"
+}, {
+  "icon": "bx bxs-book-heart",
+  "name": "book-heart"
+}, {
+  "icon": "bx bx-book-add",
+  "name": "book-add"
+}, {
+  "icon": "bx bxs-book-add",
+  "name": "book-add"
+}, {
+  "icon": "bx bx-bracket",
+  "name": "bracket"
+}, {
+  "icon": "bx bx-brain",
+  "name": "brain"
+}, {
+  "icon": "bx bxs-brain",
+  "name": "brain"
+}, {
+  "icon": "bx bx-border-outer",
+  "name": "border-outer"
+}, {
+  "icon": "bx bx-braille",
+  "name": "braille"
+}, {
+  "icon": "bx bx-window-alt",
+  "name": "window-alt"
+}, {
+  "icon": "bx bxs-window-alt",
+  "name": "window-alt"
+}, {
+  "icon": "bx bx-calendar-heart",
+  "name": "calendar-heart"
+}, {
+  "icon": "bx bxs-calendar-heart",
+  "name": "calendar-heart"
+}, {
+  "icon": "bx bx-wine",
+  "name": "wine"
+}, {
+  "icon": "bx bx-vial",
+  "name": "vial"
+}, {
+  "icon": "bx bx-color-fill",
+  "name": "color-fill"
+}, {
+  "icon": "bx bx-capsule",
+  "name": "capsule"
+}, {
+  "icon": "bx bx-eraser",
+  "name": "eraser"
+}, {
+  "icon": "bx bx-drink",
+  "name": "drink"
+}, {
+  "icon": "bx bx-cctv",
+  "name": "cctv"
+}, {
+  "icon": "bx bxs-cctv",
+  "name": "cctv"
+}, {
+  "icon": "bx bx-chair",
+  "name": "chair"
+}, {
+  "icon": "bx bx-network-chart",
+  "name": "network-chart"
+}, {
+  "icon": "bx bxs-network-chart",
+  "name": "network-chart"
+}, {
+  "icon": "bx bx-vector",
+  "name": "vector"
+}, {
+  "icon": "bx bxs-vector",
+  "name": "vector"
+}, {
+  "icon": "bx bx-calendar-exclamation",
+  "name": "calendar-exclamation"
+}, {
+  "icon": "bx bxs-calendar-exclamation",
+  "name": "calendar-exclamation"
+}, {
+  "icon": "bx bx-calendar-star",
+  "name": "calendar-star"
+}, {
+  "icon": "bx bxs-calendar-star",
+  "name": "calendar-star"
+}, {
+  "icon": "bx bx-camera-home",
+  "name": "camera-home"
+}, {
+  "icon": "bx bxs-camera-home",
+  "name": "camera-home"
+}, {
+  "icon": "bx bx-camera-movie",
+  "name": "camera-movie"
+}, {
+  "icon": "bx bxs-camera-movie",
+  "name": "camera-movie"
+}, {
+  "icon": "bx bxs-backpack",
+  "name": "backpack"
+}, {
+  "icon": "bx bxs-cart-download",
+  "name": "cart-download"
+}, {
+  "icon": "bx bxs-cart-add",
+  "name": "cart-add"
+}, {
+  "icon": "bx bxs-car-battery",
+  "name": "car-battery"
+}, {
+  "icon": "bx bx-caret-right-circle",
+  "name": "caret-right-circle"
+}, {
+  "icon": "bx bx-caret-left-circle",
+  "name": "caret-left-circle"
+}, {
+  "icon": "bx bx-caret-up-circle",
+  "name": "caret-up-circle"
+}, {
+  "icon": "bx bx-caret-down-circle",
+  "name": "caret-down-circle"
+}, {
+  "icon": "bx bx-caret-right-square",
+  "name": "caret-right-square"
+}, {
+  "icon": "bx bxs-caret-right-square",
+  "name": "caret-right-square"
+}, {
+  "icon": "bx bx-caret-up-square",
+  "name": "caret-up-square"
+}, {
+  "icon": "bx bxs-caret-up-square",
+  "name": "caret-up-square"
+}, {
+  "icon": "bx bx-caret-left-square",
+  "name": "caret-left-square"
+}, {
+  "icon": "bx bxs-caret-left-square",
+  "name": "caret-left-square"
+}, {
+  "icon": "bx bx-caret-down-square",
+  "name": "caret-down-square"
+}, {
+  "icon": "bx bxs-caret-down-square",
+  "name": "caret-down-square"
+}, {
+  "icon": "bx bx-shield-x",
+  "name": "shield-x"
+}, {
+  "icon": "bx bxs-shield-x",
+  "name": "shield-x"
+}, {
+  "icon": "bx bx-line-chart-down",
+  "name": "line-chart-down"
+}, {
+  "icon": "bx bx-chevron-down-circle",
+  "name": "chevron-down-circle"
+}, {
+  "icon": "bx bxs-chevron-down-circle",
+  "name": "chevron-down-circle"
+}, {
+  "icon": "bx bx-chevron-up-circle",
+  "name": "chevron-up-circle"
+}, {
+  "icon": "bx bxs-chevron-up-circle",
+  "name": "chevron-up-circle"
+}, {
+  "icon": "bx bx-chevron-left-circle",
+  "name": "chevron-left-circle"
+}, {
+  "icon": "bx bxs-chevron-left-circle",
+  "name": "chevron-left-circle"
+}, {
+  "icon": "bx bx-chevron-right-circle",
+  "name": "chevron-right-circle"
+}, {
+  "icon": "bx bxs-chevron-right-circle",
+  "name": "chevron-right-circle"
+}, {
+  "icon": "bx bx-chevron-down-square",
+  "name": "chevron-down-square"
+}, {
+  "icon": "bx bxs-chevron-down-square",
+  "name": "chevron-down-square"
+}, {
+  "icon": "bx bx-chevron-up-square",
+  "name": "chevron-up-square"
+}, {
+  "icon": "bx bxs-chevron-up-square",
+  "name": "chevron-up-square"
+}, {
+  "icon": "bx bx-chevron-left-square",
+  "name": "chevron-left-square"
+}, {
+  "icon": "bx bxs-chevron-left-square",
+  "name": "chevron-left-square"
+}, {
+  "icon": "bx bx-chevron-right-square",
+  "name": "chevron-right-square"
+}, {
+  "icon": "bx bxs-chevron-right-square",
+  "name": "chevron-right-square"
+}, {
+  "icon": "bx bx-church",
+  "name": "church"
+}, {
+  "icon": "bx bxs-church",
+  "name": "church"
+}, {
+  "icon": "bx bx-coin",
+  "name": "coin"
+}, {
+  "icon": "bx bxs-coin",
+  "name": "coin"
+}, {
+  "icon": "bx bx-coin-stack",
+  "name": "coin-stack"
+}, {
+  "icon": "bx bxs-coin-stack",
+  "name": "coin-stack"
+}, {
+  "icon": "bx bx-unite",
+  "name": "unite"
+}, {
+  "icon": "bx bx-minus-front",
+  "name": "minus-front"
+}, {
+  "icon": "bx bx-intersect",
+  "name": "intersect"
+}, {
+  "icon": "bx bx-exclude",
+  "name": "exclude"
+}, {
+  "icon": "bx bx-minus-back",
+  "name": "minus-back"
+}, {
+  "icon": "bx bx-merge",
+  "name": "merge"
+}, {
+  "icon": "bx bx-trim",
+  "name": "trim"
+}, {
+  "icon": "bx bx-outline",
+  "name": "outline"
+}, {
+  "icon": "bx bxs-bullseye",
+  "name": "bullseye"
+}, {
+  "icon": "bx bx-meteor",
+  "name": "meteor"
+}, {
+  "icon": "bx bxs-meteor",
+  "name": "meteor"
+}, {
+  "icon": "bx bx-refresh",
+  "name": "refresh"
+}, {
+  "icon": "bx bx-home-smile",
+  "name": "home-smile"
+}, {
+  "icon": "bx bxs-home-smile",
+  "name": "home-smile"
+}, {
+  "icon": "bx bx-envelope-open",
+  "name": "envelope-open"
+}, {
+  "icon": "bx bxs-envelope-open",
+  "name": "envelope-open"
+}, {
+  "icon": "bx bxl-dev-to",
+  "name": "dev-to"
+}, {
+  "icon": "bx bx-message-alt-add",
+  "name": "message-alt-add"
+}, {
+  "icon": "bx bxs-message-alt-add",
+  "name": "message-alt-add"
+}, {
+  "icon": "bx bx-message-alt-check",
+  "name": "message-alt-check"
+}, {
+  "icon": "bx bxs-message-alt-check",
+  "name": "message-alt-check"
+}, {
+  "icon": "bx bx-message-alt-error",
+  "name": "message-alt-error"
+}, {
+  "icon": "bx bxs-message-alt-error",
+  "name": "message-alt-error"
+}, {
+  "icon": "bx bx-message-alt-x",
+  "name": "message-alt-x"
+}, {
+  "icon": "bx bxs-message-alt-x",
+  "name": "message-alt-x"
+}, {
+  "icon": "bx bx-message-alt-minus",
+  "name": "message-alt-minus"
+}, {
+  "icon": "bx bxs-message-alt-minus",
+  "name": "message-alt-minus"
+}, {
+  "icon": "bx bx-message-alt-edit",
+  "name": "message-alt-edit"
+}, {
+  "icon": "bx bxs-message-alt-edit",
+  "name": "message-alt-edit"
+}, {
+  "icon": "bx bx-message-alt-detail",
+  "name": "message-alt-detail"
+}, {
+  "icon": "bx bxs-message-alt-detail",
+  "name": "message-alt-detail"
+}, {
+  "icon": "bx bx-message-rounded-check",
+  "name": "message-rounded-check"
+}, {
+  "icon": "bx bxs-message-rounded-check",
+  "name": "message-rounded-check"
+}, {
+  "icon": "bx bx-message-rounded-error",
+  "name": "message-rounded-error"
+}, {
+  "icon": "bx bxs-message-rounded-error",
+  "name": "message-rounded-error"
+}, {
+  "icon": "bx bx-message-rounded-x",
+  "name": "message-rounded-x"
+}, {
+  "icon": "bx bxs-message-rounded-x",
+  "name": "message-rounded-x"
+}, {
+  "icon": "bx bx-message-rounded-minus",
+  "name": "message-rounded-minus"
+}, {
+  "icon": "bx bxs-message-rounded-minus",
+  "name": "message-rounded-minus"
+}, {
+  "icon": "bx bx-message-rounded-edit",
+  "name": "message-rounded-edit"
+}, {
+  "icon": "bx bxs-message-rounded-edit",
+  "name": "message-rounded-edit"
+}, {
+  "icon": "bx bx-message-rounded-add",
+  "name": "message-rounded-add"
+}, {
+  "icon": "bx bxs-message-rounded-add",
+  "name": "message-rounded-add"
+}, {
+  "icon": "bx bx-message-rounded-detail",
+  "name": "message-rounded-detail"
+}, {
+  "icon": "bx bxs-message-rounded-detail",
+  "name": "message-rounded-detail"
+}, {
+  "icon": "bx bx-message-check",
+  "name": "message-check"
+}, {
+  "icon": "bx bxs-message-check",
+  "name": "message-check"
+}, {
+  "icon": "bx bx-message-error",
+  "name": "message-error"
+}, {
+  "icon": "bx bxs-message-error",
+  "name": "message-error"
+}, {
+  "icon": "bx bx-message-x",
+  "name": "message-x"
+}, {
+  "icon": "bx bxs-message-x",
+  "name": "message-x"
+}, {
+  "icon": "bx bx-message-minus",
+  "name": "message-minus"
+}, {
+  "icon": "bx bxs-message-minus",
+  "name": "message-minus"
+}, {
+  "icon": "bx bx-message-edit",
+  "name": "message-edit"
+}, {
+  "icon": "bx bxs-message-edit",
+  "name": "message-edit"
+}, {
+  "icon": "bx bx-message-add",
+  "name": "message-add"
+}, {
+  "icon": "bx bxs-message-add",
+  "name": "message-add"
+}, {
+  "icon": "bx bx-message-detail",
+  "name": "message-detail"
+}, {
+  "icon": "bx bxs-message-detail",
+  "name": "message-detail"
+}, {
+  "icon": "bx bx-message-square-check",
+  "name": "message-square-check"
+}, {
+  "icon": "bx bxs-message-square-check",
+  "name": "message-square-check"
+}, {
+  "icon": "bx bx-message-square-error",
+  "name": "message-square-error"
+}, {
+  "icon": "bx bxs-message-square-error",
+  "name": "message-square-error"
+}, {
+  "icon": "bx bx-message-square-x",
+  "name": "message-square-x"
+}, {
+  "icon": "bx bxs-message-square-x",
+  "name": "message-square-x"
+}, {
+  "icon": "bx bx-message-square-minus",
+  "name": "message-square-minus"
+}, {
+  "icon": "bx bxs-message-square-minus",
+  "name": "message-square-minus"
+}, {
+  "icon": "bx bx-message-square-edit",
+  "name": "message-square-edit"
+}, {
+  "icon": "bx bxs-message-square-edit",
+  "name": "message-square-edit"
+}, {
+  "icon": "bx bx-message-square-add",
+  "name": "message-square-add"
+}, {
+  "icon": "bx bxs-message-square-add",
+  "name": "message-square-add"
+}, {
+  "icon": "bx bx-message-square-detail",
+  "name": "message-square-detail"
+}, {
+  "icon": "bx bxs-message-square-detail",
+  "name": "message-square-detail"
+}, {
+  "icon": "bx bx-comment-check",
+  "name": "comment-check"
+}, {
+  "icon": "bx bxs-comment-check",
+  "name": "comment-check"
+}, {
+  "icon": "bx bx-comment-error",
+  "name": "comment-error"
+}, {
+  "icon": "bx bx-comment-x",
+  "name": "comment-x"
+}, {
+  "icon": "bx bxs-comment-x",
+  "name": "comment-x"
+}, {
+  "icon": "bx bx-comment-edit",
+  "name": "comment-edit"
+}, {
+  "icon": "bx bxs-comment-edit",
+  "name": "comment-edit"
+}, {
+  "icon": "bx bx-comment-minus",
+  "name": "comment-minus"
+}, {
+  "icon": "bx bxs-comment-minus",
+  "name": "comment-minus"
+}, {
+  "icon": "bx bx-comment-add",
+  "name": "comment-add"
+}, {
+  "icon": "bx bx-comment-detail",
+  "name": "comment-detail"
+}, {
+  "icon": "bx bx-cookie",
+  "name": "cookie"
+}, {
+  "icon": "bx bxs-cookie",
+  "name": "cookie"
+}, {
+  "icon": "bx bxs-copyright",
+  "name": "copyright"
+}, {
+  "icon": "bx bx-credit-card-front",
+  "name": "credit-card-front"
+}, {
+  "icon": "bx bxs-credit-card-front",
+  "name": "credit-card-front"
+}, {
+  "icon": "bx bxs-crop",
+  "name": "crop"
+}, {
+  "icon": "bx bxs-diamond",
+  "name": "diamond"
+}, {
+  "icon": "bx bx-door-open",
+  "name": "door-open"
+}, {
+  "icon": "bx bxs-door-open",
+  "name": "door-open"
+}, {
+  "icon": "bx bx-donate-heart",
+  "name": "donate-heart"
+}, {
+  "icon": "bx bxs-donate-heart",
+  "name": "donate-heart"
+}, {
+  "icon": "bx bx-donate-blood",
+  "name": "donate-blood"
+}, {
+  "icon": "bx bxs-donate-blood",
+  "name": "donate-blood"
+}, {
+  "icon": "bx bx-shape-polygon",
+  "name": "shape-polygon"
+}, {
+  "icon": "bx bxl-zoom",
+  "name": "zoom"
+}, {
+  "icon": "bx bxl-microsoft-teams",
+  "name": "microsoft-teams"
+}, {
+  "icon": "bx bxl-blender",
+  "name": "blender"
+}, {
+  "icon": "bx bxl-kubernetes",
+  "name": "kubernetes"
+}, {
+  "icon": "bx bxl-google-cloud",
+  "name": "google-cloud"
+}, {
+  "icon": "bx bxl-django",
+  "name": "django"
+}, {
+  "icon": "bx bxl-spring-boot",
+  "name": "spring-boot"
+}, {
+  "icon": "bx bxl-tux",
+  "name": "tux"
+}, {
+  "icon": "bx bxl-markdown",
+  "name": "markdown"
+}, {
+  "icon": "bx bxl-python",
+  "name": "python"
+}, {
+  "icon": "bx bxl-ok-ru",
+  "name": "ok-ru"
+}, {
+  "icon": "bx bxl-firebase",
+  "name": "firebase"
+}, {
+  "icon": "bx bxl-c-plus-plus",
+  "name": "c-plus-plus"
+}, {
+  "icon": "bx bx-bookmark-heart",
+  "name": "bookmark-heart"
+}, {
+  "icon": "bx bxs-bookmark-heart",
+  "name": "bookmark-heart"
+}, {
+  "icon": "bx bx-sort-alt-2",
+  "name": "sort-alt-2"
+}, {
+  "icon": "bx bx-category",
+  "name": "category"
+}, {
+  "icon": "bx bxs-category",
+  "name": "category"
+}, {
+  "icon": "bx bx-category-alt",
+  "name": "category-alt"
+}, {
+  "icon": "bx bxs-category-alt",
+  "name": "category-alt"
+}, {
+  "icon": "bx bx-bookmark-alt",
+  "name": "bookmark-alt"
+}, {
+  "icon": "bx bxs-bookmark-alt",
+  "name": "bookmark-alt"
+}, {
+  "icon": "bx bx-bookmark-alt-plus",
+  "name": "bookmark-alt-plus"
+}, {
+  "icon": "bx bxs-bookmark-alt-plus",
+  "name": "bookmark-alt-plus"
+}, {
+  "icon": "bx bx-bookmark-alt-minus",
+  "name": "bookmark-alt-minus"
+}, {
+  "icon": "bx bxs-bookmark-alt-minus",
+  "name": "bookmark-alt-minus"
+}, {
+  "icon": "bx bxs-face-mask",
+  "name": "face-mask"
+}, {
+  "icon": "bx bxs-tv",
+  "name": "tv"
+}, {
+  "icon": "bx bx-tag-alt",
+  "name": "tag-alt"
+}, {
+  "icon": "bx bxs-tag-alt",
+  "name": "tag-alt"
+}, {
+  "icon": "bx bx-movie-play",
+  "name": "movie-play"
+}, {
+  "icon": "bx bxs-movie-play",
+  "name": "movie-play"
+}, {
+  "icon": "bx bxs-user-account",
+  "name": "user-account"
+}, {
+  "icon": "bx bx-expand-alt",
+  "name": "expand-alt"
+}, {
+  "icon": "bx bx-library",
+  "name": "library"
+}, {
+  "icon": "bx bx-trip",
+  "name": "trip"
+}, {
+  "icon": "bx bxs-virus",
+  "name": "virus"
+}, {
+  "icon": "bx bxs-virus-block",
+  "name": "virus-block"
+}]
