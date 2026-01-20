@@ -1,50 +1,53 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-sans:'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans:
+    "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 body {
-  font-family:var(--font-sans);
+  font-family: var(--font-sans);
   @apply bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100;
 }
 
 .custom-scrollbar::-webkit-scrollbar {
-  width:5px;
+  width: 5px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background:transparent;
+  background: transparent;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color:#cbd5e1;
-  border-radius:20px;
+  background-color: #cbd5e1;
+  border-radius: 20px;
 }
 
 .custom-scrollbar:hover::-webkit-scrollbar-thumb {
-  background-color:#94a3b8;
+  background-color: #94a3b8;
 }
 
-@media (prefers-color-scheme:dark) {
+@media (prefers-color-scheme: dark) {
   .custom-scrollbar::-webkit-scrollbar-thumb {
-    background-color:#475569;
+    background-color: #475569;
   }
 
   .custom-scrollbar:hover::-webkit-scrollbar-thumb {
-    background-color:#64748b;
+    background-color: #64748b;
   }
 }
 
 :is(.dark .custom-scrollbar)::-webkit-scrollbar-thumb {
-  background-color:#475569;
+  background-color: #475569;
 }
 
 :is(.dark .custom-scrollbar):hover::-webkit-scrollbar-thumb {
-  background-color:#64748b;
+  background-color: #64748b;
 }
 
 .card {
@@ -56,14 +59,14 @@ body {
 }
 
 .horizontal-menu {
-  scrollbar-width:none;
+  scrollbar-width: none;
   /* Firefox */
-  -ms-overflow-style:none;
+  -ms-overflow-style: none;
   /* IE and Edge */
 }
 
 .horizontal-menu::-webkit-scrollbar {
-  display:none;
+  display: none;
   /* Chrome, Safari, Opera */
 }
 
@@ -102,8 +105,6 @@ body {
 .nav-header {
   @apply px-3.5 py-2.5 text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wide;
 }
-
-
 
 .nav-link {
   @apply flex items-center gap-2 px-3.5 py-2.5 text-sm font-normal text-slate-700 dark:text-slate-300 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors cursor-pointer;
@@ -146,7 +147,7 @@ body {
   @apply grid grid-rows-[1fr];
 }
 
-.nav-submenu>div {
+.nav-submenu > div {
   @apply overflow-hidden;
 }
 
@@ -160,12 +161,12 @@ body {
 
 /* Compact Sidebar Styles */
 .sidebar-compact {
-  width:80px;
-  transition:width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 80px;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .sidebar-compact:hover {
-  width:260px;
+  width: 260px;
 }
 
 /* Shared transition properties for text elements */
@@ -176,11 +177,13 @@ body {
 .sidebar-compact .sidebar-footer-text,
 .sidebar-compact .font-medium,
 .sidebar-compact .brand-text {
-  opacity:1;
-  max-width:200px;
-  white-space:nowrap;
-  overflow:hidden;
-  transition:max-width 0.3s ease, opacity 0.3s ease;
+  opacity: 1;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  transition:
+    max-width 0.3s ease,
+    opacity 0.3s ease;
 }
 
 /* 1. COLLAPSED STATE (Not Hovered) */
@@ -191,50 +194,50 @@ body {
 .sidebar-compact:not(:hover) .sidebar-footer-text,
 .sidebar-compact:not(:hover) .font-medium,
 .sidebar-compact:not(:hover) .brand-text {
-  opacity:0;
-  max-width:0;
+  opacity: 0;
+  max-width: 0;
 }
 
 /* Strictly hide headers and submenus when collapsed to avoid vertical spacing issues */
 .sidebar-compact:not(:hover) .nav-header,
 .sidebar-compact:not(:hover) .nav-submenu {
-  display:none!important;
+  display: none !important;
 }
 
 .sidebar-compact:not(:hover) .brand-container span {
-  display:none;
+  display: none;
 }
 
 /* Icon & Brand Centering when collapsed */
 .sidebar-compact:not(:hover) .nav-link,
 .sidebar-compact:not(:hover) .sidebar-footer a,
 .sidebar-compact:not(:hover) .brand-container {
-  justify-content:center;
-  padding-left:0;
-  padding-right:0;
-  gap:0;
+  justify-content: center;
+  padding-left: 0;
+  padding-right: 0;
+  gap: 0;
   /* IMPERATIVE:Remove gap so icon is strictly centered */
 }
 
 /* Fix Icon Margins */
 .sidebar-compact:not(:hover) .nav-icon {
-  margin-right:0;
-  font-size:1.5rem;
+  margin-right: 0;
+  font-size: 1.5rem;
 }
 
 /* Fix Chevron Auto Margin preventing centering */
 .sidebar-compact:not(:hover) .nav-chevron {
-  margin-left:0;
+  margin-left: 0;
 }
 
 /* 2. EXPANDED STATE (Hovered) */
 .sidebar-compact:hover .nav-header {
-  display:block;
-  margin-top:1rem;
+  display: block;
+  margin-top: 1rem;
 }
 
 .sidebar-compact:hover .logo-text {
-  display:inline;
+  display: inline;
 }
 
 /* Swiper Custom Styling */
@@ -294,7 +297,7 @@ body {
 }
 
 .toast-close::after {
-  content:"\00d7";
+  content: "\00d7";
   /* Elegant multiplication sign */
   @apply text-2xl text-white font-light leading-none;
 }
@@ -623,4 +626,331 @@ body {
 
 .fancybox__caption p {
   @apply text-slate-300 text-sm;
+}
+
+/* Tom Select Styling */
+.ts-wrapper .ts-control {
+  @apply w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg outline-none text-slate-900 flex items-center transition-all shadow-none;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  min-height: 46px; /* Ensure consistent height */
+}
+
+/* Dark Mode Overrides with !important to beat library specificity */
+.dark .ts-wrapper .ts-control {
+  @apply bg-slate-700 border-slate-600 text-slate-100;
+  background-color: var(--color-slate-700) !important;
+  border-color: var(--color-slate-600) !important;
+  color: var(--color-slate-100) !important;
+}
+
+/* Focus State */
+.ts-wrapper.focus .ts-control {
+  @apply border-indigo-500 ring-2 ring-indigo-500/20 shadow-none;
+  border-color: var(--color-indigo-500) !important;
+}
+
+/* Dropdown */
+.ts-wrapper .ts-dropdown {
+  @apply mt-1 bg-white border border-slate-200 rounded-lg shadow-xl overflow-hidden z-50;
+}
+
+.dark .ts-wrapper .ts-dropdown {
+  @apply bg-slate-800 border-slate-700 text-slate-100;
+  background-color: var(--color-slate-800) !important;
+  border-color: var(--color-slate-700) !important;
+}
+
+/* Dropdown Options */
+.ts-wrapper .ts-dropdown .option {
+  @apply px-4 py-2.5 cursor-pointer text-slate-700;
+}
+
+.dark .ts-wrapper .ts-dropdown .option {
+  @apply text-slate-300;
+}
+
+.ts-wrapper .ts-dropdown .option.active,
+.ts-wrapper .ts-dropdown .option:hover {
+  @apply bg-slate-100 text-slate-900;
+}
+
+.dark .ts-wrapper .ts-dropdown .option.active,
+.dark .ts-wrapper .ts-dropdown .option:hover {
+  @apply bg-slate-700/50 text-slate-100;
+}
+
+/* Input text (search) */
+.ts-wrapper .ts-control > input {
+  @apply text-slate-900;
+}
+.dark .ts-wrapper .ts-control > input {
+  @apply text-slate-100;
+  color: white !important; /* Force input text white in dark mode */
+}
+
+/* Multi-select items */
+.ts-wrapper.multi .ts-control > div.item {
+  @apply bg-indigo-50 text-indigo-600 rounded px-2 py-0.5 mr-1 border border-indigo-100;
+}
+
+.dark .ts-wrapper.multi .ts-control > div.item {
+  @apply bg-indigo-900/30 text-indigo-400 border-indigo-800;
+}
+
+/* Single select active item text */
+.ts-wrapper.single .ts-control .item {
+  @apply text-slate-900;
+}
+.dark .ts-wrapper.single .ts-control .item {
+  @apply text-slate-100;
+  color: white !important;
+}
+
+.ts-wrapper.plugin-remove_button:not(.rtl) .item .remove {
+  @apply border-l border-slate-200 dark:border-slate-700;
+}
+
+/* Fix for Group Headers */
+.ts-wrapper .ts-dropdown .optgroup-header {
+  @apply px-4 py-2 text-xs font-bold text-slate-500 uppercase tracking-wider bg-slate-50;
+}
+.dark .ts-wrapper .ts-dropdown .optgroup-header {
+  @apply text-slate-400 bg-slate-700/50;
+}
+
+/* Placeholder */
+.ts-wrapper .ts-control .input-placeholder {
+  @apply text-slate-400; /* slate-400 */
+}
+
+/* Flatpickr Custom Styling (Encore UI Theme) */
+.flatpickr-calendar {
+  @apply font-sans rounded-2xl border border-slate-200 shadow-xl bg-white text-slate-700;
+  width: 320px !important;
+}
+
+.flatpickr-calendar:not(.open),
+.flatpickr-calendar.noCalendar:not(.open) {
+  @apply hidden!;
+}
+
+/* Dark Mode Overrides for Flatpickr */
+/* Note: We use .dark parent selector because Flatpickr elements rendered in the body 
+   don't inherit the dark: utility class logic directly without this scope. */
+
+.dark .flatpickr-calendar,
+.flatpickr-calendar.dark {
+  @apply bg-slate-800! border-slate-700! text-slate-300! shadow-xl!;
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.5),
+    0 8px 10px -6px rgba(0, 0, 0, 0.5) !important;
+}
+
+.flatpickr-calendar.hasTime .flatpickr-time {
+  @apply border-t border-slate-100;
+}
+.dark .flatpickr-calendar.hasTime .flatpickr-time {
+  @apply border-slate-700!;
+}
+
+/* Specific styles for Time Picker only (no calendar) */
+/* Specific styles for Time Picker only (no calendar) */
+.flatpickr-calendar.noCalendar {
+  @apply block! w-auto! p-2!;
+}
+
+.flatpickr-calendar.noCalendar.hasTime .flatpickr-time {
+  @apply border-t-0! h-auto! flex! items-center! justify-center! max-h-none!;
+}
+
+.flatpickr-calendar::before,
+.flatpickr-calendar::after {
+  display: none !important; /* Hide arrows */
+}
+
+.flatpickr-months {
+  @apply bg-transparent mb-2;
+}
+
+.flatpickr-months .flatpickr-month {
+  @apply text-slate-800 fill-slate-800 h-10;
+}
+.dark .flatpickr-months .flatpickr-month {
+  @apply text-slate-100! fill-slate-100!;
+}
+
+.flatpickr-current-month {
+  @apply text-slate-800 font-bold text-lg pt-1;
+}
+.dark .flatpickr-current-month {
+  @apply text-slate-100!;
+}
+
+.flatpickr-current-month input.cur-year {
+  @apply font-bold text-slate-800;
+}
+.dark .flatpickr-current-month input.cur-year {
+  @apply text-slate-100!;
+}
+
+.flatpickr-monthDropdown-months {
+  @apply font-bold text-slate-800 bg-transparent hover:bg-slate-50;
+}
+.dark .flatpickr-monthDropdown-months {
+  @apply text-slate-100! hover:bg-slate-700!;
+}
+
+.flatpickr-weekdays {
+  @apply bg-transparent;
+}
+
+span.flatpickr-weekday {
+  @apply text-slate-400 font-medium text-xs uppercase tracking-wider bg-transparent;
+}
+.dark span.flatpickr-weekday {
+  @apply text-slate-400!;
+}
+
+.flatpickr-day {
+  @apply text-slate-700 rounded-lg h-9 w-9 leading-9 m-0.5 ease-out transition-all border-none hover:bg-slate-100;
+}
+.dark .flatpickr-day {
+  @apply text-slate-300! hover:bg-slate-700!;
+}
+
+.flatpickr-day.inRange,
+.flatpickr-day.prevMonthDay.inRange,
+.flatpickr-day.nextMonthDay.inRange,
+.flatpickr-day.today.inRange,
+.flatpickr-day.prevMonthDay.today.inRange,
+.flatpickr-day.nextMonthDay.today.inRange,
+.flatpickr-day:hover,
+.flatpickr-day.prevMonthDay:hover,
+.flatpickr-day.nextMonthDay:hover,
+.flatpickr-day:focus,
+.flatpickr-day.prevMonthDay:focus,
+.flatpickr-day.nextMonthDay:focus {
+  @apply bg-slate-100 border-none;
+}
+.dark .flatpickr-day.inRange,
+.dark .flatpickr-day:hover,
+.dark .flatpickr-day:focus {
+  @apply bg-slate-700! border-transparent!;
+  /* Manual box-shadow is still needed for color matching, 
+      Tailwind doesn't have a utility for specific shadow colors easily in @apply without config */
+  box-shadow:
+    -5px 0 0 #334155,
+    5px 0 0 #334155 !important;
+}
+
+.flatpickr-day.today {
+  @apply border border-slate-300 font-bold;
+}
+.dark .flatpickr-day.today {
+  @apply border-slate-600!;
+}
+
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange,
+.flatpickr-day.selected.inRange,
+.flatpickr-day.startRange.inRange,
+.flatpickr-day.endRange.inRange,
+.flatpickr-day.selected:focus,
+.flatpickr-day.startRange:focus,
+.flatpickr-day.endRange:focus,
+.flatpickr-day.selected:hover,
+.flatpickr-day.startRange:hover,
+.flatpickr-day.endRange:hover,
+.flatpickr-day.selected.prevMonthDay,
+.flatpickr-day.startRange.prevMonthDay,
+.flatpickr-day.endRange.prevMonthDay,
+.flatpickr-day.selected.nextMonthDay,
+.flatpickr-day.startRange.nextMonthDay,
+.flatpickr-day.endRange.nextMonthDay {
+  @apply bg-indigo-600 border-indigo-600 text-white shadow-md shadow-indigo-200;
+}
+.dark .flatpickr-day.selected,
+.dark .flatpickr-day.startRange,
+.dark .flatpickr-day.endRange {
+  @apply bg-indigo-600! border-indigo-600! text-white! shadow-none!;
+}
+
+.flatpickr-time input:hover,
+.flatpickr-time .flatpickr-am-pm:hover,
+.flatpickr-time input:focus,
+.flatpickr-time .flatpickr-am-pm:focus {
+  @apply bg-slate-50;
+}
+.dark .flatpickr-time input:hover,
+.dark .flatpickr-time .flatpickr-am-pm:hover,
+.dark .flatpickr-time input:focus,
+.dark .flatpickr-time .flatpickr-am-pm:focus {
+  @apply bg-slate-700!;
+}
+
+.flatpickr-time .numInputWrapper span.arrowUp:after {
+  @apply border-b-slate-400;
+}
+
+.flatpickr-time .numInputWrapper span.arrowDown:after {
+  @apply border-t-slate-400;
+}
+
+.flatpickr-time input,
+.flatpickr-time .flatpickr-am-pm {
+  @apply text-slate-800 font-medium;
+}
+.dark .flatpickr-time input,
+.dark .flatpickr-time .flatpickr-am-pm {
+  @apply text-slate-100!;
+}
+
+.dark .flatpickr-prev-month svg,
+.dark .flatpickr-next-month svg {
+  @apply fill-slate-300!;
+}
+
+/* ========================================
+   Dropzone.js Custom Styling
+   ======================================== */
+
+.dropzone {
+  @apply border-2 border-dashed border-slate-300 dark:border-slate-600 rounded-2xl bg-slate-50 dark:bg-slate-700 transition-all duration-300!;
+}
+
+.dropzone:hover {
+  @apply border-indigo-500 dark:border-indigo-400 bg-indigo-50 dark:bg-indigo-900/30!;
+}
+
+.dropzone .dz-message {
+  @apply my-12 text-slate-500 dark:text-slate-300!;
+}
+
+.dropzone .dz-preview .dz-image {
+  @apply rounded-lg!;
+}
+
+.dropzone .dz-preview .dz-details {
+  @apply rounded-lg!;
+  background: rgba(0, 0, 0, 0.5) !important;
+}
+
+.dropzone .dz-preview .dz-progress {
+  @apply h-2 rounded overflow-hidden!;
+}
+
+.dropzone .dz-preview .dz-progress .dz-upload {
+  @apply bg-indigo-600!;
+}
+
+.dropzone .dz-preview .dz-error-message {
+  @apply bg-red-500 rounded-lg text-white!;
+}
+
+.dropzone .dz-preview .dz-success-mark,
+.dropzone .dz-preview .dz-error-mark {
+  @apply rounded-full!;
+  background: rgba(255, 255, 255, 0.9) !important;
 }
