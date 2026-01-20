@@ -1,42 +1,65 @@
 document.addEventListener("DOMContentLoaded", function () {
   // 1. TinyMCE - Full-Featured Editor
   if (document.getElementById("tinymce-editor")) {
-    tinymce.init({
-      selector: "#tinymce-editor",
-      height: 400,
-      menubar: true,
-      plugins: [
-        "advlist",
-        "autolink",
-        "lists",
-        "link",
-        "image",
-        "charmap",
-        "preview",
-        "anchor",
-        "searchreplace",
-        "visualblocks",
-        "code",
-        "fullscreen",
-        "insertdatetime",
-        "media",
-        "table",
-        "help",
-        "wordcount",
-      ],
-      toolbar:
-        "undo redo | blocks | " +
-        "bold italic forecolor | alignleft aligncenter " +
-        "alignright alignjustify | bullist numlist outdent indent | " +
-        "removeformat | help",
-      content_style:
-        "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
-      skin: document.documentElement.classList.contains("dark")
-        ? "oxide-dark"
-        : "oxide",
-      content_css: document.documentElement.classList.contains("dark")
-        ? "dark"
-        : "default",
+    // Function to initialize TinyMCE with current theme
+    function initTinyMCE() {
+      const isDark = document.documentElement.classList.contains("dark");
+
+      tinymce.init({
+        selector: "#tinymce-editor",
+        height: 400,
+        menubar: true,
+        plugins: [
+          "advlist",
+          "autolink",
+          "lists",
+          "link",
+          "image",
+          "charmap",
+          "preview",
+          "anchor",
+          "searchreplace",
+          "visualblocks",
+          "code",
+          "fullscreen",
+          "insertdatetime",
+          "media",
+          "table",
+          "help",
+          "wordcount",
+        ],
+        toolbar:
+          "undo redo | blocks | " +
+          "bold italic forecolor | alignleft aligncenter " +
+          "alignright alignjustify | bullist numlist outdent indent | " +
+          "removeformat | help",
+        content_style: isDark
+          ? "body { font-family:Helvetica,Arial,sans-serif; font-size:14px; background-color:#1e293b; color:#f1f5f9; }"
+          : "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
+      });
+    }
+
+    // Initialize on load
+    initTinyMCE();
+
+    // Listen for theme changes and reinitialize TinyMCE
+    window.addEventListener("themeChanged", function () {
+      // Remove existing instance
+      if (tinymce.get("tinymce-editor")) {
+        const content = tinymce.get("tinymce-editor").getContent();
+        tinymce.get("tinymce-editor").remove();
+
+        // Reinitialize with new theme
+        setTimeout(() => {
+          initTinyMCE();
+          // Restore content after reinit
+          setTimeout(() => {
+            if (tinymce.get("tinymce-editor")) {
+              tinymce.get("tinymce-editor").setContent(content);
+            }
+          }, 100);
+        }, 100);
+      }
     });
   }
 

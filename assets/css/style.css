@@ -954,3 +954,461 @@ span.flatpickr-weekday {
   @apply rounded-full!;
   background: rgba(255, 255, 255, 0.9) !important;
 }
+
+/* ========================================
+   Quill.js Dark Mode Styling
+   ======================================== */
+
+.dark .ql-toolbar.ql-snow {
+  @apply bg-slate-700! border-slate-600!;
+}
+
+.dark .ql-container.ql-snow {
+  @apply bg-slate-800! border-slate-600!;
+}
+
+.dark .ql-editor {
+  @apply text-slate-100!;
+}
+
+.dark .ql-editor.ql-blank::before {
+  @apply text-slate-400!;
+}
+
+.dark .ql-snow .ql-stroke {
+  @apply stroke-slate-300!;
+}
+
+.dark .ql-snow .ql-fill {
+  @apply fill-slate-300!;
+}
+
+.dark .ql-snow .ql-picker-label {
+  @apply text-slate-300!;
+}
+
+.dark .ql-snow .ql-picker-options {
+  @apply bg-slate-700! border-slate-600!;
+}
+
+.dark .ql-snow .ql-picker-item {
+  @apply text-slate-300!;
+}
+
+.dark .ql-snow .ql-picker-item:hover {
+  @apply text-indigo-400!;
+}
+
+.dark .ql-snow.ql-toolbar button:hover,
+.dark .ql-snow .ql-toolbar button:hover {
+  @apply text-indigo-400!;
+}
+
+.dark .ql-snow.ql-toolbar button:hover .ql-stroke,
+.dark .ql-snow .ql-toolbar button:hover .ql-stroke {
+  @apply stroke-indigo-400!;
+}
+
+.dark .ql-snow.ql-toolbar button:hover .ql-fill,
+.dark .ql-snow .ql-toolbar button:hover .ql-fill {
+  @apply fill-indigo-400!;
+}
+
+.dark .ql-snow.ql-toolbar button.ql-active,
+.dark .ql-snow .ql-toolbar button.ql-active {
+  @apply text-indigo-500!;
+}
+
+.dark .ql-snow.ql-toolbar button.ql-active .ql-stroke,
+.dark .ql-snow .ql-toolbar button.ql-active .ql-stroke {
+  @apply stroke-indigo-500!;
+}
+
+.dark .ql-snow.ql-toolbar button.ql-active .ql-fill,
+.dark .ql-snow .ql-toolbar button.ql-active .ql-fill {
+  @apply fill-indigo-500!;
+}
+
+/* ========================================
+   SimpleMDE Dark Mode Styling
+   ======================================== */
+
+.dark .CodeMirror {
+  @apply bg-slate-800! border-slate-600! text-slate-100!;
+}
+
+.dark .CodeMirror-cursor {
+  @apply border-slate-100!;
+}
+
+.dark .CodeMirror-gutters {
+  @apply bg-slate-700! border-slate-600!;
+}
+
+.dark .CodeMirror-linenumber {
+  @apply text-slate-400!;
+}
+
+.dark .editor-toolbar {
+  @apply bg-slate-700! border-slate-600!;
+}
+
+.dark .editor-toolbar a {
+  @apply text-slate-300!;
+}
+
+.dark .editor-toolbar a:hover,
+.dark .editor-toolbar a.active {
+  @apply bg-slate-600! text-indigo-400! border-slate-500!;
+}
+
+.dark .editor-toolbar i.separator {
+  @apply border-slate-600!;
+}
+
+.dark .editor-preview,
+.dark .editor-preview-side {
+  @apply bg-slate-800! text-slate-100!;
+}
+
+.dark .editor-statusbar {
+  @apply bg-slate-700! border-slate-600! text-slate-400!;
+}
+
+.dark .CodeMirror-selected {
+  background: rgba(99, 102, 241, 0.2) !important;
+}
+
+.dark .cm-s-easymde .cm-header {
+  @apply text-indigo-400!;
+}
+
+.dark .cm-s-easymde .cm-link {
+  @apply text-purple-400!;
+}
+
+.dark .cm-s-easymde .cm-url {
+  @apply text-blue-400!;
+}
+
+.dark .cm-s-easymde .cm-quote {
+  @apply text-emerald-400!;
+}
+
+/* ========================================
+   TinyMCE Dark Mode Styling
+   ======================================== */
+
+/* Override TinyMCE container */
+.dark .tox.tox-tinymce {
+  @apply border-slate-600!;
+}
+
+.dark .tox:not(.tox-tinymce-inline) .tox-editor-header {
+  @apply bg-slate-700! border-slate-600!;
+}
+
+.dark .tox-promotion {
+  @apply bg-transparent! border-transparent!;
+}
+
+.dark .tox .tox-promotion-link {
+  @apply text-slate-300! font-medium! bg-indigo-600/50!;
+}
+
+.dark .tox .tox-promotion-link:hover {
+  @apply text-indigo-400!;
+}
+
+.dark .tox .tox-statusbar__branding svg {
+  @apply fill-slate-400!;
+}
+
+.dark .tox-statusbar__wordcount {
+  @apply text-slate-400!;
+}
+
+.dark .tox .tox-statusbar__branding a {
+  @apply text-slate-300!;
+}
+
+.dark .tox .tox-statusbar__branding a:hover {
+  @apply text-indigo-400!;
+}
+
+/* Menubar & Toolbar */
+.dark .tox .tox-menubar,
+.dark .tox .tox-toolbar,
+.dark .tox .tox-toolbar-overlord,
+.dark .tox .tox-toolbar__primary,
+.dark .tox .tox-toolbar__overflow {
+  @apply bg-slate-700! border-slate-600!;
+}
+
+/* Menubar Items */
+.dark .tox .tox-mbtn {
+  @apply text-slate-300! bg-transparent!;
+}
+
+.dark .tox .tox-mbtn:hover {
+  @apply bg-slate-600! text-indigo-400!;
+}
+
+.dark .tox .tox-mbtn--active {
+  @apply bg-slate-600! text-indigo-500!;
+}
+
+/* Toolbar Group Backgrounds */
+.dark .tox .tox-toolbar__group:not(:last-of-type) {
+  @apply border-slate-600!;
+}
+
+/* Panel & Sidebar */
+.dark .tox .tox-sidebar-wrap,
+.dark .tox .tox-sidebar,
+.dark .tox .tox-panel {
+  @apply bg-slate-800! border-slate-600!;
+}
+
+/* More Drawer */
+.dark .tox .tox-toolbar__overflow {
+  @apply bg-slate-700! border-slate-600!;
+}
+
+.dark .tox .tox-toolbar__group {
+  @apply border-slate-600!;
+}
+
+/* Toolbar Buttons */
+.dark .tox .tox-tbtn {
+  @apply text-slate-300! bg-transparent!;
+}
+
+.dark .tox .tox-tbtn:hover {
+  @apply bg-slate-600! text-indigo-400!;
+}
+
+.dark .tox .tox-tbtn--enabled,
+.dark .tox .tox-tbtn--enabled:hover {
+  @apply bg-slate-600! text-indigo-500!;
+}
+
+.dark .tox .tox-tbtn svg {
+  @apply fill-slate-300!;
+}
+
+.dark .tox .tox-tbtn:hover svg {
+  @apply fill-indigo-400!;
+}
+
+.dark .tox .tox-tbtn--enabled svg {
+  @apply fill-indigo-500!;
+}
+
+/* Editor Area */
+.dark .tox .tox-edit-area__iframe {
+  @apply bg-slate-800!;
+}
+
+/* Status Bar */
+.dark .tox .tox-statusbar {
+  @apply bg-slate-700! border-slate-600! text-slate-400!;
+}
+
+.dark .tox .tox-statusbar a,
+.dark .tox .tox-statusbar__path-item {
+  @apply text-slate-400!;
+}
+
+.dark .tox .tox-statusbar a:hover,
+.dark .tox .tox-statusbar__path-item:hover {
+  @apply text-indigo-400!;
+}
+
+/* Menus & Dropdowns */
+.dark .tox .tox-menu,
+.dark .tox .tox-collection,
+.dark .tox .tox-swatches-menu {
+  @apply bg-slate-700! border-slate-600!;
+}
+
+.dark .tox .tox-collection__item,
+.dark .tox .tox-menu__item {
+  @apply text-slate-300!;
+}
+
+.dark .tox .tox-collection__item:hover,
+.dark .tox .tox-menu__item:hover {
+  @apply bg-slate-600! text-indigo-400!;
+}
+
+.dark .tox .tox-collection__item--active,
+.dark .tox .tox-menu__item--active {
+  @apply bg-slate-600! text-indigo-500!;
+}
+
+.dark .tox .tox-collection__item-icon svg,
+.dark .tox .tox-menu__item-icon svg {
+  @apply fill-slate-400!;
+}
+
+/* Dialogs */
+.dark .tox .tox-dialog {
+  @apply bg-slate-800! border-slate-600!;
+}
+
+.dark .tox .tox-dialog__header {
+  @apply bg-slate-700! border-slate-600! text-slate-100!;
+}
+
+.dark .tox .tox-dialog__title {
+  @apply text-slate-100!;
+}
+
+.dark .tox .tox-dialog__body {
+  @apply text-slate-300!;
+}
+
+.dark .tox .tox-dialog__body-nav-item {
+  @apply text-slate-300!;
+}
+
+.dark .tox .tox-dialog__body-nav-item--active {
+  @apply text-indigo-500! border-indigo-500!;
+}
+
+.dark .tox .tox-dialog__footer {
+  @apply bg-slate-700! border-slate-600!;
+}
+
+/* Form Elements */
+.dark .tox .tox-textfield,
+.dark .tox .tox-textarea,
+.dark .tox .tox-listboxfield .tox-listbox--select,
+.dark .tox .tox-selectfield select {
+  @apply bg-slate-700! border-slate-600! text-slate-100!;
+}
+
+.dark .tox .tox-textfield:focus,
+.dark .tox .tox-textarea:focus {
+  @apply border-indigo-500! bg-slate-700!;
+}
+
+.dark .tox .tox-label,
+.dark .tox .tox-toolbar-label {
+  @apply text-slate-300!;
+}
+
+/* Fix for toolbar select dropdowns (Paragraph, etc) */
+.dark .tox .tox-tbtn--select,
+.dark .tox .tox-tbtn__select-label {
+  @apply text-slate-300!;
+}
+
+.dark .tox .tox-tbtn--select:hover {
+  @apply text-indigo-400!;
+}
+
+/* Buttons */
+.dark .tox .tox-button {
+  @apply bg-slate-600! text-slate-100! border-slate-500!;
+}
+
+.dark .tox .tox-button:hover {
+  @apply bg-slate-500! text-indigo-400!;
+}
+
+.dark .tox .tox-button--secondary {
+  @apply bg-indigo-600! text-white! border-indigo-500!;
+}
+
+.dark .tox .tox-button--secondary:hover {
+  @apply bg-indigo-500!;
+}
+
+.dark .tox .tox-button[disabled] {
+  @apply bg-slate-700! text-slate-500! border-slate-600!;
+}
+
+/* Split Button */
+.dark .tox .tox-split-button:hover {
+  @apply bg-slate-600!;
+}
+
+.dark .tox .tox-tbtn__select-label {
+  @apply text-slate-300!;
+}
+
+/* Notification */
+.dark .tox .tox-notification {
+  @apply bg-slate-700! border-slate-600! text-slate-300!;
+}
+
+.dark .tox .tox-notification--error {
+  @apply bg-red-900/30! border-red-600!;
+}
+
+.dark .tox .tox-notification--warning {
+  @apply bg-amber-900/30! border-amber-600!;
+}
+
+.dark .tox .tox-notification--success {
+  @apply bg-emerald-900/30! border-emerald-600!;
+}
+
+/* Color Picker */
+.dark .tox .tox-swatch {
+  @apply border-slate-600!;
+}
+
+/* Insert Table Grid */
+.dark .tox .tox-insert-table-picker__selected {
+  @apply bg-indigo-500/30!;
+}
+
+.dark .tox .tox-insert-table-picker__label {
+  @apply text-slate-300!;
+}
+
+/* Popup & Floating Panels */
+.dark .tox .tox-pop {
+  @apply bg-slate-700! border-slate-600!;
+}
+
+.dark .tox .tox-pop__dialog {
+  @apply bg-slate-700!;
+}
+
+/* Color Input */
+.dark .tox .tox-color-input span {
+  @apply border-slate-600!;
+}
+
+/* Autocompleter */
+.dark .tox .tox-autocompleter {
+  @apply bg-slate-700! border-slate-600!;
+}
+
+.dark .tox .tox-autocompleter .tox-menu {
+  @apply bg-slate-700!;
+}
+
+/* Tab Navigation */
+.dark .tox .tox-dialog__body-nav-item:not(.tox-dialog__body-nav-item--active) {
+  @apply border-transparent!;
+}
+
+/* Tooltips */
+.dark .tox .tox-tooltip,
+.dark .tox .tox-tooltip__body {
+  @apply bg-slate-700! text-slate-100! border-slate-600!;
+}
+
+.dark .tox .tox-tooltip__arrow {
+  border-color: transparent transparent #334155 transparent !important;
+}
+
+/* Silver Theme Overrides for Dark Mode */
+.dark .tox.tox-silver-sink .tox-pop {
+  @apply bg-slate-700! border-slate-600!;
+}

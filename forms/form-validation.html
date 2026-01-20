@@ -3,22 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Input Masks | Encore UI</title>
+    <title>Form Validation | Encore UI</title>
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/assets/css/style.css" />
-
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"
     ></script>
-
-    <!-- Cleave.js -->
-    <script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/cleave.min.js"></script>
-    <!-- Cleave.js Phone Lib (Indonesia) -->
-    <script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/addons/cleave-phone.id.js"></script>
   </head>
   <body
     x-data="{ 
@@ -440,7 +434,7 @@
                 </ul>
               </li>
 
-              <li class="nav-item dropdown" x-data="{ open: true }">
+              <li class="nav-item dropdown" x-data="{ open: false }">
                 <a
                   href="#"
                   class="nav-link group"
@@ -469,9 +463,7 @@
                       >
                     </li>
                     <li class="nav-item">
-                      <a
-                        href="/forms/input-masks.html"
-                        class="nav-sub-link active"
+                      <a href="/forms/input-masks.html" class="nav-sub-link"
                         ><span>Input Masks</span></a
                       >
                     </li>
@@ -539,7 +531,10 @@
               </li>
 
               <li class="nav-item">
-                <a href="/forms/form-validation.html" class="nav-link group">
+                <a
+                  href="/forms/form-validation.html"
+                  class="nav-link active group"
+                >
                   <i class="bx bx-list-check nav-icon"></i>
                   <span>Form Validation</span>
                 </a>
@@ -1285,176 +1280,496 @@
               <h1
                 class="text-3xl font-bold text-slate-800 dark:text-slate-100 mb-2"
               >
-                Input Masks
+                Form Validation
               </h1>
               <p class="text-slate-600 dark:text-slate-400">
-                Format input content as you type using Cleave.js.
+                Examples of HTML5 validation, custom validation, and real-time
+                feedback.
               </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-              <!-- Credit Card -->
+            <div class="space-y-8">
+              <!-- HTML5 Validation -->
               <div
                 class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6"
+                x-data="{
+                  submitted: false,
+                  handleSubmit(event) {
+                    event.preventDefault();
+                    if (event.target.checkValidity()) {
+                      alert('Form submitted successfully!');
+                      this.submitted = true;
+                    }
+                  }
+                }"
               >
                 <div class="flex items-center justify-between mb-4">
                   <h3
                     class="text-lg font-bold text-slate-800 dark:text-slate-100"
                   >
-                    Credit Card
-                  </h3>
-                </div>
-                <p class="text-sm text-slate-500 dark:text-slate-400 mb-4">
-                  Automatically format credit card numbers (blocks of 4).
-                </p>
-                <div>
-                  <label
-                    class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
-                    >Card Number</label
-                  >
-                  <div class="relative">
-                    <input
-                      type="text"
-                      class="mask-credit-card w-full px-4 py-2.5 bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none text-slate-900 dark:text-slate-100 placeholder:text-slate-400 transition-all"
-                      placeholder="xxxx xxxx xxxx xxxx"
-                    />
-                    <i
-                      class="bx bx-credit-card absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"
-                    ></i>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Phone Number -->
-              <div
-                class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6"
-              >
-                <div class="flex items-center justify-between mb-4">
-                  <h3
-                    class="text-lg font-bold text-slate-800 dark:text-slate-100"
-                  >
-                    Phone Number
+                    HTML5 Validation
                   </h3>
                   <span
-                    class="px-2 py-1 text-xs font-semibold bg-indigo-50 text-indigo-600 rounded-lg dark:bg-indigo-900/30 dark:text-indigo-400"
-                    >ID Region</span
+                    class="px-2 py-1 text-xs font-semibold bg-blue-50 text-blue-600 rounded-lg dark:bg-blue-900/30 dark:text-blue-400"
+                    >Native</span
                   >
                 </div>
-
                 <p class="text-sm text-slate-500 dark:text-slate-400 mb-4">
-                  Format phone numbers for specific region (Indonesia).
+                  Uses built-in HTML5 validation attributes like required,
+                  pattern, min, max, etc.
                 </p>
-                <div>
-                  <label
-                    class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
-                    >Phone Number</label
-                  >
-                  <div class="relative">
-                    <input
-                      type="text"
-                      class="mask-phone w-full px-4 py-2.5 bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none text-slate-900 dark:text-slate-100 placeholder:text-slate-400 transition-all"
-                      placeholder="08xx xxxx xxxx"
-                    />
-                    <i
-                      class="bx bx-phone absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"
-                    ></i>
+                <form @submit="handleSubmit" class="space-y-4">
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label
+                        class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
+                      >
+                        Email <span class="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        placeholder="Enter email"
+                        class="w-full px-4 py-2.5 bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-transparent transition-all"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
+                      >
+                        Phone <span class="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="tel"
+                        required
+                        pattern="[0-9]{10,15}"
+                        placeholder="1234567890"
+                        class="w-full px-4 py-2.5 bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-transparent transition-all"
+                      />
+                      <p
+                        class="mt-1 text-xs text-slate-500 dark:text-slate-400"
+                      >
+                        10-15 digits only
+                      </p>
+                    </div>
                   </div>
-                </div>
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label
+                        class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
+                      >
+                        Age <span class="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="number"
+                        required
+                        min="18"
+                        max="100"
+                        placeholder="Enter age"
+                        class="w-full px-4 py-2.5 bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-transparent transition-all"
+                      />
+                      <p
+                        class="mt-1 text-xs text-slate-500 dark:text-slate-400"
+                      >
+                        Must be between 18 and 100
+                      </p>
+                    </div>
+                    <div>
+                      <label
+                        class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
+                      >
+                        Website
+                      </label>
+                      <input
+                        type="url"
+                        placeholder="https://example.com"
+                        class="w-full px-4 py-2.5 bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-transparent transition-all"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label
+                      class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
+                    >
+                      Message <span class="text-red-500">*</span>
+                    </label>
+                    <textarea
+                      required
+                      minlength="10"
+                      maxlength="200"
+                      rows="3"
+                      placeholder="Enter message (10-200 characters)"
+                      class="w-full px-4 py-2.5 bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-transparent transition-all"
+                    ></textarea>
+                  </div>
+                  <div class="flex justify-end">
+                    <button
+                      type="submit"
+                      class="px-6 py-2.5 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors font-medium"
+                    >
+                      Submit Form
+                    </button>
+                  </div>
+                </form>
               </div>
 
-              <!-- Date Formatting -->
+              <!-- Custom Validation with Real-time Feedback -->
               <div
                 class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6"
+                x-data="{
+                  form: {
+                    username: '',
+                    email: '',
+                    password: '',
+                    confirmPassword: '',
+                    agree: false
+                  },
+                  errors: {},
+                  touched: {},
+                  validateUsername() {
+                    if (!this.form.username) {
+                      this.errors.username = 'Username is required';
+                    } else if (this.form.username.length < 3) {
+                      this.errors.username = 'Username must be at least 3 characters';
+                    } else if (!/^[a-zA-Z0-9_]+$/.test(this.form.username)) {
+                      this.errors.username = 'Username can only contain letters, numbers, and underscores';
+                    } else {
+                      delete this.errors.username;
+                    }
+                  },
+                  validateEmail() {
+                    if (!this.form.email) {
+                      this.errors.email = 'Email is required';
+                    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.form.email)) {
+                      this.errors.email = 'Please enter a valid email address';
+                    } else {
+                      delete this.errors.email;
+                    }
+                  },
+                  validatePassword() {
+                    if (!this.form.password) {
+                      this.errors.password = 'Password is required';
+                    } else if (this.form.password.length < 8) {
+                      this.errors.password = 'Password must be at least 8 characters';
+                    } else if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/.test(this.form.password)) {
+                      this.errors.password = 'Password must contain uppercase, lowercase, and number';
+                    } else {
+                      delete this.errors.password;
+                    }
+                  },
+                  validateConfirmPassword() {
+                    if (!this.form.confirmPassword) {
+                      this.errors.confirmPassword = 'Please confirm your password';
+                    } else if (this.form.password !== this.form.confirmPassword) {
+                      this.errors.confirmPassword = 'Passwords do not match';
+                    } else {
+                      delete this.errors.confirmPassword;
+                    }
+                  },
+                  validateAgree() {
+                    if (!this.form.agree) {
+                      this.errors.agree = 'You must agree to the terms';
+                    } else {
+                      delete this.errors.agree;
+                    }
+                  },
+                  handleSubmit(event) {
+                    event.preventDefault();
+                    this.validateUsername();
+                    this.validateEmail();
+                    this.validatePassword();
+                    this.validateConfirmPassword();
+                    this.validateAgree();
+                    
+                    if (Object.keys(this.errors).length === 0) {
+                      alert('Form submitted successfully!');
+                      console.log('Form data:', this.form);
+                    }
+                  },
+                  getPasswordStrength() {
+                    const password = this.form.password;
+                    if (!password) return { strength: 0, label: '', color: '' };
+                    
+                    let strength = 0;
+                    if (password.length >= 8) strength++;
+                    if (password.length >= 12) strength++;
+                    if (/[a-z]/.test(password)) strength++;
+                    if (/[A-Z]/.test(password)) strength++;
+                    if (/\d/.test(password)) strength++;
+                    if (/[^a-zA-Z\d]/.test(password)) strength++;
+                    
+                    if (strength <= 2) return { strength: 33, label: 'Weak', color: 'bg-red-500' };
+                    if (strength <= 4) return { strength: 66, label: 'Medium', color: 'bg-amber-500' };
+                    return { strength: 100, label: 'Strong', color: 'bg-emerald-500' };
+                  }
+                }"
               >
                 <div class="flex items-center justify-between mb-4">
                   <h3
                     class="text-lg font-bold text-slate-800 dark:text-slate-100"
                   >
-                    Date
+                    Custom Validation with Real-time Feedback
                   </h3>
+                  <span
+                    class="px-2 py-1 text-xs font-semibold bg-purple-50 text-purple-600 rounded-lg dark:bg-purple-900/30 dark:text-purple-400"
+                    >Alpine.js</span
+                  >
                 </div>
                 <p class="text-sm text-slate-500 dark:text-slate-400 mb-4">
-                  Automatically adds slashes for dates (DD/MM/YYYY).
+                  Custom validation logic with instant feedback as you type.
                 </p>
-                <div>
-                  <label
-                    class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
-                    >Date</label
-                  >
-                  <div class="relative">
+                <form @submit="handleSubmit" class="space-y-4">
+                  <div>
+                    <label
+                      class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
+                    >
+                      Username <span class="text-red-500">*</span>
+                    </label>
                     <input
                       type="text"
-                      class="mask-date w-full px-4 py-2.5 bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none text-slate-900 dark:text-slate-100 placeholder:text-slate-400 transition-all"
-                      placeholder="DD / MM / YYYY"
+                      x-model="form.username"
+                      @blur="touched.username = true; validateUsername()"
+                      @input="touched.username && validateUsername()"
+                      placeholder="Enter username"
+                      class="w-full px-4 py-2.5 bg-white dark:bg-slate-700 border rounded-lg focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-transparent transition-all"
+                      :class="errors.username && touched.username ? 'border-red-500' : 'border-slate-300 dark:border-slate-600'"
                     />
-                    <i
-                      class="bx bx-calendar absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"
-                    ></i>
+                    <div class="mt-1 flex items-center gap-2">
+                      <i
+                        x-show="!errors.username && form.username && touched.username"
+                        class="bx bx-check-circle text-emerald-500"
+                      ></i>
+                      <p
+                        x-show="errors.username && touched.username"
+                        x-text="errors.username"
+                        class="text-sm text-red-500"
+                      ></p>
+                    </div>
                   </div>
-                </div>
+
+                  <div>
+                    <label
+                      class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
+                    >
+                      Email <span class="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      x-model="form.email"
+                      @blur="touched.email = true; validateEmail()"
+                      @input="touched.email && validateEmail()"
+                      placeholder="Enter email"
+                      class="w-full px-4 py-2.5 bg-white dark:bg-slate-700 border rounded-lg focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-transparent transition-all"
+                      :class="errors.email && touched.email ? 'border-red-500' : 'border-slate-300 dark:border-slate-600'"
+                    />
+                    <div class="mt-1 flex items-center gap-2">
+                      <i
+                        x-show="!errors.email && form.email && touched.email"
+                        class="bx bx-check-circle text-emerald-500"
+                      ></i>
+                      <p
+                        x-show="errors.email && touched.email"
+                        x-text="errors.email"
+                        class="text-sm text-red-500"
+                      ></p>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label
+                      class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
+                    >
+                      Password <span class="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="password"
+                      x-model="form.password"
+                      @blur="touched.password = true; validatePassword()"
+                      @input="touched.password && validatePassword()"
+                      placeholder="Enter password"
+                      class="w-full px-4 py-2.5 bg-white dark:bg-slate-700 border rounded-lg focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-transparent transition-all"
+                      :class="errors.password && touched.password ? 'border-red-500' : 'border-slate-300 dark:border-slate-600'"
+                    />
+                    <!-- Password Strength Meter -->
+                    <div x-show="form.password" class="mt-2">
+                      <div class="flex items-center gap-2 mb-1">
+                        <div
+                          class="flex-1 h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden"
+                        >
+                          <div
+                            class="h-full transition-all duration-300"
+                            :class="getPasswordStrength().color"
+                            :style="`width: ${getPasswordStrength().strength}%`"
+                          ></div>
+                        </div>
+                        <span
+                          class="text-xs font-medium"
+                          :class="getPasswordStrength().strength === 100 ? 'text-emerald-600 dark:text-emerald-400' : getPasswordStrength().strength === 66 ? 'text-amber-600 dark:text-amber-400' : 'text-red-600 dark:text-red-400'"
+                          x-text="getPasswordStrength().label"
+                        ></span>
+                      </div>
+                    </div>
+                    <p
+                      x-show="errors.password && touched.password"
+                      x-text="errors.password"
+                      class="mt-1 text-sm text-red-500"
+                    ></p>
+                  </div>
+
+                  <div>
+                    <label
+                      class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
+                    >
+                      Confirm Password <span class="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="password"
+                      x-model="form.confirmPassword"
+                      @blur="touched.confirmPassword = true; validateConfirmPassword()"
+                      @input="touched.confirmPassword && validateConfirmPassword()"
+                      placeholder="Confirm password"
+                      class="w-full px-4 py-2.5 bg-white dark:bg-slate-700 border rounded-lg focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-transparent transition-all"
+                      :class="errors.confirmPassword && touched.confirmPassword ? 'border-red-500' : 'border-slate-300 dark:border-slate-600'"
+                    />
+                    <div class="mt-1 flex items-center gap-2">
+                      <i
+                        x-show="!errors.confirmPassword && form.confirmPassword && touched.confirmPassword"
+                        class="bx bx-check-circle text-emerald-500"
+                      ></i>
+                      <p
+                        x-show="errors.confirmPassword && touched.confirmPassword"
+                        x-text="errors.confirmPassword"
+                        class="text-sm text-red-500"
+                      ></p>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label class="flex items-start gap-3 cursor-pointer group">
+                      <input
+                        type="checkbox"
+                        x-model="form.agree"
+                        @change="touched.agree = true; validateAgree()"
+                        class="mt-1 w-4 h-4 text-indigo-600 rounded focus:ring-indigo-500"
+                        :class="errors.agree && touched.agree ? 'border-red-500' : 'border-slate-300 dark:border-slate-600'"
+                      />
+                      <span class="text-sm text-slate-700 dark:text-slate-300">
+                        I agree to the
+                        <a
+                          href="#"
+                          class="text-indigo-600 dark:text-indigo-400 hover:underline"
+                          >Terms and Conditions</a
+                        >
+                        <span class="text-red-500">*</span>
+                      </span>
+                    </label>
+                    <p
+                      x-show="errors.agree && touched.agree"
+                      x-text="errors.agree"
+                      class="mt-1 text-sm text-red-500 ml-7"
+                    ></p>
+                  </div>
+
+                  <div class="flex justify-end">
+                    <button
+                      type="submit"
+                      class="px-6 py-2.5 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors font-medium"
+                    >
+                      Create Account
+                    </button>
+                  </div>
+                </form>
               </div>
 
-              <!-- Numeral Formatting -->
+              <!-- Async Validation (Username Availability) -->
               <div
                 class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6"
+                x-data="{
+                  username: '',
+                  checking: false,
+                  available: null,
+                  checkTimeout: null,
+                  async checkUsername() {
+                    if (!this.username || this.username.length < 3) {
+                      this.available = null;
+                      return;
+                    }
+                    
+                    this.checking = true;
+                    
+                    // Simulate API call
+                    await new Promise(resolve => setTimeout(resolve, 1000));
+                    
+                    // Simulate check (usernames starting with 'a' are taken)
+                    this.available = !this.username.toLowerCase().startsWith('a');
+                    this.checking = false;
+                  },
+                  handleInput() {
+                    this.available = null;
+                    clearTimeout(this.checkTimeout);
+                    this.checkTimeout = setTimeout(() => this.checkUsername(), 500);
+                  }
+                }"
               >
                 <div class="flex items-center justify-between mb-4">
                   <h3
                     class="text-lg font-bold text-slate-800 dark:text-slate-100"
                   >
-                    Numeral / Currency
+                    Async Validation
                   </h3>
+                  <span
+                    class="px-2 py-1 text-xs font-semibold bg-emerald-50 text-emerald-600 rounded-lg dark:bg-emerald-900/30 dark:text-emerald-400"
+                    >Real-time</span
+                  >
                 </div>
                 <p class="text-sm text-slate-500 dark:text-slate-400 mb-4">
-                  Thousands separator, prefix, and precision control.
+                  Check username availability with debounced API calls.
                 </p>
                 <div>
                   <label
                     class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
-                    >Amount (IDR)</label
                   >
+                    Username
+                  </label>
                   <div class="relative">
                     <input
                       type="text"
-                      class="mask-currency w-full px-4 py-2.5 bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none text-slate-900 dark:text-slate-100 placeholder:text-slate-400 transition-all"
-                      placeholder="Rp 10.000"
+                      x-model="username"
+                      @input="handleInput"
+                      placeholder="Enter username"
+                      class="w-full px-4 py-2.5 pr-12 bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-transparent transition-all"
                     />
-                    <i
-                      class="bx bx-money absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"
-                    ></i>
+                    <div class="absolute right-3 top-1/2 -translate-y-1/2">
+                      <i
+                        x-show="checking"
+                        class="bx bx-loader-alt animate-spin text-slate-400"
+                      ></i>
+                      <i
+                        x-show="!checking && available === true"
+                        class="bx bx-check-circle text-emerald-500"
+                      ></i>
+                      <i
+                        x-show="!checking && available === false"
+                        class="bx bx-x-circle text-red-500"
+                      ></i>
+                    </div>
                   </div>
-                </div>
-              </div>
-
-              <!-- Custom Delimiter (Serial Key) -->
-              <div
-                class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 md:col-span-2"
-              >
-                <div class="flex items-center justify-between mb-4">
-                  <h3
-                    class="text-lg font-bold text-slate-800 dark:text-slate-100"
+                  <p
+                    x-show="!checking && available === true"
+                    class="mt-1 text-sm text-emerald-600 dark:text-emerald-400"
                   >
-                    Custom Block (Serial Key)
-                  </h3>
-                </div>
-                <p class="text-sm text-slate-500 dark:text-slate-400 mb-4">
-                  Custom blocks delimiter for things like License Keys.
-                </p>
-                <div>
-                  <label
-                    class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
-                    >License Key</label
+                    ✓ Username is available
+                  </p>
+                  <p
+                    x-show="!checking && available === false"
+                    class="mt-1 text-sm text-red-500"
                   >
-                  <div class="relative">
-                    <input
-                      type="text"
-                      class="mask-license w-full px-4 py-2.5 bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none text-slate-900 dark:text-slate-100 placeholder:text-slate-400 transition-all uppercase font-mono tracking-wider"
-                      placeholder="XXXX-XXXX-XXXX-XXXX"
-                    />
-                    <i
-                      class="bx bx-key absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"
-                    ></i>
-                  </div>
+                    ✗ Username is already taken
+                  </p>
+                  <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                    Try usernames starting with 'a' (taken) or other letters
+                    (available)
+                  </p>
                 </div>
               </div>
             </div>
@@ -1473,8 +1788,5 @@
         </footer>
       </div>
     </div>
-
-    <!-- Init Masks -->
-    <script src="/assets/js/forms/input-masks.js"></script>
   </body>
 </html>

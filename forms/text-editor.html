@@ -46,6 +46,7 @@
             this.darkMode = !this.darkMode; 
             localStorage.setItem('theme', this.darkMode ? 'dark' : 'light'); 
             document.documentElement.classList.toggle('dark', this.darkMode);
+            window.dispatchEvent(new Event('themeChanged'));
         },
         init() {
             if (this.darkMode) document.documentElement.classList.add('dark');
@@ -556,7 +557,7 @@
               </li>
 
               <li class="nav-item">
-                <a href="#" class="nav-link group">
+                <a href="/forms/form-validation.html" class="nav-link group">
                   <i class="bx bx-list-check nav-icon"></i>
                   <span>Form Validation</span>
                 </a>
