@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Results | Encore UI</title>
+    <!-- Vite CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Alpine.js -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"
+    ></script>
+  </head>
+  <body
+    x-data="{
+        sidebarHidden: false,
+        darkMode: localStorage.getItem('theme') === 'dark',
+        toggleTheme() {
+            this.darkMode = !this.darkMode;
+            localStorage.setItem('theme', this.darkMode ? 'dark' : 'light');
+            if (this.darkMode) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        },
+        toggleSidebar() {
+            this.sidebarHidden = !this.sidebarHidden;
+        }
+    }"
+    x-init="$watch('darkMode', val => val ? document.documentElement.classList.add('dark') : document.documentElement.classList.remove('dark')); if(darkMode) document.documentElement.classList.add('dark');"
+    :class="{ 'sidebar-hidden': sidebarHidden }"
+    class="bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 antialiased transition-colors duration-300"
+  >
+    <!-- Mobile Drawer -->
+    <div
+      class="fixed inset-0 z-50 lg:hidden bg-slate-900/50 backdrop-blur-sm transition-opacity duration-300"
+      x-show="sidebarHidden"
+      x-transition:enter="ease-out duration-300"
+      x-transition:enter-start="opacity-0"
+      x-transition:enter-end="opacity-100"
+      x-transition:leave="ease-in duration-200"
+      x-transition:leave-start="opacity-100"
+      x-transition:leave-end="opacity-0"
+      @click="sidebarHidden = false"
+      style="display: none"
+    ></div>
+
+    <!-- Dashboard Container -->
+    <div class="min-h-screen bg-slate-50 dark:bg-slate-900">
+      <!-- Sidebar -->
+      <aside class="layout-sidebar bg-white dark:bg-slate-800">
+        <!-- Brand -->
+        <div
+          class="h-16 flex items-center px-6 border-b border-slate-100 dark:border-slate-700"
+        >
+          <div
+            class="flex items-center gap-2 font-bold text-xl text-indigo-600 dark:text-indigo-400 tracking-tight"
+          >
+            <i class="bx bxs-cube-alt text-2xl"></i>
+            <span>Encore</span>
+          </div>
+          <button
+            @click="sidebarHidden = !sidebarHidden"
+            class="lg:hidden ml-auto text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
+          >
+            <i class="bx bx-x text-2xl"></i>
+          </button>
+        </div>
+
+        <!-- Navigation -->
+        <div class="flex-1 overflow-y-auto py-4 custom-scrollbar">
+          <nav class="px-2">
+            <ul class="nav">
+              <li class="nav-header">Dashboard</li>
+              <li class="nav-item">
+                <a
+                  href="/dashboard/dashboard-default.html"
+                  class="nav-link group"
+                >
+                  <i class="bx bxs-dashboard nav-icon"></i>
+                  <span>Dashboard</span>
+                </a>
+              </li>
+
+              <li class="nav-header">Utility / Misc</li>
+
+              <li class="nav-item dropdown" x-data="{ open: true }">
+                <a
+                  href="#"
+                  class="nav-link active group"
+                  @click.prevent="open = !open"
+                  :class="{ 'active': open }"
+                >
+                  <i class="bx bx-box nav-icon"></i>
+                  <span>Utility</span>
+                  <i
+                    class="bx bx-chevron-right nav-chevron"
+                    :class="{ 'rotate-90': open }"
+                  ></i>
+                </a>
+                <ul class="nav-submenu" :class="{ 'show': open }">
+                  <div>
+                    <li class="nav-item">
+                      <a href="/utility/pricing-table.html" class="nav-sub-link"
+                        ><span>Pricing Table</span></a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a href="/utility/faq.html" class="nav-sub-link"
+                        ><span>FAQ</span></a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a href="/utility/timeline.html" class="nav-sub-link"
+                        ><span>Timeline</span></a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a href="/utility/gallery.html" class="nav-sub-link"
+                        ><span>Gallery</span></a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        href="/utility/search-result.html"
+                        class="nav-sub-link active"
+                        ><span>Search Results</span></a
+                      >
+                    </li>
+                  </div>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a href="/user/account-settings.html" class="nav-link group">
+                  <i class="bx bx-user-circle nav-icon"></i>
+                  <span>Account Settings</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- Main Wrapper -->
+      <div class="layout-content bg-slate-50 dark:bg-slate-900">
+        <!-- Navbar -->
+        <header class="relative z-10">
+          <div
+            class="bg-white/95 dark:bg-slate-800/95 backdrop-blur-md border-b border-slate-100/50 dark:border-slate-700/50"
+          >
+            <div class="container mx-auto">
+              <div class="h-16 px-4 lg:px-6 flex items-center justify-between">
+                <!-- Left Section -->
+                <div class="flex items-center gap-4">
+                  <button
+                    @click="toggleSidebar()"
+                    class="p-2 hover:bg-linear-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-xl transition-all duration-300 group"
+                  >
+                    <i
+                      class="bx bx-menu text-2xl text-slate-600 dark:text-slate-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors"
+                    ></i>
+                  </button>
+                  <h3
+                    class="text-xl font-bold text-slate-800 dark:text-slate-100 hidden sm:block"
+                  >
+                    Search
+                  </h3>
+                </div>
+
+                <!-- Right Section -->
+                <div class="flex items-center gap-2">
+                  <div class="hidden sm:flex items-center gap-1">
+                    <button
+                      @click="toggleTheme()"
+                      class="relative p-2.5 hover:bg-linear-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-xl transition-all duration-300 group"
+                    >
+                      <i
+                        class="bx text-xl text-slate-600 dark:text-slate-400 transition-colors"
+                        :class="darkMode ? 'bx-sun group-hover:text-amber-500' : 'bx-moon group-hover:text-indigo-600 dark:group-hover:text-indigo-400'"
+                      ></i>
+                    </button>
+                  </div>
+
+                  <!-- Simple Profile (Placeholder) -->
+                  <button
+                    class="flex items-center gap-3 pl-2 pr-3 py-1.5 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-xl transition-all"
+                  >
+                    <img
+                      src="https://ui-avatars.com/api/?name=User&background=6366f1&color=fff"
+                      class="w-8 h-8 rounded-full"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main
+          class="flex-1 overflow-x-hidden overflow-y-auto bg-slate-50 dark:bg-slate-900 p-4 lg:p-6"
+          x-data="{ 
+              activeTab: 'all',
+              searchQuery: 'dashboard design',
+          }"
+        >
+          <div class="container mx-auto max-w-5xl">
+            <!-- Search Header -->
+            <div class="flex flex-col md:flex-row gap-4 mb-8">
+              <div class="flex-1 relative">
+                <i
+                  class="bx bx-search absolute left-4 top-1/2 -translate-y-1/2 text-2xl text-slate-400"
+                ></i>
+                <input
+                  type="text"
+                  x-model="searchQuery"
+                  class="w-full pl-12 pr-4 py-3.5 rounded-2xl bg-white dark:bg-slate-800 border-0 shadow-sm ring-1 ring-slate-100 dark:ring-slate-700 focus:ring-2 focus:ring-indigo-500 outline-none text-lg text-slate-800 dark:text-slate-100 placeholder-slate-400 transition-all font-medium"
+                />
+              </div>
+              <button
+                class="px-8 py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-2xl shadow-lg shadow-indigo-200 dark:shadow-none transition-all"
+              >
+                Search
+              </button>
+            </div>
+
+            <!-- Stats & Tabs -->
+            <div
+              class="flex flex-col md:flex-row items-start md:items-center justify-between mb-6 border-b border-slate-200 dark:border-slate-700 pb-2"
+            >
+              <p
+                class="text-slate-500 dark:text-slate-400 text-sm font-medium mb-4 md:mb-0"
+              >
+                About
+                <span class="font-bold text-slate-800 dark:text-slate-200"
+                  >12</span
+                >
+                results found (0.32 seconds)
+              </p>
+
+              <div
+                class="flex items-center gap-2 overflow-x-auto w-full md:w-auto"
+              >
+                <button
+                  @click="activeTab = 'all'"
+                  class="px-4 py-2 text-sm font-bold rounded-lg transition-all border-b-2"
+                  :class="activeTab === 'all' ? 'text-indigo-600 dark:text-indigo-400 border-indigo-600 dark:border-indigo-400 bg-indigo-50 dark:bg-indigo-900/20' : 'text-slate-500 dark:text-slate-400 border-transparent hover:text-slate-700 dark:hover:text-slate-300'"
+                >
+                  All
+                </button>
+                <button
+                  @click="activeTab = 'users'"
+                  class="px-4 py-2 text-sm font-bold rounded-lg transition-all border-b-2"
+                  :class="activeTab === 'users' ? 'text-indigo-600 dark:text-indigo-400 border-indigo-600 dark:border-indigo-400 bg-indigo-50 dark:bg-indigo-900/20' : 'text-slate-500 dark:text-slate-400 border-transparent hover:text-slate-700 dark:hover:text-slate-300'"
+                >
+                  Users
+                </button>
+                <button
+                  @click="activeTab = 'projects'"
+                  class="px-4 py-2 text-sm font-bold rounded-lg transition-all border-b-2"
+                  :class="activeTab === 'projects' ? 'text-indigo-600 dark:text-indigo-400 border-indigo-600 dark:border-indigo-400 bg-indigo-50 dark:bg-indigo-900/20' : 'text-slate-500 dark:text-slate-400 border-transparent hover:text-slate-700 dark:hover:text-slate-300'"
+                >
+                  Projects
+                </button>
+                <button
+                  @click="activeTab = 'files'"
+                  class="px-4 py-2 text-sm font-bold rounded-lg transition-all border-b-2"
+                  :class="activeTab === 'files' ? 'text-indigo-600 dark:text-indigo-400 border-indigo-600 dark:border-indigo-400 bg-indigo-50 dark:bg-indigo-900/20' : 'text-slate-500 dark:text-slate-400 border-transparent hover:text-slate-700 dark:hover:text-slate-300'"
+                >
+                  Files
+                </button>
+              </div>
+            </div>
+
+            <!-- Results -->
+            <div class="space-y-6">
+              <!-- Project Result (Show if 'all' or 'projects') -->
+              <div
+                x-show="activeTab === 'all' || activeTab === 'projects'"
+                class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md transition-shadow"
+              >
+                <div class="flex items-start gap-4">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 flex items-center justify-center shrink-0"
+                  >
+                    <i class="bx bxs-dashboard text-2xl"></i>
+                  </div>
+                  <div class="flex-1">
+                    <h3
+                      class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-1"
+                    >
+                      <span class="bg-yellow-100 text-slate-800 px-1 rounded"
+                        >Dashboard</span
+                      >
+                      Redesign v2.0
+                    </h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mb-3">
+                      Complete overhaul of the main admin
+                      <span class="font-bold text-slate-800 dark:text-slate-200"
+                        >dashboard</span
+                      >
+                      interface. Focusing on accessibility and dark mode
+                      support.
+                    </p>
+                    <div
+                      class="flex items-center gap-4 text-xs font-medium text-slate-500 dark:text-slate-400"
+                    >
+                      <div class="flex items-center gap-1">
+                        <i class="bx bx-calendar"></i> Updated 2 days ago
+                      </div>
+                      <div class="flex items-center gap-1">
+                        <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                        Active
+                      </div>
+                      <div class="flex -space-x-2">
+                        <img
+                          class="w-6 h-6 rounded-full border-2 border-white dark:border-slate-800"
+                          src="https://ui-avatars.com/api/?name=John"
+                          alt=""
+                        />
+                        <img
+                          class="w-6 h-6 rounded-full border-2 border-white dark:border-slate-800"
+                          src="https://ui-avatars.com/api/?name=Jane"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- User Result (Show if 'all' or 'users') -->
+              <div
+                x-show="activeTab === 'all' || activeTab === 'users'"
+                class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md transition-shadow flex items-center justify-between"
+              >
+                <div class="flex items-center gap-4">
+                  <img
+                    src="https://ui-avatars.com/api/?name=Sarah+Smith&background=random"
+                    class="w-12 h-12 rounded-full"
+                  />
+                  <div>
+                    <h3 class="font-bold text-slate-800 dark:text-slate-100">
+                      Sarah Smith
+                    </h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">
+                      Senior UI/UX
+                      <span class="bg-yellow-100 text-slate-800 px-1 rounded"
+                        >Designer</span
+                      >
+                    </p>
+                    <p class="text-xs text-slate-400 mt-0.5">
+                      San Francisco, CA
+                    </p>
+                  </div>
+                </div>
+                <button
+                  class="px-4 py-2 border border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 rounded-lg font-bold text-sm transition-colors"
+                >
+                  View Profile
+                </button>
+              </div>
+
+              <!-- File Result (Show if 'all' or 'files') -->
+              <div
+                x-show="activeTab === 'all' || activeTab === 'files'"
+                class="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md transition-shadow flex items-center gap-4"
+              >
+                <div
+                  class="w-10 h-10 rounded-lg bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 flex items-center justify-center text-xl shrink-0"
+                >
+                  <i class="bx bxs-file-pdf"></i>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <h4
+                    class="font-bold text-slate-800 dark:text-slate-100 truncate"
+                  >
+                    <span class="bg-yellow-100 text-slate-800 px-1 rounded"
+                      >Dashboard</span
+                    >_Specs_2026.pdf
+                  </h4>
+                  <p class="text-xs text-slate-500 dark:text-slate-400">
+                    2.4 MB • Uploaded by Alex
+                  </p>
+                </div>
+                <button
+                  class="text-slate-400 hover:text-indigo-600 transition-colors"
+                >
+                  <i class="bx bxs-download text-xl"></i>
+                </button>
+              </div>
+
+              <!-- Another User Result -->
+              <div
+                x-show="activeTab === 'all' || activeTab === 'users'"
+                class="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md transition-shadow flex items-center justify-between"
+              >
+                <div class="flex items-center gap-4">
+                  <img
+                    src="https://ui-avatars.com/api/?name=Mike+Ross&background=random"
+                    class="w-12 h-12 rounded-full"
+                  />
+                  <div>
+                    <h3 class="font-bold text-slate-800 dark:text-slate-100">
+                      Mike Ross
+                    </h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">
+                      Frontend Developer
+                    </p>
+                    <p class="text-xs text-slate-400 mt-0.5">New York, NY</p>
+                  </div>
+                </div>
+                <button
+                  class="px-4 py-2 border border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 rounded-lg font-bold text-sm transition-colors"
+                >
+                  View Profile
+                </button>
+              </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-center mt-12">
+              <nav class="flex items-center gap-1">
+                <button
+                  class="w-10 h-10 flex items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                >
+                  <i class="bx bx-chevron-left text-xl"></i>
+                </button>
+                <button
+                  class="w-10 h-10 flex items-center justify-center rounded-lg bg-indigo-600 text-white font-bold shadow-lg shadow-indigo-200 dark:shadow-none"
+                >
+                  1
+                </button>
+                <button
+                  class="w-10 h-10 flex items-center justify-center rounded-lg text-slate-600 dark:text-slate-400 font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                >
+                  2
+                </button>
+                <button
+                  class="w-10 h-10 flex items-center justify-center rounded-lg text-slate-600 dark:text-slate-400 font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                >
+                  3
+                </button>
+                <span
+                  class="w-10 h-10 flex items-center justify-center text-slate-400"
+                  >...</span
+                >
+                <button
+                  class="w-10 h-10 flex items-center justify-center rounded-lg text-slate-600 dark:text-slate-400 font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                >
+                  8
+                </button>
+                <button
+                  class="w-10 h-10 flex items-center justify-center rounded-lg text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                >
+                  <i class="bx bx-chevron-right text-xl"></i>
+                </button>
+              </nav>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

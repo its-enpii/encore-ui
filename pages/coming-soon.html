@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coming Soon | Encore UI</title>
+    <!-- Vite CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Alpine.js -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"
+    ></script>
+  </head>
+  <body
+    class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 antialiased h-screen flex flex-col overflow-hidden"
+    x-data="{
+        darkMode: localStorage.getItem('theme') === 'dark',
+        timeLeft: {
+            days: 0,
+            hours: 0,
+            minutes: 0,
+            seconds: 0
+        },
+        targetDate: new Date('2026-12-31T00:00:00').getTime(),
+        init() {
+             // Watch for dark mode changes
+            this.$watch('darkMode', val => val ? document.documentElement.classList.add('dark') : document.documentElement.classList.remove('dark')); 
+            if(this.darkMode) document.documentElement.classList.add('dark');
+
+            // Countdown Timer
+            this.updateTimer();
+            setInterval(() => {
+                this.updateTimer();
+            }, 1000);
+        },
+        updateTimer() {
+            const now = new Date().getTime();
+            const distance = this.targetDate - now;
+
+            if (distance < 0) {
+                this.timeLeft = { days: 0, hours: 0, minutes: 0, seconds: 0 };
+                return;
+            }
+
+            this.timeLeft.days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            this.timeLeft.hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            this.timeLeft.minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            this.timeLeft.seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        },
+        toggleTheme() {
+            this.darkMode = !this.darkMode;
+            localStorage.setItem('theme', this.darkMode ? 'dark' : 'light');
+            if (this.darkMode) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        }
+    }"
+  >
+    <!-- Header -->
+    <header
+      class="absolute top-0 left-0 w-full p-6 flex justify-between items-center z-20"
+    >
+      <div
+        class="flex items-center gap-2 font-bold text-xl text-indigo-600 dark:text-indigo-400 tracking-tight"
+      >
+        <i class="bx bxs-cube-alt text-2xl"></i>
+        <span>Encore</span>
+      </div>
+      <button
+        @click="toggleTheme()"
+        class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors"
+      >
+        <i
+          class="bx text-xl"
+          :class="darkMode ? 'bx-sun text-slate-400' : 'bx-moon text-slate-600'"
+        ></i>
+      </button>
+    </header>
+
+    <!-- Main Content -->
+    <main
+      class="flex-1 flex flex-col items-center justify-center p-6 relative z-10 w-full max-w-4xl mx-auto text-center"
+    >
+      <!-- Abstract Bg -->
+      <div
+        class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-50 dark:opacity-30"
+      >
+        <div
+          class="absolute top-1/2 left-1/4 w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply dark:mix-blend-overlay filter blur-3xl opacity-30 animate-blob"
+        ></div>
+        <div
+          class="absolute top-1/4 right-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply dark:mix-blend-overlay filter blur-3xl opacity-30 animate-blob animation-delay-2000"
+        ></div>
+        <div
+          class="absolute -bottom-32 left-1/2 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply dark:mix-blend-overlay filter blur-3xl opacity-30 animate-blob animation-delay-4000"
+        ></div>
+      </div>
+
+      <div class="relative">
+        <h1
+          class="text-5xl md:text-7xl font-extrabold text-slate-900 dark:text-white mb-6 tracking-tight"
+        >
+          Something amazing is <br class="hidden md:block" />
+          coming soon.
+        </h1>
+        <p
+          class="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-12 max-w-2xl mx-auto"
+        >
+          We are building a new experience that will redefine how you interact
+          with your data. Stay tuned for updates!
+        </p>
+
+        <!-- Timer -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mb-12">
+          <div
+            class="flex flex-col items-center p-4 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm rounded-2xl border border-slate-200/50 dark:border-slate-700/50"
+          >
+            <span
+              class="text-4xl md:text-5xl font-bold text-indigo-600 dark:text-indigo-400 font-mono"
+              x-text="timeLeft.days < 10 ? '0'+timeLeft.days : timeLeft.days"
+              >00</span
+            >
+            <span
+              class="text-xs uppercase font-bold tracking-wider text-slate-500 dark:text-slate-400 mt-1"
+              >Days</span
+            >
+          </div>
+          <div
+            class="flex flex-col items-center p-4 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm rounded-2xl border border-slate-200/50 dark:border-slate-700/50"
+          >
+            <span
+              class="text-4xl md:text-5xl font-bold text-indigo-600 dark:text-indigo-400 font-mono"
+              x-text="timeLeft.hours < 10 ? '0'+timeLeft.hours : timeLeft.hours"
+              >00</span
+            >
+            <span
+              class="text-xs uppercase font-bold tracking-wider text-slate-500 dark:text-slate-400 mt-1"
+              >Hours</span
+            >
+          </div>
+          <div
+            class="flex flex-col items-center p-4 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm rounded-2xl border border-slate-200/50 dark:border-slate-700/50"
+          >
+            <span
+              class="text-4xl md:text-5xl font-bold text-indigo-600 dark:text-indigo-400 font-mono"
+              x-text="timeLeft.minutes < 10 ? '0'+timeLeft.minutes : timeLeft.minutes"
+              >00</span
+            >
+            <span
+              class="text-xs uppercase font-bold tracking-wider text-slate-500 dark:text-slate-400 mt-1"
+              >Minutes</span
+            >
+          </div>
+          <div
+            class="flex flex-col items-center p-4 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm rounded-2xl border border-slate-200/50 dark:border-slate-700/50"
+          >
+            <span
+              class="text-4xl md:text-5xl font-bold text-indigo-600 dark:text-indigo-400 font-mono"
+              x-text="timeLeft.seconds < 10 ? '0'+timeLeft.seconds : timeLeft.seconds"
+              >00</span
+            >
+            <span
+              class="text-xs uppercase font-bold tracking-wider text-slate-500 dark:text-slate-400 mt-1"
+              >Seconds</span
+            >
+          </div>
+        </div>
+
+        <!-- Subscribe -->
+        <div class="max-w-md mx-auto">
+          <form class="flex items-center gap-2">
+            <div class="relative flex-1">
+              <i
+                class="bx bx-envelope absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-xl"
+              ></i>
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                class="w-full pl-12 pr-4 py-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all placeholder-slate-400 text-slate-800 dark:text-slate-200"
+              />
+            </div>
+            <button
+              type="button"
+              class="px-6 py-3 bg-slate-900 dark:bg-white hover:bg-slate-800 dark:hover:bg-slate-200 text-white dark:text-slate-900 font-bold rounded-xl transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+            >
+              Notify Me
+            </button>
+          </form>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mt-4">
+            No spam, we promise. Unsubscribe anytime.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="absolute bottom-6 w-full text-center text-sm text-slate-500 dark:text-slate-400 z-20"
+    >
+      &copy; 2026 Encore UI. All rights reserved.
+    </footer>
+
+    <style>
+      .animate-blob {
+        animation: blob 7s infinite;
+      }
+      .animation-delay-2000 {
+        animation-delay: 2s;
+      }
+      .animation-delay-4000 {
+        animation-delay: 4s;
+      }
+      @keyframes blob {
+        0% {
+          transform: translate(0px, 0px) scale(1);
+        }
+        33% {
+          transform: translate(30px, -50px) scale(1.1);
+        }
+        66% {
+          transform: translate(-20px, 20px) scale(0.9);
+        }
+        100% {
+          transform: translate(0px, 0px) scale(1);
+        }
+      }
+    </style>
+  </body>
+</html>

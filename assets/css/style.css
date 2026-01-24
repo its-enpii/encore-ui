@@ -1565,3 +1565,18 @@ table.dataTable tbody tr:hover {
 .dark .tox.tox-silver-sink .tox-pop {
   @apply bg-slate-700! border-slate-600!;
 }
+
+.map-container {
+  @apply w-full h-[400px] rounded-lg overflow-hidden;
+}
+
+.map-container {
+  @apply w-full h-[400px] rounded-xl overflow-hidden;
+}
+/* Custom tooltip style to match theme */
+.jvm-tooltip {
+  @apply bg-slate-700 text-slate-100 border-slate-600 rounded-lg p-1.5 text-xs;
+}
+.dark .jvm-tooltip {
+  @apply bg-slate-50 text-slate-900 border-slate-200;
+}

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ApexCharts | Encore UI</title>
+    <title>Account Settings | Encore UI</title>
     <!-- Vite CSS -->
     <link rel="stylesheet" href="/assets/css/style.css" />
     <!-- Boxicons -->
@@ -11,13 +11,37 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <!-- ApexCharts -->
-    <script src="/assets/lib/apexcharts-5.3.6/dist/apexcharts.min.js"></script>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <!-- Alpine.js -->
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"
     ></script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Outfit", sans-serif;
+      }
+      /* Custom Scrollbar */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
   </head>
   <body
     x-data="{
@@ -599,7 +623,7 @@
                 </ul>
               </li>
 
-              <li class="nav-item dropdown" x-data="{ open: true }">
+              <li class="nav-item dropdown" x-data="{ open: false }">
                 <a
                   href="#"
                   class="nav-link group"
@@ -616,9 +640,7 @@
                 <ul class="nav-submenu" :class="{ 'show': open }">
                   <div>
                     <li class="nav-item">
-                      <a
-                        href="/charts/apexcharts.html"
-                        class="nav-sub-link active"
+                      <a href="/charts/apexcharts.html" class="nav-sub-link"
                         ><span>ApexCharts</span></a
                       >
                     </li>
@@ -717,7 +739,7 @@
                 </ul>
               </li>
 
-              <li class="nav-item dropdown" x-data="{ open: false }">
+              <li class="nav-item dropdown" x-data="{ open: true }">
                 <a
                   href="#"
                   class="nav-link group"
@@ -739,7 +761,7 @@
                       >
                     </li>
                     <li class="nav-item">
-                      <a href="/user/account-settings.html" class="nav-sub-link"
+                      <a href="/user/account-settings.html" class="nav-sub-link active"
                         ><span>Account Settings</span></a
                       >
                     </li>
@@ -860,7 +882,7 @@
       </aside>
 
       <!-- Main Wrapper -->
-      <div class="layout-content dark:bg-slate-900">
+      <div class="layout-content bg-slate-50 dark:bg-slate-900">
         <!-- Navbar -->
         <header class="relative z-10">
           <div
@@ -878,9 +900,12 @@
                       class="bx bx-menu text-2xl text-slate-600 dark:text-slate-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors"
                     ></i>
                   </button>
+                  <h1 class="text-xl font-bold text-slate-800 dark:text-slate-100 hidden sm:block">
+                     Account Settings
+                  </h1>
                 </div>
 
-                <!-- Center Section -->
+                <!-- Center Section (Search) -->
                 <div class="hidden lg:flex items-center flex-1 max-w-xl mx-8">
                   <div class="relative w-full group">
                     <div
@@ -894,20 +919,14 @@
                       ></i>
                       <input
                         type="text"
-                        placeholder="Search anything..."
+                        placeholder="Search settings..."
                         class="flex-1 px-4 py-2.5 bg-transparent text-sm text-slate-900 dark:text-slate-100 outline-none placeholder:text-slate-400 dark:placeholder:text-slate-500"
                       />
                       <div
                         class="hidden group-focus-within:flex items-center gap-1 mr-3 text-xs text-slate-400 dark:text-slate-500"
                       >
-                        <kbd
-                          class="px-2 py-0.5 bg-white dark:bg-slate-600 rounded border border-slate-200 dark:border-slate-500"
-                          >⌘</kbd
-                        >
-                        <kbd
-                          class="px-2 py-0.5 bg-white dark:bg-slate-600 rounded border border-slate-200 dark:border-slate-500"
-                          >K</kbd
-                        >
+                         <kbd class="px-2 py-0.5 bg-white dark:bg-slate-600 rounded border border-slate-200 dark:border-slate-500">⌘</kbd>
+                         <kbd class="px-2 py-0.5 bg-white dark:bg-slate-600 rounded border border-slate-200 dark:border-slate-500">K</kbd>
                       </div>
                     </div>
                   </div>
@@ -915,9 +934,7 @@
 
                 <!-- Right Section -->
                 <div class="flex items-center gap-2">
-                  <!-- Quick Actions -->
-                  <div class="hidden sm:flex items-center gap-1">
-                    <!-- Theme Toggle -->
+                   <!-- Theme Toggle -->
                     <button
                       @click="toggleTheme()"
                       class="relative p-2.5 hover:bg-linear-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-xl transition-all duration-300 group"
@@ -927,516 +944,907 @@
                         :class="darkMode ? 'bx-sun group-hover:text-amber-500' : 'bx-moon group-hover:text-indigo-600 dark:group-hover:text-indigo-400'"
                       ></i>
                     </button>
-
-                    <!-- Notifications Dropdown -->
-                    <div
-                      class="relative"
-                      x-data="{ open: false }"
-                      @click.outside="open = false"
-                    >
-                      <button
-                        @click="open = !open"
-                        class="relative p-2.5 hover:bg-linear-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-xl transition-all duration-300 group"
-                      >
-                        <i
-                          class="bx bx-bell text-xl text-slate-600 dark:text-slate-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors"
-                        ></i>
-                        <span class="absolute top-1.5 right-1.5 flex h-2 w-2">
-                          <span
-                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"
-                          ></span>
-                          <span
-                            class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"
-                          ></span>
+                    <!-- Notifications -->
+                    <button class="relative p-2.5 hover:bg-linear-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-xl transition-all duration-300 group">
+                        <i class="bx bx-bell text-xl text-slate-600 dark:text-slate-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors"></i>
+                         <span class="absolute top-1.5 right-1.5 flex h-2 w-2">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
                         </span>
-                      </button>
-
-                      <!-- Dropdown Menu -->
-                      <div
-                        x-show="open"
-                        x-transition:enter="transition ease-out duration-200"
-                        x-transition:enter-start="opacity-0 translate-y-2"
-                        x-transition:enter-end="opacity-100 translate-y-0"
-                        x-transition:leave="transition ease-in duration-150"
-                        x-transition:leave-start="opacity-100 translate-y-0"
-                        x-transition:leave-end="opacity-0 translate-y-2"
-                        class="absolute right-0 mt-2 w-80 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 overflow-hidden z-50"
-                      >
-                        <div
-                          class="p-4 border-b border-slate-100 dark:border-slate-700 flex items-center justify-between"
-                        >
-                          <h3
-                            class="font-semibold text-slate-800 dark:text-slate-100"
-                          >
-                            Notifications
-                          </h3>
-                          <a
-                            href="#"
-                            class="text-xs text-indigo-600 dark:text-indigo-400 hover:underline"
-                            >Mark all as read</a
-                          >
-                        </div>
-
-                        <div
-                          class="max-h-[300px] overflow-y-auto custom-scrollbar"
-                        >
-                          <a
-                            href="#"
-                            class="flex gap-4 p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
-                          >
-                            <div
-                              class="w-10 h-10 rounded-full bg-indigo-50 dark:bg-indigo-900/20 flex items-center justify-center text-indigo-600 shrink-0"
-                            >
-                              <i class="bx bx-cart"></i>
-                            </div>
-                            <div>
-                              <p
-                                class="text-sm font-medium text-slate-800 dark:text-slate-100"
-                              >
-                                New Order Received
-                              </p>
-                              <p class="text-xs text-slate-500 mt-1">
-                                Order #1234 from John Doe has been placed.
-                              </p>
-                              <p class="text-[10px] text-slate-400 mt-1">
-                                2 mins ago
-                              </p>
-                            </div>
-                          </a>
-                          <a
-                            href="#"
-                            class="flex gap-4 p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
-                          >
-                            <div
-                              class="w-10 h-10 rounded-full bg-amber-50 dark:bg-amber-900/20 flex items-center justify-center text-amber-600 shrink-0"
-                            >
-                              <i class="bx bx-server"></i>
-                            </div>
-                            <div>
-                              <p
-                                class="text-sm font-medium text-slate-800 dark:text-slate-100"
-                              >
-                                Server Load High
-                              </p>
-                              <p class="text-xs text-slate-500 mt-1">
-                                CPU usage is above 90% on Server A.
-                              </p>
-                              <p class="text-[10px] text-slate-400 mt-1">
-                                1 hour ago
-                              </p>
-                            </div>
-                          </a>
-                          <a
-                            href="#"
-                            class="flex gap-4 p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
-                          >
-                            <div
-                              class="w-10 h-10 rounded-full bg-emerald-50 dark:bg-emerald-900/20 flex items-center justify-center text-emerald-600 shrink-0"
-                            >
-                              <i class="bx bx-user-plus"></i>
-                            </div>
-                            <div>
-                              <p
-                                class="text-sm font-medium text-slate-800 dark:text-slate-100"
-                              >
-                                New User Registered
-                              </p>
-                              <p class="text-xs text-slate-500 mt-1">
-                                Sarah Smith created an account.
-                              </p>
-                              <p class="text-[10px] text-slate-400 mt-1">
-                                3 hours ago
-                              </p>
-                            </div>
-                          </a>
-                        </div>
-
-                        <div
-                          class="p-3 border-t border-slate-100 dark:border-slate-700 text-center"
-                        >
-                          <a
-                            href="#"
-                            class="text-sm text-indigo-600 dark:text-indigo-400 font-medium hover:underline"
-                            >View All Notifications</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Messages Dropdown -->
-                    <div
-                      class="relative"
-                      x-data="{ open: false }"
-                      @click.outside="open = false"
-                    >
-                      <button
-                        @click="open = !open"
-                        class="relative p-2.5 hover:bg-linear-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl transition-all duration-300 group"
-                      >
-                        <i
-                          class="bx bx-message-dots text-xl text-slate-600 dark:text-slate-400 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors"
-                        ></i>
-                        <span
-                          class="absolute -top-1 -right-1 flex items-center justify-center h-5 w-5 bg-linear-to-br from-indigo-500 to-purple-500 text-white text-xs font-bold rounded-full"
-                        >
-                          3
-                        </span>
-                      </button>
-
-                      <!-- Dropdown Menu -->
-                      <div
-                        x-show="open"
-                        x-transition:enter="transition ease-out duration-200"
-                        x-transition:enter-start="opacity-0 translate-y-2"
-                        x-transition:enter-end="opacity-100 translate-y-0"
-                        x-transition:leave="transition ease-in duration-150"
-                        x-transition:leave-start="opacity-100 translate-y-0"
-                        x-transition:leave-end="opacity-0 translate-y-2"
-                        class="absolute right-0 mt-2 w-80 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 overflow-hidden z-50"
-                      >
-                        <div
-                          class="p-4 border-b border-slate-100 dark:border-slate-700 flex items-center justify-between"
-                        >
-                          <h3
-                            class="font-semibold text-slate-800 dark:text-slate-100"
-                          >
-                            Messages
-                          </h3>
-                          <a
-                            href="#"
-                            class="text-xs text-purple-600 dark:text-purple-400 hover:underline"
-                            >Mark all as read</a
-                          >
-                        </div>
-
-                        <div
-                          class="max-h-[300px] overflow-y-auto custom-scrollbar"
-                        >
-                          <a
-                            href="#"
-                            class="flex gap-4 p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
-                          >
-                            <img
-                              src="https://ui-avatars.com/api/?name=Jane+Doe&background=random"
-                              class="w-10 h-10 rounded-full shrink-0"
-                            />
-                            <div class="overflow-hidden">
-                              <div
-                                class="flex justify-between items-center mb-1"
-                              >
-                                <p
-                                  class="text-sm font-medium text-slate-800 dark:text-slate-100"
-                                >
-                                  Jane Doe
-                                </p>
-                                <span class="text-[10px] text-slate-400"
-                                  >Just now</span
-                                >
-                              </div>
-                              <p class="text-xs text-slate-500 truncate">
-                                Hey, can you review the latest designs?
-                              </p>
-                            </div>
-                          </a>
-                          <a
-                            href="#"
-                            class="flex gap-4 p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
-                          >
-                            <img
-                              src="https://ui-avatars.com/api/?name=Mike+Ross&background=random"
-                              class="w-10 h-10 rounded-full shrink-0"
-                            />
-                            <div class="overflow-hidden">
-                              <div
-                                class="flex justify-between items-center mb-1"
-                              >
-                                <p
-                                  class="text-sm font-medium text-slate-800 dark:text-slate-100"
-                                >
-                                  Mike Ross
-                                </p>
-                                <span class="text-[10px] text-slate-400"
-                                  >15m ago</span
-                                >
-                              </div>
-                              <p class="text-xs text-slate-500 truncate">
-                                The project meeting has been rescheduled.
-                              </p>
-                            </div>
-                          </a>
-                        </div>
-
-                        <div
-                          class="p-3 border-t border-slate-100 dark:border-slate-700 text-center"
-                        >
-                          <a
-                            href="#"
-                            class="text-sm text-purple-600 dark:text-purple-400 font-medium hover:underline"
-                            >View All Messages</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Divider -->
-                  <div
-                    class="hidden sm:block h-8 w-px bg-linear-to-b from-transparent via-slate-200 dark:via-slate-600 to-transparent mx-2"
-                  ></div>
-
-                  <!-- Profile Section -->
-                  <div
-                    class="relative"
-                    x-data="{ open: false }"
-                    @click.outside="open = false"
-                  >
-                    <button
-                      @click="open = !open"
-                      class="flex items-center gap-3 pl-2 pr-3 py-1.5 hover:bg-linear-to-br from-slate-50 to-indigo-50 dark:from-slate-700 dark:to-indigo-900/30 rounded-xl transition-all duration-300 group"
-                    >
-                      <div class="relative">
-                        <img
-                          src="https://ui-avatars.com/api/?name=Admin+User&background=6366f1&color=fff"
-                          alt="Avatar"
-                          class="w-9 h-9 rounded-full ring-2 ring-white dark:ring-slate-700 group-hover:ring-indigo-200 dark:group-hover:ring-indigo-500 transition-all duration-300"
-                        />
-                        <span
-                          class="absolute bottom-0 right-0 h-3 w-3 bg-emerald-500 border-2 border-white dark:border-slate-800 rounded-full"
-                        ></span>
-                      </div>
-                      <div class="hidden lg:block text-left">
-                        <p
-                          class="text-sm font-semibold text-slate-800 dark:text-slate-200 leading-tight group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors"
-                        >
-                          Admin User
-                        </p>
-                        <p class="text-xs text-slate-500 dark:text-slate-400">
-                          Administrator
-                        </p>
-                      </div>
-                      <i
-                        class="bx bx-chevron-down text-slate-400 dark:text-slate-500 hidden lg:block group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-all duration-300"
-                        :class="{ 'rotate-180': open }"
-                      ></i>
                     </button>
 
-                    <!-- Profile Dropdown -->
-                    <div
-                      x-show="open"
-                      x-transition:enter="transition ease-out duration-200"
-                      x-transition:enter-start="opacity-0 translate-y-2"
-                      x-transition:enter-end="opacity-100 translate-y-0"
-                      x-transition:leave="transition ease-in duration-150"
-                      x-transition:leave-start="opacity-100 translate-y-0"
-                      x-transition:leave-end="opacity-0 translate-y-2"
-                      class="absolute right-0 mt-2 w-56 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 overflow-hidden z-50"
-                    >
-                      <div
-                        class="p-4 border-b border-slate-100 dark:border-slate-700 text-center bg-slate-50/50 dark:bg-slate-700/30"
-                      >
-                        <div
-                          class="w-16 h-16 rounded-full bg-slate-200 dark:bg-slate-600 mx-auto mb-2 overflow-hidden"
-                        >
-                          <img
-                            src="https://ui-avatars.com/api/?name=Admin+User&background=6366f1&color=fff"
-                            class="w-full h-full object-cover"
-                          />
-                        </div>
-                        <h4
-                          class="font-bold text-slate-800 dark:text-slate-100"
-                        >
-                          Admin User
-                        </h4>
-                        <p class="text-xs text-slate-500 dark:text-slate-400">
-                          admin@encore.com
-                        </p>
-                      </div>
-
-                      <div class="p-2">
-                        <a
-                          href="#"
-                          class="flex items-center gap-3 px-3 py-2 text-sm text-slate-600 dark:text-slate-300 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
-                        >
-                          <i
-                            class="bx bx-user text-lg text-slate-400 dark:text-slate-500"
-                          ></i>
-                          My Profile
-                        </a>
-                        <a
-                          href="#"
-                          class="flex items-center gap-3 px-3 py-2 text-sm text-slate-600 dark:text-slate-300 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
-                        >
-                          <i
-                            class="bx bx-cog text-lg text-slate-400 dark:text-slate-500"
-                          ></i>
-                          Settings
-                        </a>
-                        <a
-                          href="#"
-                          class="flex items-center gap-3 px-3 py-2 text-sm text-slate-600 dark:text-slate-300 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
-                        >
-                          <i
-                            class="bx bx-credit-card text-lg text-slate-400 dark:text-slate-500"
-                          ></i>
-                          Billing
-                        </a>
-                      </div>
-
-                      <div
-                        class="p-2 border-t border-slate-100 dark:border-slate-700"
-                      >
-                        <a
-                          href="#"
-                          class="flex items-center gap-3 px-3 py-2 text-sm text-red-600 dark:text-red-400 rounded-xl hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors"
-                        >
-                          <i class="bx bx-log-out text-lg"></i>
-                          Logout
-                        </a>
-                      </div>
-                    </div>
-                  </div>
+                    <!-- Profile Dropdown (Simplified) -->
+                     <div class="relative ml-2">
+                        <button class="flex items-center gap-3 pl-2 pr-3 py-1.5 hover:bg-linear-to-br from-slate-50 to-indigo-50 dark:from-slate-700 dark:to-indigo-900/30 rounded-xl transition-all duration-300 group">
+                            <img src="https://ui-avatars.com/api/?name=Admin+User&background=6366f1&color=fff" class="w-9 h-9 rounded-full ring-2 ring-white dark:ring-slate-700" />
+                        </button>
+                     </div>
                 </div>
               </div>
             </div>
           </div>
         </header>
 
-        <!-- Main Content -->
-        <main
-          class="flex-1 overflow-x-hidden overflow-y-auto p-4 lg:p-8 relative"
+        <!-- Main Content Area -->
+        <main class="flex-1 overflow-x-hidden overflow-y-auto bg-slate-50 dark:bg-slate-900">
+            <div class="container mx-auto px-4 lg:px-6 py-8">
+                <div x-data="{ activeSettingsTab: 'general' }">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <!-- Left Sidebar (Rich Navigation) -->
+    <div class="lg:col-span-1">
+        <div
+        class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden lg:sticky lg:top-6"
         >
-          <div class="container mx-auto px-4 lg:px-6 py-8">
-            <div class="mb-6">
-              <h1 class="text-2xl font-bold text-slate-800 dark:text-slate-100">
-                ApexCharts
-              </h1>
-              <p class="text-slate-500 dark:text-slate-400 text-sm">
-                Interactive and modern charts for your dashboard.
-              </p>
+        <nav class="p-3 space-y-1">
+            <a
+            @click.prevent="activeSettingsTab = 'general'"
+            href="#"
+            :class="activeSettingsTab === 'general' ? 'bg-indigo-50 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-300 shadow-xs' : 'text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700/50'"
+            class="group flex items-center gap-3 px-4 py-3 rounded-xl transition-all font-medium"
+            >
+            <div
+                :class="activeSettingsTab === 'general' ? 'bg-white dark:bg-indigo-800 text-indigo-600 dark:text-indigo-300' : 'bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 group-hover:bg-white dark:group-hover:bg-slate-600 group-hover:text-indigo-600 dark:group-hover:text-indigo-300'"
+                class="w-8 h-8 rounded-lg flex items-center justify-center transition-colors shadow-sm"
+            >
+                <i class="bx bx-user-circle text-lg"></i>
             </div>
+            <span>General</span>
+            </a>
 
-            <!-- Row 1: Line & Area -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-              <!-- Line Chart -->
-              <div
-                class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm p-6"
-              >
-                <h3
-                  class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-4"
-                >
-                  Basic Line Chart
-                </h3>
-                <div id="lineChart" class="min-h-[350px]"></div>
-              </div>
-              <!-- Area Chart -->
-              <div
-                class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm p-6"
-              >
-                <h3
-                  class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-4"
-                >
-                  Spline Area Chart
-                </h3>
-                <div id="areaChart" class="min-h-[350px]"></div>
-              </div>
+            <a
+            @click.prevent="activeSettingsTab = 'security'"
+            href="#"
+            :class="activeSettingsTab === 'security' ? 'bg-indigo-50 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-300 shadow-xs' : 'text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700/50'"
+            class="group flex items-center gap-3 px-4 py-3 rounded-xl transition-all font-medium"
+            >
+            <div
+                :class="activeSettingsTab === 'security' ? 'bg-white dark:bg-indigo-800 text-emerald-600 dark:text-emerald-300' : 'bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 group-hover:bg-white dark:group-hover:bg-slate-600 group-hover:text-emerald-600 dark:group-hover:text-emerald-300'"
+                class="w-8 h-8 rounded-lg flex items-center justify-center transition-colors shadow-sm"
+            >
+                <i class="bx bx-shield-quarter text-lg"></i>
             </div>
+            <span>Security</span>
+            </a>
 
-            <!-- Row 2: Column & Bar -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-              <!-- Column Chart -->
-              <div
-                class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm p-6"
-              >
-                <h3
-                  class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-4"
-                >
-                  Column Chart
-                </h3>
-                <div id="columnChart" class="min-h-[350px]"></div>
-              </div>
-              <!-- Bar Chart -->
-              <div
-                class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm p-6"
-              >
-                <h3
-                  class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-4"
-                >
-                  Bar Chart
-                </h3>
-                <div id="barChart" class="min-h-[350px]"></div>
-              </div>
+            <a
+            @click.prevent="activeSettingsTab = 'notifications'"
+            href="#"
+            :class="activeSettingsTab === 'notifications' ? 'bg-indigo-50 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-300 shadow-xs' : 'text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700/50'"
+            class="group flex items-center gap-3 px-4 py-3 rounded-xl transition-all font-medium"
+            >
+            <div
+                :class="activeSettingsTab === 'notifications' ? 'bg-white dark:bg-indigo-800 text-amber-600 dark:text-amber-300' : 'bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 group-hover:bg-white dark:group-hover:bg-slate-600 group-hover:text-amber-600 dark:group-hover:text-amber-300'"
+                class="w-8 h-8 rounded-lg flex items-center justify-center transition-colors shadow-sm"
+            >
+                <i class="bx bx-bell text-lg"></i>
             </div>
+            <span>Notifications</span>
+            </a>
 
-            <!-- Row 3: Mixed & Pie -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
-              <!-- Mixed Chart -->
-              <div
-                class="lg:col-span-2 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm p-6"
-              >
-                <h3
-                  class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-4"
-                >
-                  Mixed Chart
-                </h3>
-                <div id="mixedChart" class="min-h-[350px]"></div>
-              </div>
-              <!-- Donut Chart -->
-              <div
-                class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm p-6"
-              >
-                <h3
-                  class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-4"
-                >
-                  Donut Chart
-                </h3>
-                <div
-                  id="donutChart"
-                  class="min-h-[350px] flex items-center justify-center"
-                ></div>
-              </div>
+            <a
+            @click.prevent="activeSettingsTab = 'billing'"
+            href="#"
+            :class="activeSettingsTab === 'billing' ? 'bg-indigo-50 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-300 shadow-xs' : 'text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700/50'"
+            class="group flex items-center gap-3 px-4 py-3 rounded-xl transition-all font-medium"
+            >
+            <div
+                :class="activeSettingsTab === 'billing' ? 'bg-white dark:bg-indigo-800 text-purple-600 dark:text-purple-300' : 'bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 group-hover:bg-white dark:group-hover:bg-slate-600 group-hover:text-purple-600 dark:group-hover:text-purple-300'"
+                class="w-8 h-8 rounded-lg flex items-center justify-center transition-colors shadow-sm"
+            >
+                <i class="bx bx-credit-card text-lg"></i>
             </div>
-
-            <!-- Row 4: Radar -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-              <!-- Radar Chart -->
-              <div
-                class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm p-6"
-              >
-                <h3
-                  class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-4"
-                >
-                  Radar Chart
-                </h3>
-                <div id="radarChart" class="min-h-[350px]"></div>
-              </div>
-              <!-- Radial Bar Chart -->
-              <div
-                class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm p-6"
-              >
-                <h3
-                  class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-4"
-                >
-                  Radial Bar Chart
-                </h3>
-                <div id="radialBarChart" class="min-h-[350px]"></div>
-              </div>
-            </div>
-          </div>
-        </main>
-
-        <!-- Footer -->
-        <footer
-          class="bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 p-4"
-        >
-          <div class="container mx-auto py-2">
-            <p class="text-center text-sm text-slate-500 dark:text-slate-400">
-              &copy; 2026 Encore UI. All rights reserved.
-            </p>
-          </div>
-        </footer>
-      </div>
+            <span>Billing</span>
+            </a>
+        </nav>
+        </div>
     </div>
 
-    <script src="/assets/js/charts/apexcharts.js"></script>
+    <!-- Right Content (Polished Forms) -->
+    <div class="lg:col-span-2 space-y-6">
+        <!-- General Settings -->
+<div
+x-show="activeSettingsTab === 'general'"
+x-transition:enter="transition ease-out duration-300"
+x-transition:enter-start="opacity-0 translate-y-2"
+x-transition:enter-end="opacity-100 translate-y-0"
+>
+<div
+    class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden"
+>
+    <!-- Section Header -->
+    <div
+    class="px-8 py-6 border-b border-slate-100 dark:border-slate-700 flex items-center justify-between bg-slate-50/50 dark:bg-slate-800/50"
+    >
+    <div>
+        <h2
+        class="text-xl font-bold text-slate-800 dark:text-slate-100"
+        >
+        Personal Information
+        </h2>
+        <p
+        class="text-slate-500 dark:text-slate-400 text-sm mt-1"
+        >
+        Update your photo and personal details.
+        </p>
+    </div>
+    <div class="hidden sm:block">
+        <button
+        class="text-sm text-indigo-600 font-medium hover:underline"
+        >
+        View Public Profile
+        </button>
+    </div>
+    </div>
+
+    <div class="p-8">
+    <!-- Avatar Upload Row -->
+    <div
+        class="flex flex-col sm:flex-row items-center gap-8 mb-10"
+    >
+        <div class="relative group">
+        <img
+            src="https://ui-avatars.com/api/?name=Admin+User&background=6366f1&color=fff&size=256"
+            alt="Avatar"
+            class="w-28 h-28 rounded-full shadow-md object-cover"
+        />
+        <button
+            class="absolute bottom-0 right-0 bg-slate-900 text-white p-2 rounded-full hover:bg-indigo-600 transition-colors shadow-lg border-2 border-white dark:border-slate-800"
+        >
+            <i class="bx bx-camera text-lg"></i>
+        </button>
+        </div>
+        <div class="text-center sm:text-left">
+        <h4
+            class="font-bold text-slate-800 dark:text-slate-100"
+        >
+            Profile Photo
+        </h4>
+        <p
+            class="text-sm text-slate-500 dark:text-slate-400 mt-1 mb-3"
+        >
+            This will be displayed on your profile.
+        </p>
+        <div
+            class="flex gap-3 justify-center sm:justify-start"
+        >
+            <button
+            class="px-4 py-2 bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-600 text-sm font-semibold rounded-xl transition-all shadow-sm"
+            >
+            Update
+            </button>
+            <button
+            class="text-red-500 hover:text-red-600 text-sm font-medium px-2"
+            >
+            Remove
+            </button>
+        </div>
+        </div>
+    </div>
+
+    <!-- Form Grid -->
+    <form class="space-y-6">
+        <div
+        class="grid grid-cols-1 md:grid-cols-2 gap-6"
+        >
+        <div class="space-y-1.5">
+            <label
+            class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
+            >First Name</label
+            >
+            <div class="relative">
+            <i
+                class="bx bx-user absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
+            ></i>
+            <input
+                type="text"
+                value="Admin"
+                class="w-full pl-10 pr-4 py-2.5 bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none placeholder:text-slate-400 dark:placeholder:text-slate-500 transition-all"
+            />
+            </div>
+        </div>
+        <div class="space-y-1.5">
+            <label
+            class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
+            >Last Name</label
+            >
+            <div class="relative">
+            <input
+                type="text"
+                value="User"
+                class="w-full px-4 py-2.5 bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none placeholder:text-slate-400 dark:placeholder:text-slate-500 transition-all"
+            />
+            </div>
+        </div>
+        </div>
+
+        <div
+        class="grid grid-cols-1 md:grid-cols-2 gap-6"
+        >
+        <div class="space-y-1.5">
+            <label
+            class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
+            >Email Address</label
+            >
+            <div class="relative">
+            <i
+                class="bx bx-envelope absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
+            ></i>
+            <input
+                type="email"
+                value="admin@encore.com"
+                class="w-full pl-10 pr-4 py-2.5 bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none placeholder:text-slate-400 dark:placeholder:text-slate-500 transition-all"
+            />
+            </div>
+        </div>
+        <div class="space-y-1.5">
+            <label
+            class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
+            >Phone Number</label
+            >
+            <div class="relative">
+            <i
+                class="bx bx-phone absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
+            ></i>
+            <input
+                type="tel"
+                value="+1 (555) 000-1234"
+                class="w-full pl-10 pr-4 py-2.5 bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none placeholder:text-slate-400 dark:placeholder:text-slate-500 transition-all"
+            />
+            </div>
+        </div>
+        </div>
+
+        <div class="space-y-1.5">
+        <label
+            class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
+            >Bio</label
+        >
+        <textarea
+            rows="4"
+            class="w-full px-4 py-2.5 bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none resize-none placeholder:text-slate-400 dark:placeholder:text-slate-500 transition-all"
+        >
+Product Designer based in San Francisco. Passionate about building accessible and beautiful user interfaces.</textarea
+        >
+        <p
+            class="text-xs text-slate-400 text-right mt-1"
+        >
+            Max 500 characters
+        </p>
+        </div>
+
+        <div
+        class="flex items-center justify-end pt-6 border-t border-slate-100 dark:border-slate-700"
+        >
+        <button
+            type="button"
+            class="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl shadow-lg shadow-indigo-200 dark:shadow-none hover:shadow-indigo-300 transition-all transform hover:-translate-y-0.5"
+        >
+            Save Changes
+        </button>
+        </div>
+    </form>
+    </div>
+</div>
+</div>
+
+<!-- Security Settings -->
+<div
+x-show="activeSettingsTab === 'security'"
+x-transition:enter="transition ease-out duration-300"
+x-transition:enter-start="opacity-0 translate-y-2"
+x-transition:enter-end="opacity-100 translate-y-0"
+>
+<div
+    class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden"
+>
+    <div
+    class="px-8 py-6 border-b border-slate-100 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800/50"
+    >
+    <h2
+        class="text-xl font-bold text-slate-800 dark:text-slate-100"
+    >
+        Login & Security
+    </h2>
+    <p
+        class="text-slate-500 dark:text-slate-400 text-sm mt-1"
+    >
+        Manage your password and 2FA settings.
+    </p>
+    </div>
+
+    <div class="p-8">
+    <form class="space-y-8">
+        <!-- Password Section -->
+        <div class="space-y-6">
+        <h4
+            class="font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2"
+        >
+            <i
+            class="bx bx-lock-alt text-indigo-500"
+            ></i>
+            Change Password
+        </h4>
+
+        <div class="space-y-4 max-w-xl">
+            <div class="space-y-1.5">
+            <label
+                class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
+                >Current Password</label
+            >
+            <input
+                type="password"
+                class="w-full px-4 py-2.5 bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none transition-all"
+            />
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+            <div class="space-y-1.5">
+                <label
+                class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
+                >New Password</label
+                >
+                <input
+                type="password"
+                class="w-full px-4 py-2.5 bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none transition-all"
+                />
+            </div>
+            <div class="space-y-1.5">
+                <label
+                class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
+                >Confirm New</label
+                >
+                <input
+                type="password"
+                class="w-full px-4 py-2.5 bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none transition-all"
+                />
+            </div>
+            </div>
+        </div>
+        </div>
+
+        <div
+        class="w-full h-px bg-slate-100 dark:border-slate-700"
+        ></div>
+
+        <!-- 2FA Section -->
+        <div
+        class="flex items-center justify-between p-4 bg-indigo-50 dark:bg-indigo-900/10 rounded-2xl border border-indigo-100 dark:border-indigo-900/30"
+        >
+        <div class="flex items-center gap-4">
+            <div
+            class="w-10 h-10 rounded-full bg-indigo-100 dark:bg-indigo-800 text-indigo-600 dark:text-indigo-300 flex items-center justify-center text-xl"
+            >
+            <i class="bx bx-mobile-alt"></i>
+            </div>
+            <div>
+            <h4
+                class="font-bold text-slate-800 dark:text-slate-100"
+            >
+                Two-Factor Authentication
+            </h4>
+            <p
+                class="text-xs text-slate-500 dark:text-slate-400"
+            >
+                Add an extra layer of security to your
+                account.
+            </p>
+            </div>
+        </div>
+
+        <div x-data="{ on: false }">
+            <button
+            type="button"
+            @click="on = !on"
+            class="relative inline-flex h-7 w-12 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2"
+            :class="on ? 'bg-indigo-600' : 'bg-slate-300 dark:bg-slate-600'"
+            >
+            <span
+                aria-hidden="true"
+                class="translate-x-0 pointer-events-none inline-block h-6 w-6 transform rounded-full bg-white shadow-sm ring-0 transition duration-200 ease-in-out"
+                :class="on ? 'translate-x-5' : 'translate-x-0'"
+            ></span>
+            </button>
+        </div>
+        </div>
+
+        <div
+        class="flex items-center justify-end pt-4"
+        >
+        <button
+            type="button"
+            class="px-8 py-3 bg-slate-900 dark:bg-white hover:bg-slate-800 dark:hover:bg-slate-100 text-white dark:text-slate-900 font-bold rounded-xl shadow-lg transition-all transform hover:-translate-y-0.5"
+        >
+            Update Security
+        </button>
+        </div>
+    </form>
+    </div>
+</div>
+</div>
+<!-- Notifications Settings -->
+<div x-show="activeSettingsTab === 'notifications'">
+<div
+    class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden"
+>
+    <div
+    class="px-8 py-6 border-b border-slate-100 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800/50"
+    >
+    <h2
+        class="text-xl font-bold text-slate-800 dark:text-slate-100"
+    >
+        Notifications
+    </h2>
+    <p
+        class="text-slate-500 dark:text-slate-400 text-sm mt-1"
+    >
+        Manage where and when you receive updates.
+    </p>
+    </div>
+
+    <div class="p-0">
+    <!-- Notification Matrix -->
+    <div class="overflow-x-auto">
+        <table
+        class="w-full text-left border-collapse"
+        >
+        <thead>
+            <tr>
+            <th
+                class="p-6 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider bg-slate-50 dark:bg-slate-800/50 border-b border-slate-100 dark:border-slate-700 w-1/2"
+            >
+                Activity Type
+            </th>
+            <th
+                class="p-6 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider bg-slate-50 dark:bg-slate-800/50 border-b border-slate-100 dark:border-slate-700 text-center"
+            >
+                Email
+            </th>
+            <th
+                class="p-6 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider bg-slate-50 dark:bg-slate-800/50 border-b border-slate-100 dark:border-slate-700 text-center"
+            >
+                Push
+            </th>
+            <th
+                class="p-6 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider bg-slate-50 dark:bg-slate-800/50 border-b border-slate-100 dark:border-slate-700 text-center"
+            >
+                SMS
+            </th>
+            </tr>
+        </thead>
+        <tbody
+            class="divide-y divide-slate-100 dark:divide-slate-700"
+        >
+            <!-- Row 1 -->
+            <tr
+            class="hover:bg-slate-50/50 dark:hover:bg-slate-700/20 transition-colors"
+            >
+            <td class="p-6">
+                <p
+                class="font-bold text-slate-800 dark:text-slate-100"
+                >
+                Comments & Mentions
+                </p>
+                <p
+                class="text-xs text-slate-500 dark:text-slate-400 mt-0.5"
+                >
+                When someone mentions you in a
+                thread.
+                </p>
+            </td>
+            <td class="p-6 text-center">
+                <input
+                type="checkbox"
+                checked
+                class="w-5 h-5 accent-indigo-600 rounded cursor-pointer"
+                />
+            </td>
+            <td class="p-6 text-center">
+                <input
+                type="checkbox"
+                checked
+                class="w-5 h-5 accent-indigo-600 rounded cursor-pointer"
+                />
+            </td>
+            <td class="p-6 text-center">
+                <input
+                type="checkbox"
+                class="w-5 h-5 accent-indigo-600 rounded cursor-pointer opacity-40"
+                />
+            </td>
+            </tr>
+            <!-- Row 2 -->
+            <tr
+            class="hover:bg-slate-50/50 dark:hover:bg-slate-700/20 transition-colors"
+            >
+            <td class="p-6">
+                <p
+                class="font-bold text-slate-800 dark:text-slate-100"
+                >
+                Project Updates
+                </p>
+                <p
+                class="text-xs text-slate-500 dark:text-slate-400 mt-0.5"
+                >
+                Status changes on projects you
+                follow.
+                </p>
+            </td>
+            <td class="p-6 text-center">
+                <input
+                type="checkbox"
+                checked
+                class="w-5 h-5 accent-indigo-600 rounded cursor-pointer"
+                />
+            </td>
+            <td class="p-6 text-center">
+                <input
+                type="checkbox"
+                checked
+                class="w-5 h-5 accent-indigo-600 rounded cursor-pointer"
+                />
+            </td>
+            <td class="p-6 text-center">
+                <input
+                type="checkbox"
+                checked
+                class="w-5 h-5 accent-indigo-600 rounded cursor-pointer"
+                />
+            </td>
+            </tr>
+            <!-- Row 3 -->
+            <tr
+            class="hover:bg-slate-50/50 dark:hover:bg-slate-700/20 transition-colors"
+            >
+            <td class="p-6">
+                <p
+                class="font-bold text-slate-800 dark:text-slate-100"
+                >
+                Reminders
+                </p>
+                <p
+                class="text-xs text-slate-500 dark:text-slate-400 mt-0.5"
+                >
+                Upcoming deadlines and meeting
+                alerts.
+                </p>
+            </td>
+            <td class="p-6 text-center">
+                <input
+                type="checkbox"
+                checked
+                class="w-5 h-5 accent-indigo-600 rounded cursor-pointer"
+                />
+            </td>
+            <td class="p-6 text-center">
+                <input
+                type="checkbox"
+                checked
+                class="w-5 h-5 accent-indigo-600 rounded cursor-pointer"
+                />
+            </td>
+            <td class="p-6 text-center">
+                <input
+                type="checkbox"
+                checked
+                class="w-5 h-5 accent-indigo-600 rounded cursor-pointer"
+                />
+            </td>
+            </tr>
+            <!-- Row 4 -->
+            <tr
+            class="hover:bg-slate-50/50 dark:hover:bg-slate-700/20 transition-colors"
+            >
+            <td class="p-6">
+                <p
+                class="font-bold text-slate-800 dark:text-slate-100"
+                >
+                Product Updates
+                </p>
+                <p
+                class="text-xs text-slate-500 dark:text-slate-400 mt-0.5"
+                >
+                New features and system
+                announcements.
+                </p>
+            </td>
+            <td class="p-6 text-center">
+                <input
+                type="checkbox"
+                class="w-5 h-5 accent-indigo-600 rounded cursor-pointer"
+                />
+            </td>
+            <td class="p-6 text-center">
+                <input
+                type="checkbox"
+                checked
+                class="w-5 h-5 accent-indigo-600 rounded cursor-pointer"
+                />
+            </td>
+            <td class="p-6 text-center">
+                <input
+                type="checkbox"
+                class="w-5 h-5 accent-indigo-600 rounded cursor-pointer opacity-40"
+                />
+            </td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    </div>
+
+    <div
+    class="flex items-center justify-between px-8 py-5 border-t border-slate-100 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800/50"
+    >
+    <button
+        class="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 font-medium"
+    >
+        Unsubscribe from all
+    </button>
+    <button
+        type="button"
+        class="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-xl shadow-lg shadow-indigo-200 dark:shadow-none transition-all"
+    >
+        Save Preferences
+    </button>
+    </div>
+</div>
+</div>
+
+<!-- Billing Settings -->
+<div x-show="activeSettingsTab === 'billing'">
+<div
+    class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8"
+>
+    <!-- Current Plan -->
+    <div
+    class="bg-indigo-600 rounded-2xl p-6 text-white shadow-lg shadow-indigo-200 dark:shadow-none relative overflow-hidden"
+    >
+    <div
+        class="absolute top-0 right-0 p-8 opacity-10"
+    >
+        <i class="bx bx-diamond text-9xl"></i>
+    </div>
+    <div
+        class="relative z-10 flex flex-col h-full justify-between"
+    >
+        <div>
+        <div class="flex items-center gap-2 mb-2">
+            <span
+            class="px-2.5 py-1 bg-white/20 rounded-lg text-xs font-bold uppercase tracking-wider"
+            >Current Plan</span
+            >
+        </div>
+        <h3 class="text-3xl font-bold">Pro Plan</h3>
+        <p class="text-indigo-100 mt-1">
+            $29.00 / month
+        </p>
+        </div>
+        <div class="mt-8">
+        <div
+            class="flex justify-between text-sm mb-2 font-medium"
+        >
+            <span>Usage</span>
+            <span>85%</span>
+        </div>
+        <div
+            class="h-2 bg-indigo-900/30 rounded-full overflow-hidden"
+        >
+            <div
+            class="h-full bg-white w-[85%] rounded-full"
+            ></div>
+        </div>
+        <div class="flex gap-4 mt-6">
+            <button
+            class="px-4 py-2 bg-white text-indigo-600 font-bold rounded-xl text-sm hover:bg-indigo-50 transition-colors"
+            >
+            Manage Plan
+            </button>
+            <button
+            class="px-4 py-2 bg-indigo-700 text-white font-bold rounded-xl text-sm hover:bg-indigo-800 transition-colors"
+            >
+            Upgrade
+            </button>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Payment Method -->
+    <div
+    class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 p-6 flex flex-col justify-between"
+    >
+    <div>
+        <h3
+        class="font-bold text-slate-800 dark:text-slate-100 text-lg mb-4"
+        >
+        Payment Method
+        </h3>
+        <div
+        class="flex items-center gap-4 p-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-700/50"
+        >
+        <div
+            class="w-12 h-8 bg-white dark:bg-slate-800 rounded flex items-center justify-center border border-slate-200 dark:border-slate-600"
+        >
+            <i
+            class="bx bxl-visa text-2xl text-blue-600"
+            ></i>
+        </div>
+        <div>
+            <p
+            class="font-bold text-slate-800 dark:text-slate-200 text-sm"
+            >
+            Visa ending in 4242
+            </p>
+            <p class="text-xs text-slate-500">
+            Expires 12/28
+            </p>
+        </div>
+        <span
+            class="ml-auto px-2 py-1 bg-green-100 text-green-700 text-[10px] font-bold uppercase rounded"
+            >Default</span
+        >
+        </div>
+        <button
+        class="text-indigo-600 text-sm font-medium mt-4 flex items-center gap-1 hover:gap-2 transition-all"
+        >
+        <i class="bx bx-plus"></i> Add new payment
+        method
+        </button>
+    </div>
+    <div
+        class="mt-6 pt-6 border-t border-slate-100 dark:border-slate-700"
+    >
+        <div
+        class="flex justify-between items-center text-sm"
+        >
+        <span class="text-slate-500"
+            >Next billing date</span
+        >
+        <span
+            class="font-bold text-slate-800 dark:text-slate-100"
+            >Feb 21, 2026</span
+        >
+        </div>
+    </div>
+    </div>
+</div>
+
+<!-- Invoice History -->
+<div
+    class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden"
+>
+    <div
+    class="px-8 py-6 border-b border-slate-100 dark:border-slate-700 flex justify-between items-center"
+    >
+    <h3
+        class="font-bold text-slate-800 dark:text-slate-100"
+    >
+        Invoice History
+    </h3>
+    <button
+        class="text-sm text-indigo-600 font-medium border border-indigo-200 px-3 py-1.5 rounded-lg hover:bg-indigo-50 transition-colors"
+    >
+        Download All
+    </button>
+    </div>
+    <div class="overflow-x-auto">
+    <table class="w-full text-left">
+        <thead
+        class="bg-slate-50 dark:bg-slate-900/50 text-xs font-bold text-slate-500 uppercase tracking-wider"
+        >
+        <tr>
+            <th class="px-8 py-4">Invoice</th>
+            <th class="px-8 py-4">Date</th>
+            <th class="px-8 py-4">Amount</th>
+            <th class="px-8 py-4">Status</th>
+            <th class="px-8 py-4 text-right">
+            Action
+            </th>
+        </tr>
+        </thead>
+        <tbody
+        class="divide-y divide-slate-100 dark:divide-slate-700 text-sm"
+        >
+        <tr
+            class="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
+        >
+            <td
+            class="px-8 py-4 font-bold text-slate-800 dark:text-slate-200"
+            >
+            INV-2024-001
+            </td>
+            <td class="px-8 py-4 text-slate-500">
+            Jan 01, 2026
+            </td>
+            <td
+            class="px-8 py-4 font-medium text-slate-800 dark:text-slate-200"
+            >
+            $29.00
+            </td>
+            <td class="px-8 py-4">
+            <span
+                class="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-600"
+                >Paid</span
+            >
+            </td>
+            <td class="px-8 py-4 text-right">
+            <button
+                class="p-2 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg text-slate-500 transition-colors"
+            >
+                <i class="bx bx-download"></i>
+            </button>
+            </td>
+        </tr>
+        <tr
+            class="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
+        >
+            <td
+            class="px-8 py-4 font-bold text-slate-800 dark:text-slate-200"
+            >
+            INV-2023-012
+            </td>
+            <td class="px-8 py-4 text-slate-500">
+            Dec 01, 2025
+            </td>
+            <td
+            class="px-8 py-4 font-medium text-slate-800 dark:text-slate-200"
+            >
+            $29.00
+            </td>
+            <td class="px-8 py-4">
+            <span
+                class="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-600"
+                >Paid</span
+            >
+            </td>
+            <td class="px-8 py-4 text-right">
+            <button
+                class="p-2 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg text-slate-500 transition-colors"
+            >
+                <i class="bx bx-download"></i>
+            </button>
+            </td>
+        </tr>
+        <tr
+            class="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
+        >
+            <td
+            class="px-8 py-4 font-bold text-slate-800 dark:text-slate-200"
+            >
+            INV-2023-011
+            </td>
+            <td class="px-8 py-4 text-slate-500">
+            Nov 01, 2025
+            </td>
+            <td
+            class="px-8 py-4 font-medium text-slate-800 dark:text-slate-200"
+            >
+            $29.00
+            </td>
+            <td class="px-8 py-4">
+            <span
+                class="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-600"
+                >Paid</span
+            >
+            </td>
+            <td class="px-8 py-4 text-right">
+            <button
+                class="p-2 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg text-slate-500 transition-colors"
+            >
+                <i class="bx bx-download"></i>
+            </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+</div>
+</div>
+    </div>
+    </div>
+</div>
+            </div>
+        </main>
+      </div>
+    </div>
   </body>
 </html>

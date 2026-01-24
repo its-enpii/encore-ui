@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timeline | Encore UI</title>
+    <!-- Vite CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Alpine.js -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"
+    ></script>
+  </head>
+  <body
+    x-data="{
+        sidebarHidden: false,
+        darkMode: localStorage.getItem('theme') === 'dark',
+        toggleTheme() {
+            this.darkMode = !this.darkMode;
+            localStorage.setItem('theme', this.darkMode ? 'dark' : 'light');
+            if (this.darkMode) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        },
+        toggleSidebar() {
+            this.sidebarHidden = !this.sidebarHidden;
+        }
+    }"
+    x-init="$watch('darkMode', val => val ? document.documentElement.classList.add('dark') : document.documentElement.classList.remove('dark')); if(darkMode) document.documentElement.classList.add('dark');"
+    :class="{ 'sidebar-hidden': sidebarHidden }"
+    class="bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 antialiased transition-colors duration-300"
+  >
+    <!-- Mobile Drawer -->
+    <div
+      class="fixed inset-0 z-50 lg:hidden bg-slate-900/50 backdrop-blur-sm transition-opacity duration-300"
+      x-show="sidebarHidden"
+      x-transition:enter="ease-out duration-300"
+      x-transition:enter-start="opacity-0"
+      x-transition:enter-end="opacity-100"
+      x-transition:leave="ease-in duration-200"
+      x-transition:leave-start="opacity-100"
+      x-transition:leave-end="opacity-0"
+      @click="sidebarHidden = false"
+      style="display: none"
+    ></div>
+
+    <!-- Dashboard Container -->
+    <div class="min-h-screen bg-slate-50 dark:bg-slate-900">
+      <!-- Sidebar -->
+      <aside class="layout-sidebar bg-white dark:bg-slate-800">
+        <!-- Brand -->
+        <div
+          class="h-16 flex items-center px-6 border-b border-slate-100 dark:border-slate-700"
+        >
+          <div
+            class="flex items-center gap-2 font-bold text-xl text-indigo-600 dark:text-indigo-400 tracking-tight"
+          >
+            <i class="bx bxs-cube-alt text-2xl"></i>
+            <span>Encore</span>
+          </div>
+          <button
+            @click="sidebarHidden = !sidebarHidden"
+            class="lg:hidden ml-auto text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
+          >
+            <i class="bx bx-x text-2xl"></i>
+          </button>
+        </div>
+
+        <!-- Navigation -->
+        <div class="flex-1 overflow-y-auto py-4 custom-scrollbar">
+          <nav class="px-2">
+            <ul class="nav">
+              <li class="nav-header">Dashboard</li>
+              <li class="nav-item">
+                <a
+                  href="/dashboard/dashboard-default.html"
+                  class="nav-link group"
+                >
+                  <i class="bx bxs-dashboard nav-icon"></i>
+                  <span>Dashboard</span>
+                </a>
+              </li>
+
+              <li class="nav-header">Utility / Misc</li>
+
+              <li class="nav-item dropdown" x-data="{ open: true }">
+                <a
+                  href="#"
+                  class="nav-link active group"
+                  @click.prevent="open = !open"
+                  :class="{ 'active': open }"
+                >
+                  <i class="bx bx-box nav-icon"></i>
+                  <span>Utility</span>
+                  <i
+                    class="bx bx-chevron-right nav-chevron"
+                    :class="{ 'rotate-90': open }"
+                  ></i>
+                </a>
+                <ul class="nav-submenu" :class="{ 'show': open }">
+                  <div>
+                    <li class="nav-item">
+                      <a href="/utility/pricing-table.html" class="nav-sub-link"
+                        ><span>Pricing Table</span></a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a href="/utility/faq.html" class="nav-sub-link"
+                        ><span>FAQ</span></a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        href="/utility/timeline.html"
+                        class="nav-sub-link active"
+                        ><span>Timeline</span></a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a href="/utility/gallery.html" class="nav-sub-link"
+                        ><span>Gallery</span></a
+                      >
+                    </li>
+                  </div>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a href="/user/account-settings.html" class="nav-link group">
+                  <i class="bx bx-user-circle nav-icon"></i>
+                  <span>Account Settings</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- Main Wrapper -->
+      <div class="layout-content bg-slate-50 dark:bg-slate-900">
+        <!-- Navbar -->
+        <header class="relative z-10">
+          <div
+            class="bg-white/95 dark:bg-slate-800/95 backdrop-blur-md border-b border-slate-100/50 dark:border-slate-700/50"
+          >
+            <div class="container mx-auto">
+              <div class="h-16 px-4 lg:px-6 flex items-center justify-between">
+                <!-- Left Section -->
+                <div class="flex items-center gap-4">
+                  <button
+                    @click="toggleSidebar()"
+                    class="p-2 hover:bg-linear-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-xl transition-all duration-300 group"
+                  >
+                    <i
+                      class="bx bx-menu text-2xl text-slate-600 dark:text-slate-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors"
+                    ></i>
+                  </button>
+                  <h3
+                    class="text-xl font-bold text-slate-800 dark:text-slate-100 hidden sm:block"
+                  >
+                    Projects Timeline
+                  </h3>
+                </div>
+
+                <!-- Right Section -->
+                <div class="flex items-center gap-2">
+                  <div class="hidden sm:flex items-center gap-1">
+                    <button
+                      @click="toggleTheme()"
+                      class="relative p-2.5 hover:bg-linear-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-xl transition-all duration-300 group"
+                    >
+                      <i
+                        class="bx text-xl text-slate-600 dark:text-slate-400 transition-colors"
+                        :class="darkMode ? 'bx-sun group-hover:text-amber-500' : 'bx-moon group-hover:text-indigo-600 dark:group-hover:text-indigo-400'"
+                      ></i>
+                    </button>
+                  </div>
+
+                  <!-- Simple Profile (Placeholder) -->
+                  <button
+                    class="flex items-center gap-3 pl-2 pr-3 py-1.5 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-xl transition-all"
+                  >
+                    <img
+                      src="https://ui-avatars.com/api/?name=User&background=6366f1&color=fff"
+                      class="w-8 h-8 rounded-full"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main
+          class="flex-1 overflow-x-hidden overflow-y-auto bg-slate-50 dark:bg-slate-900 p-4 lg:p-6"
+        >
+          <div class="container mx-auto max-w-5xl">
+            <!-- Timeline Container -->
+            <div class="relative py-8">
+              <!-- Vertical Line (Desktop: Center, Mobile: Left) -->
+              <div
+                class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-slate-200 dark:bg-slate-700 -ml-px"
+              ></div>
+
+              <!-- Item 1 (Right on Desktop) -->
+              <div class="relative mb-12">
+                <!-- Desktop Alignment Helper -->
+                <div class="md:flex items-center justify-between w-full">
+                  <!-- Left Side (Empty on simple timeline, or Date) -->
+                  <div class="hidden md:block w-5/12 text-right pr-8">
+                    <span
+                      class="text-sm font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider"
+                      >Oct 24, 2026</span
+                    >
+                  </div>
+
+                  <!-- Icon -->
+                  <div
+                    class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-indigo-600 border-4 border-slate-50 dark:border-slate-900 flex items-center justify-center z-10 shadow-lg"
+                  >
+                    <i class="bx bx-rocket text-white text-sm"></i>
+                  </div>
+
+                  <!-- Content Card (Right) -->
+                  <div class="ml-12 md:ml-0 md:w-5/12 pl-0 md:pl-8">
+                    <div
+                      class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-lg transition-shadow relative"
+                    >
+                      <span
+                        class="md:hidden text-xs font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider mb-2 block"
+                        >Oct 24, 2026</span
+                      >
+                      <h3
+                        class="font-bold text-lg text-slate-800 dark:text-slate-100 mb-2"
+                      >
+                        v2.0 Dashboard Launch
+                      </h3>
+                      <p
+                        class="text-slate-600 dark:text-slate-400 text-sm mb-4 leading-relaxed"
+                      >
+                        Official release of the new dashboard interface
+                        including dark mode support and improved accessibility
+                        features.
+                      </p>
+                      <div class="flex items-center gap-2">
+                        <span
+                          class="px-2 py-1 bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300 text-[10px] font-bold uppercase rounded"
+                          >Completed</span
+                        >
+                        <div class="flex -space-x-2 ml-auto">
+                          <img
+                            class="w-6 h-6 rounded-full border-2 border-white dark:border-slate-800"
+                            src="https://ui-avatars.com/api/?name=Alex&background=random"
+                            alt=""
+                          />
+                          <img
+                            class="w-6 h-6 rounded-full border-2 border-white dark:border-slate-800"
+                            src="https://ui-avatars.com/api/?name=Sarah&background=random"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                      <!-- Arrow (Desktop Only) -->
+                      <div
+                        class="hidden md:block absolute top-6 -left-2 w-4 h-4 bg-white dark:bg-slate-800 border-l border-b border-slate-100 dark:border-slate-700 transform rotate-45"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 2 (Left on Desktop) -->
+              <div class="relative mb-12">
+                <div
+                  class="md:flex items-center justify-between w-full flex-row-reverse"
+                >
+                  <div class="hidden md:block w-5/12 text-left pl-8">
+                    <span
+                      class="text-sm font-bold text-amber-600 dark:text-amber-400 uppercase tracking-wider"
+                      >Sep 15, 2026</span
+                    >
+                  </div>
+
+                  <div
+                    class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-amber-500 border-4 border-slate-50 dark:border-slate-900 flex items-center justify-center z-10 shadow-lg"
+                  >
+                    <i class="bx bx-bug text-white text-sm"></i>
+                  </div>
+
+                  <!-- Content Card (Left) -->
+                  <div class="ml-12 md:ml-0 md:w-5/12 pr-0 md:pr-8">
+                    <div
+                      class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-lg transition-shadow relative"
+                    >
+                      <span
+                        class="md:hidden text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-wider mb-2 block"
+                        >Sep 15, 2026</span
+                      >
+                      <h3
+                        class="font-bold text-lg text-slate-800 dark:text-slate-100 mb-2"
+                      >
+                        Beta Testing Phase
+                      </h3>
+                      <p
+                        class="text-slate-600 dark:text-slate-400 text-sm mb-4 leading-relaxed"
+                      >
+                        Closed beta testing with selected partners to identify
+                        bugs and gather initial user feedback.
+                      </p>
+                      <div class="flex items-center gap-2">
+                        <span
+                          class="px-2 py-1 bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300 text-[10px] font-bold uppercase rounded"
+                          >In Progress</span
+                        >
+                      </div>
+                      <!-- Arrow (Right side for left card) -->
+                      <div
+                        class="hidden md:block absolute top-6 -right-2 w-4 h-4 bg-white dark:bg-slate-800 border-t border-r border-slate-100 dark:border-slate-700 transform rotate-45"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 3 (Right on Desktop) -->
+              <div class="relative mb-12">
+                <div class="md:flex items-center justify-between w-full">
+                  <div class="hidden md:block w-5/12 text-right pr-8">
+                    <span
+                      class="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider"
+                      >Aug 01, 2026</span
+                    >
+                  </div>
+
+                  <div
+                    class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-slate-400 border-4 border-slate-50 dark:border-slate-900 flex items-center justify-center z-10 shadow-lg"
+                  >
+                    <i class="bx bx-pencil text-white text-sm"></i>
+                  </div>
+
+                  <div class="ml-12 md:ml-0 md:w-5/12 pl-0 md:pl-8">
+                    <div
+                      class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-lg transition-shadow relative"
+                    >
+                      <span
+                        class="md:hidden text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2 block"
+                        >Aug 01, 2026</span
+                      >
+                      <h3
+                        class="font-bold text-lg text-slate-800 dark:text-slate-100 mb-2"
+                      >
+                        Design System Spec
+                      </h3>
+                      <p
+                        class="text-slate-600 dark:text-slate-400 text-sm mb-4 leading-relaxed"
+                      >
+                        Finalization of color palettes, typography, and
+                        component library specifications.
+                      </p>
+                      <div class="flex items-center gap-2">
+                        <span
+                          class="px-2 py-1 bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300 text-[10px] font-bold uppercase rounded"
+                          >Planning</span
+                        >
+                      </div>
+                      <div
+                        class="hidden md:block absolute top-6 -left-2 w-4 h-4 bg-white dark:bg-slate-800 border-l border-b border-slate-100 dark:border-slate-700 transform rotate-45"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 4 (Left on Desktop) -->
+              <div class="relative">
+                <div
+                  class="md:flex items-center justify-between w-full flex-row-reverse"
+                >
+                  <div class="hidden md:block w-5/12 text-left pl-8">
+                    <span
+                      class="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider"
+                      >Jul 10, 2026</span
+                    >
+                  </div>
+
+                  <div
+                    class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-700 border-4 border-slate-50 dark:border-slate-900 flex items-center justify-center z-10 shadow-lg"
+                  >
+                    <i
+                      class="bx bx-flag text-slate-500 dark:text-slate-400 text-sm"
+                    ></i>
+                  </div>
+
+                  <div class="ml-12 md:ml-0 md:w-5/12 pr-0 md:pr-8">
+                    <div
+                      class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-lg transition-shadow relative opacity-75"
+                    >
+                      <span
+                        class="md:hidden text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2 block"
+                        >Jul 10, 2026</span
+                      >
+                      <h3
+                        class="font-bold text-lg text-slate-800 dark:text-slate-100 mb-2"
+                      >
+                        Project Kickoff
+                      </h3>
+                      <p
+                        class="text-slate-600 dark:text-slate-400 text-sm mb-4 leading-relaxed"
+                      >
+                        Initial team meeting to define project scope and
+                        deliverables.
+                      </p>
+                      <div class="flex items-center gap-2">
+                        <span
+                          class="px-2 py-1 bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300 text-[10px] font-bold uppercase rounded"
+                          >Completed</span
+                        >
+                      </div>
+                      <div
+                        class="hidden md:block absolute top-6 -right-2 w-4 h-4 bg-white dark:bg-slate-800 border-t border-r border-slate-100 dark:border-slate-700 transform rotate-45"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

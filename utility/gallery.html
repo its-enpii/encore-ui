@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery | Encore UI</title>
+    <!-- Vite CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Alpine.js -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"
+    ></script>
+  </head>
+  <body
+    x-data="{
+        sidebarHidden: false,
+        darkMode: localStorage.getItem('theme') === 'dark',
+        toggleTheme() {
+            this.darkMode = !this.darkMode;
+            localStorage.setItem('theme', this.darkMode ? 'dark' : 'light');
+            if (this.darkMode) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        },
+        toggleSidebar() {
+            this.sidebarHidden = !this.sidebarHidden;
+        }
+    }"
+    x-init="$watch('darkMode', val => val ? document.documentElement.classList.add('dark') : document.documentElement.classList.remove('dark')); if(darkMode) document.documentElement.classList.add('dark');"
+    :class="{ 'sidebar-hidden': sidebarHidden }"
+    class="bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 antialiased transition-colors duration-300"
+  >
+    <!-- Mobile Drawer -->
+    <div
+      class="fixed inset-0 z-50 lg:hidden bg-slate-900/50 backdrop-blur-sm transition-opacity duration-300"
+      x-show="sidebarHidden"
+      x-transition:enter="ease-out duration-300"
+      x-transition:enter-start="opacity-0"
+      x-transition:enter-end="opacity-100"
+      x-transition:leave="ease-in duration-200"
+      x-transition:leave-start="opacity-100"
+      x-transition:leave-end="opacity-0"
+      @click="sidebarHidden = false"
+      style="display: none"
+    ></div>
+
+    <!-- Dashboard Container -->
+    <div class="min-h-screen bg-slate-50 dark:bg-slate-900">
+      <!-- Sidebar -->
+      <aside class="layout-sidebar bg-white dark:bg-slate-800">
+        <!-- Brand -->
+        <div
+          class="h-16 flex items-center px-6 border-b border-slate-100 dark:border-slate-700"
+        >
+          <div
+            class="flex items-center gap-2 font-bold text-xl text-indigo-600 dark:text-indigo-400 tracking-tight"
+          >
+            <i class="bx bxs-cube-alt text-2xl"></i>
+            <span>Encore</span>
+          </div>
+          <button
+            @click="sidebarHidden = !sidebarHidden"
+            class="lg:hidden ml-auto text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
+          >
+            <i class="bx bx-x text-2xl"></i>
+          </button>
+        </div>
+
+        <!-- Navigation -->
+        <div class="flex-1 overflow-y-auto py-4 custom-scrollbar">
+          <nav class="px-2">
+            <ul class="nav">
+              <li class="nav-header">Dashboard</li>
+              <li class="nav-item">
+                <a
+                  href="/dashboard/dashboard-default.html"
+                  class="nav-link group"
+                >
+                  <i class="bx bxs-dashboard nav-icon"></i>
+                  <span>Dashboard</span>
+                </a>
+              </li>
+
+              <li class="nav-header">Utility / Misc</li>
+
+              <li class="nav-item dropdown" x-data="{ open: true }">
+                <a
+                  href="#"
+                  class="nav-link active group"
+                  @click.prevent="open = !open"
+                  :class="{ 'active': open }"
+                >
+                  <i class="bx bx-box nav-icon"></i>
+                  <span>Utility</span>
+                  <i
+                    class="bx bx-chevron-right nav-chevron"
+                    :class="{ 'rotate-90': open }"
+                  ></i>
+                </a>
+                <ul class="nav-submenu" :class="{ 'show': open }">
+                  <div>
+                    <li class="nav-item">
+                      <a href="/utility/pricing-table.html" class="nav-sub-link"
+                        ><span>Pricing Table</span></a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a href="/utility/faq.html" class="nav-sub-link"
+                        ><span>FAQ</span></a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a href="/utility/timeline.html" class="nav-sub-link"
+                        ><span>Timeline</span></a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        href="/utility/gallery.html"
+                        class="nav-sub-link active"
+                        ><span>Gallery</span></a
+                      >
+                    </li>
+                  </div>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a href="/user/account-settings.html" class="nav-link group">
+                  <i class="bx bx-user-circle nav-icon"></i>
+                  <span>Account Settings</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- Main Wrapper -->
+      <div class="layout-content bg-slate-50 dark:bg-slate-900">
+        <!-- Navbar -->
+        <header class="relative z-10">
+          <div
+            class="bg-white/95 dark:bg-slate-800/95 backdrop-blur-md border-b border-slate-100/50 dark:border-slate-700/50"
+          >
+            <div class="container mx-auto">
+              <div class="h-16 px-4 lg:px-6 flex items-center justify-between">
+                <!-- Left Section -->
+                <div class="flex items-center gap-4">
+                  <button
+                    @click="toggleSidebar()"
+                    class="p-2 hover:bg-linear-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-xl transition-all duration-300 group"
+                  >
+                    <i
+                      class="bx bx-menu text-2xl text-slate-600 dark:text-slate-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors"
+                    ></i>
+                  </button>
+                  <h3
+                    class="text-xl font-bold text-slate-800 dark:text-slate-100 hidden sm:block"
+                  >
+                    Gallery
+                  </h3>
+                </div>
+
+                <!-- Right Section -->
+                <div class="flex items-center gap-2">
+                  <div class="hidden sm:flex items-center gap-1">
+                    <button
+                      @click="toggleTheme()"
+                      class="relative p-2.5 hover:bg-linear-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-xl transition-all duration-300 group"
+                    >
+                      <i
+                        class="bx text-xl text-slate-600 dark:text-slate-400 transition-colors"
+                        :class="darkMode ? 'bx-sun group-hover:text-amber-500' : 'bx-moon group-hover:text-indigo-600 dark:group-hover:text-indigo-400'"
+                      ></i>
+                    </button>
+                  </div>
+
+                  <!-- Simple Profile (Placeholder) -->
+                  <button
+                    class="flex items-center gap-3 pl-2 pr-3 py-1.5 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-xl transition-all"
+                  >
+                    <img
+                      src="https://ui-avatars.com/api/?name=User&background=6366f1&color=fff"
+                      class="w-8 h-8 rounded-full"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main
+          class="flex-1 overflow-x-hidden overflow-y-auto bg-slate-50 dark:bg-slate-900 p-4 lg:p-6"
+          x-data="{ 
+              activeFilter: 'all',
+              lightboxOpen: false,
+              lightboxImage: '',
+              lightboxTitle: '',
+              images: [
+                  { id: 1, src: 'https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?q=80&w=600&auto=format&fit=crop', category: 'nature', title: 'Mountain Peaks' },
+                  { id: 2, src: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=600&auto=format&fit=crop', category: 'tech', title: 'Workspace Setup' },
+                  { id: 3, src: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=600&auto=format&fit=crop', category: 'design', title: 'Abstract Art' },
+                  { id: 4, src: 'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=600&auto=format&fit=crop', category: 'nature', title: 'Green Forest' },
+                  { id: 5, src: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=600&auto=format&fit=crop', category: 'tech', title: 'Coding Screen' },
+                  { id: 6, src: 'https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=600&auto=format&fit=crop', category: 'design', title: 'Modern Architecture' },
+                  { id: 7, src: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=600&auto=format&fit=crop', category: 'nature', title: 'Ocean Waves' },
+                  { id: 8, src: 'https://images.unsplash.com/photo-1526738549149-8e07eca6c147?q=80&w=600&auto=format&fit=crop', category: 'tech', title: 'Circuit Board' },
+                  { id: 9, src: 'https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?q=80&w=600&auto=format&fit=crop', category: 'design', title: 'Creative Studio' },
+              ],
+              openLightbox(image) {
+                  this.lightboxImage = image.src;
+                  this.lightboxTitle = image.title;
+                  this.lightboxOpen = true;
+              }
+          }"
+        >
+          <div class="container mx-auto max-w-7xl">
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-2 mb-8">
+              <button
+                @click="activeFilter = 'all'"
+                :class="activeFilter === 'all' ? 'bg-indigo-600 text-white' : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700'"
+                class="px-5 py-2 rounded-full font-bold text-sm shadow-sm transition-all"
+              >
+                All
+              </button>
+              <button
+                @click="activeFilter = 'nature'"
+                :class="activeFilter === 'nature' ? 'bg-indigo-600 text-white' : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700'"
+                class="px-5 py-2 rounded-full font-bold text-sm shadow-sm transition-all"
+              >
+                Nature
+              </button>
+              <button
+                @click="activeFilter = 'tech'"
+                :class="activeFilter === 'tech' ? 'bg-indigo-600 text-white' : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700'"
+                class="px-5 py-2 rounded-full font-bold text-sm shadow-sm transition-all"
+              >
+                Technology
+              </button>
+              <button
+                @click="activeFilter = 'design'"
+                :class="activeFilter === 'design' ? 'bg-indigo-600 text-white' : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700'"
+                class="px-5 py-2 rounded-full font-bold text-sm shadow-sm transition-all"
+              >
+                Design
+              </button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <template x-for="image in images" :key="image.id">
+                <div
+                  x-show="activeFilter === 'all' || activeFilter === image.category"
+                  x-transition:enter="transition ease-out duration-300 transform"
+                  x-transition:enter-start="opacity-0 scale-90"
+                  x-transition:enter-end="opacity-100 scale-100"
+                  class="group relative aspect-video sm:aspect-square rounded-2xl overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-all duration-300 bg-slate-100 dark:bg-slate-800"
+                  @click="openLightbox(image)"
+                >
+                  <img
+                    :src="image.src"
+                    :alt="image.title"
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+
+                  <!-- Overlay -->
+                  <div
+                    class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4"
+                  >
+                    <i
+                      class="bx bx-zoom-in text-white text-3xl mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
+                    ></i>
+                    <h3
+                      class="text-white font-bold text-lg translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75"
+                      x-text="image.title"
+                    ></h3>
+                    <span
+                      class="text-white/80 text-sm uppercase tracking-wider translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100"
+                      x-text="image.category"
+                    ></span>
+                  </div>
+                </div>
+              </template>
+            </div>
+          </div>
+
+          <!-- Lightbox Modal -->
+          <div
+            x-show="lightboxOpen"
+            class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4"
+            style="display: none"
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100"
+            x-transition:leave="transition ease-in duration-200"
+            x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0"
+          >
+            <button
+              @click="lightboxOpen = false"
+              class="absolute top-4 right-4 text-white/50 hover:text-white transition-colors"
+            >
+              <i class="bx bx-x text-5xl"></i>
+            </button>
+
+            <div
+              @click.outside="lightboxOpen = false"
+              class="max-w-5xl max-h-screen w-full relative"
+            >
+              <img
+                :src="lightboxImage"
+                class="w-full h-auto max-h-[85vh] object-contain rounded-lg shadow-2xl"
+              />
+              <p
+                class="text-center text-white mt-4 font-medium text-lg"
+                x-text="lightboxTitle"
+              ></p>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

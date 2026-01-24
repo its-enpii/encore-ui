@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Not Found | Encore UI</title>
+    <!-- Vite CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Alpine.js -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"
+    ></script>
+  </head>
+  <body
+    class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 antialiased h-screen flex flex-col overflow-hidden"
+    x-data="{
+        darkMode: localStorage.getItem('theme') === 'dark',
+        init() {
+            this.$watch('darkMode', val => val ? document.documentElement.classList.add('dark') : document.documentElement.classList.remove('dark')); 
+            if(this.darkMode) document.documentElement.classList.add('dark');
+        },
+        toggleTheme() {
+            this.darkMode = !this.darkMode;
+            localStorage.setItem('theme', this.darkMode ? 'dark' : 'light');
+            if (this.darkMode) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        }
+    }"
+  >
+    <!-- Header -->
+    <header
+      class="absolute top-0 left-0 w-full p-6 flex justify-between items-center z-20"
+    >
+      <div
+        class="flex items-center gap-2 font-bold text-xl text-indigo-600 dark:text-indigo-400 tracking-tight"
+      >
+        <i class="bx bxs-cube-alt text-2xl"></i>
+        <span>Encore</span>
+      </div>
+      <button
+        @click="toggleTheme()"
+        class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors"
+      >
+        <i
+          class="bx text-xl"
+          :class="darkMode ? 'bx-sun text-slate-400' : 'bx-moon text-slate-600'"
+        ></i>
+      </button>
+    </header>
+
+    <main
+      class="flex-1 flex flex-col items-center justify-center p-6 text-center relative z-10 w-full max-w-2xl mx-auto"
+    >
+      <div class="relative mb-8">
+        <h1
+          class="text-[150px] md:text-[200px] leading-none font-extrabold text-slate-100 dark:text-slate-800 select-none"
+        >
+          404
+        </h1>
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        >
+          <i
+            class="bx bx-search-alt text-6xl text-indigo-600 dark:text-indigo-400 drop-shadow-lg"
+          ></i>
+        </div>
+      </div>
+
+      <h2
+        class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4"
+      >
+        Oops! Page not found.
+      </h2>
+
+      <p
+        class="text-lg text-slate-600 dark:text-slate-400 mb-10 max-w-md mx-auto"
+      >
+        The page you are looking for might have been removed, had its name
+        changed, or is temporarily unavailable.
+      </p>
+
+      <a
+        href="/dashboard/dashboard-default.html"
+        class="px-8 py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl shadow-lg shadow-indigo-200 dark:shadow-none transition-all hover:-translate-y-0.5 inline-flex items-center gap-2"
+      >
+        <i class="bx bx-home-alt text-lg"></i>
+        Back to Dashboard
+      </a>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="absolute bottom-6 w-full text-center text-sm text-slate-500 dark:text-slate-400 z-20"
+    >
+      &copy; 2026 Encore UI. All rights reserved.
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ | Encore UI</title>
+    <!-- Vite CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Alpine.js -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"
+    ></script>
+  </head>
+  <body
+    x-data="{
+        sidebarHidden: false,
+        darkMode: localStorage.getItem('theme') === 'dark',
+        toggleTheme() {
+            this.darkMode = !this.darkMode;
+            localStorage.setItem('theme', this.darkMode ? 'dark' : 'light');
+            if (this.darkMode) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        },
+        toggleSidebar() {
+            this.sidebarHidden = !this.sidebarHidden;
+        }
+    }"
+    x-init="$watch('darkMode', val => val ? document.documentElement.classList.add('dark') : document.documentElement.classList.remove('dark')); if(darkMode) document.documentElement.classList.add('dark');"
+    :class="{ 'sidebar-hidden': sidebarHidden }"
+    class="bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 antialiased transition-colors duration-300"
+  >
+    <!-- Mobile Drawer -->
+    <div
+      class="fixed inset-0 z-50 lg:hidden bg-slate-900/50 backdrop-blur-sm transition-opacity duration-300"
+      x-show="sidebarHidden"
+      x-transition:enter="ease-out duration-300"
+      x-transition:enter-start="opacity-0"
+      x-transition:enter-end="opacity-100"
+      x-transition:leave="ease-in duration-200"
+      x-transition:leave-start="opacity-100"
+      x-transition:leave-end="opacity-0"
+      @click="sidebarHidden = false"
+      style="display: none"
+    ></div>
+
+    <!-- Dashboard Container -->
+    <div class="min-h-screen bg-slate-50 dark:bg-slate-900">
+      <!-- Sidebar -->
+      <aside class="layout-sidebar bg-white dark:bg-slate-800">
+        <!-- Brand -->
+        <div
+          class="h-16 flex items-center px-6 border-b border-slate-100 dark:border-slate-700"
+        >
+          <div
+            class="flex items-center gap-2 font-bold text-xl text-indigo-600 dark:text-indigo-400 tracking-tight"
+          >
+            <i class="bx bxs-cube-alt text-2xl"></i>
+            <span>Encore</span>
+          </div>
+          <button
+            @click="sidebarHidden = !sidebarHidden"
+            class="lg:hidden ml-auto text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
+          >
+            <i class="bx bx-x text-2xl"></i>
+          </button>
+        </div>
+
+        <!-- Navigation -->
+        <div class="flex-1 overflow-y-auto py-4 custom-scrollbar">
+          <nav class="px-2">
+            <ul class="nav">
+              <li class="nav-header">Dashboard</li>
+              <li class="nav-item">
+                <a
+                  href="/dashboard/dashboard-default.html"
+                  class="nav-link group"
+                >
+                  <i class="bx bxs-dashboard nav-icon"></i>
+                  <span>Dashboard</span>
+                </a>
+              </li>
+
+              <li class="nav-header">Utility / Misc</li>
+
+              <li class="nav-item dropdown" x-data="{ open: true }">
+                <a
+                  href="#"
+                  class="nav-link active group"
+                  @click.prevent="open = !open"
+                  :class="{ 'active': open }"
+                >
+                  <i class="bx bx-box nav-icon"></i>
+                  <span>Utility</span>
+                  <i
+                    class="bx bx-chevron-right nav-chevron"
+                    :class="{ 'rotate-90': open }"
+                  ></i>
+                </a>
+                <ul class="nav-submenu" :class="{ 'show': open }">
+                  <div>
+                    <li class="nav-item">
+                      <a href="/utility/pricing-table.html" class="nav-sub-link"
+                        ><span>Pricing Table</span></a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a href="/utility/faq.html" class="nav-sub-link active"
+                        ><span>FAQ</span></a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a href="/utility/timeline.html" class="nav-sub-link"
+                        ><span>Timeline</span></a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a href="/utility/gallery.html" class="nav-sub-link"
+                        ><span>Gallery</span></a
+                      >
+                    </li>
+                  </div>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a href="/user/account-settings.html" class="nav-link group">
+                  <i class="bx bx-user-circle nav-icon"></i>
+                  <span>Account Settings</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- Main Wrapper -->
+      <div class="layout-content bg-slate-50 dark:bg-slate-900">
+        <!-- Navbar -->
+        <header class="relative z-10">
+          <div
+            class="bg-white/95 dark:bg-slate-800/95 backdrop-blur-md border-b border-slate-100/50 dark:border-slate-700/50"
+          >
+            <div class="container mx-auto">
+              <div class="h-16 px-4 lg:px-6 flex items-center justify-between">
+                <!-- Left Section -->
+                <div class="flex items-center gap-4">
+                  <button
+                    @click="toggleSidebar()"
+                    class="p-2 hover:bg-linear-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-xl transition-all duration-300 group"
+                  >
+                    <i
+                      class="bx bx-menu text-2xl text-slate-600 dark:text-slate-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors"
+                    ></i>
+                  </button>
+                  <h3
+                    class="text-xl font-bold text-slate-800 dark:text-slate-100 hidden sm:block"
+                  >
+                    FAQ
+                  </h3>
+                </div>
+
+                <!-- Right Section -->
+                <div class="flex items-center gap-2">
+                  <div class="hidden sm:flex items-center gap-1">
+                    <button
+                      @click="toggleTheme()"
+                      class="relative p-2.5 hover:bg-linear-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-xl transition-all duration-300 group"
+                    >
+                      <i
+                        class="bx text-xl text-slate-600 dark:text-slate-400 transition-colors"
+                        :class="darkMode ? 'bx-sun group-hover:text-amber-500' : 'bx-moon group-hover:text-indigo-600 dark:group-hover:text-indigo-400'"
+                      ></i>
+                    </button>
+                  </div>
+
+                  <!-- Simple Profile (Placeholder) -->
+                  <button
+                    class="flex items-center gap-3 pl-2 pr-3 py-1.5 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-xl transition-all"
+                  >
+                    <img
+                      src="https://ui-avatars.com/api/?name=User&background=6366f1&color=fff"
+                      class="w-8 h-8 rounded-full"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main
+          class="flex-1 overflow-x-hidden overflow-y-auto bg-slate-50 dark:bg-slate-900"
+          x-data="{ 
+              searchQuery: '', 
+              activeCategory: 'all',
+              faqs: [
+                  { 
+                      question: 'How do I change my password?', 
+                      answer: 'You can change your password in the Account Settings page under the Security tab. You will need to enter your current password to confirm the change.', 
+                      category: 'account' 
+                  },
+                  { 
+                      question: 'Can I use Encore UI for commercial projects?', 
+                      answer: 'Yes! Encore UI is licensed under MIT, which allows for both personal and commercial use without any restrictions.', 
+                      category: 'general' 
+                  },
+                  { 
+                      question: 'How does billing work?', 
+                      answer: 'We charge your credit card on the first of every month. You can view your invoice history in the Billing section of your account.', 
+                      category: 'billing' 
+                  },
+                  { 
+                      question: 'Is two-factor authentication available?', 
+                      answer: 'Yes, we support 2FA via authenticator apps like Google Authenticator or Authy. You can enable it in Security settings.', 
+                      category: 'account' 
+                  },
+                  { 
+                      question: 'Do you offer refunds?', 
+                      answer: 'If you are unhappy with our service, contact us within 14 days of your purchase for a full refund, no questions asked.', 
+                      category: 'billing' 
+                  },
+                  { 
+                      question: 'Where can I find the API documentation?', 
+                      answer: 'Our API documentation is available at docs.encore-ui.com. It covers all endpoints, authentication methods, and rate limits.', 
+                      category: 'technical' 
+                  }
+              ],
+              get filteredFaqs() {
+                  if (this.searchQuery === '') {
+                      if (this.activeCategory === 'all') return this.faqs;
+                      return this.faqs.filter(faq => faq.category === this.activeCategory);
+                  }
+                  return this.faqs.filter(faq => 
+                      faq.question.toLowerCase().includes(this.searchQuery.toLowerCase()) || 
+                      faq.answer.toLowerCase().includes(this.searchQuery.toLowerCase())
+                  );
+              }
+          }"
+        >
+          <!-- Hero / Search Section -->
+          <div
+            class="bg-indigo-600 dark:bg-slate-800 pt-16 pb-24 px-4 text-center relative overflow-hidden"
+          >
+            <!-- Background Decoration -->
+            <div
+              class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20 pointer-events-none"
+            >
+              <div
+                class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-indigo-400 blur-3xl"
+              ></div>
+              <div
+                class="absolute top-1/2 right-0 w-64 h-64 rounded-full bg-purple-400 blur-3xl"
+              ></div>
+            </div>
+
+            <div class="relative z-10 max-w-2xl mx-auto">
+              <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-4">
+                How can we help you?
+              </h1>
+              <p class="text-indigo-100 mb-8 text-lg">
+                Search our knowledge base or browse categories below.
+              </p>
+
+              <div class="relative max-w-lg mx-auto">
+                <i
+                  class="bx bx-search absolute left-4 top-3.5 text-slate-400 text-xl"
+                ></i>
+                <input
+                  type="text"
+                  x-model="searchQuery"
+                  placeholder="Type keywords to find answers..."
+                  class="w-full pl-12 pr-4 py-3.5 rounded-2xl border-0 shadow-lg text-slate-800 placeholder-slate-400 focus:ring-4 focus:ring-indigo-400/50 outline-none transition-all"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Content Container -->
+          <div
+            class="container mx-auto max-w-6xl px-4 lg:px-6 -mt-12 relative z-20 pb-12"
+          >
+            <div
+              class="bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 overflow-hidden min-h-[500px]"
+            >
+              <div class="grid grid-cols-1 md:grid-cols-12 min-h-[500px]">
+                <!-- Sidebar (Categories) -->
+                <div
+                  class="md:col-span-3 bg-slate-50 dark:bg-slate-800/50 border-r border-slate-100 dark:border-slate-700 p-6"
+                >
+                  <h3
+                    class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 px-3"
+                  >
+                    Categories
+                  </h3>
+                  <nav class="space-y-1">
+                    <button
+                      @click="activeCategory = 'all'; searchQuery = ''"
+                      :class="activeCategory === 'all' && searchQuery === '' ? 'bg-white dark:bg-slate-700 shadow-sm text-indigo-600 dark:text-indigo-400' : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700/50'"
+                      class="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold transition-all text-left"
+                    >
+                      <i class="bx bx-grid-alt text-lg"></i>
+                      All Questions
+                    </button>
+                    <button
+                      @click="activeCategory = 'general'; searchQuery = ''"
+                      :class="activeCategory === 'general' ? 'bg-white dark:bg-slate-700 shadow-sm text-indigo-600 dark:text-indigo-400' : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700/50'"
+                      class="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold transition-all text-left"
+                    >
+                      <i class="bx bx-cube text-lg"></i>
+                      General
+                    </button>
+                    <button
+                      @click="activeCategory = 'account'; searchQuery = ''"
+                      :class="activeCategory === 'account' ? 'bg-white dark:bg-slate-700 shadow-sm text-indigo-600 dark:text-indigo-400' : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700/50'"
+                      class="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold transition-all text-left"
+                    >
+                      <i class="bx bx-user text-lg"></i>
+                      Account
+                    </button>
+                    <button
+                      @click="activeCategory = 'billing'; searchQuery = ''"
+                      :class="activeCategory === 'billing' ? 'bg-white dark:bg-slate-700 shadow-sm text-indigo-600 dark:text-indigo-400' : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700/50'"
+                      class="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold transition-all text-left"
+                    >
+                      <i class="bx bx-credit-card text-lg"></i>
+                      Billing
+                    </button>
+                    <button
+                      @click="activeCategory = 'technical'; searchQuery = ''"
+                      :class="activeCategory === 'technical' ? 'bg-white dark:bg-slate-700 shadow-sm text-indigo-600 dark:text-indigo-400' : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700/50'"
+                      class="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold transition-all text-left"
+                    >
+                      <i class="bx bx-code-alt text-lg"></i>
+                      Technical
+                    </button>
+                  </nav>
+                </div>
+
+                <!-- FAQ List -->
+                <div class="md:col-span-9 p-8 bg-white dark:bg-slate-800">
+                  <div class="flex items-center justify-between mb-6">
+                    <h2
+                      class="text-xl font-bold text-slate-800 dark:text-slate-100"
+                    >
+                      <span x-show="searchQuery">Search Results</span>
+                      <span x-show="!searchQuery && activeCategory === 'all'"
+                        >All Questions</span
+                      >
+                      <span
+                        x-show="!searchQuery && activeCategory === 'general'"
+                        >General Questions</span
+                      >
+                      <span
+                        x-show="!searchQuery && activeCategory === 'account'"
+                        >Account & Security</span
+                      >
+                      <span
+                        x-show="!searchQuery && activeCategory === 'billing'"
+                        >Billing & Plans</span
+                      >
+                      <span
+                        x-show="!searchQuery && activeCategory === 'technical'"
+                        >Technical & API</span
+                      >
+                    </h2>
+                    <span
+                      class="text-sm text-slate-500"
+                      x-text="filteredFaqs.length + ' articles'"
+                    ></span>
+                  </div>
+
+                  <!-- List -->
+                  <div class="space-y-4">
+                    <template x-for="(faq, index) in filteredFaqs" :key="index">
+                      <div
+                        x-data="{ open: false }"
+                        class="border border-slate-100 dark:border-slate-700 rounded-xl overflow-hidden hover:border-indigo-100 dark:hover:border-slate-600 transition-colors"
+                      >
+                        <button
+                          @click="open = !open"
+                          class="w-full flex items-center justify-between p-5 text-left bg-slate-50/30 dark:bg-slate-800/50 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
+                        >
+                          <span
+                            class="font-bold text-slate-800 dark:text-slate-200"
+                            x-text="faq.question"
+                          ></span>
+                          <i
+                            class="bx bx-chevron-down text-xl text-slate-400 transition-transform duration-300"
+                            :class="open ? 'rotate-180 text-indigo-500' : ''"
+                          ></i>
+                        </button>
+                        <div x-show="open" x-collapse>
+                          <div
+                            class="p-5 text-slate-600 dark:text-slate-400 text-sm leading-relaxed border-t border-dashed border-slate-100 dark:border-slate-700 mt-2 pt-4"
+                          >
+                            <p x-text="faq.answer"></p>
+                          </div>
+                        </div>
+                      </div>
+                    </template>
+
+                    <!-- Empty State -->
+                    <div
+                      x-show="filteredFaqs.length === 0"
+                      class="text-center py-12"
+                    >
+                      <div
+                        class="w-16 h-16 bg-slate-100 dark:bg-slate-700 rounded-full flex items-center justify-center mx-auto mb-4"
+                      >
+                        <i class="bx bx-search text-3xl text-slate-400"></i>
+                      </div>
+                      <h3
+                        class="text-lg font-bold text-slate-800 dark:text-slate-100"
+                      >
+                        No results found
+                      </h3>
+                      <p class="text-slate-500 dark:text-slate-400">
+                        Try adjusting your search or category.
+                      </p>
+                      <button
+                        @click="searchQuery = ''; activeCategory = 'all'"
+                        class="mt-4 text-indigo-600 font-medium hover:underline"
+                      >
+                        Clear Filters
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

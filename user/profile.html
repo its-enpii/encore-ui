@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ApexCharts | Encore UI</title>
+    <title>User Profile | Encore UI</title>
     <!-- Vite CSS -->
     <link rel="stylesheet" href="/assets/css/style.css" />
     <!-- Boxicons -->
@@ -11,13 +11,38 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <!-- ApexCharts -->
-    <script src="/assets/lib/apexcharts-5.3.6/dist/apexcharts.min.js"></script>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <!-- Alpine.js -->
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"
     ></script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Outfit", sans-serif;
+      }
+
+      /* Custom Scrollbar */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
   </head>
   <body
     x-data="{
@@ -40,7 +65,9 @@
             if (this.darkMode) {
                 document.documentElement.classList.add('dark');
             }
-        }
+
+        },
+        activeTab: 'overview'
     }"
     :class="{ 'sidebar-hidden': sidebarHidden }"
     class="bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 antialiased transition-colors duration-300"
@@ -599,7 +626,7 @@
                 </ul>
               </li>
 
-              <li class="nav-item dropdown" x-data="{ open: true }">
+              <li class="nav-item dropdown" x-data="{ open: false }">
                 <a
                   href="#"
                   class="nav-link group"
@@ -616,9 +643,7 @@
                 <ul class="nav-submenu" :class="{ 'show': open }">
                   <div>
                     <li class="nav-item">
-                      <a
-                        href="/charts/apexcharts.html"
-                        class="nav-sub-link active"
+                      <a href="/charts/apexcharts.html" class="nav-sub-link"
                         ><span>ApexCharts</span></a
                       >
                     </li>
@@ -717,7 +742,7 @@
                 </ul>
               </li>
 
-              <li class="nav-item dropdown" x-data="{ open: false }">
+              <li class="nav-item dropdown" x-data="{ open: true }">
                 <a
                   href="#"
                   class="nav-link group"
@@ -734,7 +759,7 @@
                 <ul class="nav-submenu" :class="{ 'show': open }">
                   <div>
                     <li class="nav-item">
-                      <a href="/user/profile.html" class="nav-sub-link"
+                      <a href="/user/profile.html" class="nav-sub-link active"
                         ><span>Profile</span></a
                       >
                     </li>
@@ -860,7 +885,7 @@
       </aside>
 
       <!-- Main Wrapper -->
-      <div class="layout-content dark:bg-slate-900">
+      <div class="layout-content bg-slate-50 dark:bg-slate-900">
         <!-- Navbar -->
         <header class="relative z-10">
           <div
@@ -1301,124 +1326,506 @@
           </div>
         </header>
 
-        <!-- Main Content -->
-        <main
-          class="flex-1 overflow-x-hidden overflow-y-auto p-4 lg:p-8 relative"
-        >
-          <div class="container mx-auto px-4 lg:px-6 py-8">
-            <div class="mb-6">
-              <h1 class="text-2xl font-bold text-slate-800 dark:text-slate-100">
-                ApexCharts
-              </h1>
-              <p class="text-slate-500 dark:text-slate-400 text-sm">
-                Interactive and modern charts for your dashboard.
-              </p>
-            </div>
+        <!-- Main Content Area -->
+        <main class="flex-1 overflow-x-hidden overflow-y-auto">
+          <!-- Immersive Hero Section -->
+          <div class="relative h-88 bg-slate-900 overflow-hidden">
+            <!-- Dynamic Background -->
+            <div
+              class="absolute inset-0 bg-linear-to-br from-indigo-900 via-purple-900 to-slate-900"
+            ></div>
+            <div
+              class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 mix-blend-overlay"
+            ></div>
 
-            <!-- Row 1: Line & Area -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-              <!-- Line Chart -->
+            <!-- Abstract blobs -->
+            <div class="absolute top-0 left-0 w-full h-full overflow-hidden">
               <div
-                class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm p-6"
-              >
-                <h3
-                  class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-4"
-                >
-                  Basic Line Chart
-                </h3>
-                <div id="lineChart" class="min-h-[350px]"></div>
-              </div>
-              <!-- Area Chart -->
+                class="absolute top-[10%] left-[20%] w-96 h-96 bg-indigo-500 rounded-full mix-blend-screen filter blur-[100px] opacity-30 animate-blob"
+              ></div>
               <div
-                class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm p-6"
-              >
-                <h3
-                  class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-4"
-                >
-                  Spline Area Chart
-                </h3>
-                <div id="areaChart" class="min-h-[350px]"></div>
-              </div>
+                class="absolute top-[20%] right-[20%] w-96 h-96 bg-purple-500 rounded-full mix-blend-screen filter blur-[100px] opacity-30 animate-blob animation-delay-2000"
+              ></div>
+              <div
+                class="absolute -bottom-32 left-[40%] w-96 h-96 bg-pink-500 rounded-full mix-blend-screen filter blur-[100px] opacity-30 animate-blob animation-delay-4000"
+              ></div>
             </div>
+          </div>
 
-            <!-- Row 2: Column & Bar -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-              <!-- Column Chart -->
+          <div
+            class="container mx-auto px-4 lg:px-6 pb-12 -mt-32 relative z-10"
+          >
+            <!-- Floating Profile Card -->
+            <div
+              class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-2xl border border-white/20 dark:border-slate-700/30 rounded-3xl p-6 lg:p-8 shadow-2xl shadow-indigo-900/10 mb-8 max-w-6xl mx-auto"
+            >
               <div
-                class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm p-6"
+                class="flex flex-col md:flex-row items-center md:items-start gap-8"
               >
-                <h3
-                  class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-4"
-                >
-                  Column Chart
-                </h3>
-                <div id="columnChart" class="min-h-[350px]"></div>
-              </div>
-              <!-- Bar Chart -->
-              <div
-                class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm p-6"
-              >
-                <h3
-                  class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-4"
-                >
-                  Bar Chart
-                </h3>
-                <div id="barChart" class="min-h-[350px]"></div>
-              </div>
-            </div>
+                <!-- Avatar with Glow -->
+                <div class="relative group">
+                  <div
+                    class="absolute -inset-1 bg-linear-to-r from-indigo-500 to-purple-500 rounded-4xl blur opacity-30 group-hover:opacity-60 transition duration-500"
+                  ></div>
+                  <div class="relative">
+                    <img
+                      src="https://ui-avatars.com/api/?name=Admin+User&background=6366f1&color=fff&size=256"
+                      alt="Profile"
+                      class="w-32 h-32 md:w-40 md:h-40 rounded-[1.8rem] ring-4 ring-white dark:ring-slate-800 object-cover shadow-xl"
+                    />
+                    <div
+                      class="absolute bottom-2 right-2 w-7 h-7 bg-emerald-500 border-4 border-white dark:border-slate-800 rounded-full flex items-center justify-center"
+                      title="Online"
+                    >
+                      <i class="bx bx-check text-white text-xs font-bold"></i>
+                    </div>
+                  </div>
+                </div>
 
-            <!-- Row 3: Mixed & Pie -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
-              <!-- Mixed Chart -->
-              <div
-                class="lg:col-span-2 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm p-6"
-              >
-                <h3
-                  class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-4"
-                >
-                  Mixed Chart
-                </h3>
-                <div id="mixedChart" class="min-h-[350px]"></div>
+                <!-- Info -->
+                <div class="flex-1 text-center md:text-left mt-2">
+                  <div
+                    class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4"
+                  >
+                    <div>
+                      <h1
+                        class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-2 tracking-tight"
+                      >
+                        Admin User
+                      </h1>
+                      <div
+                        class="flex flex-wrap items-center justify-center md:justify-start gap-y-2 gap-x-4 text-slate-500 dark:text-slate-400 text-sm font-medium"
+                      >
+                        <span
+                          class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-700/50"
+                        >
+                          <i class="bx bx-briefcase text-indigo-500"></i>
+                          Product Designer
+                        </span>
+                        <span
+                          class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-700/50"
+                        >
+                          <i class="bx bx-map text-purple-500"></i> San
+                          Francisco, CA
+                        </span>
+                        <span
+                          class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-700/50"
+                        >
+                          <i class="bx bx-time text-emerald-500"></i> Local time
+                          12:45 PM
+                        </span>
+                      </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="flex items-center gap-3">
+                      <button
+                        class="h-11 w-11 flex items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600 transition-all"
+                      >
+                        <i class="bx bx-dots-horizontal-rounded text-2xl"></i>
+                      </button>
+                      <button
+                        class="h-11 px-6 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold hover:opacity-90 transition-all flex items-center gap-2 shadow-lg shadow-slate-900/20"
+                      >
+                        <i class="bx bx-edit-alt"></i> Edit Profile
+                      </button>
+                    </div>
+                  </div>
+
+                  <p
+                    class="text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto md:mx-0"
+                  >
+                    Passionate UI/UX Designer crafting intuitive and engaging
+                    digital experiences. Obsessed with glassmorphism, clean
+                    typography, and pixel-perfect details.
+                  </p>
+                </div>
               </div>
-              <!-- Donut Chart -->
+
+              <!-- Quick Stats Grid -->
               <div
-                class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm p-6"
+                class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-8 pt-8 border-t border-slate-100 dark:border-slate-700/50"
               >
-                <h3
-                  class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-4"
-                >
-                  Donut Chart
-                </h3>
+                <div class="text-center md:text-left px-4">
+                  <p class="text-2xl font-bold text-slate-900 dark:text-white">
+                    124
+                  </p>
+                  <p
+                    class="text-xs font-semibold text-slate-400 uppercase tracking-wider mt-1"
+                  >
+                    Projects
+                  </p>
+                </div>
                 <div
-                  id="donutChart"
-                  class="min-h-[350px] flex items-center justify-center"
-                ></div>
+                  class="text-center md:text-left px-4 border-l border-slate-100 dark:border-slate-700/50"
+                >
+                  <p class="text-2xl font-bold text-slate-900 dark:text-white">
+                    3.5k
+                  </p>
+                  <p
+                    class="text-xs font-semibold text-slate-400 uppercase tracking-wider mt-1"
+                  >
+                    Followers
+                  </p>
+                </div>
+                <div
+                  class="text-center md:text-left px-4 border-l border-slate-100 dark:border-slate-700/50"
+                >
+                  <p class="text-2xl font-bold text-slate-900 dark:text-white">
+                    86
+                  </p>
+                  <p
+                    class="text-xs font-semibold text-slate-400 uppercase tracking-wider mt-1"
+                  >
+                    Reviews
+                  </p>
+                </div>
+                <div
+                  class="text-center md:text-left px-4 border-l border-slate-100 dark:border-slate-700/50"
+                >
+                  <p class="text-2xl font-bold text-emerald-500">9.8</p>
+                  <p
+                    class="text-xs font-semibold text-slate-400 uppercase tracking-wider mt-1"
+                  >
+                    Rating
+                  </p>
+                </div>
               </div>
             </div>
 
-            <!-- Row 4: Radar -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-              <!-- Radar Chart -->
+            <!-- Main Content Grid -->
+            <div class="max-w-6xl mx-auto">
+              <!-- Premium Tabs -->
               <div
-                class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm p-6"
+                class="flex items-center justify-center md:justify-start gap-1 p-1 bg-slate-200/50 dark:bg-slate-800/50 backdrop-blur-md rounded-xl w-fit mb-8 mx-auto md:mx-0"
               >
-                <h3
-                  class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-4"
+                <button
+                  @click="activeTab = 'overview'"
+                  :class="activeTab === 'overview' ? 'bg-white dark:bg-slate-700 text-indigo-600 dark:text-white shadow-sm' : 'text-slate-500 dark:text-slate-400 hover:bg-white/50 dark:hover:bg-slate-700/50'"
+                  class="px-6 py-2 rounded-lg text-sm font-semibold transition-all"
                 >
-                  Radar Chart
-                </h3>
-                <div id="radarChart" class="min-h-[350px]"></div>
+                  Overview
+                </button>
+                <button
+                  @click="activeTab = 'projects'"
+                  :class="activeTab === 'projects' ? 'bg-white dark:bg-slate-700 text-indigo-600 dark:text-white shadow-sm' : 'text-slate-500 dark:text-slate-400 hover:bg-white/50 dark:hover:bg-slate-700/50'"
+                  class="px-6 py-2 rounded-lg text-sm font-semibold transition-all"
+                >
+                  Projects
+                </button>
+
               </div>
-              <!-- Radial Bar Chart -->
+
               <div
-                class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm p-6"
+                class="grid grid-cols-1 lg:grid-cols-3 gap-8"
               >
-                <h3
-                  class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-4"
+                <!-- Left Column (Sticky info) -->
+                <div class="space-y-6">
+                  <!-- Contacts Card -->
+                  <div
+                    class="bg-white dark:bg-slate-800 rounded-3xl p-6 shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-700"
+                  >
+                    <h3
+                      class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-6 flex items-center gap-2"
+                    >
+                      <span class="w-1 h-6 rounded-full bg-indigo-500"></span>
+                      Contact Info
+                    </h3>
+                    <div class="space-y-5">
+                      <div
+                        class="group flex items-start gap-4 p-3 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
+                      >
+                        <div
+                          class="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl group-hover:scale-110 transition-transform"
+                        >
+                          <i class="bx bx-envelope"></i>
+                        </div>
+                        <div>
+                          <p
+                            class="text-xs font-semibold text-slate-400 uppercase tracking-wide"
+                          >
+                            Email
+                          </p>
+                          <p
+                            class="text-sm font-semibold text-slate-700 dark:text-slate-200"
+                          >
+                            admin@encore.com
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        class="group flex items-start gap-4 p-3 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
+                      >
+                        <div
+                          class="w-10 h-10 rounded-xl bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400 flex items-center justify-center text-xl group-hover:scale-110 transition-transform"
+                        >
+                          <i class="bx bx-phone"></i>
+                        </div>
+                        <div>
+                          <p
+                            class="text-xs font-semibold text-slate-400 uppercase tracking-wide"
+                          >
+                            Phone
+                          </p>
+                          <p
+                            class="text-sm font-semibold text-slate-700 dark:text-slate-200"
+                          >
+                            +1 (555) 000-1234
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        class="group flex items-start gap-4 p-3 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
+                      >
+                        <div
+                          class="w-10 h-10 rounded-xl bg-pink-50 dark:bg-pink-900/20 text-pink-600 dark:text-pink-400 flex items-center justify-center text-xl group-hover:scale-110 transition-transform"
+                        >
+                          <i class="bx bxl-dribbble"></i>
+                        </div>
+                        <div>
+                          <p
+                            class="text-xs font-semibold text-slate-400 uppercase tracking-wide"
+                          >
+                            Dribbble
+                          </p>
+                          <p
+                            class="text-sm font-semibold text-slate-700 dark:text-slate-200"
+                          >
+                            dribbble.com/encore
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="mt-6 pt-6 border-t border-slate-100 dark:border-slate-700"
+                    >
+                      <button
+                        class="w-full py-3 rounded-xl border border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-300 font-semibold hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
+                      >
+                        Download Resume
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Skills Card -->
+                  <div
+                    class="bg-white dark:bg-slate-800 rounded-3xl p-6 shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-700"
+                  >
+                    <h3
+                      class="text-lg font-bold text-slate-800 dark:text-slate-100 mb-6 flex items-center gap-2"
+                    >
+                      <span class="w-1 h-6 rounded-full bg-purple-500"></span>
+                      Tools & Skills
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                      <span
+                        class="px-4 py-2 bg-slate-50 dark:bg-slate-700/50 text-slate-600 dark:text-slate-300 rounded-xl text-sm font-semibold border border-slate-100 dark:border-slate-600/50"
+                        >Figma</span
+                      >
+                      <span
+                        class="px-4 py-2 bg-slate-50 dark:bg-slate-700/50 text-slate-600 dark:text-slate-300 rounded-xl text-sm font-semibold border border-slate-100 dark:border-slate-600/50"
+                        >Adobe XD</span
+                      >
+                      <span
+                        class="px-4 py-2 bg-slate-50 dark:bg-slate-700/50 text-slate-600 dark:text-slate-300 rounded-xl text-sm font-semibold border border-slate-100 dark:border-slate-600/50"
+                        >Tailwind CSS</span
+                      >
+                      <span
+                        class="px-4 py-2 bg-slate-50 dark:bg-slate-700/50 text-slate-600 dark:text-slate-300 rounded-xl text-sm font-semibold border border-slate-100 dark:border-slate-600/50"
+                        >React JS</span
+                      >
+                      <span
+                        class="px-4 py-2 bg-slate-50 dark:bg-slate-700/50 text-slate-600 dark:text-slate-300 rounded-xl text-sm font-semibold border border-slate-100 dark:border-slate-600/50"
+                        >Vue.js</span
+                      >
+                      <span
+                        class="px-4 py-2 bg-slate-50 dark:bg-slate-700/50 text-slate-600 dark:text-slate-300 rounded-xl text-sm font-semibold border border-slate-100 dark:border-slate-600/50"
+                        >Notion</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Right Column (Dynamic Content) -->
+                <div
+                  class="lg:col-span-2"
                 >
-                  Radial Bar Chart
-                </h3>
-                <div id="radialBarChart" class="min-h-[350px]"></div>
+                  <div
+                    x-show="activeTab === 'overview'"
+                    x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter-start="opacity-0 translate-y-4"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    class="space-y-6"
+                  >
+                    <!-- Stats Overview -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div
+                        class="bg-indigo-500 text-white p-6 rounded-3xl relative overflow-hidden group"
+                      >
+                        <div
+                          class="absolute -right-6 -top-6 w-32 h-32 bg-white/20 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"
+                        ></div>
+                        <div class="relative z-10">
+                          <div
+                            class="w-12 h-12 bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center text-2xl mb-4"
+                          >
+                            <i class="bx bx-trending-up"></i>
+                          </div>
+                          <p class="text-indigo-100 font-medium">
+                            Monthly Views
+                          </p>
+                          <h4 class="text-3xl font-bold mt-1">45.2k</h4>
+                          <p class="text-sm mt-3 flex items-center gap-1">
+                            <span
+                              class="bg-white/20 px-1.5 py-0.5 rounded text-white"
+                              >+12%</span
+                            >
+                            vs last month
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        class="bg-slate-900 dark:bg-slate-800 text-white p-6 rounded-3xl relative overflow-hidden group"
+                      >
+                        <div
+                          class="absolute -right-6 -bottom-6 w-32 h-32 bg-indigo-500/20 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"
+                        ></div>
+                        <div class="relative z-10">
+                          <div
+                            class="w-12 h-12 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center text-2xl mb-4"
+                          >
+                            <i class="bx bx-time"></i>
+                          </div>
+                          <p class="text-slate-400 font-medium">
+                            Avg. Response Time
+                          </p>
+                          <h4 class="text-3xl font-bold mt-1">1h 20m</h4>
+                          <p
+                            class="text-sm mt-3 flex items-center gap-1 text-slate-400"
+                          >
+                            Faster than 80% contributors
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Recent Projects -->
+                    <div
+                      class="bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-700"
+                    >
+                      <div class="flex items-center justify-between mb-8">
+                        <h3
+                          class="text-xl font-bold text-slate-800 dark:text-slate-100"
+                        >
+                          Recent Projects
+                        </h3>
+                        <a
+                          href="#"
+                          class="text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:text-indigo-700"
+                          >View All</a
+                        >
+                      </div>
+
+                      <div class="space-y-6">
+                        <div
+                          class="group flex items-center justify-between p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors border border-transparent hover:border-slate-200 dark:hover:border-slate-700"
+                        >
+                          <div class="flex items-center gap-5">
+                            <div
+                              class="w-14 h-14 rounded-2xl bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform shadow-sm"
+                            >
+                              <i class="bx bxl-figma"></i>
+                            </div>
+                            <div>
+                              <h4
+                                class="text-base font-bold text-slate-800 dark:text-slate-100 group-hover:text-indigo-600 transition-colors"
+                              >
+                                Admin Dashboard Redesign
+                              </h4>
+                              <p
+                                class="text-sm text-slate-500 dark:text-slate-400 mt-0.5"
+                              >
+                                UI/UX Design • 2 days ago
+                              </p>
+                            </div>
+                          </div>
+                          <div class="flex flex-col items-end gap-2">
+                            <span
+                              class="px-3 py-1 rounded-full text-xs font-bold bg-indigo-50 text-indigo-600 dark:bg-indigo-900/40 dark:text-indigo-300"
+                              >In Progress</span
+                            >
+                            <div class="flex -space-x-2">
+                              <img
+                                class="w-6 h-6 rounded-full border-2 border-white dark:border-slate-800"
+                                src="https://ui-avatars.com/api/?name=J+D&background=random"
+                                alt=""
+                              />
+                              <img
+                                class="w-6 h-6 rounded-full border-2 border-white dark:border-slate-800"
+                                src="https://ui-avatars.com/api/?name=A+S&background=random"
+                                alt=""
+                              />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div
+                          class="group flex items-center justify-between p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors border border-transparent hover:border-slate-200 dark:hover:border-slate-700"
+                        >
+                          <div class="flex items-center gap-5">
+                            <div
+                              class="w-14 h-14 rounded-2xl bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform shadow-sm"
+                            >
+                              <i class="bx bxl-react"></i>
+                            </div>
+                            <div>
+                              <h4
+                                class="text-base font-bold text-slate-800 dark:text-slate-100 group-hover:text-indigo-600 transition-colors"
+                              >
+                                E-commerce Frontend
+                              </h4>
+                              <p
+                                class="text-sm text-slate-500 dark:text-slate-400 mt-0.5"
+                              >
+                                Development • 5 days ago
+                              </p>
+                            </div>
+                          </div>
+                          <div class="flex flex-col items-end gap-2">
+                            <span
+                              class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 dark:bg-emerald-900/40 dark:text-emerald-300"
+                              >Completed</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    x-show="activeTab === 'projects'"
+                    x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter-start="opacity-0 translate-y-4"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                  >
+                    <div
+                      class="bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-xl border border-slate-100 dark:border-slate-700 text-center py-20"
+                    >
+                      <div
+                        class="w-20 h-20 bg-indigo-50 dark:bg-indigo-900/30 rounded-full flex items-center justify-center mx-auto mb-6 text-indigo-500"
+                      >
+                        <i class="bx bx-layer text-4xl"></i>
+                      </div>
+                      <h3
+                        class="text-xl font-bold text-slate-800 dark:text-slate-100"
+                      >
+                        All Projects
+                      </h3>
+                      <p class="text-slate-500 mt-2">
+                        Content for all projects would appear here.
+                      </p>
+                    </div>
+                  </div>
               </div>
             </div>
           </div>
@@ -1436,7 +1843,5 @@
         </footer>
       </div>
     </div>
-
-    <script src="/assets/js/charts/apexcharts.js"></script>
   </body>
 </html>

@@ -3,21 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ApexCharts | Encore UI</title>
-    <!-- Vite CSS -->
-    <link rel="stylesheet" href="/assets/css/style.css" />
+    <title>Vector Maps | Encore UI</title>
     <!-- Boxicons -->
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <!-- ApexCharts -->
-    <script src="/assets/lib/apexcharts-5.3.6/dist/apexcharts.min.js"></script>
+    <!-- jsVectorMap CSS -->
+    <link
+      rel="stylesheet"
+      href="/assets/lib/jsvectormap-1.7.0/dist/jsvectormap.min.css"
+    />
+
+    <!-- Vite CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+
     <!-- Alpine.js -->
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"
     ></script>
+
+    <!-- jsVectorMap JS -->
+    <script src="/assets/lib/jsvectormap-1.7.0/dist/jsvectormap.min.js"></script>
+    <script src="/assets/lib/jsvectormap-1.7.0/dist/maps/world.js"></script>
   </head>
   <body
     x-data="{
@@ -45,7 +54,7 @@
     :class="{ 'sidebar-hidden': sidebarHidden }"
     class="bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 antialiased transition-colors duration-300"
   >
-    <!-- Mobile Drawer (Visible on Mobile Only) -->
+    <!-- Mobile Drawer -->
     <div
       class="fixed inset-0 z-50 lg:hidden bg-slate-900/50 backdrop-blur-sm transition-opacity duration-300"
       x-show="sidebarHidden"
@@ -599,7 +608,7 @@
                 </ul>
               </li>
 
-              <li class="nav-item dropdown" x-data="{ open: true }">
+              <li class="nav-item dropdown" x-data="{ open: false }">
                 <a
                   href="#"
                   class="nav-link group"
@@ -616,9 +625,7 @@
                 <ul class="nav-submenu" :class="{ 'show': open }">
                   <div>
                     <li class="nav-item">
-                      <a
-                        href="/charts/apexcharts.html"
-                        class="nav-sub-link active"
+                      <a href="/charts/apexcharts.html" class="nav-sub-link"
                         ><span>ApexCharts</span></a
                       >
                     </li>
@@ -631,7 +638,7 @@
                 </ul>
               </li>
 
-              <li class="nav-item dropdown" x-data="{ open: false }">
+              <li class="nav-item dropdown" x-data="{ open: true }">
                 <a
                   href="#"
                   class="nav-link group"
@@ -653,7 +660,9 @@
                       >
                     </li>
                     <li class="nav-item">
-                      <a href="/maps/vector-maps.html" class="nav-sub-link"
+                      <a
+                        href="/maps/vector-maps.html"
+                        class="nav-sub-link active"
                         ><span>Vector Maps</span></a
                       >
                     </li>
@@ -1308,117 +1317,28 @@
           <div class="container mx-auto px-4 lg:px-6 py-8">
             <div class="mb-6">
               <h1 class="text-2xl font-bold text-slate-800 dark:text-slate-100">
-                ApexCharts
+                Vector Maps
               </h1>
               <p class="text-slate-500 dark:text-slate-400 text-sm">
-                Interactive and modern charts for your dashboard.
+                Interactive vector maps using jsVectorMap.
               </p>
             </div>
 
-            <!-- Row 1: Line & Area -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-              <!-- Line Chart -->
+            <!-- World Map -->
+            <div class="grid grid-cols-1 gap-6 mb-6">
               <div
                 class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm p-6"
               >
                 <h3
                   class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-4"
                 >
-                  Basic Line Chart
-                </h3>
-                <div id="lineChart" class="min-h-[350px]"></div>
-              </div>
-              <!-- Area Chart -->
-              <div
-                class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm p-6"
-              >
-                <h3
-                  class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-4"
-                >
-                  Spline Area Chart
-                </h3>
-                <div id="areaChart" class="min-h-[350px]"></div>
-              </div>
-            </div>
-
-            <!-- Row 2: Column & Bar -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-              <!-- Column Chart -->
-              <div
-                class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm p-6"
-              >
-                <h3
-                  class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-4"
-                >
-                  Column Chart
-                </h3>
-                <div id="columnChart" class="min-h-[350px]"></div>
-              </div>
-              <!-- Bar Chart -->
-              <div
-                class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm p-6"
-              >
-                <h3
-                  class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-4"
-                >
-                  Bar Chart
-                </h3>
-                <div id="barChart" class="min-h-[350px]"></div>
-              </div>
-            </div>
-
-            <!-- Row 3: Mixed & Pie -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
-              <!-- Mixed Chart -->
-              <div
-                class="lg:col-span-2 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm p-6"
-              >
-                <h3
-                  class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-4"
-                >
-                  Mixed Chart
-                </h3>
-                <div id="mixedChart" class="min-h-[350px]"></div>
-              </div>
-              <!-- Donut Chart -->
-              <div
-                class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm p-6"
-              >
-                <h3
-                  class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-4"
-                >
-                  Donut Chart
+                  World Map
                 </h3>
                 <div
-                  id="donutChart"
-                  class="min-h-[350px] flex items-center justify-center"
+                  id="worldMap"
+                  class="map-container"
+                  style="height: 500px"
                 ></div>
-              </div>
-            </div>
-
-            <!-- Row 4: Radar -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-              <!-- Radar Chart -->
-              <div
-                class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm p-6"
-              >
-                <h3
-                  class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-4"
-                >
-                  Radar Chart
-                </h3>
-                <div id="radarChart" class="min-h-[350px]"></div>
-              </div>
-              <!-- Radial Bar Chart -->
-              <div
-                class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm p-6"
-              >
-                <h3
-                  class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-4"
-                >
-                  Radial Bar Chart
-                </h3>
-                <div id="radialBarChart" class="min-h-[350px]"></div>
               </div>
             </div>
           </div>
@@ -1437,6 +1357,6 @@
       </div>
     </div>
 
-    <script src="/assets/js/charts/apexcharts.js"></script>
+    <script src="/assets/js/maps/vector-maps.js"></script>
   </body>
 </html>

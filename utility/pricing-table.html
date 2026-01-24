@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pricing Plans | Encore UI</title>
+    <!-- Vite CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Alpine.js -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"
+    ></script>
+  </head>
+  <body
+    x-data="{
+        sidebarHidden: false,
+        darkMode: localStorage.getItem('theme') === 'dark',
+        toggleTheme() {
+            this.darkMode = !this.darkMode;
+            localStorage.setItem('theme', this.darkMode ? 'dark' : 'light');
+            if (this.darkMode) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        },
+        toggleSidebar() {
+            this.sidebarHidden = !this.sidebarHidden;
+        }
+    }"
+    x-init="$watch('darkMode', val => val ? document.documentElement.classList.add('dark') : document.documentElement.classList.remove('dark')); if(darkMode) document.documentElement.classList.add('dark');"
+    :class="{ 'sidebar-hidden': sidebarHidden }"
+    class="bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 antialiased transition-colors duration-300"
+  >
+    <!-- Mobile Drawer -->
+    <div
+      class="fixed inset-0 z-50 lg:hidden bg-slate-900/50 backdrop-blur-sm transition-opacity duration-300"
+      x-show="sidebarHidden"
+      x-transition:enter="ease-out duration-300"
+      x-transition:enter-start="opacity-0"
+      x-transition:enter-end="opacity-100"
+      x-transition:leave="ease-in duration-200"
+      x-transition:leave-start="opacity-100"
+      x-transition:leave-end="opacity-0"
+      @click="sidebarHidden = false"
+      style="display: none"
+    ></div>
+
+    <!-- Dashboard Container -->
+    <div class="min-h-screen bg-slate-50 dark:bg-slate-900">
+      <!-- Sidebar -->
+      <aside class="layout-sidebar bg-white dark:bg-slate-800">
+        <!-- Brand -->
+        <div
+          class="h-16 flex items-center px-6 border-b border-slate-100 dark:border-slate-700"
+        >
+          <div
+            class="flex items-center gap-2 font-bold text-xl text-indigo-600 dark:text-indigo-400 tracking-tight"
+          >
+            <i class="bx bxs-cube-alt text-2xl"></i>
+            <span>Encore</span>
+          </div>
+          <button
+            @click="sidebarHidden = !sidebarHidden"
+            class="lg:hidden ml-auto text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
+          >
+            <i class="bx bx-x text-2xl"></i>
+          </button>
+        </div>
+
+        <!-- Navigation -->
+        <div class="flex-1 overflow-y-auto py-4 custom-scrollbar">
+          <nav class="px-2">
+            <ul class="nav">
+              <li class="nav-header">Dashboard</li>
+              <li class="nav-item">
+                <a
+                  href="/dashboard/dashboard-default.html"
+                  class="nav-link group"
+                >
+                  <i class="bx bxs-dashboard nav-icon"></i>
+                  <span>Dashboard</span>
+                </a>
+              </li>
+
+              <li class="nav-header">Utility / Misc</li>
+
+              <li class="nav-item dropdown" x-data="{ open: true }">
+                <a
+                  href="#"
+                  class="nav-link active group"
+                  @click.prevent="open = !open"
+                  :class="{ 'active': open }"
+                >
+                  <i class="bx bx-box nav-icon"></i>
+                  <span>Utility</span>
+                  <i
+                    class="bx bx-chevron-right nav-chevron"
+                    :class="{ 'rotate-90': open }"
+                  ></i>
+                </a>
+                <ul class="nav-submenu" :class="{ 'show': open }">
+                  <div>
+                    <li class="nav-item">
+                      <a
+                        href="/utility/pricing-table.html"
+                        class="nav-sub-link active"
+                        ><span>Pricing Table</span></a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a href="/utility/faq.html" class="nav-sub-link"
+                        ><span>FAQ</span></a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a href="/utility/timeline.html" class="nav-sub-link"
+                        ><span>Timeline</span></a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a href="/utility/gallery.html" class="nav-sub-link"
+                        ><span>Gallery</span></a
+                      >
+                    </li>
+                  </div>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a href="/user/account-settings.html" class="nav-link group">
+                  <i class="bx bx-user-circle nav-icon"></i>
+                  <span>Account Settings</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- Main Wrapper -->
+      <div class="layout-content bg-slate-50 dark:bg-slate-900">
+        <!-- Navbar -->
+        <header class="relative z-10">
+          <div
+            class="bg-white/95 dark:bg-slate-800/95 backdrop-blur-md border-b border-slate-100/50 dark:border-slate-700/50"
+          >
+            <div class="container mx-auto">
+              <div class="h-16 px-4 lg:px-6 flex items-center justify-between">
+                <!-- Left Section -->
+                <div class="flex items-center gap-4">
+                  <button
+                    @click="toggleSidebar()"
+                    class="p-2 hover:bg-linear-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-xl transition-all duration-300 group"
+                  >
+                    <i
+                      class="bx bx-menu text-2xl text-slate-600 dark:text-slate-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors"
+                    ></i>
+                  </button>
+                  <h3
+                    class="text-xl font-bold text-slate-800 dark:text-slate-100 hidden sm:block"
+                  >
+                    Pricing Plans
+                  </h3>
+                </div>
+
+                <!-- Right Section -->
+                <div class="flex items-center gap-2">
+                  <div class="hidden sm:flex items-center gap-1">
+                    <button
+                      @click="toggleTheme()"
+                      class="relative p-2.5 hover:bg-linear-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-xl transition-all duration-300 group"
+                    >
+                      <i
+                        class="bx text-xl text-slate-600 dark:text-slate-400 transition-colors"
+                        :class="darkMode ? 'bx-sun group-hover:text-amber-500' : 'bx-moon group-hover:text-indigo-600 dark:group-hover:text-indigo-400'"
+                      ></i>
+                    </button>
+                  </div>
+
+                  <!-- Simple Profile (Placeholder) -->
+                  <button
+                    class="flex items-center gap-3 pl-2 pr-3 py-1.5 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-xl transition-all"
+                  >
+                    <img
+                      src="https://ui-avatars.com/api/?name=User&background=6366f1&color=fff"
+                      class="w-8 h-8 rounded-full"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main
+          class="flex-1 overflow-x-hidden overflow-y-auto bg-slate-50 dark:bg-slate-900 p-4 lg:p-6"
+          x-data="{ annual: true }"
+        >
+          <div class="container mx-auto max-w-6xl">
+            <!-- Pricing Header -->
+            <div class="text-center max-w-2xl mx-auto mb-16 mt-8">
+              <h1
+                class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-4"
+              >
+                Choose the Perfect Plan
+              </h1>
+              <p class="text-lg text-slate-600 dark:text-slate-400 mb-8">
+                Simple, transparent pricing that grows with you. Try any plan
+                free for 30 days.
+              </p>
+
+              <!-- Toggle Switch -->
+              <div class="flex items-center justify-center gap-4">
+                <span
+                  class="text-sm font-semibold"
+                  :class="!annual ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400'"
+                >
+                  Monthly
+                </span>
+
+                <button
+                  @click="annual = !annual"
+                  class="relative inline-flex h-8 w-14 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                  :class="annual ? 'bg-indigo-600' : 'bg-slate-300 dark:bg-slate-600'"
+                >
+                  <span
+                    class="inline-block h-6 w-6 transform rounded-full bg-white transition-transform"
+                    :class="annual ? 'translate-x-7' : 'translate-x-1'"
+                  ></span>
+                </button>
+
+                <span
+                  class="text-sm font-semibold flex items-center gap-2"
+                  :class="annual ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-slate-400'"
+                >
+                  Yearly
+                  <span
+                    class="inline-flex items-center rounded-full bg-indigo-100 dark:bg-indigo-900/30 px-2.5 py-0.5 text-xs font-bold text-indigo-700 dark:text-indigo-300"
+                  >
+                    Save 20%
+                  </span>
+                </span>
+              </div>
+            </div>
+
+            <!-- Pricing Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20 relative">
+              <!-- Starter Plan -->
+              <div
+                class="relative bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-700 flex flex-col hover:-translate-y-1 transition-transform duration-300"
+              >
+                <div class="mb-6">
+                  <h3
+                    class="text-lg font-bold text-slate-900 dark:text-white mb-2"
+                  >
+                    Starter
+                  </h3>
+                  <p class="text-slate-500 dark:text-slate-400 text-sm">
+                    Perfect for individuals and side projects.
+                  </p>
+                </div>
+                <div class="mb-6">
+                  <div class="flex items-baseline gap-1">
+                    <span
+                      class="text-4xl font-extrabold text-slate-900 dark:text-white"
+                      x-text="annual ? '$0' : '$0'"
+                    ></span>
+                    <span class="text-slate-500 font-medium">/mo</span>
+                  </div>
+                  <p class="text-xs text-slate-400 mt-1" x-show="annual">
+                    Free forever
+                  </p>
+                </div>
+                <button
+                  class="w-full py-3 px-4 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 font-bold rounded-xl transition-colors mb-8"
+                >
+                  Get Started
+                </button>
+                <ul class="space-y-4 flex-1">
+                  <li
+                    class="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300"
+                  >
+                    <i class="bx bx-check text-indigo-500 text-xl shrink-0"></i>
+                    <span>1 Project</span>
+                  </li>
+                  <li
+                    class="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300"
+                  >
+                    <i class="bx bx-check text-indigo-500 text-xl shrink-0"></i>
+                    <span>500MB Storage</span>
+                  </li>
+                  <li
+                    class="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300"
+                  >
+                    <i class="bx bx-check text-indigo-500 text-xl shrink-0"></i>
+                    <span>Community Support</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Pro Plan (Most Popular) -->
+              <div
+                class="relative bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-2xl shadow-indigo-200/50 dark:shadow-none border-2 border-indigo-500 dark:border-indigo-500 flex flex-col transform md:-translate-y-4"
+              >
+                <div
+                  class="absolute -top-4 left-1/2 -translate-x-1/2 bg-indigo-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wide"
+                >
+                  Most Popular
+                </div>
+                <div class="mb-6">
+                  <h3
+                    class="text-lg font-bold text-slate-900 dark:text-white mb-2"
+                  >
+                    Pro
+                  </h3>
+                  <p class="text-slate-500 dark:text-slate-400 text-sm">
+                    For growing teams and startups.
+                  </p>
+                </div>
+                <div class="mb-6">
+                  <div class="flex items-baseline gap-1">
+                    <span
+                      class="text-4xl font-extrabold text-slate-900 dark:text-white"
+                      x-text="annual ? '$29' : '$39'"
+                    ></span>
+                    <span class="text-slate-500 font-medium">/mo</span>
+                  </div>
+                  <p
+                    class="text-xs text-indigo-600 dark:text-indigo-400 mt-1 font-medium"
+                    x-show="annual"
+                  >
+                    Billed $348 yearly
+                  </p>
+                </div>
+                <button
+                  class="w-full py-3 px-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl shadow-lg shadow-indigo-200 dark:shadow-none transition-all mb-8 hover:-translate-y-0.5"
+                >
+                  Start Free Trial
+                </button>
+                <ul class="space-y-4 flex-1">
+                  <li
+                    class="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300"
+                  >
+                    <i class="bx bx-check text-indigo-500 text-xl shrink-0"></i>
+                    <span>Unlimited Projects</span>
+                  </li>
+                  <li
+                    class="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300"
+                  >
+                    <i class="bx bx-check text-indigo-500 text-xl shrink-0"></i>
+                    <span>50GB Storage</span>
+                  </li>
+                  <li
+                    class="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300"
+                  >
+                    <i class="bx bx-check text-indigo-500 text-xl shrink-0"></i>
+                    <span>Advanced Analytics</span>
+                  </li>
+                  <li
+                    class="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300"
+                  >
+                    <i class="bx bx-check text-indigo-500 text-xl shrink-0"></i>
+                    <span>Priority Email Support</span>
+                  </li>
+                  <li
+                    class="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300"
+                  >
+                    <i class="bx bx-check text-indigo-500 text-xl shrink-0"></i>
+                    <span>Team Collaboration</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Enterprise Plan -->
+              <div
+                class="relative bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-700 flex flex-col hover:-translate-y-1 transition-transform duration-300"
+              >
+                <div class="mb-6">
+                  <h3
+                    class="text-lg font-bold text-slate-900 dark:text-white mb-2"
+                  >
+                    Enterprise
+                  </h3>
+                  <p class="text-slate-500 dark:text-slate-400 text-sm">
+                    Advanced features for large scale.
+                  </p>
+                </div>
+                <div class="mb-6">
+                  <div class="flex items-baseline gap-1">
+                    <span
+                      class="text-4xl font-extrabold text-slate-900 dark:text-white"
+                      x-text="annual ? '$99' : '$129'"
+                    ></span>
+                    <span class="text-slate-500 font-medium">/mo</span>
+                  </div>
+                  <p class="text-xs text-slate-400 mt-1" x-show="annual">
+                    Billed $1188 yearly
+                  </p>
+                </div>
+                <button
+                  class="w-full py-3 px-4 bg-slate-900 dark:bg-white hover:bg-slate-800 dark:hover:bg-slate-100 text-white dark:text-slate-900 font-bold rounded-xl transition-colors mb-8"
+                >
+                  Contact Sales
+                </button>
+                <ul class="space-y-4 flex-1">
+                  <li
+                    class="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300"
+                  >
+                    <i class="bx bx-check text-indigo-500 text-xl shrink-0"></i>
+                    <span>Everything in Pro</span>
+                  </li>
+                  <li
+                    class="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300"
+                  >
+                    <i class="bx bx-check text-indigo-500 text-xl shrink-0"></i>
+                    <span>Unlimited Storage</span>
+                  </li>
+                  <li
+                    class="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300"
+                  >
+                    <i class="bx bx-check text-indigo-500 text-xl shrink-0"></i>
+                    <span>SSO & Advanced Security</span>
+                  </li>
+                  <li
+                    class="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300"
+                  >
+                    <i class="bx bx-check text-indigo-500 text-xl shrink-0"></i>
+                    <span>Dedicated Account Manager</span>
+                  </li>
+                  <li
+                    class="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300"
+                  >
+                    <i class="bx bx-check text-indigo-500 text-xl shrink-0"></i>
+                    <span>Custom Integrations</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="max-w-3xl mx-auto mb-20">
+              <h2
+                class="text-2xl font-bold text-center text-slate-900 dark:text-white mb-8"
+              >
+                Frequently Asked Questions
+              </h2>
+              <div class="space-y-4" x-data="{ expanded: null }">
+                <!-- FAQ Item 1 -->
+                <div
+                  class="bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 overflow-hidden"
+                >
+                  <button
+                    @click="expanded = expanded === 1 ? null : 1"
+                    class="w-full flex items-center justify-between p-5 text-left font-bold text-slate-800 dark:text-slate-200"
+                  >
+                    <span>Can I change my plan later?</span>
+                    <i
+                      class="bx bx-chevron-down text-xl transition-transform duration-200"
+                      :class="expanded === 1 ? 'rotate-180' : ''"
+                    ></i>
+                  </button>
+                  <div x-show="expanded === 1" x-collapse>
+                    <div
+                      class="px-5 pb-5 text-slate-600 dark:text-slate-400 leading-relaxed"
+                    >
+                      Yes, you can upgrade or downgrade your plan at any time.
+                      If you upgrade, the prorated amount will be charged
+                      immediately. If you downgrade, the credit will be applied
+                      to your next billing cycle.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div
+                  class="bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 overflow-hidden"
+                >
+                  <button
+                    @click="expanded = expanded === 2 ? null : 2"
+                    class="w-full flex items-center justify-between p-5 text-left font-bold text-slate-800 dark:text-slate-200"
+                  >
+                    <span>What payment methods do you accept?</span>
+                    <i
+                      class="bx bx-chevron-down text-xl transition-transform duration-200"
+                      :class="expanded === 2 ? 'rotate-180' : ''"
+                    ></i>
+                  </button>
+                  <div x-show="expanded === 2" x-collapse>
+                    <div
+                      class="px-5 pb-5 text-slate-600 dark:text-slate-400 leading-relaxed"
+                    >
+                      We accept all major credit cards (Visa, Mastercard,
+                      American Express) and PayPal. For Enterprise plans, we
+                      also support bank transfers and invoicing.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div
+                  class="bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 overflow-hidden"
+                >
+                  <button
+                    @click="expanded = expanded === 3 ? null : 3"
+                    class="w-full flex items-center justify-between p-5 text-left font-bold text-slate-800 dark:text-slate-200"
+                  >
+                    <span>Is there a free trial?</span>
+                    <i
+                      class="bx bx-chevron-down text-xl transition-transform duration-200"
+                      :class="expanded === 3 ? 'rotate-180' : ''"
+                    ></i>
+                  </button>
+                  <div x-show="expanded === 3" x-collapse>
+                    <div
+                      class="px-5 pb-5 text-slate-600 dark:text-slate-400 leading-relaxed"
+                    >
+                      Yes! The Pro plan comes with a 14-day free trial. You can
+                      explore all features without being charged. No credit card
+                      required for the Starter plan.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
